@@ -3,19 +3,6 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   return (
     <>
-      {/* Temporary pixel grid for editing - REMOVE LATER */}
-      <div 
-        className="fixed inset-0 pointer-events-none z-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 0, 0, 0.2) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 0, 0, 0.2) 1px, transparent 1px),
-            linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '10px 10px, 10px 10px, 50px 50px, 50px 50px'
-        }}
-      />
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
@@ -26,13 +13,6 @@ const Header = () => {
           backgroundColor: 'rgba(255, 255, 255, 0.07)',
           mixBlendMode: 'screen',
           border: '1px solid rgba(255, 255, 255, 0.08)',
-          backgroundImage: `
-            linear-gradient(rgba(0, 255, 0, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 0, 0.3) 1px, transparent 1px),
-            linear-gradient(rgba(0, 255, 0, 0.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 0, 0.15) 1px, transparent 1px)
-          `,
-          backgroundSize: '10px 10px, 10px 10px, 50px 50px, 50px 50px'
         }}
       >
         <div className="container mx-auto px-3 md:px-6 pt-[84px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-3 md:mt-4">
