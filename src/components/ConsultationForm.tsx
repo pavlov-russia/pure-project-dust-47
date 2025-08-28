@@ -100,10 +100,11 @@ const ConsultationForm = () => {
                 type="submit"
                 variant="form-submit"
                 size="xl"
-                className="w-full"
-                icon={<MessageCircle className="w-5 h-5" />}
+                className="w-full text-center leading-tight"
+                icon={<MessageCircle className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />}
               >
-                Отправить и записаться на консультацию
+                <span className="block sm:inline">Отправить и записаться</span>
+                <span className="block sm:inline sm:ml-1">на консультацию</span>
               </Button>
             </form>
           </CardContent>
