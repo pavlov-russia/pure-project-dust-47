@@ -296,7 +296,7 @@ All colors MUST be HSL.
   
   /* Breathing animation for glass buttons */
   .slow-pulse {
-    animation: breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: breath-glass 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
   @keyframes breath-glass {
