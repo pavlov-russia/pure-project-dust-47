@@ -154,7 +154,6 @@ const Index = () => {
               <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
             </div>
             <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
-              <Eye className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
               <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
                 Как понять, что ваше предложение не упаковано или упаковано плохо?
               </h3>
