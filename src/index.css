@@ -294,17 +294,25 @@ All colors MUST be HSL.
     height: auto;
   }
   
-  /* Very slow and subtle pulse animation for buttons */
+  /* Breathing animation for glass buttons */
   .slow-pulse {
-    animation: slow-pulse 11s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
-  @keyframes slow-pulse {
+  @keyframes breath-glass {
     0%, 100% {
-      opacity: 1;
+      transform: scale(1);
+      box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 0 20px rgba(255,255,255,0.1);
+      background-color: rgba(255,255,255,0.18);
     }
     50% {
-      opacity: 0.7;
+      transform: scale(1.035);
+      box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.45),
+        0 0 30px rgba(255,255,255,0.25);
+      background-color: rgba(255,255,255,0.22);
     }
   }
 }
