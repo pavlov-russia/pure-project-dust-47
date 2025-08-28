@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="fixed top-2 left-2 right-2 md:top-4 md:left-4 md:right-4 z-50 animate-fade-in">
+    <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
         className="relative overflow-hidden rounded-[24px] border-0"
