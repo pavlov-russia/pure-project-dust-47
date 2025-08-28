@@ -135,7 +135,19 @@ const Index = () => {
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
           <div className="max-w-3xl mx-auto bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
-            <h2 className="text-xl md:text-4xl font-bold mb-4 md:mb-8">ЭКСПРЕСС-ТЕСТ</h2>
+            {/* Express Stamp */}
+            <div className="relative inline-block mx-auto mb-4 md:mb-6">
+              <div className="relative bg-white/20 border-4 border-white/60 rounded-xl px-6 py-3 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-30 rounded-lg"></div>
+                <div className="relative font-black text-xl md:text-3xl text-white tracking-wider uppercase">
+                  EXPRESS
+                </div>
+                {/* Stamp texture overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 rounded-lg pointer-events-none"></div>
+              </div>
+            </div>
+            
+            <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-8">ТЕСТ</h2>
             <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
               <Eye className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
               <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
