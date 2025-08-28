@@ -112,7 +112,7 @@ const Index = () => {
                   <div className="relative bg-black/30 backdrop-blur-md rounded-xl p-5 border border-white/30 shadow-inner">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-xl blur opacity-50"></div>
                     <p className="relative font-bold text-white text-base md:text-lg leading-relaxed">
-                      название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
+                      Название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
                       <span className="block mt-2 text-xl md:text-2xl font-black bg-gradient-to-r from-white via-accent-foreground to-white bg-clip-text text-transparent animate-pulse">
                         ЭТО НЕ УПАКОВКА!
                       </span>
