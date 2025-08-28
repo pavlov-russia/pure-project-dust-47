@@ -256,14 +256,14 @@ const Index = () => {
       </section>
 
       {/* Checklist Section */}
-      <section className="pt-6 md:pt-16 pb-[20px] md:pb-14 relative">
+      <section className="pt-6 md:pt-16 pb-5 md:pb-14 relative">
         {/* Background with rounded corners and dashed border like SVG */}
         <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark overflow-hidden">
           {/* Inner content background */}
           <div className="absolute inset-0 bg-gradient-dark"></div>
         </div>
         
-        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10 pb-3 md:pb-0">
+        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10">
           <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
