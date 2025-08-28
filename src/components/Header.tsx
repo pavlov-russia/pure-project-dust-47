@@ -16,39 +16,46 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let ticking = false;
+    const rootEl = document.getElementById('root');
+    const heroEl = document.querySelector('[data-hero]');
 
+    if (!rootEl) return;
+
+    // Если есть Hero — используем IntersectionObserver относительно #root
+    if (heroEl && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          // Показываем кнопку, когда Hero почти вышел из области (видимость < 20%)
+          setShowCTA(entry.intersectionRatio < 0.2);
+        },
+        {
+          root: rootEl,
+          threshold: [0, 0.2, 0.5, 1],
+        }
+      );
+
+      observer.observe(heroEl);
+
+      return () => observer.disconnect();
+    }
+
+    // Fallback: слушаем скролл у #root
+    let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const scrollPosition = window.scrollY;
-          
-          // Простой и надежный триггер - показываем кнопку после прокрутки на 400px
-          // Это примерно когда пользователь прокрутил половину Hero секции
-          const triggerPoint = 400;
-          
-          const shouldShow = scrollPosition > triggerPoint;
-          
-          // Debug в консоль для проверки
-          if (scrollPosition > 0) {
-            console.log('Scroll check:', { scrollPosition, triggerPoint, shouldShow });
-          }
-          
-          setShowCTA(shouldShow);
+          const scrollTop = rootEl.scrollTop;
+          setShowCTA(scrollTop > 400);
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    // Добавляем обработчик скролла с пассивным флагом для производительности
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Проверяем начальную позицию
+    rootEl.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-
-    // Очищаем обработчик при размонтировании
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => rootEl.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-interface SectionCardProps {
+interface SectionCardProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-const SectionCard: React.FC<SectionCardProps> = ({ children, className }) => {
+const SectionCard: React.FC<SectionCardProps> = ({ children, className, ...rest }) => {
   return (
     <section 
       className={cn(
@@ -26,6 +26,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ children, className }) => {
         boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.4), 0 12px 40px rgba(17,1,61,0.25)',
         isolation: 'isolate'
       }}
+      {...rest}
     >
       <div className="relative z-10">
         {children}
