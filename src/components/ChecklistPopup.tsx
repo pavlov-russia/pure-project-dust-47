@@ -40,15 +40,7 @@ const ChecklistPopup = () => {
   };
 
   return (
-    <>
-      {/* Countdown component */}
-      {showCountdown && hasFinishedFirstTime && (
-        <div className="fixed bottom-4 right-4 z-40 bg-primary text-white px-4 py-2 rounded-lg font-bold text-lg animate-pulse">
-          {countdown} секунд
-        </div>
-      )}
-      
-      <Dialog open={isOpen} onOpenChange={handleClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogPortal>
         <DialogOverlay 
           className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
@@ -111,7 +103,6 @@ const ChecklistPopup = () => {
         </DialogContent>
       </DialogPortal>
     </Dialog>
-    </>
   );
 };
 
