@@ -22,18 +22,19 @@ const Header = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollPosition = window.scrollY;
-          const viewportHeight = window.innerHeight;
           
-          // Более точный расчет: Hero секция занимает примерно 100vh
-          // pt-20 = 5rem = 80px на мобильном, pt-48 = 12rem = 192px на десктопе
-          const isMobile = window.innerWidth < 768;
-          const headerPadding = isMobile ? 80 : 192; // pt-20 / pt-48
-          const heroContentHeight = isMobile ? 300 : 400; // примерная высота контента
+          // Простой и надежный триггер - показываем кнопку после прокрутки на 400px
+          // Это примерно когда пользователь прокрутил половину Hero секции
+          const triggerPoint = 400;
           
-          // Показываем кнопку когда пользователь прокрутил больше половины Hero секции
-          const triggerPoint = viewportHeight * 0.5 + headerPadding + heroContentHeight * 0.3;
+          const shouldShow = scrollPosition > triggerPoint;
           
-          setShowCTA(scrollPosition > triggerPoint);
+          // Debug в консоль для проверки
+          if (scrollPosition > 0) {
+            console.log('Scroll check:', { scrollPosition, triggerPoint, shouldShow });
+          }
+          
+          setShowCTA(shouldShow);
           ticking = false;
         });
         ticking = true;
