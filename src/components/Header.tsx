@@ -25,7 +25,14 @@ const Header = () => {
           WebkitBackdropFilter: 'blur(40px)',
           backgroundColor: 'rgba(255, 255, 255, 0.07)',
           mixBlendMode: 'screen',
-          border: '1px solid rgba(255, 255, 255, 0.08)'
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          backgroundImage: `
+            linear-gradient(rgba(0, 255, 0, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 0, 0.3) 1px, transparent 1px),
+            linear-gradient(rgba(0, 255, 0, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 0, 0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '10px 10px, 10px 10px, 50px 50px, 50px 50px'
         }}
       >
         <div className="container mx-auto px-3 md:px-6 pt-4 md:pt-6 pb-12 md:pb-16 flex items-center justify-between max-w-full mt-16 md:mt-24">
