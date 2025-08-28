@@ -101,7 +101,7 @@ const Index = () => {
             </p>
             <Button 
               size="lg"
-              className="backdrop-blur-[40px] bg-white/70 text-purple-700 hover:bg-gray-100/60 transition-all duration-300 font-semibold px-8 md:px-10 py-4 md:py-5 h-auto text-base md:text-lg rounded-[34px] shadow-lg hover:shadow-xl"
+              className="backdrop-blur-[40px] bg-white/70 text-primary hover:bg-gray-100/60 transition-all duration-300 font-semibold px-8 md:px-10 py-4 md:py-5 h-auto text-base md:text-lg rounded-[34px] shadow-lg hover:shadow-xl"
             >
               <Zap className="w-5 h-5 md:w-6 md:h-6 mr-3" />
               Хочу мощную упаковку 🔥
