@@ -25,7 +25,16 @@ const ChecklistPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl rounded-3xl overflow-hidden">
+      <DialogContent 
+        className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
+        style={{
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.07)',
+          mixBlendMode: 'screen',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+        }}
+      >
         <DialogHeader className="text-center space-y-3">
           <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-2">
             <FileText className="w-8 h-8 text-white" />
