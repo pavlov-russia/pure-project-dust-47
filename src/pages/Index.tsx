@@ -39,7 +39,7 @@ const Index = () => {
         </p>
         <Button 
           size="lg" 
-          className="bg-white text-[#272727] rounded-xl px-4 md:px-5 py-3 shadow-md hover:bg-gray-50 transition-all duration-300 font-semibold touch-target text-sm md:text-base"
+          className="bg-white text-[#272727] rounded-xl px-4 md:px-5 py-3 shadow-md hover:bg-secondary transition-all duration-300 font-semibold touch-target text-sm md:text-base"
         >
           <Target className="w-4 h-4 md:w-5 md:h-5 mr-2" />
           <span className="hidden sm:inline">Получить индивидуальное КП</span>
@@ -61,11 +61,11 @@ const Index = () => {
           </h3>
         </div>
 
-        <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-4 md:p-8 max-w-4xl mx-auto">
+        <div className="bg-destructive/20 border border-destructive/30 rounded-lg p-4 md:p-8 max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-start justify-center space-y-3 md:space-y-0 md:space-x-4 text-left">
-            <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-red-300 mt-1 flex-shrink-0 mx-auto md:mx-0" />
+            <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-destructive-foreground mt-1 flex-shrink-0 mx-auto md:mx-0" />
             <div className="text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-demibold text-red-300 mb-3 md:mb-4">
+              <h3 className="text-lg md:text-xl font-demibold text-destructive-foreground mb-3 md:mb-4">
                 Опасная иллюзия
               </h3>
               <p className="text-white mb-3 md:mb-4 text-sm md:text-base">
@@ -101,7 +101,7 @@ const Index = () => {
             </p>
             <Button 
               size="lg"
-              className="backdrop-blur-[40px] bg-white/70 text-primary hover:bg-gray-100/60 transition-all duration-300 font-semibold px-8 md:px-10 py-4 md:py-5 h-auto text-base md:text-lg rounded-[34px] shadow-lg hover:shadow-xl"
+              className="backdrop-blur-[40px] bg-white/70 text-primary hover:bg-secondary/60 transition-all duration-300 font-semibold px-8 md:px-10 py-4 md:py-5 h-auto text-base md:text-lg rounded-[34px] shadow-lg hover:shadow-xl"
             >
               <Zap className="w-5 h-5 md:w-6 md:h-6 mr-3" />
               Хочу мощную упаковку 🔥
@@ -173,9 +173,9 @@ const Index = () => {
                     description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                   }
                 ].map((item, index) => (
-                  <div key={index} className="relative backdrop-blur-[40px] bg-neutral-100/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-neutral-200/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div key={index} className="relative backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     {/* Dark overlay for color-dodge effect */}
-                    <div className="absolute inset-0 bg-[#0F0F0F] rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
+                    <div className="absolute inset-0 bg-foreground rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
                     {/* Subtle overlay */}
                     <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
                     
