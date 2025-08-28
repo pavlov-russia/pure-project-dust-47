@@ -85,7 +85,7 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-6 md:px-12 max-w-full">
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 rounded-[16px] md:rounded-[24px] text-white shadow-large p-8 md:p-12 text-center">
+          <div className="max-w-5xl mx-auto bg-gradient-telegram rounded-[16px] md:rounded-[24px] text-white shadow-large p-8 md:p-12 text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">ЭКСПРЕСС-ТЕСТ</h2>
             <div className="flex flex-col md:flex-row items-center justify-center mb-6 md:mb-8 space-y-4 md:space-y-0 md:space-x-4">
               <Eye className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
