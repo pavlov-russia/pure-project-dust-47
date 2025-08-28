@@ -67,50 +67,65 @@ const Index = () => {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Animated warning glow */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-red-500/20 rounded-2xl blur-lg animate-pulse"></div>
+          {/* Animated brand glow */}
+          <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
           
-          {/* Main warning container */}
-          <div className="relative backdrop-blur-md bg-gradient-to-br from-red-500/90 to-orange-600/90 border-2 border-red-400/50 rounded-xl p-6 md:p-8 shadow-2xl overflow-hidden">
-            {/* Subtle overlay pattern */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+          {/* Main warning container with brand colors */}
+          <div className="relative backdrop-blur-md bg-gradient-to-br from-primary/95 to-accent/95 border-2 border-primary/60 rounded-2xl p-6 md:p-10 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            {/* Brand gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
             
-            <div className="relative z-10 flex flex-col md:flex-row items-start justify-center space-y-4 md:space-y-0 md:space-x-6 text-left">
-              {/* Animated warning icon */}
+            {/* Animated border accent */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-start justify-center space-y-4 md:space-y-0 md:space-x-8 text-left">
+              {/* Enhanced warning icon with brand colors */}
               <div className="relative mx-auto md:mx-0 flex-shrink-0">
-                <div className="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
-                <div className="relative bg-white/10 p-3 rounded-full border border-white/30">
-                  <AlertTriangle className="w-8 h-8 md:w-10 md:h-10 text-white animate-pulse" />
+                {/* Pulsing background rings */}
+                <div className="absolute inset-0 bg-white/20 rounded-full animate-ping scale-125"></div>
+                <div className="absolute inset-0 bg-accent/30 rounded-full animate-pulse scale-110"></div>
+                
+                {/* Main icon container */}
+                <div className="relative bg-white/15 backdrop-blur-sm p-4 rounded-full border-2 border-white/40 shadow-lg">
+                  <AlertTriangle className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-lg" strokeWidth={2.5} />
                 </div>
               </div>
               
               <div className="text-center md:text-left flex-1">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 flex items-center justify-center md:justify-start gap-2">
-                  <span className="animate-pulse">⚠️</span>
-                  Опасная иллюзия
+                {/* Enhanced title with better typography */}
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5 flex items-center justify-center md:justify-start gap-3">
+                  <span className="text-2xl animate-bounce">⚠️</span>
+                  <span className="bg-gradient-to-r from-white via-white to-accent-foreground bg-clip-text text-transparent">
+                    Опасная иллюзия
+                  </span>
                 </h3>
                 
-                <div className="space-y-3">
-                  <p className="text-white/95 text-base md:text-lg leading-relaxed">
+                <div className="space-y-4">
+                  <p className="text-white/95 text-lg md:text-xl leading-relaxed font-medium">
                     Многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                   </p>
                   
-                  <p className="text-white/85 text-sm md:text-base leading-relaxed">
+                  <p className="text-white/85 text-base md:text-lg leading-relaxed">
                     Чаще всего это лишь визуальный фасад:
                   </p>
                   
-                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                    <p className="font-bold text-white text-sm md:text-base leading-relaxed">
+                  {/* Enhanced final statement with brand styling */}
+                  <div className="relative bg-black/30 backdrop-blur-md rounded-xl p-5 border border-white/30 shadow-inner">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-xl blur opacity-50"></div>
+                    <p className="relative font-bold text-white text-base md:text-lg leading-relaxed">
                       название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
-                      <span className="text-yellow-300 animate-pulse text-lg"> ЭТО НЕ УПАКОВКА!</span>
+                      <span className="block mt-2 text-xl md:text-2xl font-black bg-gradient-to-r from-white via-accent-foreground to-white bg-clip-text text-transparent animate-pulse">
+                        ЭТО НЕ УПАКОВКА!
+                      </span>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Corner accent */}
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-full"></div>
+            {/* Brand corner accents */}
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/15 to-transparent rounded-bl-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-accent/20 to-transparent rounded-tr-2xl"></div>
           </div>
         </div>
       </SectionCard>
