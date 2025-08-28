@@ -35,7 +35,7 @@ const Header = () => {
         <Button 
           variant="ghost"
           size="sm"
-          className="relative z-10 font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-foreground text-xs md:text-sm touch-target slow-pulse"
+          className="relative z-10 font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-foreground text-xs md:text-sm touch-target slow-pulse cta-glow"
           style={{
             backgroundColor: 'rgba(255,255,255,0.18)',
             backdropFilter: 'blur(12px)',
