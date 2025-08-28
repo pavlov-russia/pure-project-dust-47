@@ -7,14 +7,23 @@ import { X, FileText, Star } from "lucide-react";
 const ChecklistPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [countdown, setCountdown] = useState(7);
+  const [showCountdown, setShowCountdown] = useState(true);
+  const [countdownFinished, setCountdownFinished] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 7000);
+    if (!showCountdown || countdownFinished) return;
 
-    return () => clearTimeout(timer);
-  }, []);
+    if (countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown(countdown - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setIsOpen(true);
+      setShowCountdown(false);
+    }
+  }, [countdown, showCountdown, countdownFinished]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +32,31 @@ const ChecklistPopup = () => {
     setIsOpen(false);
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+    setCountdown(7);
+    setShowCountdown(true);
+    setCountdownFinished(true);
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <>
+      {/* Countdown Display */}
+      {showCountdown && !countdownFinished && (
+        <div className="fixed top-4 right-4 z-50">
+          <div 
+            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white animate-pulse"
+            style={{
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              boxShadow: '0 8px 32px rgba(102, 126, 234, 0.4)'
+            }}
+          >
+            {countdown}
+          </div>
+        </div>
+      )}
+      
+      <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogPortal>
         <DialogOverlay 
           className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
@@ -79,7 +111,7 @@ const ChecklistPopup = () => {
         </form>
         
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={handleClose}
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100"
         >
           <X className="h-4 w-4" />
@@ -87,6 +119,7 @@ const ChecklistPopup = () => {
         </DialogContent>
       </DialogPortal>
     </Dialog>
+    </>
   );
 };
 
