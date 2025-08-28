@@ -125,7 +125,7 @@ const Index = () => {
                 <div className="relative z-10 text-center">
                   {/* Quote content */}
                   <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
-                    "👉🏼 <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система"
+                    <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система
                   </h2>
                 </div>
                 
