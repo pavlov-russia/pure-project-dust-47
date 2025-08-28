@@ -156,9 +156,14 @@ const Index = () => {
                     description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                   }
                 ].map((item, index) => (
-                  <div key={index} className="bg-white/40 backdrop-blur-sm border border-white/30 rounded-2xl p-4 md:p-6 hover:bg-white/50 transition-all duration-300">
-                    <div className="flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
-                      <div className="bg-success/20 p-2 md:p-3 rounded-full mx-auto md:mx-0 backdrop-blur-sm">
+                  <div key={index} className="relative backdrop-blur-[40px] bg-neutral-100/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-neutral-50/70 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                    {/* Dark overlay for color-dodge effect */}
+                    <div className="absolute inset-0 bg-[#0F0F0F] rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
+                    {/* Subtle overlay */}
+                    <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
+                    
+                    <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
+                      <div className="bg-success/20 backdrop-blur-sm p-2 md:p-3 rounded-full mx-auto md:mx-0 border border-success/30">
                         <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success" />
                       </div>
                       <div className="flex-1 text-center md:text-left">
