@@ -123,12 +123,6 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
                 
                 <div className="relative z-10 text-center">
-                  {/* iOS style notification header */}
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
-                    <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
-                  </div>
-                  
                   {/* Quote content */}
                   <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
                     "👉🏼 <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система"
