@@ -78,9 +78,9 @@ const Index = () => {
             {/* Animated border accent */}
             <div className="absolute inset-0 rounded-2xl border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
             
-            <div className="relative z-10 flex flex-col md:flex-row items-start justify-center space-y-4 md:space-y-0 md:space-x-8 text-left">
+            <div className="relative z-10 flex flex-col items-center justify-center space-y-4 text-center">
               {/* Enhanced warning icon with brand colors */}
-              <div className="relative mx-auto md:mx-0 flex-shrink-0">
+              <div className="relative flex-shrink-0 mb-4">
                 {/* Pulsing background rings */}
                 <div className="absolute inset-0 bg-white/20 rounded-full animate-ping scale-125"></div>
                 <div className="absolute inset-0 bg-accent/30 rounded-full animate-pulse scale-110"></div>
@@ -91,9 +91,9 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="text-center md:text-left flex-1">
+              <div className="text-center flex-1">
                 {/* Enhanced title with better typography */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5 flex items-center justify-center md:justify-start">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5 flex items-center justify-center">
                   <span className="bg-gradient-to-r from-white via-white to-accent-foreground bg-clip-text text-transparent">
                     Опасная иллюзия
                   </span>
