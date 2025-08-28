@@ -21,10 +21,17 @@ const Header = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          // Показываем кнопку после прокрутки Hero секции
-          // Hero имеет pt-20 md:pt-48, поэтому ориентируемся на ~70vh
-          const triggerPoint = window.innerHeight * 0.7;
           const scrollPosition = window.scrollY;
+          const viewportHeight = window.innerHeight;
+          
+          // Более точный расчет: Hero секция занимает примерно 100vh
+          // pt-20 = 5rem = 80px на мобильном, pt-48 = 12rem = 192px на десктопе
+          const isMobile = window.innerWidth < 768;
+          const headerPadding = isMobile ? 80 : 192; // pt-20 / pt-48
+          const heroContentHeight = isMobile ? 300 : 400; // примерная высота контента
+          
+          // Показываем кнопку когда пользователь прокрутил больше половины Hero секции
+          const triggerPoint = viewportHeight * 0.5 + headerPadding + heroContentHeight * 0.3;
           
           setShowCTA(scrollPosition > triggerPoint);
           ticking = false;
