@@ -139,14 +139,16 @@ const Index = () => {
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
               {/* Express Stamp - smaller with continuous animation */}
               <div className="relative inline-block">
-                <div className="relative bg-white/20 border-2 border-white/60 rounded-lg px-3 py-1.5 md:px-4 md:py-2 animate-[swing_3s_ease-in-out_infinite] will-change-transform transform-gpu backface-hidden"
-                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-30 rounded-md"></div>
-                  <div className="relative font-black text-sm md:text-lg text-white tracking-wider uppercase">
-                    EXPRESS
+                <div className="relative bg-white/20 border-2 border-white/60 rounded-lg px-3 py-1.5 md:px-4 md:py-2 overflow-hidden">
+                  <div className="relative inline-flex items-center justify-center [transform-origin:center] [contain:paint] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
+                       style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-30 rounded-md pointer-events-none"></div>
+                    <div className="relative font-black text-sm md:text-lg text-white tracking-wider uppercase">
+                      EXPRESS
+                    </div>
+                    {/* Stamp texture overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 rounded-md pointer-events-none"></div>
                   </div>
-                  {/* Stamp texture overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 rounded-md pointer-events-none"></div>
                 </div>
               </div>
               
