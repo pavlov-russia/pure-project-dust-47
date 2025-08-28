@@ -246,9 +246,27 @@ const AnimationShowcase = () => {
               style={activeAnimation === animation.id ? animation.style : {}}
             >
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white" />
-                </div>
+                {animation.id === 8 ? (
+                  <div className="w-16 h-16 bg-black rounded-full mx-auto mb-4 flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-green-400 font-mono text-xs">
+                      <div>01</div>
+                      <div>10</div>
+                      <div>11</div>
+                    </div>
+                    {activeAnimation === animation.id && (
+                      <div className="absolute inset-0 text-green-400 font-mono text-xs opacity-70">
+                        <div className="animate-pulse absolute top-0 left-2">1</div>
+                        <div className="animate-pulse absolute top-2 right-2">0</div>
+                        <div className="animate-pulse absolute bottom-2 left-1">1</div>
+                        <div className="animate-pulse absolute bottom-0 right-1">0</div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Play className="w-6 h-6 text-white" />
+                  </div>
+                )}
                 
                 <h3 className="text-white font-semibold mb-2">
                   {animation.name}
