@@ -141,7 +141,7 @@ const Index = () => {
               <div className="relative inline-block">
                 <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                  <div className="font-black text-sm md:text-lg text-white tracking-wider uppercase">
+                  <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
                     EXPRESS
                   </div>
                 </div>
