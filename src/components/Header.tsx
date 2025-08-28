@@ -35,7 +35,9 @@ const Header = () => {
           backgroundSize: '10px 10px, 10px 10px, 50px 50px, 50px 50px'
         }}
       >
-        <div className="container mx-auto px-3 md:px-6 pt-4 md:pt-6 pb-[31px] md:pb-[47px] flex items-center justify-between max-w-full mt-20 md:mt-28">
+        <div className="container mx-auto px-3 md:px-6 pt-4 md:pt-6 pb-[31px] md:pb-[47px] flex items-center justify-between max-w-full">
+        {/* Spacer to push content down */}
+        <div className="absolute top-0 left-0 right-0 h-4"></div>
         {/* Logo */}
         <div className="flex items-center relative z-10">
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">
