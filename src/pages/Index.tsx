@@ -256,9 +256,15 @@ const Index = () => {
       </section>
 
       {/* Checklist Section */}
-      <section className="py-8 md:py-16 bg-gradient-dark text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-full">
-          <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2">
+      <section className="py-8 md:py-16 relative">
+        {/* Background with rounded corners and dashed border like SVG */}
+        <div className="absolute inset-0 m-4 md:m-8 rounded-[21px] bg-gradient-dark border-2 border-dashed border-white/30 overflow-hidden">
+          {/* Inner content background */}
+          <div className="absolute inset-0 bg-gradient-dark"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative z-10">
+          <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2 text-white">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
           {/* SVG-styled card with large drop shadow */}
