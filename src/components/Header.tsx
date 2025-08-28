@@ -5,7 +5,7 @@ const Header = () => {
     <header className="fixed top-2 left-2 right-2 md:top-4 md:left-4 md:right-4 z-50 animate-fade-in">
       {/* iOS Glassmorphism Container */}
       <div className="relative overflow-hidden rounded-[16px] md:rounded-[20px] border glass">
-        <div className="container mx-auto px-3 md:px-6 py-3 md:py-4 flex items-center justify-between">
+        <div className="container mx-auto px-3 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-full">
         {/* Logo */}
         <div className="flex items-center relative z-10">
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">

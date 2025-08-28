@@ -22,7 +22,7 @@ const ConsultationForm = () => {
 
   return (
     <div className="bg-gradient-subtle py-16">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-full">
         <Card className="max-w-2xl mx-auto shadow-large border-0">
           <CardHeader className="text-center">
             <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4">

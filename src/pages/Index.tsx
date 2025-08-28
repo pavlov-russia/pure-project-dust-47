@@ -84,7 +84,7 @@ const Index = () => {
 
       {/* Express Test Section */}
       <section className="py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <Card className="max-w-3xl mx-auto bg-gradient-telegram text-white shadow-large">
             <CardContent className="p-6 md:p-8 text-center">
               <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6"><span className="font-demibold">ЭКСПРЕСС-ТЕСТ</span></h2>
@@ -114,7 +114,7 @@ const Index = () => {
 
       {/* Real Packaging System */}
       <section className="py-8 md:py-16 bg-gradient-subtle">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
             <h2 className="mobile-subheading-scale md:text-4xl font-regular text-center mb-8 md:mb-12 px-2">
               👉🏼 <span className="font-demibold">Настоящая упаковка</span> — это система:
@@ -191,7 +191,7 @@ const Index = () => {
 
       {/* Quote Section */}
       <section className="py-8 md:py-16 bg-primary/5">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-full">
           <blockquote className="text-lg md:text-3xl font-regular italic text-foreground max-w-3xl mx-auto px-2">
             "У вас не будет <span className="font-demibold">второго шанса</span> произвести первое впечатление"
           </blockquote>
@@ -201,7 +201,7 @@ const Index = () => {
 
       {/* Checklist Section */}
       <section className="py-8 md:py-16 bg-gradient-dark text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-full">
           <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
@@ -230,7 +230,7 @@ const Index = () => {
 
       {/* TapBlog Features */}
       <section className="py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
             <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
               <CardContent className="p-6 md:p-8">
@@ -266,7 +266,7 @@ const Index = () => {
 
       {/* Target Audience */}
       <section className="py-8 md:py-16 bg-gradient-subtle">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-3xl mx-auto">
             <h2 className="mobile-subheading-scale md:text-3xl font-regular text-center mb-8 md:mb-12 px-2">
               Кому подходит <span className="font-demibold">наша упаковка?</span>
