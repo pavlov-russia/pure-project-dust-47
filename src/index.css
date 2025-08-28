@@ -296,7 +296,7 @@ All colors MUST be HSL.
   
   /* Very slow and subtle pulse animation for buttons */
   .slow-pulse {
-    animation: slow-pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: slow-pulse 11s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
   
   @keyframes slow-pulse {
@@ -304,7 +304,7 @@ All colors MUST be HSL.
       opacity: 1;
     }
     50% {
-      opacity: 0.85;
+      opacity: 0.7;
     }
   }
 }
