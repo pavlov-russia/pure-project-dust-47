@@ -104,20 +104,21 @@ const Index = () => {
                     Многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                   </p>
                   
-                  <p className="text-white/85 text-base md:text-lg leading-relaxed">
-                    Чаще всего это лишь визуальный фасад:
-                  </p>
-                  
-                  {/* Enhanced final statement with brand styling */}
-                  <div className="relative bg-black/30 backdrop-blur-md rounded-xl p-5 border border-white/30 shadow-inner">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-xl blur opacity-50"></div>
-                    <p className="relative font-bold text-white text-base md:text-lg leading-relaxed">
-                      Название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
-                      <span className="block mt-2 text-xl md:text-2xl font-black bg-gradient-to-r from-white via-accent-foreground to-white bg-clip-text text-transparent animate-pulse">
-                        ЭТО НЕ УПАКОВКА!
-                      </span>
-                    </p>
-                  </div>
+                   {/* Enhanced final statement with brand styling */}
+                   <div className="relative bg-black/30 backdrop-blur-md rounded-xl p-5 border border-white/30 shadow-inner">
+                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-accent/50 rounded-xl blur opacity-50"></div>
+                     <div className="relative">
+                       <p className="text-white/85 text-base md:text-lg leading-relaxed mb-3">
+                         Чаще всего это лишь визуальный фасад:
+                       </p>
+                       <p className="font-bold text-white text-base md:text-lg leading-relaxed">
+                         Название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
+                         <span className="block mt-2 text-xl md:text-2xl font-black bg-gradient-to-r from-white via-accent-foreground to-white bg-clip-text text-transparent animate-pulse">
+                           ЭТО НЕ УПАКОВКА!
+                         </span>
+                       </p>
+                     </div>
+                   </div>
                 </div>
               </div>
             </div>
