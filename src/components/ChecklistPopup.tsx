@@ -77,6 +77,9 @@ const ChecklistPopup = () => {
               className="text-center border-primary/20 focus:border-primary"
               required
             />
+            <p className="text-xs text-destructive text-center font-medium">
+              Email будет изменён на то что в ТЗ!
+            </p>
           </div>
           
           <Button 
