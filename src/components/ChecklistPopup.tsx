@@ -27,12 +27,7 @@ const ChecklistPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogPortal>
         <DialogOverlay 
-          className="fixed inset-0 z-50 backdrop-blur-md bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 transition-all duration-500 ease-out"
-          style={{
-            backdropFilter: 'blur(0px)',
-            transition: 'backdrop-filter 0.5s ease-out',
-          }}
-          data-state={isOpen ? 'open' : 'closed'}
+          className="fixed inset-0 z-50 bg-black/40 transition-[backdrop-filter,opacity] duration-500 ease-out data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
         />
         <DialogContent 
           className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden animate-scale-in data-[state=closed]:animate-scale-out data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out transition-all duration-300 ease-out"
@@ -42,9 +37,6 @@ const ChecklistPopup = () => {
             backgroundColor: 'rgba(255, 255, 255, 0.70)',
             mixBlendMode: 'screen',
             border: '1px solid rgba(255, 255, 255, 0.08)',
-            transform: isOpen ? 'scale(1)' : 'scale(0.95)',
-            opacity: isOpen ? 1 : 0,
-            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out',
           }}
         >
         <DialogHeader className="text-center space-y-3">
