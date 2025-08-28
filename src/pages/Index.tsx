@@ -84,31 +84,29 @@ const Index = () => {
 
       {/* Express Test Section */}
       <section className="py-8 md:py-16">
-        <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <Card className="max-w-3xl mx-auto bg-gradient-telegram text-white shadow-large">
-            <CardContent className="p-6 md:p-8 text-center">
-              <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6"><span className="font-demibold">ЭКСПРЕСС-ТЕСТ</span></h2>
-              <div className="flex flex-col md:flex-row items-center justify-center mb-4 md:mb-6 space-y-3 md:space-y-0 md:space-x-3">
-                <Eye className="w-6 h-6 md:w-8 md:h-8" />
-                <h3 className="text-lg md:text-xl font-semibold leading-tight">
-                  Как понять, что ваше предложение не упаковано или упаковано плохо?
-                </h3>
-              </div>
-              <p className="text-base md:text-lg mb-3 md:mb-4">
-                Очень просто. Трафик есть, а продаж нет или они минимальны.
-              </p>
-              <p className="text-xs md:text-sm opacity-75 mb-6 md:mb-8">
-                *при условии адекватного профессионального трафик-менеджера
-              </p>
-              <Button 
-                size="lg"
-                className="bg-white text-primary hover:bg-gray-100 transition-smooth font-semibold px-6 md:px-8 py-4 md:py-6 h-auto touch-target text-sm md:text-base"
-              >
-                <Zap className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Хочу мощную упаковку 🔥
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="container mx-auto px-6 md:px-12 max-w-full">
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700 rounded-[16px] md:rounded-[24px] text-white shadow-large p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">ЭКСПРЕСС-ТЕСТ</h2>
+            <div className="flex flex-col md:flex-row items-center justify-center mb-6 md:mb-8 space-y-4 md:space-y-0 md:space-x-4">
+              <Eye className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" />
+              <h3 className="text-xl md:text-2xl font-medium leading-tight max-w-2xl">
+                Как понять, что ваше предложение не упаковано или упаковано плохо?
+              </h3>
+            </div>
+            <p className="text-lg md:text-xl mb-6 md:mb-8 font-medium">
+              Очень просто. Трафик есть, а продаж нет или они минимальны.
+            </p>
+            <p className="text-sm md:text-base opacity-75 mb-8 md:mb-10">
+              *при условии адекватного профессионального трафик-менеджера
+            </p>
+            <Button 
+              size="lg"
+              className="bg-white text-purple-700 hover:bg-gray-50 transition-all duration-300 font-semibold px-8 md:px-10 py-4 md:py-5 h-auto text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <Zap className="w-5 h-5 md:w-6 md:h-6 mr-3" />
+              Хочу мощную упаковку 🔥
+            </Button>
+          </div>
         </div>
       </section>
 
