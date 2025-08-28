@@ -64,10 +64,12 @@ const ChecklistPopup = () => {
           </div>
           
           <Button 
-            type="submit" 
-            className="w-full bg-gradient-telegram hover:shadow-medium transition-smooth font-semibold"
+            type="submit"
+            variant="form-submit"
+            size="lg"
+            className="w-full"
+            icon={<Star className="w-4 h-4" />}
           >
-            <Star className="w-4 h-4 mr-2" />
             Получить чек-лист бесплатно
           </Button>
           
