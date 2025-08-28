@@ -122,10 +122,7 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Brand corner accents */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-3xl opacity-50"></div>
-            <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-white/5 to-transparent rounded-tr-2xl opacity-30"></div>
-          </div>
+            </div>
         </div>
       </SectionCard>
 
