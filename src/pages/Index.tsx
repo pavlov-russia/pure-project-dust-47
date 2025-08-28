@@ -156,7 +156,7 @@ const Index = () => {
                     description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                   }
                 ].map((item, index) => (
-                  <div key={index} className="relative backdrop-blur-[40px] bg-neutral-100/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-neutral-50/70 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div key={index} className="relative backdrop-blur-[40px] bg-neutral-100/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-neutral-200/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     {/* Dark overlay for color-dodge effect */}
                     <div className="absolute inset-0 bg-[#0F0F0F] rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
                     {/* Subtle overlay */}
