@@ -54,8 +54,8 @@ const Index = () => {
 
       {/* Strategic Packaging Section */}
       <SectionCard className="bg-gradient-hero text-white text-center">
-        <h2 className="mobile-subheading-scale md:text-4xl font-regular mb-4 md:mb-6 px-2">
-          <span className="font-demibold text-white">Стратегическая упаковка</span> — катализатор доверия и конверсии
+        <h2 className="mobile-subheading-scale md:text-4xl font-bold mb-4 md:mb-6 px-2">
+          <span className="font-bold text-white">Стратегическая упаковка</span> — катализатор доверия и конверсии
         </h2>
         <p className="text-lg md:text-xl mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90 px-2">
           Это основа, без которой продвижение теряет смысл, а вы – бюджет
