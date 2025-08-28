@@ -1,34 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
-import type { CSSProperties } from "react";
 
 const Header = () => {
-  const isMobile = useIsMobile();
-  const containerStyle: CSSProperties = isMobile
-    ? {
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        backgroundColor: 'rgba(255, 255, 255, 0.85)',
-        border: '1px solid rgba(255, 255, 255, 0.20)',
-        transform: 'translateZ(0)',
-        willChange: 'transform'
-      }
-    : {
-        backdropFilter: 'blur(40px)',
-        WebkitBackdropFilter: 'blur(40px)',
-        backgroundColor: 'rgba(255, 255, 255, 0.07)',
-        mixBlendMode: 'screen' as const,
-        border: '1px solid rgba(255, 255, 255, 0.08)'
-      };
   return (
     <>
-    <header className={`${isMobile ? 'sticky' : 'fixed'} top-0 left-0 right-0 z-50 animate-fade-in`}>
+    <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
-        className="relative overflow-hidden rounded-[24px] border-0 transition-colors duration-300 transform-gpu"
-        style={containerStyle}
+        className="relative overflow-hidden rounded-[24px] border-0"
+        style={{
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.07)',
+          mixBlendMode: 'screen',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+        }}
       >
-        <div className="container mx-auto px-3 md:px-6 pt-[60px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-2 md:mt-4">
+        <div className="container mx-auto px-3 md:px-6 pt-[84px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-3 md:mt-4">
         {/* Logo */}
         <div className="flex items-center relative z-10">
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">
@@ -49,20 +36,13 @@ const Header = () => {
           variant="ghost"
           size="sm"
           className="relative z-10 font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-foreground text-xs md:text-sm touch-target"
-          style={
-            isMobile
-              ? {
-                  backgroundColor: 'rgba(255,255,255,0.90)',
-                  border: '1px solid rgba(255,255,255,0.35)'
-                }
-              : {
-                  backgroundColor: 'rgba(255,255,255,0.18)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255,255,255,0.35)',
-                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)'
-                }
-          }
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.18)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255,255,255,0.35)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)'
+          }}
         >
           <span className="hidden sm:inline">Получить индивидуальное КП</span>
           <span className="sm:hidden">Получить КП</span>
