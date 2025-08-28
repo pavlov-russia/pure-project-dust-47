@@ -114,9 +114,32 @@ const Index = () => {
       <section className="py-8 md:py-16 bg-gradient-subtle">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
-            <h2 className="mobile-subheading-scale md:text-4xl font-regular text-center mb-8 md:mb-12 px-2">
-              👉🏼 <span className="font-demibold">Настоящая упаковка</span> — это система:
-            </h2>
+            {/* Wisdom Style Header */}
+            <div className="max-w-2xl mx-auto mb-8 md:mb-12">
+              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
+                {/* Multiple liquid glass layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
+                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
+                
+                <div className="relative z-10 text-center">
+                  {/* iOS style notification header */}
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
+                    <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
+                  </div>
+                  
+                  {/* Quote content */}
+                  <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
+                    "👉🏼 <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система"
+                  </h2>
+                </div>
+                
+                {/* Enhanced animated glow with multiple layers */}
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
+              </div>
+            </div>
             
             {/* Glass-morphism container */}
             <div className="relative backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-2xl">
