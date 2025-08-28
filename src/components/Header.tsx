@@ -42,7 +42,7 @@ const Header = () => {
             WebkitBackdropFilter: 'blur(12px)',
             border: '1px solid rgba(255,255,255,0.35)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)',
-            animation: 'breath-glass 15s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            animation: 'breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             willChange: 'transform, box-shadow, background-color',
           }}
         >
