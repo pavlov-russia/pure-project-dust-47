@@ -3,8 +3,17 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   return (
     <header className="fixed top-2 left-2 right-2 md:top-4 md:left-4 md:right-4 z-50 animate-fade-in">
-      {/* iOS Glassmorphism Container */}
-      <div className="relative overflow-hidden rounded-[16px] md:rounded-[20px] border glass">
+      {/* Advanced Glassmorphism Container with SVG-inspired styling */}
+      <div 
+        className="relative overflow-hidden rounded-[24px] border-0"
+        style={{
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.07)',
+          mixBlendMode: 'screen',
+          border: '1px solid rgba(255, 255, 255, 0.08)'
+        }}
+      >
         <div className="container mx-auto px-3 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-full">
         {/* Logo */}
         <div className="flex items-center relative z-10">
