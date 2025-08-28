@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogOverlay, DialogPortal } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X, FileText, Star } from "lucide-react";
@@ -25,16 +25,20 @@ const ChecklistPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent 
-        className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
-        style={{
-          backdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.70)',
-          mixBlendMode: 'screen',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-        }}
-      >
+      <DialogPortal>
+        <DialogOverlay 
+          className="fixed inset-0 z-50 backdrop-blur-md bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+        />
+        <DialogContent 
+          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
+          style={{
+            backdropFilter: 'blur(40px)',
+            WebkitBackdropFilter: 'blur(40px)',
+            backgroundColor: 'rgba(255, 255, 255, 0.70)',
+            mixBlendMode: 'screen',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+          }}
+        >
         <DialogHeader className="text-center space-y-3">
           <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-2">
             <FileText className="w-8 h-8 text-white" />
@@ -78,7 +82,8 @@ const ChecklistPopup = () => {
         >
           <X className="h-4 w-4" />
         </button>
-      </DialogContent>
+        </DialogContent>
+      </DialogPortal>
     </Dialog>
   );
 };
