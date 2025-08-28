@@ -256,44 +256,44 @@ const Index = () => {
       </section>
 
       {/* Checklist Section */}
-      <section className="py-8 md:py-16 relative">
+      <section className="py-6 md:py-16 relative">
         {/* Background with rounded corners and dashed border like SVG */}
-        <div className="absolute inset-0 m-4 md:m-8 rounded-[21px] bg-gradient-dark border-2 border-dashed border-white/30 overflow-hidden">
+        <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark border-2 border-dashed border-white/30 overflow-hidden">
           {/* Inner content background */}
           <div className="absolute inset-0 bg-gradient-dark"></div>
         </div>
         
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative z-10">
-          <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2 text-white">
+        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10">
+          <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
           {/* SVG-styled card with large drop shadow */}
-          <div className="max-w-2xl mx-auto relative">
+          <div className="max-w-lg md:max-w-2xl mx-auto relative">
             {/* Drop shadow background */}
-            <div className="absolute inset-0 bg-black/20 rounded-[34px] blur-[38px] translate-y-5"></div>
+            <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
             
             {/* Main white card */}
-            <div className="relative bg-white rounded-[34px] p-6 md:p-8 text-foreground">
+            <div className="relative bg-white rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground">
               <div className="flex items-center justify-center mb-4 md:mb-6">
-                <Shield className="w-10 h-10 md:w-12 md:h-12 text-warning" />
+                <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
               </div>
-              <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
+              <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
                 <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
               </h3>
-              <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base">
+              <p className="text-muted-foreground mb-4 md:mb-6 text-xs md:text-base">
                 (разобрали на реальных примерах наших клиентов)
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-telegram text-white hover:shadow-medium transition-smooth font-semibold px-6 md:px-8 py-4 md:py-6 h-auto touch-target text-sm md:text-base"
+                className="bg-gradient-telegram text-white hover:shadow-medium transition-smooth font-semibold px-5 md:px-8 py-3 md:py-6 h-auto touch-target text-sm md:text-base w-full md:w-auto rounded-[16px] md:rounded-lg"
               >
                 <Shield className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Получить чек-лист бесплатно
               </Button>
               
-              {/* SVG corner decoration */}
-              <div className="absolute bottom-4 right-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-muted-foreground">
+              {/* SVG corner decoration - hidden on mobile */}
+              <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 hidden md:block">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted-foreground md:w-6 md:h-6">
                   <path d="M20.175 18.149C19.887 19.642 19.484 20.737 18.191 21.054C17.897 21.37 16.819 21.801 15.335 22.121" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
