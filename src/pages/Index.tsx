@@ -111,12 +111,22 @@ const Index = () => {
       </section>
 
       {/* Real Packaging System */}
-      <section className="py-8 md:py-16 bg-gradient-subtle">
+      <section className="py-8 md:py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mobile-subheading-scale md:text-4xl font-regular text-center mb-8 md:mb-12 px-2">
-              👉🏼 <span className="font-demibold">Настоящая упаковка</span> — это система:
-            </h2>
+          <div className="max-w-4xl mx-auto relative">
+            {/* Background blur container similar to SVG */}
+            <div 
+              className="absolute inset-0 bg-black/5 rounded-[24px] backdrop-blur-[50px]"
+              style={{
+                filter: 'blur(50px)'
+              }}
+            ></div>
+            
+            {/* Content container */}
+            <div className="relative z-10 p-8 md:p-12">
+              <h2 className="mobile-subheading-scale md:text-4xl font-regular text-center mb-8 md:mb-12 px-2">
+                👉🏼 <span className="font-demibold">Настоящая упаковка</span> — это система:
+              </h2>
             
             <div className="grid gap-4 md:gap-6">
               {[
@@ -182,6 +192,7 @@ const Index = () => {
                 <Rocket className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Заказать упаковку
               </Button>
+              </div>
             </div>
           </div>
         </div>
