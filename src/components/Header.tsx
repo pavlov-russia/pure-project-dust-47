@@ -2,6 +2,20 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
+    <>
+      {/* Temporary pixel grid for editing - REMOVE LATER */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 0, 0, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 0, 0, 0.2) 1px, transparent 1px),
+            linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '10px 10px, 10px 10px, 50px 50px, 50px 50px'
+        }}
+      />
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
@@ -49,6 +63,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 
