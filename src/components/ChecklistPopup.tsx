@@ -138,7 +138,26 @@ export const ChecklistCountdown = () => {
   }, [countdown, showCountdown, hasFinishedFirstTime]);
 
   return (
-    <span className={`font-bold ${showCountdown && !hasFinishedFirstTime ? 'text-accent animate-pulse' : ''}`}>
+    <span 
+      className={`
+        inline-block px-3 py-1 mx-1 rounded-lg font-bold transition-all duration-300
+        ${showCountdown && !hasFinishedFirstTime 
+          ? 'bg-gradient-to-r from-accent via-primary to-accent text-white shadow-glow animate-pulse transform scale-110' 
+          : 'text-white'
+        }
+      `}
+      style={{
+        animation: showCountdown && !hasFinishedFirstTime 
+          ? 'breath-glass 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, pulse 1s ease-in-out infinite' 
+          : 'none',
+        boxShadow: showCountdown && !hasFinishedFirstTime 
+          ? '0 0 30px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--accent) / 0.6), inset 0 1px 0 rgba(255,255,255,0.3)'
+          : 'none',
+        textShadow: showCountdown && !hasFinishedFirstTime 
+          ? '0 0 10px rgba(255,255,255,0.8), 0 0 20px hsl(var(--primary) / 0.8)'
+          : 'none'
+      }}
+    >
       {countdown}
     </span>
   );
