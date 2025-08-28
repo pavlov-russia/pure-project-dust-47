@@ -3,30 +3,11 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   return (
     <header className="fixed top-2 left-2 right-2 md:top-4 md:left-4 md:right-4 z-50 animate-fade-in">
-      {/* Advanced Glassmorphism Container with SVG Style */}
-      <div 
-        className="relative overflow-hidden rounded-[34px] border"
-        style={{
-          backgroundColor: 'rgba(250, 250, 250, 0.7)',
-          backdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px)',
-          border: '1px solid rgba(0, 0, 0, 0.08)',
-          boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 12px 40px rgba(15, 15, 15, 0.15)',
-          mixBlendMode: 'normal'
-        }}
-      >
-        {/* Background blur overlay */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'rgba(0, 0, 0, 0.08)',
-            mixBlendMode: 'hard-light'
-          }}
-        />
-        
-        <div className="container mx-auto px-3 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-full relative z-10">
+      {/* iOS Glassmorphism Container */}
+      <div className="relative overflow-hidden rounded-[16px] md:rounded-[20px] border glass">
+        <div className="container mx-auto px-3 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-full">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center relative z-10">
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">
             <path fillRule="evenodd" clipRule="evenodd" d="M0 2.38041C0 1.06574 1.06574 0 2.3804 0H8.8075C10.1222 0 11.1879 1.06574 11.1879 2.3804V8.33142C11.1879 9.64608 12.2536 10.7118 13.5683 10.7118H19.2813C20.5959 10.7118 21.6617 11.7776 21.6617 13.0922V19.0432C21.6617 20.3579 20.5959 21.4236 19.2813 21.4236H13.5683C12.2536 21.4236 11.1879 22.4894 11.1879 23.8041V29.7551C11.1879 31.0697 12.2536 32.1355 13.5683 32.1355H19.2813C20.5959 32.1355 21.6617 33.2012 21.6617 34.5159V40.4669C21.6617 41.7816 20.5959 42.8473 19.2813 42.8473H12.8542C11.5395 42.8473 10.4738 41.7816 10.4738 40.4669V34.5159C10.4738 33.2012 9.40804 32.1355 8.09338 32.1355H2.38041C1.06574 32.1355 0 31.0697 0 29.7551V2.38041Z" fill="currentColor" className="text-primary"/>
             <path fillRule="evenodd" clipRule="evenodd" d="M34.9924 2.38041C34.9924 1.06574 33.9267 0 32.612 0H28.0893C26.7746 0 25.7089 1.06574 25.7089 2.38041V40.4669C25.7089 41.7816 26.7746 42.8473 28.0893 42.8473H34.9924H43.7999C45.1146 42.8473 46.1803 41.7816 46.1803 40.4669V34.5159C46.1803 33.2012 47.2461 32.1355 48.5608 32.1355H54.0357C55.3503 32.1355 56.4161 31.0697 56.4161 29.7551V23.8041C56.4161 22.4894 55.3503 21.4236 54.0357 21.4236H48.5608C47.2461 21.4236 46.1803 20.3579 46.1803 19.0432V13.0922C46.1803 11.7776 45.1146 10.7118 43.7999 10.7118H37.3728C36.0582 10.7118 34.9924 9.64608 34.9924 8.33142V2.38041ZM45.2282 23.8041C45.2282 22.4894 44.1624 21.4236 42.8478 21.4236H37.3728C36.0582 21.4236 34.9924 22.4894 34.9924 23.8041V29.7551C34.9924 31.0697 36.0582 32.1355 37.3728 32.1355H42.8478C44.1624 32.1355 45.2282 31.0697 45.2282 29.7551V23.8041Z" fill="currentColor" className="text-primary"/>
@@ -44,13 +25,13 @@ const Header = () => {
         <Button 
           variant="ghost"
           size="sm"
-          className="font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-gray-800 text-xs md:text-sm touch-target"
+          className="relative z-10 font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-gray-800 text-xs md:text-sm touch-target"
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.05)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid rgba(0, 0, 0, 0.08)',
-            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.6)'
+            backgroundColor: 'rgba(255,255,255,0.18)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255,255,255,0.35)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)'
           }}
         >
           <span className="hidden sm:inline">Получить индивидуальное КП</span>
