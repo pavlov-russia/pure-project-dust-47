@@ -27,16 +27,24 @@ const ChecklistPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogPortal>
         <DialogOverlay 
-          className="fixed inset-0 z-50 backdrop-blur-md bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+          className="fixed inset-0 z-50 backdrop-blur-md bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 transition-all duration-500 ease-out"
+          style={{
+            backdropFilter: 'blur(0px)',
+            transition: 'backdrop-filter 0.5s ease-out',
+          }}
+          data-state={isOpen ? 'open' : 'closed'}
         />
         <DialogContent 
-          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
+          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden animate-scale-in data-[state=closed]:animate-scale-out data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out transition-all duration-300 ease-out"
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
             backgroundColor: 'rgba(255, 255, 255, 0.70)',
             mixBlendMode: 'screen',
             border: '1px solid rgba(255, 255, 255, 0.08)',
+            transform: isOpen ? 'scale(1)' : 'scale(0.95)',
+            opacity: isOpen ? 1 : 0,
+            transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out',
           }}
         >
         <DialogHeader className="text-center space-y-3">
