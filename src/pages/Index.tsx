@@ -54,16 +54,16 @@ const Index = () => {
 
       {/* Strategic Packaging Section */}
       <SectionCard className="bg-gradient-hero text-white">
-        <div className="text-center mb-8">
+        <div className="text-center mb-4 md:mb-8">
           <h2 className="mobile-subheading-scale md:text-4xl font-bold mb-4 md:mb-6 px-2">
             <span className="font-bold text-white">Стратегическая упаковка</span> — катализатор доверия и конверсии
           </h2>
-          <p className="text-lg md:text-xl mb-6 max-w-4xl mx-auto leading-relaxed opacity-90 px-2">
+          <p className="text-lg md:text-xl mb-4 md:mb-6 max-w-4xl mx-auto leading-relaxed opacity-90 px-2">
             Это основа, без которой продвижение теряет смысл, а вы – бюджет
           </p>
           
           {/* Key principle highlight */}
-          <div className="bg-white/10 border border-white/25 rounded-xl p-4 md:p-6 max-w-2xl mx-auto mb-8">
+          <div className="bg-white/10 border border-white/25 rounded-xl p-3 md:p-6 max-w-2xl mx-auto mb-4 md:mb-8">
             <h3 className="text-lg md:text-xl font-bold text-white">
               <span className="font-bold">СНАЧАЛА УПАКОВКА</span> — ПОТОМ ТРАФИК
             </h3>
@@ -76,7 +76,7 @@ const Index = () => {
           <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
           
           {/* Main warning container with brand colors */}
-          <div className="relative backdrop-blur-md bg-gradient-to-br from-primary/95 to-accent/95 border-2 border-primary/60 rounded-2xl p-6 md:p-10 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+          <div className="relative backdrop-blur-md bg-gradient-to-br from-primary/95 to-accent/95 border-2 border-primary/60 rounded-2xl p-4 md:p-10 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
             {/* Brand gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
             
