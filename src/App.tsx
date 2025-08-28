@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { telegramWebApp } from "@/utils/telegramWebApp";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AnimationShowcase from "./components/AnimationShowcase";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/animations" element={<AnimationShowcase />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
