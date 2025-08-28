@@ -30,7 +30,7 @@ const ChecklistPopup = () => {
         style={{
           backdropFilter: 'blur(40px)',
           WebkitBackdropFilter: 'blur(40px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.40)',
+          backgroundColor: 'rgba(255, 255, 255, 0.70)',
           mixBlendMode: 'screen',
           border: '1px solid rgba(255, 255, 255, 0.08)',
         }}
