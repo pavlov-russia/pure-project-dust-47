@@ -272,15 +272,15 @@ const Index = () => {
             {/* Drop shadow background */}
             <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
             
-            {/* Main white card */}
-            <div className="relative bg-white rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground">
+            {/* Main glass morphism card */}
+            <div className="relative backdrop-blur-xl bg-white/20 border border-white/30 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-white shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
               <div className="flex items-center justify-center mb-4 md:mb-6">
                 <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
               </div>
               <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
                 <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
               </h3>
-              <p className="text-muted-foreground mb-4 md:mb-6 text-xs md:text-base">
+              <p className="text-white/70 mb-4 md:mb-6 text-xs md:text-base">
                 (разобрали на реальных примерах наших клиентов)
               </p>
               <Button 
