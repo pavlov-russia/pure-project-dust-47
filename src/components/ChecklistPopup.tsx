@@ -27,10 +27,10 @@ const ChecklistPopup = () => {
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogPortal>
         <DialogOverlay 
-          className="fixed inset-0 z-50 bg-black/40 transition-[backdrop-filter,opacity] duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
+          className="fixed inset-0 z-50 bg-black/40 transition-[backdrop-filter,opacity] duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
         />
         <DialogContent 
-          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-[2000ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
