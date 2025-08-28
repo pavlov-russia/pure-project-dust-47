@@ -41,7 +41,9 @@ const Header = () => {
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
             border: '1px solid rgba(255,255,255,0.35)',
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)'
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)',
+            animation: 'breath-glass 15s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            willChange: 'transform, box-shadow, background-color',
           }}
         >
           <svg width="20" height="20" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5">
