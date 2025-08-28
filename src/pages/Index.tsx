@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import ChecklistPopup from "@/components/ChecklistPopup";
+import ChecklistPopup, { ChecklistCountdown } from "@/components/ChecklistPopup";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
@@ -32,7 +32,7 @@ const Index = () => {
           Управляйте впечатлением о своём бизнесе с <span className="font-demibold text-white">TapBlog</span>
         </h1>
         <p className="mobile-subheading-scale md:text-2xl mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
-          У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+          У вас есть менее <ChecklistCountdown /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
         </p>
         <p className="text-base md:text-lg mb-8 md:mb-10 font-medium">
           И мы поможем использовать их в вашу пользу!

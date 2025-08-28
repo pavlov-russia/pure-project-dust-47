@@ -7,14 +7,22 @@ import { X, FileText, Star } from "lucide-react";
 const ChecklistPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [countdown, setCountdown] = useState(7);
+  const [showCountdown, setShowCountdown] = useState(true);
+  const [hasFinishedFirstTime, setHasFinishedFirstTime] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    if (!hasFinishedFirstTime && showCountdown && countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown(prev => prev - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (!hasFinishedFirstTime && countdown === 0) {
       setIsOpen(true);
-    }, 7000);
-
-    return () => clearTimeout(timer);
-  }, []);
+      setShowCountdown(false);
+      setHasFinishedFirstTime(true);
+    }
+  }, [countdown, showCountdown, hasFinishedFirstTime]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +31,24 @@ const ChecklistPopup = () => {
     setIsOpen(false);
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+    if (hasFinishedFirstTime) {
+      setCountdown(7);
+      setShowCountdown(true);
+    }
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <>
+      {/* Countdown component */}
+      {showCountdown && hasFinishedFirstTime && (
+        <div className="fixed bottom-4 right-4 z-40 bg-primary text-white px-4 py-2 rounded-lg font-bold text-lg animate-pulse">
+          {countdown} секунд
+        </div>
+      )}
+      
+      <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogPortal>
         <DialogOverlay 
           className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
@@ -79,7 +103,7 @@ const ChecklistPopup = () => {
         </form>
         
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={handleClose}
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100"
         >
           <X className="h-4 w-4" />
@@ -87,6 +111,36 @@ const ChecklistPopup = () => {
         </DialogContent>
       </DialogPortal>
     </Dialog>
+    </>
+  );
+};
+
+// Экспортируем компонент для отображения отсчета в тексте
+export const ChecklistCountdown = () => {
+  const [countdown, setCountdown] = useState(7);
+  const [showCountdown, setShowCountdown] = useState(true);
+  const [hasFinishedFirstTime, setHasFinishedFirstTime] = useState(false);
+
+  useEffect(() => {
+    if (!hasFinishedFirstTime && showCountdown && countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown(prev => prev - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (!hasFinishedFirstTime && countdown === 0) {
+      setShowCountdown(false);
+      setHasFinishedFirstTime(true);
+      // После завершения отсчета показываем 7 и останавливаем
+      setTimeout(() => {
+        setCountdown(7);
+      }, 100);
+    }
+  }, [countdown, showCountdown, hasFinishedFirstTime]);
+
+  return (
+    <span className={`font-bold ${showCountdown && !hasFinishedFirstTime ? 'text-accent animate-pulse' : ''}`}>
+      {countdown}
+    </span>
   );
 };
 
