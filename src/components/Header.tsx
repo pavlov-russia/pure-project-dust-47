@@ -1,46 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { useTelegramWebApp } from "@/hooks/useTelegramWebApp";
-import { CSSProperties } from "react";
 
 const Header = () => {
-  const { shouldUseBlurFallback } = useTelegramWebApp();
-
-  // Fallback styles for Telegram WebApp on mobile
-  const getHeaderStyles = (): CSSProperties => {
-    if (shouldUseBlurFallback) {
-      return {
-        backgroundColor: 'rgba(255, 255, 255, 0.95)', // Более плотный фон без blur
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        transform: 'translateZ(0)',
-        willChange: 'transform',
-        isolation: 'isolate',
-        // Убираем проблемные свойства для Telegram WebApp
-        backdropFilter: 'none',
-        WebkitBackdropFilter: 'none',
-        mixBlendMode: 'normal',
-      } as CSSProperties;
-    }
-    
-    // Обычные стили для десктопа и браузеров
-    return {
-      backdropFilter: 'blur(40px)',
-      WebkitBackdropFilter: 'blur(40px)',
-      backgroundColor: 'rgba(255, 255, 255, 0.07)',
-      mixBlendMode: 'screen',
-      border: '1px solid rgba(255, 255, 255, 0.08)',
-      transform: 'translateZ(0)',
-      willChange: 'backdrop-filter',
-      isolation: 'isolate',
-    } as CSSProperties;
-  };
-
   return (
     <>
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
-      {/* Advanced Glassmorphism Container with adaptive styling */}
+      {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
         className="relative overflow-hidden rounded-[24px] border-0"
-        style={getHeaderStyles()}
+        style={{
+          backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.07)',
+          mixBlendMode: 'screen',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+        }}
       >
         <div className="container mx-auto px-3 md:px-6 pt-[84px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-3 md:mt-4">
         {/* Logo */}
@@ -63,11 +36,7 @@ const Header = () => {
           variant="ghost"
           size="sm"
           className="relative z-10 font-semibold px-3 md:px-6 py-2 h-auto rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 text-foreground text-xs md:text-sm touch-target"
-          style={shouldUseBlurFallback ? {
-            backgroundColor: 'rgba(255,255,255,0.9)',
-            border: '1px solid rgba(255,255,255,0.5)',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-          } : {
+          style={{
             backgroundColor: 'rgba(255,255,255,0.18)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',
