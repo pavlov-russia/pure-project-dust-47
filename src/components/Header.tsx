@@ -13,6 +13,9 @@ const Header = () => {
           backgroundColor: 'rgba(255, 255, 255, 0.07)',
           mixBlendMode: 'screen',
           border: '1px solid rgba(255, 255, 255, 0.08)',
+          transform: 'translateZ(0)',
+          willChange: 'backdrop-filter',
+          isolation: 'isolate',
         }}
       >
         <div className="container mx-auto px-3 md:px-6 pt-[84px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-3 md:mt-4">
