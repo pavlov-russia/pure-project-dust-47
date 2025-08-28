@@ -136,13 +136,13 @@ export const ChecklistCountdown = () => {
       className={`
         inline-block px-3 py-1 mx-1 rounded-lg font-bold transition-all duration-300
         ${showCountdown && !hasFinishedFirstTime 
-          ? 'bg-gradient-to-r from-accent via-primary to-accent text-white shadow-glow animate-pulse transform scale-110' 
+          ? 'bg-gradient-to-r from-accent via-primary to-accent text-white shadow-glow transform scale-110' 
           : 'text-white'
         }
       `}
       style={{
         animation: showCountdown && !hasFinishedFirstTime 
-          ? 'breath-glass 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, pulse 1s ease-in-out infinite' 
+          ? 'matrixDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite' 
           : 'none',
         boxShadow: showCountdown && !hasFinishedFirstTime 
           ? '0 0 30px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--accent) / 0.6), inset 0 1px 0 rgba(255,255,255,0.3)'

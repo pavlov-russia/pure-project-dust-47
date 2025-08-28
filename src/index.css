@@ -336,4 +336,24 @@ All colors MUST be HSL.
       background-color: rgba(255,255,255,0.22);
     }
   }
+  
+  /* Matrix Drop Animation */
+  @keyframes matrixDrop {
+    0% { 
+      opacity: 0; 
+      transform: translateY(-100px) scaleY(0.1);
+      filter: brightness(0);
+    }
+    50% { 
+      opacity: 1; 
+      transform: translateY(10px) scaleY(1.1);
+      filter: brightness(1.5);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0) scaleY(1);
+      filter: brightness(1);
+    }
+  }
+  }
 }
