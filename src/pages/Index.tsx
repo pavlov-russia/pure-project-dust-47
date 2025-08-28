@@ -256,8 +256,52 @@ const Index = () => {
       </section>
 
       {/* Checklist Section */}
-      <section className="py-8 md:py-16 bg-gradient-dark text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-full">
+      <section className="py-8 md:py-16 relative overflow-hidden">
+        {/* SVG-inspired glass morphism container */}
+        <div 
+          className="relative"
+          style={{
+            backdropFilter: 'blur(40px)',
+            WebkitBackdropFilter: 'blur(40px)',
+          }}
+        >
+          {/* Background blur layer */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'black',
+              opacity: 0.08,
+              mixBlendMode: 'hard-light'
+            }}
+          ></div>
+          
+          {/* Color dodge layer */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: '#0F0F0F',
+              mixBlendMode: 'color-dodge'
+            }}
+          ></div>
+          
+          {/* Main content layer */}
+          <div 
+            className="relative"
+            style={{
+              background: '#FAFAFA',
+              opacity: 0.7
+            }}
+          >
+            {/* Subtle overlay */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                background: 'black',
+                opacity: 0.01
+              }}
+            ></div>
+            
+            <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative z-10 text-foreground">
           <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
@@ -281,6 +325,8 @@ const Index = () => {
               </Button>
             </CardContent>
           </Card>
+            </div>
+          </div>
         </div>
       </section>
 
