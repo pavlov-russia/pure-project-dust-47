@@ -46,11 +46,11 @@ const AnimationShowcase = () => {
     },
     {
       id: 5,
-      name: "Flip In Y",
-      description: "Поворот по оси Y",
+      name: "Matrix Drop",
+      description: "Падение как в Матрице",
       className: "",
       style: {
-        animation: "flipInY 0.8s ease-out"
+        animation: "matrixDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
       }
     },
     {
