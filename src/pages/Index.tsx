@@ -66,23 +66,51 @@ const Index = () => {
           </h3>
         </div>
 
-        <div className="bg-destructive/20 border border-destructive/30 rounded-lg p-4 md:p-8 max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start justify-center space-y-3 md:space-y-0 md:space-x-4 text-left">
-            <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-destructive-foreground mt-1 flex-shrink-0 mx-auto md:mx-0" />
-            <div className="text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-demibold text-destructive-foreground mb-3 md:mb-4">
-                Опасная иллюзия
-              </h3>
-              <p className="text-white mb-3 md:mb-4 text-sm md:text-base">
-                Многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
-              </p>
-              <p className="text-white/80 mb-3 md:mb-4 text-sm md:text-base">
-                Чаще всего это лишь визуальный фасад:
-              </p>
-              <p className="font-medium text-white text-sm md:text-base">
-                название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – ЭТО НЕ УПАКОВКА!
-              </p>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Animated warning glow */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-red-500/20 rounded-2xl blur-lg animate-pulse"></div>
+          
+          {/* Main warning container */}
+          <div className="relative backdrop-blur-md bg-gradient-to-br from-red-500/90 to-orange-600/90 border-2 border-red-400/50 rounded-xl p-6 md:p-8 shadow-2xl overflow-hidden">
+            {/* Subtle overlay pattern */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none"></div>
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-start justify-center space-y-4 md:space-y-0 md:space-x-6 text-left">
+              {/* Animated warning icon */}
+              <div className="relative mx-auto md:mx-0 flex-shrink-0">
+                <div className="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                <div className="relative bg-white/10 p-3 rounded-full border border-white/30">
+                  <AlertTriangle className="w-8 h-8 md:w-10 md:h-10 text-white animate-pulse" />
+                </div>
+              </div>
+              
+              <div className="text-center md:text-left flex-1">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4 flex items-center justify-center md:justify-start gap-2">
+                  <span className="animate-pulse">⚠️</span>
+                  Опасная иллюзия
+                </h3>
+                
+                <div className="space-y-3">
+                  <p className="text-white/95 text-base md:text-lg leading-relaxed">
+                    Многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+                  </p>
+                  
+                  <p className="text-white/85 text-sm md:text-base leading-relaxed">
+                    Чаще всего это лишь визуальный фасад:
+                  </p>
+                  
+                  <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                    <p className="font-bold text-white text-sm md:text-base leading-relaxed">
+                      название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – 
+                      <span className="text-yellow-300 animate-pulse text-lg"> ЭТО НЕ УПАКОВКА!</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+            
+            {/* Corner accent */}
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-bl-full"></div>
           </div>
         </div>
       </SectionCard>
