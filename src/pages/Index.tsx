@@ -93,8 +93,7 @@ const Index = () => {
               
               <div className="text-center md:text-left flex-1">
                 {/* Enhanced title with better typography */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5 flex items-center justify-center md:justify-start gap-3">
-                  <span className="text-2xl animate-bounce">⚠️</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-5 flex items-center justify-center md:justify-start">
                   <span className="bg-gradient-to-r from-white via-white to-accent-foreground bg-clip-text text-transparent">
                     Опасная иллюзия
                   </span>
