@@ -263,7 +263,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-dark"></div>
         </div>
         
-        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10">
+        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10 pb-3 md:pb-0">
           <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
             ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
           </h2>
