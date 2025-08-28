@@ -301,30 +301,30 @@ const Index = () => {
               }}
             ></div>
             
-            <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative z-10 text-foreground">
-          <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2">
-            ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
-          </h2>
-          <Card className="max-w-2xl mx-auto bg-white text-foreground shadow-large">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex items-center justify-center mb-4 md:mb-6">
-                <Shield className="w-10 h-10 md:w-12 md:h-12 text-warning" />
-              </div>
-              <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
-                <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
-              </h3>
-              <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base">
-                (разобрали на реальных примерах наших клиентов)
-              </p>
-              <Button 
-                size="lg"
-                className="bg-white text-[#272727] hover:bg-gray-100 transition-smooth font-semibold px-6 md:px-8 py-4 md:py-6 h-auto touch-target text-sm md:text-base"
-              >
-                <Shield className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                Получить чек-лист бесплатно
-              </Button>
-            </CardContent>
-          </Card>
+            <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative z-10 text-foreground py-8 md:py-16">
+              <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-4 md:mb-6 px-2">
+                ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
+              </h2>
+              <Card className="max-w-2xl mx-auto bg-white text-foreground shadow-large">
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex items-center justify-center mb-4 md:mb-6">
+                    <Shield className="w-10 h-10 md:w-12 md:h-12 text-warning" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
+                    <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
+                  </h3>
+                  <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base">
+                    (разобрали на реальных примерах наших клиентов)
+                  </p>
+                  <Button 
+                    size="lg"
+                    className="bg-white text-[#272727] hover:bg-gray-100 transition-smooth font-semibold px-6 md:px-8 py-4 md:py-6 h-auto touch-target text-sm md:text-base"
+                  >
+                    <Shield className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    Получить чек-лист бесплатно
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
