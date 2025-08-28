@@ -256,7 +256,7 @@ const Index = () => {
       </section>
 
       {/* Checklist Section */}
-      <section className="pt-6 md:pt-16 pb-4 md:pb-14 relative">
+      <section className="pt-6 md:pt-16 pb-3 md:pb-14 relative">
         {/* Background with rounded corners and dashed border like SVG */}
         <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark overflow-hidden">
           {/* Inner content background */}
