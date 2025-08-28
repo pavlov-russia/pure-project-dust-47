@@ -1,0 +1,309 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import ChecklistPopup from "@/components/ChecklistPopup";
+import ConsultationForm from "@/components/ConsultationForm";
+import Header from "@/components/Header";
+import SectionCard from "@/components/SectionCard";
+import { 
+  Target, 
+  Zap, 
+  Users, 
+  TrendingUp, 
+  Star, 
+  CheckCircle, 
+  AlertTriangle,
+  Rocket,
+  MessageSquare,
+  Eye,
+  Palette,
+  Heart,
+  Shield
+} from "lucide-react";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <ChecklistPopup />
+      
+      {/* Hero Section */}
+      <SectionCard className="pt-40 md:pt-48 bg-gradient-hero text-white text-center">
+        <h1 className="text-4xl md:text-6xl font-regular mb-6 leading-tight">
+          Управляйте впечатлением о своём бизнесе с <span className="font-demibold text-white">TapBlog</span>
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
+          У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+        </p>
+        <p className="text-lg mb-10 font-medium">
+          И мы поможем использовать их в вашу пользу!
+        </p>
+        <Button 
+          size="lg" 
+          className="bg-white text-[#272727] rounded-xl px-5 py-3 shadow-md hover:bg-gray-50 transition-all duration-300 font-semibold"
+        >
+          <Target className="w-5 h-5 mr-2" />
+          Получить индивидуальное КП
+        </Button>
+      </SectionCard>
+
+      {/* Strategic Packaging Section */}
+      <SectionCard className="bg-gradient-hero text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-regular mb-6">
+          <span className="font-demibold text-white">Стратегическая упаковка</span> — катализатор доверия и конверсии
+        </h2>
+        <p className="text-xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
+          Это основа, без которой продвижение теряет смысл, а вы – бюджет
+        </p>
+        <div className="bg-white/10 border border-white/25 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-xl font-demibold text-white mb-2">
+            <span className="font-demibold">СНАЧАЛА УПАКОВКА</span> — ПОТОМ ТРАФИК
+          </h3>
+        </div>
+
+        <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-8 max-w-4xl mx-auto">
+          <div className="flex items-start justify-center space-x-4 text-left">
+            <AlertTriangle className="w-8 h-8 text-red-300 mt-1 flex-shrink-0" />
+            <div>
+              <h3 className="text-xl font-demibold text-red-300 mb-4">
+                Опасная иллюзия
+              </h3>
+              <p className="text-white mb-4">
+                Многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+              </p>
+              <p className="text-white/80 mb-4">
+                Чаще всего это лишь визуальный фасад:
+              </p>
+              <p className="font-medium text-white">
+                название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – ЭТО НЕ УПАКОВКА!
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionCard>
+
+      {/* Express Test Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <Card className="max-w-3xl mx-auto bg-gradient-telegram text-white shadow-large">
+            <CardContent className="p-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-regular mb-6"><span className="font-demibold">ЭКСПРЕСС-ТЕСТ</span></h2>
+              <div className="flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 mr-3" />
+                <h3 className="text-xl font-semibold">
+                  Как понять, что ваше предложение не упаковано или упаковано плохо?
+                </h3>
+              </div>
+              <p className="text-lg mb-4">
+                Очень просто. Трафик есть, а продаж нет или они минимальны.
+              </p>
+              <p className="text-sm opacity-75 mb-8">
+                *при условии адекватного профессионального трафик-менеджера
+              </p>
+              <Button 
+                size="lg"
+                className="bg-white text-primary hover:bg-gray-100 transition-smooth font-semibold px-8 py-6 h-auto"
+              >
+                <Zap className="w-5 h-5 mr-2" />
+                Хочу мощную упаковку 🔥
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Real Packaging System */}
+      <section className="py-16 bg-gradient-subtle">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-regular text-center mb-12">
+              👉🏼 <span className="font-demibold">Настоящая упаковка</span> — это система:
+            </h2>
+            
+            <div className="grid gap-6">
+              {[
+                {
+                  icon: Target,
+                  title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
+                  description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+                },
+                {
+                  icon: Star,
+                  title: "Кристальное позиционирование, понятное даже школьнику",
+                  description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Продуманный путь клиента от А до Я",
+                  description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
+                },
+                {
+                  icon: MessageSquare,
+                  title: "Осмысленный и целевой контент",
+                  description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
+                },
+                {
+                  icon: Heart,
+                  title: "Выраженный стиль коммуникации",
+                  description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
+                },
+                {
+                  icon: Palette,
+                  title: "Визуальная идентичность",
+                  description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
+                }
+              ].map((item, index) => (
+                <Card key={index} className="shadow-medium hover:shadow-large transition-smooth">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-success/10 p-3 rounded-full">
+                        <CheckCircle className="w-6 h-6 text-success" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-start space-x-3 mb-3">
+                          <item.icon className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                          <h3 className="font-semibold text-foreground leading-tight">
+                            {item.title}
+                          </h3>
+                        </div>
+                        <p className="text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button 
+                size="lg"
+                className="bg-gradient-telegram text-white hover:shadow-medium transition-smooth font-semibold px-8 py-6 h-auto"
+              >
+                <Rocket className="w-5 h-5 mr-2" />
+                Заказать упаковку
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-16 bg-primary/5">
+        <div className="container mx-auto px-6 text-center">
+          <blockquote className="text-2xl md:text-3xl font-regular italic text-foreground max-w-3xl mx-auto">
+            "У вас не будет <span className="font-demibold">второго шанса</span> произвести первое впечатление"
+          </blockquote>
+          <p className="text-muted-foreground mt-4">©️ Коко Шанель</p>
+        </div>
+      </section>
+
+      {/* Checklist Section */}
+      <section className="py-16 bg-gradient-dark text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-regular mb-6">
+            ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
+          </h2>
+          <Card className="max-w-2xl mx-auto bg-white text-foreground shadow-large">
+            <CardContent className="p-8">
+              <div className="flex items-center justify-center mb-6">
+                <Shield className="w-12 h-12 text-warning" />
+              </div>
+              <h3 className="text-xl font-regular mb-4">
+                <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                (разобрали на реальных примерах наших клиентов)
+              </p>
+              <Button 
+                size="lg"
+                className="bg-white text-[#272727] hover:bg-gray-100 transition-smooth font-semibold px-8 py-6 h-auto"
+              >
+                <Shield className="w-5 h-5 mr-2" />
+                Получить чек-лист бесплатно
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* TapBlog Features */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-large border-l-4 border-l-warning mb-8">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-regular text-center mb-6">
+                  Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
+                </h2>
+              </CardContent>
+            </Card>
+
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-regular mb-6">
+                <span className="font-demibold">TapBlog</span> — готовое решение для системной упаковки и продажи ваших продуктов и услуг в Telegram
+              </h2>
+            </div>
+
+            <div className="grid gap-4 mb-12">
+              {[
+                "Всё под ключ – от оформленного ТГ-канала с контент-стратегией до разработки web-app",
+                "Продуманная и прозрачная воронка от первого клика по рекламному объявлению до денег в кассе",
+                "WOW-эффект и яркое впечатление",
+                "Увеличение лояльности и доверия, эмоциональная связь",
+                "Гибкий функционал с внедрением ИИ – под ваши цели, задачи и потребности"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <Star className="w-6 h-6 text-warning mt-1 flex-shrink-0" />
+                  <p className="text-foreground font-medium">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Audience */}
+      <section className="py-16 bg-gradient-subtle">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-regular text-center mb-12">
+              Кому подходит <span className="font-demibold">наша упаковка?</span>
+            </h2>
+            
+            <div className="grid gap-4 mb-12">
+              {[
+                "экспертам и компаниям, продающим услуги и продукты",
+                "брендам / онлайн-магазинам", 
+                "сообществам / клубам",
+                "авторам курсов / интенсивов / тренингов",
+                "авторам тематических ТГ-каналов"
+              ].map((audience, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="w-6 h-6 text-success flex-shrink-0" />
+                  <p className="text-foreground font-medium">{audience}</p>
+                </div>
+              ))}
+            </div>
+
+            <Card className="bg-gradient-telegram text-white shadow-large">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-regular mb-4">
+                  <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
+                </h3>
+                <p className="text-lg font-semibold">
+                  САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ 👇🏼
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Consultation Form */}
+      <ConsultationForm />
+    </div>
+  );
+};
+
+export default Index;
