@@ -6,15 +6,18 @@ const Header = () => {
   const isMobile = useIsMobile();
   const containerStyle: CSSProperties = isMobile
     ? {
-        backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        backgroundColor: 'rgba(255, 255, 255, 0.85)',
         border: '1px solid rgba(255, 255, 255, 0.20)',
-        transform: 'translateZ(0)'
+        transform: 'translateZ(0)',
+        willChange: 'transform'
       }
     : {
         backdropFilter: 'blur(40px)',
         WebkitBackdropFilter: 'blur(40px)',
         backgroundColor: 'rgba(255, 255, 255, 0.07)',
-        mixBlendMode: 'screen',
+        mixBlendMode: 'screen' as const,
         border: '1px solid rgba(255, 255, 255, 0.08)'
       };
   return (
@@ -22,7 +25,7 @@ const Header = () => {
     <header className={`${isMobile ? 'sticky' : 'fixed'} top-0 left-0 right-0 z-50 animate-fade-in`}>
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
-        className="relative overflow-hidden rounded-[24px] border-0 transition-colors duration-300 will-change-transform"
+        className="relative overflow-hidden rounded-[24px] border-0 transition-colors duration-300 transform-gpu"
         style={containerStyle}
       >
         <div className="container mx-auto px-3 md:px-6 pt-[60px] md:pt-[120px] pb-[3px] md:pb-[3px] flex items-center justify-between max-w-full mt-2 md:mt-4">
