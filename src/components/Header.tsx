@@ -14,7 +14,7 @@ const Header = () => {
           border: '1px solid rgba(255, 255, 255, 0.08)'
         }}
       >
-        <div className="container mx-auto px-3 md:px-6 py-6 md:py-8 flex items-center justify-between max-w-full">
+        <div className="container mx-auto px-3 md:px-6 py-8 md:py-12 flex items-center justify-between max-w-full">
         {/* Logo */}
         <div className="flex items-center relative z-10">
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">
