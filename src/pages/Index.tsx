@@ -28,13 +28,13 @@ const Index = () => {
       
       {/* Hero Section */}
       <SectionCard className="pt-20 md:pt-48 bg-gradient-hero text-white text-center">
-        <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight px-2">
+        <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight">
           Управляйте впечатлением о своём бизнесе с <span className="font-demibold text-white">TapBlog</span>
         </h1>
-        <p className="mobile-subheading-scale md:text-2xl mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90 px-2">
+        <p className="mobile-subheading-scale md:text-2xl mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90">
           У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
         </p>
-        <p className="text-base md:text-lg mb-8 md:mb-10 font-medium px-2">
+        <p className="text-base md:text-lg mb-8 md:mb-10 font-medium">
           И мы поможем использовать их в вашу пользу!
         </p>
         <Button 
