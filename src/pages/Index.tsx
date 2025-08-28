@@ -258,7 +258,7 @@ const Index = () => {
       {/* Checklist Section */}
       <section className="py-6 md:py-16 relative">
         {/* Background with rounded corners and dashed border like SVG */}
-        <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark border-2 border-dashed border-white/30 overflow-hidden">
+        <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark overflow-hidden">
           {/* Inner content background */}
           <div className="absolute inset-0 bg-gradient-dark"></div>
         </div>
