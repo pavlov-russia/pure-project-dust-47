@@ -44,8 +44,8 @@ const ChecklistPopup = () => {
       <DialogPortal>
         <DialogOverlay 
           style={{
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
             backgroundColor: 'transparent'
           }}
         />
