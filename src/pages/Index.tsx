@@ -136,7 +136,7 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-12 max-w-full">
           <div className="max-w-3xl mx-auto relative">
             {/* Animated brand glow */}
-            <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
+            <div className="absolute -inset-6 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
             
             {/* Main express container with brand colors */}
             <div className="relative backdrop-blur-md bg-gradient-telegram border-2 border-primary/60 rounded-[20px] md:rounded-[24px] p-6 md:p-12 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300 text-white text-center aspect-square flex flex-col justify-center">
