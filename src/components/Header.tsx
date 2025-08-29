@@ -74,7 +74,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-3 md:px-6 pt-[93px] md:pt-[130px] pb-[20px] md:pb-[25px] relative max-w-full mt-3 md:mt-4">
         {/* Logo - анимированное перемещение между центром и левой позицией */}
-        <div className={`flex items-center absolute bottom-[4px] z-10 transition-all duration-700 ease-out ${
+        <div className={`flex items-center absolute bottom-[2px] z-10 transition-all duration-700 ease-out ${
           showCTA 
             ? 'left-3 md:left-6 translate-x-0' 
             : 'left-1/2 -translate-x-1/2'
@@ -93,7 +93,7 @@ const Header = () => {
         </div>
         
         {/* CTA Button - показывается только после скролла, позиционирован справа по центру по вертикали */}
-        <div className={`absolute right-3 md:right-6 bottom-[4px] transition-all duration-500 ease-out ${
+        <div className={`absolute right-3 md:right-6 bottom-[2px] transition-all duration-500 ease-out ${
           showCTA 
             ? 'opacity-100 scale-100' 
             : 'opacity-0 scale-95 pointer-events-none'
