@@ -46,6 +46,7 @@ const ChecklistPopup = () => {
           className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
         />
         <DialogContent 
+          hideClose
           className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 duration-[2000ms]"
           style={{
             backdropFilter: 'blur(40px)',
@@ -93,35 +94,18 @@ const ChecklistPopup = () => {
         
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 transition-opacity hover:opacity-80"
+          className="absolute right-3 top-3 rounded-full p-2 transition-opacity hover:opacity-90"
+          style={{
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            backgroundColor: 'rgba(255, 255, 255, 0.55)',
+            border: '1px solid rgba(0, 0, 0, 0.06)',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.5)'
+          }}
+          aria-label="Закрыть"
         >
-          <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.67">
-              <mask id="mask0_143_393" style={{"maskType":"luminance"}} maskUnits="userSpaceOnUse" x="-50" y="-50" width="200" height="200">
-                <rect width="200" height="200" transform="translate(-50 -50)" fill="white"/>
-                <rect x="26" y="26" width="48" height="48" rx="24" fill="black"/>
-              </mask>
-              <g mask="url(#mask0_143_393)">
-                <foreignObject x="-14" y="-12" width="128" height="128">
-                  <div style={{backdropFilter:"blur(20px)", height:"100%", width:"100%"}}></div>
-                </foreignObject>
-                <g filter="url(#filter0_f_143_393)">
-                  <path d="M26 52C26 38.7452 36.7452 28 50 28V28C63.2548 28 74 38.7452 74 52V52C74 65.2548 63.2548 76 50 76V76C36.7452 76 26 65.2548 26 52V52Z" fill="black" fillOpacity="0.04" style={{mixBlendMode:"hard-light"}}/>
-                </g>
-              </g>
-            </g>
-            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V74C36.7452 74 26 63.2548 26 50V50Z" fill="#333333" style={{mixBlendMode:"color-dodge"}}/>
-            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V74C36.7452 74 26 63.2548 26 50V50Z" fill="white" fillOpacity="0.5"/>
-            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V76C36.7452 74 26 63.2548 26 50V50Z" fill="#F7F7F7" style={{mixBlendMode:"multiply"}}/>
-            <rect x="26" y="26" width="48" height="48" rx="24" fill="black" fillOpacity="0.01"/>
-            <path d="M42 42L58 58M58 42L42 58" stroke="#666" strokeWidth="2" strokeLinecap="round"/>
-            <defs>
-              <filter id="filter0_f_143_393" x="-14" y="-12" width="128" height="128" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_143_393"/>
-              </filter>
-            </defs>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6L18 18M18 6L6 18" stroke="#4B5563" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
         </DialogContent>
