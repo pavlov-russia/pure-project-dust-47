@@ -31,8 +31,9 @@ export const injectFontFace = (font: StoredFont): void => {
   document.head.appendChild(style);
 };
 
-export const applyGlobalFont = (fontFamily: string): void => {
+export const applyGlobalFont = (fontFamily: string, weight: string = '400'): void => {
   document.body.style.fontFamily = `'${fontFamily}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
+  document.body.style.fontWeight = weight;
 };
 
 export const saveFontsToStorage = (fonts: StoredFont[]): void => {
@@ -61,9 +62,11 @@ export const loadFontsFromStorageAndApply = (): void => {
     injectFontFace(font);
   });
   
-  // Apply first font globally if any fonts exist
+  // Apply first font family globally (but keep default weight)
   if (fonts.length > 0) {
-    applyGlobalFont(fonts[0].fontFamily);
+    const fontFamily = fonts[0].fontFamily;
+    document.body.style.fontFamily = `'${fontFamily}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
+    // Не устанавливаем конкретный вес, позволяем CSS классам управлять этим
   }
 };
 

@@ -89,8 +89,9 @@ const FontUploader: React.FC = () => {
       injectFontFace(font);
     });
     
-    // Apply first font globally
-    applyGlobalFont(fonts[0].fontFamily);
+    // Apply first font family globally with Regular weight (400)
+    const firstFont = fonts.find(f => f.fontWeight === '400') || fonts[0];
+    applyGlobalFont(firstFont.fontFamily, '400');
 
     toast({
       title: "Шрифты применены",

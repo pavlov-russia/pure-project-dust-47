@@ -33,7 +33,7 @@ export const getFontWeightName = (weight: string): string => {
     '300': 'Light',
     '400': 'Regular',
     '500': 'Medium',
-    '600': 'Semi Bold',
+    '600': 'DemiBold',
     '700': 'Bold',
     '800': 'Extra Bold',
     '900': 'Black'
