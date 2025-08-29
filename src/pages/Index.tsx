@@ -135,16 +135,22 @@ const Index = () => {
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
           <div className="max-w-3xl mx-auto relative">
-            {/* Animated brand glow */}
-            <div className="absolute -inset-6 bg-gradient-to-r from-primary/70 via-accent/70 to-primary/70 rounded-3xl blur-md animate-pulse"></div>
+            {/* Background blur layer - same as SVG foreignObject */}
+            <div className="absolute -inset-6 backdrop-blur-[40px] rounded-3xl"></div>
             
-            {/* Main express container with brand colors */}
-            <div className="relative backdrop-blur-md bg-gradient-telegram border-2 border-primary/60 rounded-[20px] md:rounded-[24px] p-6 md:p-12 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300 text-white text-center aspect-square flex flex-col justify-center">
-              {/* Brand gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
+            {/* Hard light blend layer - black with low opacity */}
+            <div className="absolute -inset-6 bg-black/8 rounded-3xl mix-blend-hard-light"></div>
+            
+            {/* Main express container with complex glass effects */}
+            <div className="relative backdrop-blur-[40px] rounded-[34px] p-6 md:p-12 overflow-hidden transform hover:scale-[1.02] transition-all duration-300 text-white text-center aspect-square flex flex-col justify-center">
+              {/* Color dodge layer - dark background */}
+              <div className="absolute inset-0 bg-[#0F0F0F] rounded-[34px] mix-blend-color-dodge"></div>
               
-              {/* Animated border accent */}
-              <div className="absolute inset-0 rounded-[20px] md:rounded-[24px] border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+              {/* Main glass layer - white with transparency */}
+              <div className="absolute inset-0 bg-white/70 rounded-[34px]"></div>
+              
+              {/* Subtle dark overlay */}
+              <div className="absolute inset-0 bg-black/[0.01] rounded-[34px]"></div>
               
               <div className="relative z-10">
               {/* Express Test Title */}
