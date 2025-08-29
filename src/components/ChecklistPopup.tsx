@@ -56,9 +56,6 @@ const ChecklistPopup = () => {
           }}
         >
         <DialogHeader className="text-center space-y-3">
-          <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-2">
-            <FileText className="w-8 h-8 text-white" />
-          </div>
           <DialogTitle className="text-xl font-bold text-foreground">
             Забирайте оберег от слитого бюджета
           </DialogTitle>
