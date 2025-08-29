@@ -77,8 +77,8 @@ const ChecklistPopup = () => {
               WebkitBackdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               boxShadow: `
-                0 0 40px #563AF0/0.4,
-                0 0 80px #563AF0/0.3,
+                0 0 40px #7962F4/0.4,
+                0 0 80px #7962F4/0.3,
                 inset 0 1px 0 rgba(255, 255, 255, 0.3),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1)
               `,
