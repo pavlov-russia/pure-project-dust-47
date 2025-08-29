@@ -258,17 +258,13 @@ const Index = () => {
                       {/* Subtle overlay */}
                       <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
                       
-                      <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
-                        <div className="bg-success/20 backdrop-blur-sm p-2 md:p-3 rounded-full mx-auto md:mx-0 border border-success/30">
-                          <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success" />
-                        </div>
-                        <div className="flex-1 text-center md:text-left">
-                          <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-3 mb-3">
-                            <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
-                            <h3 className="font-semibold text-foreground leading-tight text-sm md:text-base">
-                              {item.title}
-                            </h3>
-                          </div>
+                       <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
+                         <div className="flex-1 text-center md:text-left">
+                           <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-3 mb-3">
+                             <h3 className="font-semibold text-foreground leading-tight text-sm md:text-base">
+                               {item.title}
+                             </h3>
+                           </div>
                           <p className="text-muted-foreground text-sm md:text-base">
                             {item.description}
                           </p>
