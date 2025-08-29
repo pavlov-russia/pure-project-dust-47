@@ -81,7 +81,7 @@ const ChecklistPopup = () => {
         </div>
         
         <p className="text-xs text-muted-foreground text-center mt-4">
-          Разобрали на реальных примерах наших клиентов
+          * Разобрали на реальных примерах наших клиентов
         </p>
         
         <button
