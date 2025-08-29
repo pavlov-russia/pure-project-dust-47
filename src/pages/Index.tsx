@@ -134,7 +134,11 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
-          <div className="max-w-3xl mx-auto relative backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center overflow-hidden">
+          <div className="max-w-3xl mx-auto relative">
+            {/* Animated brand glow */}
+            <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
+            
+            <div className="relative backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
             {/* Brand gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
             
@@ -177,6 +181,7 @@ const Index = () => {
               >
                 Хочу мощную упаковку 🔥
               </Button>
+            </div>
             </div>
           </div>
         </div>
