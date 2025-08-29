@@ -92,7 +92,7 @@ const Index = () => {
                 
                 {/* Main icon container */}
                 <div className="relative bg-white/15 backdrop-blur-sm p-4 rounded-full border-2 border-white/40 shadow-lg">
-                  <AlertTriangle className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-lg" strokeWidth={2.5} />
+                  <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-white drop-shadow-lg" strokeWidth={2.5} />
                 </div>
               </div>
               
