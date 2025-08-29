@@ -72,13 +72,13 @@ const ChecklistPopup = () => {
           <button
             className="relative px-8 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
             style={{
-              background: 'hsl(var(--gradient-primary))',
+              background: '#563AF0',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               boxShadow: `
-                0 0 40px hsl(var(--primary) / 0.4),
-                0 0 80px hsl(var(--accent) / 0.3),
+                0 0 40px #563AF0/0.4,
+                0 0 80px #563AF0/0.3,
                 inset 0 1px 0 rgba(255, 255, 255, 0.3),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1)
               `,
