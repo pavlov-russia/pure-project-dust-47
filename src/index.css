@@ -401,28 +401,17 @@ All colors MUST be HSL.
     100% { opacity: 1; transform: scale(1.02); }
   }
 
-  /* Purple glow animation for button */
-  .purple-glow {
-    animation: purple-glow-shadow 2s ease-in-out infinite alternate;
+  /* Pulse animation for button */
+  .pulse-button {
+    animation: pulse-smooth 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  @keyframes purple-glow-shadow {
-    0% { 
-      box-shadow: 
-        0 0 20px #7962F4,
-        0 0 40px #7962F4,
-        0 0 80px rgba(121, 98, 244, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  @keyframes pulse-smooth {
+    0%, 100% { 
+      transform: scale(1);
     }
-    100% { 
-      box-shadow: 
-        0 0 30px #7962F4,
-        0 0 60px #7962F4,
-        0 0 120px rgba(121, 98, 244, 0.8),
-        0 0 160px rgba(121, 98, 244, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    50% { 
+      transform: scale(1.05);
     }
   }
 }
