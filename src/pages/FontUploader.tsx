@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Upload, Download, Trash2, Type } from "lucide-react";
-import Header from "@/components/Header";
+import Header from "../components/Header";
 
 interface FontFile {
   id: string;
