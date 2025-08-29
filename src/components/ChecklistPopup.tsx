@@ -64,32 +64,9 @@ const ChecklistPopup = () => {
           </p>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-4 mt-6">
-          <div className="space-y-2">
-            <Input
-              type="email"
-              placeholder="Ваш email для получения чек-листа"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="text-center border-primary/20 focus:border-primary"
-              required
-            />
-          </div>
-          
-          <Button 
-            type="submit"
-            variant="form-submit"
-            size="lg"
-            className="w-full"
-            icon={<Star className="w-4 h-4" />}
-          >
-            Получить чек-лист бесплатно
-          </Button>
-          
-          <p className="text-xs text-muted-foreground text-center">
-            Разобрали на реальных примерах наших клиентов
-          </p>
-        </form>
+        <p className="text-xs text-muted-foreground text-center">
+          Разобрали на реальных примерах наших клиентов
+        </p>
         
         <button
           onClick={handleClose}
