@@ -72,7 +72,8 @@ const ChecklistPopup = () => {
               background: '#563AF0',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              animationDuration: '5s'
             }}
           >
             Забрать
