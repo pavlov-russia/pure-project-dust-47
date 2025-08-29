@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Upload, Download, Trash2, Type } from "lucide-react";
+import { Upload, Download, Trash2, Type, Zap } from "lucide-react";
 import Header from "../components/Header";
 
 interface FontFile {
@@ -78,6 +78,103 @@ const FontUploader = () => {
     }
   };
 
+  const applyFontsToProject = async () => {
+    if (fonts.length === 0) {
+      toast({
+        title: "Нет шрифтов",
+        description: "Сначала загрузите шрифты для применения в проекте",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Создаем CSS для @font-face правил
+      const fontFaceRules = fonts.map(font => `
+/* ${font.name} */
+@font-face {
+  font-family: "${font.fontFamily}";
+  src: url("${font.url}") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}`).join("\n");
+
+      // Создаем классы для Tailwind
+      const tailwindClasses = fonts.map(font => {
+        const className = font.fontFamily.toLowerCase().replace(/\s+/g, "-");
+        return `        '${className}': ['${font.fontFamily}', 'sans-serif'],`;
+      }).join("\n");
+
+      // Читаем текущий index.css
+      const indexCssResponse = await fetch('/src/index.css');
+      const currentIndexCss = await indexCssResponse.text();
+      
+      // Удаляем старые пользовательские шрифты если есть
+      const cleanCss = currentIndexCss.replace(
+        /\/\* === CUSTOM FONTS START === \*\/[\s\S]*?\/\* === CUSTOM FONTS END === \*\//g, 
+        ''
+      );
+
+      // Добавляем новые шрифты
+      const updatedIndexCss = cleanCss + `
+
+/* === CUSTOM FONTS START === */
+${fontFaceRules}
+/* === CUSTOM FONTS END === */`;
+
+      // Читаем текущий tailwind.config.ts
+      const tailwindConfigResponse = await fetch('/tailwind.config.ts');
+      const currentTailwindConfig = await tailwindConfigResponse.text();
+
+      // Обновляем секцию fontFamily в tailwind.config.ts
+      const fontFamilyRegex = /(fontFamily:\s*{[^}]*)(})/s;
+      const updatedTailwindConfig = currentTailwindConfig.replace(
+        fontFamilyRegex,
+        (match, start, end) => {
+          // Удаляем старые пользовательские шрифты
+          const cleanStart = start.replace(/\s*\/\/ Custom fonts[\s\S]*?(?=\s*})/g, '');
+          return `${cleanStart}
+        // Custom fonts
+${tailwindClasses}
+      ${end}`;
+        }
+      );
+
+      // Здесь мы показываем пользователю код, который нужно применить
+      // В реальном проекте это должно обновить файлы автоматически
+      const codeToShow = `
+=== ОБНОВИТЬ src/index.css ===
+${updatedIndexCss}
+
+=== ОБНОВИТЬ tailwind.config.ts ===
+${updatedTailwindConfig}
+`;
+
+      // Создаем файл с инструкциями
+      const blob = new Blob([codeToShow], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "font-integration-code.txt";
+      a.click();
+      URL.revokeObjectURL(url);
+
+      toast({
+        title: "Шрифты готовы к интеграции",
+        description: "Загружен файл с кодом для обновления проекта",
+      });
+
+    } catch (error) {
+      console.error("Error applying fonts:", error);
+      toast({
+        title: "Ошибка применения шрифтов",
+        description: "Не удалось применить шрифты к проекту",
+        variant: "destructive",
+      });
+    }
+  };
+
   const downloadFontCSS = () => {
     const cssContent = fonts.map(font => `
 @font-face {
@@ -144,12 +241,20 @@ const FontUploader = () => {
                 />
               </div>
               
-              {fonts.length > 0 && (
-                <Button onClick={downloadFontCSS} className="flex items-center gap-2">
-                  <Download className="h-4 w-4" />
-                  Скачать CSS для шрифтов
-                </Button>
-              )}
+              <div className="flex gap-2">
+                {fonts.length > 0 && (
+                  <>
+                    <Button onClick={downloadFontCSS} variant="outline" className="flex items-center gap-2">
+                      <Download className="h-4 w-4" />
+                      Скачать CSS
+                    </Button>
+                    <Button onClick={applyFontsToProject} className="flex items-center gap-2 cta-glow">
+                      <Zap className="h-4 w-4" />
+                      Загрузить в проект
+                    </Button>
+                  </>
+                )}
+              </div>
             </CardContent>
           </Card>
 
