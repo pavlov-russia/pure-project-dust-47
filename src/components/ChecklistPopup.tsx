@@ -141,7 +141,7 @@ export const ChecklistCountdown = () => {
       `}
       style={{
         animation: showCountdown && !hasFinishedFirstTime 
-          ? 'matrixDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite' 
+          ? 'elasticScale 1s ease-out infinite' 
           : 'none',
         boxShadow: showCountdown && !hasFinishedFirstTime 
           ? '0 0 30px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--accent) / 0.6), inset 0 1px 0 rgba(255,255,255,0.3)'
