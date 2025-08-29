@@ -64,10 +64,6 @@ const ChecklistPopup = () => {
           </p>
         </DialogHeader>
         
-        <p className="text-xs text-muted-foreground text-center">
-          Разобрали на реальных примерах наших клиентов
-        </p>
-        
         <div className="flex justify-center mt-6 px-4">
           <button
             className="relative w-full px-12 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
@@ -90,6 +86,10 @@ const ChecklistPopup = () => {
             Забрать
           </button>
         </div>
+        
+        <p className="text-xs text-muted-foreground text-center mt-4">
+          Разобрали на реальных примерах наших клиентов
+        </p>
         
         <button
           onClick={handleClose}
