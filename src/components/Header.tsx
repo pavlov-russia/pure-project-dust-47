@@ -60,17 +60,6 @@ const Header = () => {
 
   return (
     <>
-    {/* Пиксельная сетка для дебага */}
-    <div 
-      className="fixed inset-0 z-[9999] pointer-events-none opacity-30"
-      style={{
-        backgroundImage: `
-          linear-gradient(to right, rgba(255,0,0,0.3) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255,0,0,0.3) 1px, transparent 1px)
-        `,
-        backgroundSize: '1px 1px'
-      }}
-    />
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
       {/* Advanced Glassmorphism Container with SVG-inspired styling */}
       <div 
