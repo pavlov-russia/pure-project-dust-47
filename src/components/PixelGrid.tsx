@@ -42,11 +42,12 @@ const PixelGrid: React.FC = () => {
           key={`x-${x}`}
           x={x + 2}
           y={15}
-          fill="rgba(255, 0, 0, 0.8)"
-          fontSize="10"
+          fill="rgba(0, 255, 0, 0.9)"
+          fontSize="12"
           fontFamily="monospace"
+          fontWeight="bold"
         >
-          {x}
+          X:{x}
         </text>
       );
     }
@@ -73,11 +74,12 @@ const PixelGrid: React.FC = () => {
           key={`y-${y}`}
           x={2}
           y={y - 2}
-          fill="rgba(255, 0, 0, 0.8)"
-          fontSize="10"
+          fill="rgba(0, 100, 255, 0.9)"
+          fontSize="12"
           fontFamily="monospace"
+          fontWeight="bold"
         >
-          {y}
+          Y:{y}
         </text>
       );
     }
@@ -85,9 +87,13 @@ const PixelGrid: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-4 right-4 z-[9999] bg-black/80 text-white p-2 rounded text-xs font-mono">
+      <div className="fixed top-4 right-4 z-[99999] bg-black/80 text-white p-2 rounded text-xs font-mono">
         <div>Сетка: {gridSize}px</div>
         <div>Ctrl+Shift+G - вкл/выкл</div>
+        <div className="text-yellow-300 mt-1">
+          <div>X (→) - горизонталь</div>
+          <div>Y (↓) - вертикаль</div>
+        </div>
         <div>
           <button 
             onClick={() => setGridSize(10)}
