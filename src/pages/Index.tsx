@@ -63,7 +63,7 @@ const Index = () => {
           </p>
           
           {/* Key principle highlight */}
-          <div className="backdrop-blur-md bg-white/10 border border-white/25 rounded-xl p-3 md:p-6 max-w-2xl mx-auto mb-4 md:mb-8">
+          <div className="bg-white/10 border border-white/25 rounded-xl p-3 md:p-6 max-w-2xl mx-auto mb-4 md:mb-8">
             <h3 className="text-lg md:text-xl font-bold text-white">
               <span className="font-bold">СНАЧАЛА УПАКОВКА</span> — ПОТОМ ТРАФИК
             </h3>
@@ -134,62 +134,42 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
-          <div className="max-w-3xl mx-auto relative">
-            {/* Background blur layer - same as SVG foreignObject */}
-            <div className="absolute -inset-6 backdrop-blur-[40px] rounded-3xl"></div>
-            
-            {/* Hard light blend layer - black with low opacity */}
-            <div className="absolute -inset-6 bg-black/8 rounded-3xl mix-blend-hard-light"></div>
-            
-            {/* Main express container with complex glass effects */}
-            <div className="relative backdrop-blur-[40px] rounded-[34px] p-6 md:p-12 overflow-hidden transform hover:scale-[1.02] transition-all duration-300 text-white text-center aspect-square flex flex-col justify-center">
-              {/* Color dodge layer - dark background */}
-              <div className="absolute inset-0 bg-[#0F0F0F] rounded-[34px] mix-blend-color-dodge"></div>
-              
-              {/* Main glass layer - white with transparency */}
-              <div className="absolute inset-0 bg-white/70 rounded-[34px]"></div>
-              
-              {/* Subtle dark overlay */}
-              <div className="absolute inset-0 bg-black/[0.01] rounded-[34px]"></div>
-              
-              <div className="relative z-10">
-              {/* Express Test Title */}
-              <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
-                {/* Express Stamp - smaller with continuous animation */}
-                <div className="relative inline-block">
-                  <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
-                       style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                    <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
-                      EXPRESS
-                    </div>
+          <div className="max-w-3xl mx-auto bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
+            {/* Express Test Title */}
+            <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
+              {/* Express Stamp - smaller with continuous animation */}
+              <div className="relative inline-block">
+                <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
+                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                  <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
+                    EXPRESS
                   </div>
                 </div>
-                
-                <span className="text-xl md:text-3xl font-bold text-white/80">-</span>
-                
-                <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
               </div>
-              <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
-                <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
-                  Как понять, что ваше предложение не упаковано или упаковано плохо?
-                </h3>
-              </div>
-              <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
-                Очень просто. Трафик есть, а продаж нет или они минимальны.
-              </p>
-              <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
-                *при условии адекватного профессионального трафик-менеджера
-              </p>
-              <Button 
-                variant="cta-tertiary"
-                size="lg"
-                icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
-                className="mx-auto"
-              >
-                Хочу мощную упаковку 🔥
-              </Button>
+              
+              <span className="text-xl md:text-3xl font-bold text-white/80">-</span>
+              
+              <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
             </div>
+            <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
+              <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
+                Как понять, что ваше предложение не упаковано или упаковано плохо?
+              </h3>
             </div>
+            <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
+              Очень просто. Трафик есть, а продаж нет или они минимальны.
+            </p>
+            <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
+              *при условии адекватного профессионального трафик-менеджера
+            </p>
+            <Button 
+              variant="cta-tertiary"
+              size="lg"
+              icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
+              className="mx-auto"
+            >
+              Хочу мощную упаковку 🔥
+            </Button>
           </div>
         </div>
       </section>
@@ -220,7 +200,7 @@ const Index = () => {
             </div>
             
             {/* Glass-morphism container */}
-            <div className="relative backdrop-blur-md backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-2xl">
+            <div className="relative backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-2xl">
               {/* Glass overlay effect */}
               <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
               
@@ -257,7 +237,7 @@ const Index = () => {
                     description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                   }
                 ].map((item, index) => (
-                  <div key={index} className="relative backdrop-blur-md backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div key={index} className="relative backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     {/* Dark overlay for color-dodge effect */}
                     <div className="absolute inset-0 bg-foreground rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
                     {/* Subtle overlay */}
@@ -357,7 +337,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
             
             {/* Main glass morphism card */}
-            <div className="relative backdrop-blur-md backdrop-blur-xl bg-white/70 border border-white/40 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
+            <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
               <div className="flex items-center justify-center mb-4 md:mb-6">
                 <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
               </div>
@@ -391,7 +371,7 @@ const Index = () => {
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
-            <Card className="backdrop-blur-md shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
+            <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
               <CardContent className="p-6 md:p-8">
                 <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
                   Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
@@ -446,7 +426,7 @@ const Index = () => {
               ))}
             </div>
 
-            <Card className="backdrop-blur-md bg-gradient-telegram text-white shadow-large">
+            <Card className="bg-gradient-telegram text-white shadow-large">
               <CardContent className="p-6 md:p-8 text-center">
                 <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
                   <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
