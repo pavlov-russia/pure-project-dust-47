@@ -5,15 +5,18 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { telegramWebApp } from "@/utils/telegramWebApp";
+import { loadFontsFromStorageAndApply } from "@/utils/customFonts";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
+import FontUploader from "./pages/FontUploader";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
     const cleanup = telegramWebApp.init();
+    loadFontsFromStorageAndApply();
     return cleanup;
   }, []);
 
@@ -26,6 +29,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/animations" element={<AnimationShowcase />} />
+            <Route path="/fonts" element={<FontUploader />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
