@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { telegramWebApp } from "@/utils/telegramWebApp";
 import { loadFontsFromStorageAndApply } from "@/utils/customFonts";
+import PixelGrid from "./components/PixelGrid";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
@@ -26,6 +27,7 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <PixelGrid />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
