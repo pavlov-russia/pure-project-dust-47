@@ -175,7 +175,7 @@ const Index = () => {
                 icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
                 className="mx-auto"
               >
-                Хочу мощную упаковку 🔥
+                Хочу мощную упаковку
               </Button>
             </div>
           </div>
