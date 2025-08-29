@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const PixelGrid: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [gridSize, setGridSize] = useState(20);
 
   useEffect(() => {
