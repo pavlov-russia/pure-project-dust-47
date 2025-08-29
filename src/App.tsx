@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
 import FontUploader from "./pages/FontUploader";
 import TypographyShowcase from "./pages/TypographyShowcase";
+import PixelGrid from "./components/PixelGrid";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <PixelGrid />
         <Toaster />
         <Sonner />
         <BrowserRouter>
