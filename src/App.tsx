@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
 import FontUploader from "./pages/FontUploader";
+import TypographyShowcase from "./pages/TypographyShowcase";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/animations" element={<AnimationShowcase />} />
             <Route path="/fonts" element={<FontUploader />} />
+            <Route path="/typography" element={<TypographyShowcase />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
