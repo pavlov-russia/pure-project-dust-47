@@ -68,9 +68,9 @@ const ChecklistPopup = () => {
           Разобрали на реальных примерах наших клиентов
         </p>
         
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 px-4">
           <button
-            className="relative px-8 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
+            className="relative w-full px-12 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
             style={{
               background: '#563AF0',
               backdropFilter: 'blur(20px)',
