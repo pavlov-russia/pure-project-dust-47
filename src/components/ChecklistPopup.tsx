@@ -51,14 +51,15 @@ const ChecklistPopup = () => {
         />
         <DialogContent
           hideClose
-          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
+          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
             backgroundColor: 'rgba(255, 255, 255, 0.70)',
             mixBlendMode: 'screen',
             border: '1px solid rgba(255, 255, 255, 0.08)',
-            animation: 'scaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+            animation: 'scaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+            transformOrigin: 'center center'
           }}
         >
         <DialogHeader className="text-center space-y-4 px-12">
