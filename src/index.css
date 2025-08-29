@@ -355,4 +355,22 @@ All colors MUST be HSL.
       filter: brightness(1);
     }
   }
+
+  /* Glow pulse animation for buttons */
+  @keyframes glow-pulse {
+    0% {
+      box-shadow: 
+        0 0 20px #7962F4,
+        0 0 40px #7962F4,
+        0 0 80px rgba(121, 98, 244, 0.6),
+        0 0 120px rgba(121, 98, 244, 0.4);
+    }
+    100% {
+      box-shadow: 
+        0 0 30px #7962F4,
+        0 0 60px #7962F4,
+        0 0 120px rgba(121, 98, 244, 0.8),
+        0 0 160px rgba(121, 98, 244, 0.6);
+    }
+  }
 }
