@@ -72,7 +72,7 @@ const Header = () => {
           border: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
-        <div className="container mx-auto px-3 md:px-6 pt-[100px] md:pt-[130px] pb-[20px] md:pb-[25px] relative max-w-full mt-3 md:mt-4">
+        <div className="container mx-auto px-3 md:px-6 pt-[93px] md:pt-[130px] pb-[20px] md:pb-[25px] relative max-w-full mt-3 md:mt-4">
         {/* Logo - анимированное перемещение между центром и левой позицией */}
         <div className={`flex items-center absolute bottom-[4px] z-10 transition-all duration-700 ease-out ${
           showCTA 
