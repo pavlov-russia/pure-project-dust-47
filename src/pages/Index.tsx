@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ChecklistPopup, { ChecklistCountdown } from "@/components/ChecklistPopup";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
@@ -219,59 +220,55 @@ const Index = () => {
                 {/* Glass overlay effect */}
                 <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
                 
-                <div className="relative z-10 grid gap-4 md:gap-6">
-                  {[
-                    {
-                      icon: Target,
-                      title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
-                      description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
-                    },
-                    {
-                      icon: Star,
-                      title: "Кристальное позиционирование, понятное даже школьнику",
-                      description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
-                    },
-                    {
-                      icon: TrendingUp,
-                      title: "Продуманный путь клиента от А до Я",
-                      description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
-                    },
-                    {
-                      icon: MessageSquare,
-                      title: "Осмысленный и целевой контент",
-                      description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
-                    },
-                    {
-                      icon: Heart,
-                      title: "Выраженный стиль коммуникации",
-                      description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
-                    },
-                    {
-                      icon: Palette,
-                      title: "Визуальная идентичность",
-                      description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
-                    }
-                  ].map((item, index) => (
-                    <div key={index} className="relative backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                      {/* Dark overlay for color-dodge effect */}
-                      <div className="absolute inset-0 bg-foreground rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
-                      {/* Subtle overlay */}
-                      <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
-                      
-                       <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
-                         <div className="flex-1 text-center md:text-left">
-                           <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-3 mb-3">
-                             <h3 className="font-semibold text-foreground leading-tight text-sm md:text-base">
-                               {item.title}
-                             </h3>
-                           </div>
-                          <p className="text-muted-foreground text-sm md:text-base">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                <div className="relative z-10">
+                  <Carousel className="w-full max-w-5xl mx-auto">
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                      {[
+                        {
+                          title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
+                          description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+                        },
+                        {
+                          title: "Кристальное позиционирование, понятное даже школьнику",
+                          description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
+                        },
+                        {
+                          title: "Продуманный путь клиента от А до Я",
+                          description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
+                        },
+                        {
+                          title: "Осмысленный и целевой контент",
+                          description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
+                        },
+                        {
+                          title: "Выраженный стиль коммуникации",
+                          description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
+                        },
+                        {
+                          title: "Визуальная идентичность",
+                          description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
+                        }
+                      ].map((item, index) => (
+                        <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                          <div className="relative backdrop-blur-[40px] bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-xl hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
+                            {/* Subtle gradient overlay like in the image */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 via-transparent to-white/20 rounded-[24px] pointer-events-none"></div>
+                            
+                            <div className="relative z-10 flex flex-col h-full">
+                              <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4">
+                                {item.title}
+                              </h3>
+                              <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="hidden md:flex -left-12 bg-white/80 border-white/30 hover:bg-white/90" />
+                    <CarouselNext className="hidden md:flex -right-12 bg-white/80 border-white/30 hover:bg-white/90" />
+                  </Carousel>
                 </div>
                 
                 <div className="relative z-10 text-center mt-8 md:mt-12">
