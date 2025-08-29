@@ -138,14 +138,15 @@ const Index = () => {
             {/* Animated brand glow */}
             <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-3xl blur-xl animate-pulse"></div>
             
-            <div className="relative backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
-            {/* Brand gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
-            
-            {/* Animated border accent */}
-            <div className="absolute inset-0 rounded-[20px] md:rounded-[24px] border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-            
-            <div className="relative z-10">
+            {/* Main express container with brand colors */}
+            <div className="relative backdrop-blur-md bg-gradient-telegram border-2 border-primary/60 rounded-[20px] md:rounded-[24px] p-6 md:p-12 shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300 text-white text-center aspect-square flex flex-col justify-center">
+              {/* Brand gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
+              
+              {/* Animated border accent */}
+              <div className="absolute inset-0 rounded-[20px] md:rounded-[24px] border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+              
+              <div className="relative z-10">
               {/* Express Test Title */}
               <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
                 {/* Express Stamp - smaller with continuous animation */}
