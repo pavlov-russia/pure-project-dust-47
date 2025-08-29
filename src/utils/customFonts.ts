@@ -32,7 +32,11 @@ export const injectFontFace = (font: StoredFont): void => {
 };
 
 export const applyGlobalFont = (fontFamily: string, weight: string = '400'): void => {
-  document.body.style.fontFamily = `'${fontFamily}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
+  // Update CSS custom property for global font family
+  document.documentElement.style.setProperty('--custom-font-family', `'${fontFamily}', 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`);
+  
+  // Apply to body as fallback
+  document.body.style.fontFamily = `'${fontFamily}', 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
   document.body.style.fontWeight = weight;
 };
 
@@ -62,11 +66,17 @@ export const loadFontsFromStorageAndApply = (): void => {
     injectFontFace(font);
   });
   
-  // Apply first font family globally (but keep default weight)
+  // Apply first font family globally through CSS custom property
   if (fonts.length > 0) {
     const fontFamily = fonts[0].fontFamily;
-    document.body.style.fontFamily = `'${fontFamily}', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
-    // Не устанавливаем конкретный вес, позволяем CSS классам управлять этим
+    // Update CSS custom property for global font family
+    document.documentElement.style.setProperty('--custom-font-family', `'${fontFamily}', 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`);
+    
+    // Apply to body as fallback
+    document.body.style.fontFamily = `'${fontFamily}', 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+  } else {
+    // Reset to default fonts if no custom fonts
+    document.documentElement.style.setProperty('--custom-font-family', `'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`);
   }
 };
 
