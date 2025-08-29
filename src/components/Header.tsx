@@ -74,10 +74,10 @@ const Header = () => {
       >
         <div className="container mx-auto px-3 md:px-6 pt-[110px] md:pt-[140px] pb-[25px] md:pb-[30px] relative max-w-full mt-3 md:mt-4">
         {/* Logo - анимированное перемещение между центром и левой позицией */}
-        <div className={`flex items-center absolute top-1/2 z-10 transition-all duration-700 ease-out ${
+        <div className={`flex items-center absolute z-10 transition-all duration-700 ease-out ${
           showCTA 
-            ? 'left-3 md:left-6 -translate-y-1/2 translate-x-0' 
-            : 'left-1/2 -translate-x-1/2 -translate-y-1/2'
+            ? 'left-2 top-2 translate-x-0 translate-y-0' 
+            : 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
         }`}>
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-8 w-auto drop-shadow-sm">
             <path fillRule="evenodd" clipRule="evenodd" d="M0 2.38041C0 1.06574 1.06574 0 2.3804 0H8.8075C10.1222 0 11.1879 1.06574 11.1879 2.3804V8.33142C11.1879 9.64608 12.2536 10.7118 13.5683 10.7118H19.2813C20.5959 10.7118 21.6617 11.7776 21.6617 13.0922V19.0432C21.6617 20.3579 20.5959 21.4236 19.2813 21.4236H13.5683C12.2536 21.4236 11.1879 22.4894 11.1879 23.8041V29.7551C11.1879 31.0697 12.2536 32.1355 13.5683 32.1355H19.2813C20.5959 32.1355 21.6617 33.2012 21.6617 34.5159V40.4669C21.6617 41.7816 20.5959 42.8473 19.2813 42.8473H12.8542C11.5395 42.8473 10.4738 41.7816 10.4738 40.4669V34.5159C10.4738 33.2012 9.40804 32.1355 8.09338 32.1355H2.38041C1.06574 32.1355 0 31.0697 0 29.7551V2.38041Z" fill="currentColor" className="text-primary"/>
@@ -93,7 +93,7 @@ const Header = () => {
         </div>
         
         {/* CTA Button - показывается только после скролла, позиционирован справа по центру по вертикали */}
-        <div className={`absolute right-3 md:right-6 top-1/2 -translate-y-1/2 transition-all duration-500 ease-out ${
+        <div className={`absolute right-2 top-2 transition-all duration-500 ease-out ${
           showCTA 
             ? 'opacity-100 scale-100' 
             : 'opacity-0 scale-95 pointer-events-none'
