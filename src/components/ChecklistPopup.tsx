@@ -42,40 +42,9 @@ const ChecklistPopup = () => {
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogPortal>
-        <div 
-          className="fixed inset-0 z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
-          style={{
-            backdropFilter: 'blur(40px)',
-            WebkitBackdropFilter: 'blur(40px)',
-          }}
-        >
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'rgba(0, 0, 0, 0.08)',
-              mixBlendMode: 'hard-light',
-            }}
-          />
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: '#0F0F0F',
-              mixBlendMode: 'color-dodge',
-            }}
-          />
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'rgba(250, 250, 250, 0.7)',
-            }}
-          />
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'rgba(0, 0, 0, 0.01)',
-            }}
-          />
-        </div>
+        <DialogOverlay 
+          className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
+        />
         <DialogContent 
           hideClose
           className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 duration-[2000ms]"
@@ -111,9 +80,8 @@ const ChecklistPopup = () => {
           </button>
         </div>
         
-        <p className="text-xs text-muted-foreground text-center mt-4 flex items-center justify-center gap-1">
-          <Star className="w-3 h-3" />
-          Разобрали на реальных примерах наших клиентов
+        <p className="text-xs text-muted-foreground text-center mt-4">
+          * Разобрали на реальных примерах наших клиентов
         </p>
         
         <button
