@@ -400,4 +400,32 @@ All colors MUST be HSL.
     0% { opacity: 0.55; transform: scale(0.98); }
     100% { opacity: 1; transform: scale(1.02); }
   }
+
+  /* Purple glow animation for button */
+  .purple-glow {
+    position: relative;
+    isolation: isolate;
+  }
+  .purple-glow::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(60% 60% at 50% 50%, #7962F4 0%, transparent 70%);
+    filter: blur(16px);
+    animation: purple-breathe 2s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+
+  @keyframes purple-breathe {
+    0% { 
+      opacity: 0.6; 
+      transform: scale(0.95); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: scale(1.05); 
+    }
+  }
 }
