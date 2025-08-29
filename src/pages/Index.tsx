@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import ChecklistPopup, { ChecklistCountdown } from "@/components/ChecklistPopup";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
@@ -20,8 +20,25 @@ import {
   Heart,
   Shield
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -220,9 +237,9 @@ const Index = () => {
                 {/* Glass overlay effect */}
                 <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
                 
-                <div className="relative z-10">
-                  <Carousel className="w-full max-w-5xl mx-auto">
-                    <CarouselContent className="-ml-2 md:-ml-4">
+                 <div className="relative z-10">
+                   <Carousel setApi={setApi} className="w-full max-w-5xl mx-auto">
+                     <CarouselContent className="-ml-2 md:-ml-4">
                       {[
                         {
                           title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
@@ -268,10 +285,26 @@ const Index = () => {
                     </CarouselContent>
                     <CarouselPrevious className="hidden md:flex -left-12 bg-white/80 border-white/30 hover:bg-white/90" />
                     <CarouselNext className="hidden md:flex -right-12 bg-white/80 border-white/30 hover:bg-white/90" />
-                  </Carousel>
-                </div>
-                
-                <div className="relative z-10 text-center mt-8 md:mt-12">
+                   </Carousel>
+
+                   {/* Carousel Indicators */}
+                   <div className="flex justify-center items-center gap-2 mt-6">
+                     {Array.from({ length: 6 }).map((_, index) => (
+                       <button
+                         key={index}
+                         onClick={() => api?.scrollTo(index)}
+                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                           current === index + 1
+                             ? 'bg-foreground'
+                             : 'bg-foreground/30'
+                         }`}
+                         aria-label={`Go to slide ${index + 1}`}
+                       />
+                     ))}
+                   </div>
+                 </div>
+                 
+                 <div className="relative z-10 text-center mt-8 md:mt-12">
                   <Button 
                     variant="cta-primary"
                     size="xl"
