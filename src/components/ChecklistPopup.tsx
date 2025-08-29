@@ -57,16 +57,10 @@ const ChecklistPopup = () => {
             WebkitBackdropFilter: 'blur(40px)',
             backgroundColor: 'rgba(255, 255, 255, 0.70)',
             mixBlendMode: 'screen',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            animation: 'scaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-            transformOrigin: 'center center',
-            position: 'fixed',
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)',
-            margin: 0
+            border: '1px solid rgba(255, 255, 255, 0.08)'
           }}
         >
+        <div className="origin-center" style={{ animation: 'scaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)' }}>
         <DialogHeader className="text-center space-y-4 px-12">
           <DialogTitle className="text-xl font-bold text-foreground leading-tight">
             Забирайте оберег от слитого бюджета
@@ -109,6 +103,7 @@ const ChecklistPopup = () => {
             <path d="M6 6L18 18M18 6L6 18" stroke="#4B5563" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
+        </div>
         </DialogContent>
       </DialogPortal>
     </Dialog>
