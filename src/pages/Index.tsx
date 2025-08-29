@@ -134,42 +134,50 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
-          <div className="max-w-3xl mx-auto backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
-            {/* Express Test Title */}
-            <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
-              {/* Express Stamp - smaller with continuous animation */}
-              <div className="relative inline-block">
-                <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
-                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                  <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
-                    EXPRESS
+          <div className="max-w-3xl mx-auto relative backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center overflow-hidden">
+            {/* Brand gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-accent/20 pointer-events-none"></div>
+            
+            {/* Animated border accent */}
+            <div className="absolute inset-0 rounded-[20px] md:rounded-[24px] border-2 border-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+            
+            <div className="relative z-10">
+              {/* Express Test Title */}
+              <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
+                {/* Express Stamp - smaller with continuous animation */}
+                <div className="relative inline-block">
+                  <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
+                       style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
+                      EXPRESS
+                    </div>
                   </div>
                 </div>
+                
+                <span className="text-xl md:text-3xl font-bold text-white/80">-</span>
+                
+                <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
               </div>
-              
-              <span className="text-xl md:text-3xl font-bold text-white/80">-</span>
-              
-              <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
+              <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
+                  Как понять, что ваше предложение не упаковано или упаковано плохо?
+                </h3>
+              </div>
+              <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
+                Очень просто. Трафик есть, а продаж нет или они минимальны.
+              </p>
+              <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
+                *при условии адекватного профессионального трафик-менеджера
+              </p>
+              <Button 
+                variant="cta-tertiary"
+                size="lg"
+                icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
+                className="mx-auto"
+              >
+                Хочу мощную упаковку 🔥
+              </Button>
             </div>
-            <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
-              <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
-                Как понять, что ваше предложение не упаковано или упаковано плохо?
-              </h3>
-            </div>
-            <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
-              Очень просто. Трафик есть, а продаж нет или они минимальны.
-            </p>
-            <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
-              *при условии адекватного профессионального трафик-менеджера
-            </p>
-            <Button 
-              variant="cta-tertiary"
-              size="lg"
-              icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
-              className="mx-auto"
-            >
-              Хочу мощную упаковку 🔥
-            </Button>
           </div>
         </div>
       </section>
