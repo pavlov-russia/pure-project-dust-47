@@ -132,7 +132,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Express Test Section */}
-      <section className="py-6 md:py-16 bg-gradient-hero">
+      <SectionCard className="py-6 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
           <div className="relative max-w-3xl mx-auto">
             {/* iOS 26 Liquid Glass Effect */}
@@ -180,7 +180,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Real Packaging System */}
       <section className="py-8 md:py-16 bg-gradient-subtle">
