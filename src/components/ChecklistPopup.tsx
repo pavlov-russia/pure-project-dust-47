@@ -56,11 +56,11 @@ const ChecklistPopup = () => {
             border: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
-        <DialogHeader className="text-center space-y-4 pr-12 pl-4">
+        <DialogHeader className="text-center space-y-4 px-12">
           <DialogTitle className="text-xl font-bold text-foreground leading-tight">
             Забирайте оберег от слитого бюджета
           </DialogTitle>
-          <p className="text-muted-foreground text-sm leading-relaxed px-2">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             <span className="font-semibold text-warning">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-semibold text-destructive">50% продаж</span>
           </p>
         </DialogHeader>
