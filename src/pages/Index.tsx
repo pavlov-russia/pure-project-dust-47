@@ -85,7 +85,7 @@ const Index = () => {
             
             <div className="relative z-10 flex flex-col items-center justify-center space-y-4 text-center">
               {/* Enhanced warning icon with brand colors */}
-              <div className="relative flex-shrink-0 mb-4">
+              <div className="relative flex-shrink-0 mb-4 mt-6">
                 {/* Pulsing background rings */}
                 <div className="absolute inset-0 bg-white/20 rounded-full animate-ping scale-125"></div>
                 <div className="absolute inset-0 bg-accent/30 rounded-full animate-pulse scale-110"></div>
