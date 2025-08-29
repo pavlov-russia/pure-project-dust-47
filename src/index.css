@@ -403,7 +403,7 @@ All colors MUST be HSL.
 
   /* Pulse animation for button */
   .pulse-button {
-    animation: pulse-smooth 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse-smooth 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   @keyframes pulse-smooth {
