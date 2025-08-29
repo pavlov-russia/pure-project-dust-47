@@ -51,16 +51,15 @@ const ChecklistPopup = () => {
         />
         <DialogContent
           hideClose
-          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden"
+          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 duration-[2000ms]"
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
             backgroundColor: 'rgba(255, 255, 255, 0.70)',
             mixBlendMode: 'screen',
-            border: '1px solid rgba(255, 255, 255, 0.08)'
+            border: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
-        <div className="origin-center" style={{ animation: 'scaleBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)' }}>
         <DialogHeader className="text-center space-y-4 px-12">
           <DialogTitle className="text-xl font-bold text-foreground leading-tight">
             Забирайте оберег от слитого бюджета
@@ -103,7 +102,6 @@ const ChecklistPopup = () => {
             <path d="M6 6L18 18M18 6L6 18" stroke="#4B5563" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
-        </div>
         </DialogContent>
       </DialogPortal>
     </Dialog>
