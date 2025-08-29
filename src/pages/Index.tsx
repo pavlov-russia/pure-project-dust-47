@@ -266,21 +266,18 @@ const Index = () => {
                           description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                         }
                       ].map((item, index) => (
-                        <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                          <div className="relative backdrop-blur-[40px] bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-xl hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
-                            {/* Subtle gradient overlay like in the image */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 via-transparent to-white/20 rounded-[24px] pointer-events-none"></div>
-                            
-                            <div className="relative z-10 flex flex-col h-full">
-                              <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4">
-                                {item.title}
-                              </h3>
-                              <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                        </CarouselItem>
+                         <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                           <div className="relative bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-xl hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
+                             <div className="relative z-10 flex flex-col h-full">
+                               <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4">
+                                 {item.title}
+                               </h3>
+                               <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-1">
+                                 {item.description}
+                               </p>
+                             </div>
+                           </div>
+                         </CarouselItem>
                       ))}
                     </CarouselContent>
                     <CarouselPrevious className="hidden md:flex -left-12 bg-white/80 border-white/30 hover:bg-white/90" />
