@@ -64,7 +64,7 @@ const ChecklistPopup = () => {
           <DialogTitle className="text-xl font-bold text-foreground leading-tight">
             Забирайте оберег от слитого бюджета
           </DialogTitle>
-          <p className="text-muted-foreground text-base leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             <span className="font-semibold text-warning">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-semibold text-destructive">50% продаж</span>
           </p>
         </DialogHeader>
