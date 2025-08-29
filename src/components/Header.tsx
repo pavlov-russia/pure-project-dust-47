@@ -74,7 +74,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-3 md:px-6 pt-[93px] md:pt-[130px] pb-[20px] md:pb-[25px] relative max-w-full mt-3 md:mt-4">
         {/* Logo - анимированное перемещение между центром и левой позицией */}
-        <div className={`flex items-center absolute bottom-[2px] z-10 transition-all duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+        <div className={`flex items-center absolute bottom-[2px] z-10 transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
           showCTA 
             ? 'left-3 md:left-6 translate-x-0' 
             : 'left-1/2 -translate-x-1/2'
