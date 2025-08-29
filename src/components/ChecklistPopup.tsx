@@ -80,8 +80,9 @@ const ChecklistPopup = () => {
           </button>
         </div>
         
-        <p className="text-xs text-muted-foreground text-center mt-4">
-          * Разобрали на реальных примерах наших клиентов
+        <p className="text-xs text-muted-foreground text-center mt-4 flex items-center justify-center gap-1">
+          <Star className="w-3 h-3" />
+          Разобрали на реальных примерах наших клиентов
         </p>
         
         <button
