@@ -183,7 +183,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Real Packaging System */}
-      <section className="py-8 md:py-16 bg-gradient-subtle">
+      <SectionCard className="py-8 md:py-16 bg-gradient-subtle">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
             {/* Wisdom Style Header */}
@@ -283,10 +283,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Quote Section - iOS 26 Liquid Glass Style */}
-      <section className="py-8 md:py-16 relative overflow-hidden">
+      <SectionCard className="py-8 md:py-16 relative overflow-hidden">
         {/* Background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent"></div>
         
@@ -325,10 +325,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Checklist Section */}
-      <section className="pt-6 md:pt-16 pb-3 md:pb-14 relative">
+      <SectionCard className="pt-6 md:pt-16 pb-3 md:pb-14 relative">
         {/* Background with rounded corners and dashed border like SVG */}
         <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark overflow-hidden">
           {/* Inner content background */}
@@ -373,10 +373,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* TapBlog Features */}
-      <section className="py-8 md:py-16">
+      <SectionCard className="py-8 md:py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
             <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
@@ -409,10 +409,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Target Audience */}
-      <section className="py-8 md:py-16 bg-gradient-subtle">
+      <SectionCard className="py-8 md:py-16 bg-gradient-subtle">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-3xl mx-auto">
             <h2 className="mobile-subheading-scale md:text-3xl font-regular text-center mb-8 md:mb-12 px-2">
@@ -446,7 +446,7 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Consultation Form */}
       <ConsultationForm />
