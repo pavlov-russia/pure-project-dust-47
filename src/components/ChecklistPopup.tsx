@@ -56,7 +56,7 @@ const ChecklistPopup = () => {
             border: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
-        <DialogHeader className="text-center space-y-3">
+        <DialogHeader className="text-center space-y-3 pr-12">
           <DialogTitle className="text-xl font-bold text-foreground">
             Забирайте оберег от слитого бюджета
           </DialogTitle>
