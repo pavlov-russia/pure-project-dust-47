@@ -93,9 +93,36 @@ const ChecklistPopup = () => {
         
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100"
+          className="absolute right-4 top-4 transition-opacity hover:opacity-80"
         >
-          <X className="h-4 w-4" />
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.67">
+              <mask id="mask0_143_393" style={{"maskType":"luminance"}} maskUnits="userSpaceOnUse" x="-50" y="-50" width="200" height="200">
+                <rect width="200" height="200" transform="translate(-50 -50)" fill="white"/>
+                <rect x="26" y="26" width="48" height="48" rx="24" fill="black"/>
+              </mask>
+              <g mask="url(#mask0_143_393)">
+                <foreignObject x="-14" y="-12" width="128" height="128">
+                  <div style={{backdropFilter:"blur(20px)", height:"100%", width:"100%"}}></div>
+                </foreignObject>
+                <g filter="url(#filter0_f_143_393)">
+                  <path d="M26 52C26 38.7452 36.7452 28 50 28V28C63.2548 28 74 38.7452 74 52V52C74 65.2548 63.2548 76 50 76V76C36.7452 76 26 65.2548 26 52V52Z" fill="black" fillOpacity="0.04" style={{mixBlendMode:"hard-light"}}/>
+                </g>
+              </g>
+            </g>
+            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V74C36.7452 74 26 63.2548 26 50V50Z" fill="#333333" style={{mixBlendMode:"color-dodge"}}/>
+            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V74C36.7452 74 26 63.2548 26 50V50Z" fill="white" fillOpacity="0.5"/>
+            <path d="M26 50C26 36.7452 36.7452 26 50 26V26C63.2548 26 74 36.7452 74 50V50C74 63.2548 63.2548 74 50 74V76C36.7452 74 26 63.2548 26 50V50Z" fill="#F7F7F7" style={{mixBlendMode:"multiply"}}/>
+            <rect x="26" y="26" width="48" height="48" rx="24" fill="black" fillOpacity="0.01"/>
+            <path d="M42 42L58 58M58 42L42 58" stroke="#666" strokeWidth="2" strokeLinecap="round"/>
+            <defs>
+              <filter id="filter0_f_143_393" x="-14" y="-12" width="128" height="128" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feGaussianBlur stdDeviation="10" result="effect1_foregroundBlur_143_393"/>
+              </filter>
+            </defs>
+          </svg>
         </button>
         </DialogContent>
       </DialogPortal>
