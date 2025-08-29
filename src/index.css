@@ -380,6 +380,23 @@ All colors MUST be HSL.
 
   /* Button glow animation class */
   .button-glow {
+    position: relative;
+    isolation: isolate;
     animation: glow-pulse 2s ease-in-out infinite alternate;
   }
-}
+  .button-glow::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(60% 60% at 50% 50%, hsl(var(--accent) / 0.75) 0%, transparent 70%);
+    filter: blur(18px);
+    animation: glow-breathe 2.2s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+
+  @keyframes glow-breathe {
+    0% { opacity: 0.55; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1.02); }
+  }
