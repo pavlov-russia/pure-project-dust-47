@@ -68,6 +68,27 @@ const ChecklistPopup = () => {
           Разобрали на реальных примерах наших клиентов
         </p>
         
+        <div className="flex justify-center mt-6">
+          <button
+            className="relative px-8 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95"
+            style={{
+              background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--primary)) 100%)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              boxShadow: `
+                0 0 40px hsl(var(--primary) / 0.4),
+                0 0 80px hsl(var(--primary-glow) / 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1)
+              `,
+              animation: 'slow-pulse 3s ease-in-out infinite'
+            }}
+          >
+            Забрать
+          </button>
+        </div>
+        
         <button
           onClick={handleClose}
           className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100"
