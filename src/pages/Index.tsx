@@ -142,143 +142,151 @@ const Index = () => {
             <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
             <div className="relative z-10 text-foreground p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
-            {/* Express Test Title */}
-            <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
-              {/* Express Stamp - smaller with continuous animation */}
-              <div className="relative inline-block">
-                <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
-                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                   <div className="font-black text-xl md:text-3xl text-foreground tracking-wider uppercase">
-                     EXPRESS
-                   </div>
-                 </div>
-               </div>
+              {/* Express Test Title */}
+              <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
+                {/* Express Stamp - smaller with continuous animation */}
+                <div className="relative inline-block">
+                  <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
+                       style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
+                    <div className="font-black text-xl md:text-3xl text-foreground tracking-wider uppercase">
+                      EXPRESS
+                    </div>
+                  </div>
+                </div>
+                
+                <span className="text-xl md:text-3xl font-bold text-foreground/80">-</span>
                
-               <span className="text-xl md:text-3xl font-bold text-foreground/80">-</span>
-              
-              <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
-            </div>
-            <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
-              <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
-                Как понять, что ваше предложение не упаковано или упаковано плохо?
-              </h3>
-            </div>
-            <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
-              Очень просто. Трафик есть, а продаж нет или они минимальны.
-            </p>
-            <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
-              *при условии адекватного профессионального трафик-менеджера
-            </p>
-            <Button 
-              variant="cta-tertiary"
-              size="lg"
-              icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
-              className="mx-auto"
-            >
-              Хочу мощную упаковку 🔥
-            </Button>
+                <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
+              </div>
+              <div className="flex flex-col items-center justify-center mb-4 md:mb-8 space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-2xl font-medium leading-tight max-w-xl px-2">
+                  Как понять, что ваше предложение не упаковано или упаковано плохо?
+                </h3>
+              </div>
+              <p className="text-base md:text-xl mb-4 md:mb-8 font-medium px-2">
+                Очень просто. Трафик есть, а продаж нет или они минимальны.
+              </p>
+              <p className="text-xs md:text-base opacity-75 mb-6 md:mb-10 px-2">
+                *при условии адекватного профессионального трафик-менеджера
+              </p>
+              <Button 
+                variant="cta-tertiary"
+                size="lg"
+                icon={<Zap className="w-4 h-4 md:w-6 md:h-6" />}
+                className="mx-auto"
+              >
+                Хочу мощную упаковку 🔥
+              </Button>
             </div>
           </div>
         </div>
       </SectionCard>
 
       {/* Real Packaging System */}
-      <SectionCard className="py-8 md:py-16 bg-gradient-subtle">
+      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-4xl mx-auto">
-            {/* Wisdom Style Header */}
-            <div className="max-w-2xl mx-auto mb-8 md:mb-12">
-              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
-                {/* Multiple liquid glass layers */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
-                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
-                
-                <div className="relative z-10 text-center">
-                  {/* Quote content */}
-                  <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
-                    <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система
-                  </h2>
-                </div>
-                
-                {/* Enhanced animated glow with multiple layers */}
-                <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
-              </div>
-            </div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
-            {/* Glass-morphism container */}
-            <div className="relative backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-2xl">
-              {/* Glass overlay effect */}
-              <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
+            <div className="relative z-10 p-6 md:p-8">
+              {/* Wisdom Style Header */}
+              <div className="max-w-2xl mx-auto mb-8 md:mb-12">
+                <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
+                  {/* Multiple liquid glass layers */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
+                  <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
+                  
+                  <div className="relative z-10 text-center">
+                    {/* Quote content */}
+                    <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
+                      <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система
+                    </h2>
+                  </div>
+                  
+                  {/* Enhanced animated glow with multiple layers */}
+                  <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
+                </div>
+              </div>
               
-              <div className="relative z-10 grid gap-4 md:gap-6">
-                {[
-                  {
-                    icon: Target,
-                    title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
-                    description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
-                  },
-                  {
-                    icon: Star,
-                    title: "Кристальное позиционирование, понятное даже школьнику",
-                    description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
-                  },
-                  {
-                    icon: TrendingUp,
-                    title: "Продуманный путь клиента от А до Я",
-                    description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
-                  },
-                  {
-                    icon: MessageSquare,
-                    title: "Осмысленный и целевой контент",
-                    description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
-                  },
-                  {
-                    icon: Heart,
-                    title: "Выраженный стиль коммуникации",
-                    description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
-                  },
-                  {
-                    icon: Palette,
-                    title: "Визуальная идентичность",
-                    description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="relative backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                    {/* Dark overlay for color-dodge effect */}
-                    <div className="absolute inset-0 bg-foreground rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
-                    {/* Subtle overlay */}
-                    <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
-                    
-                    <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
-                      <div className="bg-success/20 backdrop-blur-sm p-2 md:p-3 rounded-full mx-auto md:mx-0 border border-success/30">
-                        <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success" />
-                      </div>
-                      <div className="flex-1 text-center md:text-left">
-                        <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-3 mb-3">
-                          <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
-                          <h3 className="font-semibold text-foreground leading-tight text-sm md:text-base">
-                            {item.title}
-                          </h3>
+              {/* Glass-morphism container */}
+              <div className="relative backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-2xl">
+                {/* Glass overlay effect */}
+                <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
+                
+                <div className="relative z-10 grid gap-4 md:gap-6">
+                  {[
+                    {
+                      icon: Target,
+                      title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
+                      description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+                    },
+                    {
+                      icon: Star,
+                      title: "Кристальное позиционирование, понятное даже школьнику",
+                      description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
+                    },
+                    {
+                      icon: TrendingUp,
+                      title: "Продуманный путь клиента от А до Я",
+                      description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
+                    },
+                    {
+                      icon: MessageSquare,
+                      title: "Осмысленный и целевой контент",
+                      description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
+                    },
+                    {
+                      icon: Heart,
+                      title: "Выраженный стиль коммуникации",
+                      description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
+                    },
+                    {
+                      icon: Palette,
+                      title: "Визуальная идентичность",
+                      description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="relative backdrop-blur-[40px] bg-secondary/60 border border-white/30 rounded-[34px] p-4 md:p-6 hover:bg-secondary/80 transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                      {/* Dark overlay for color-dodge effect */}
+                      <div className="absolute inset-0 bg-foreground rounded-[34px] pointer-events-none opacity-10 mix-blend-color-dodge"></div>
+                      {/* Subtle overlay */}
+                      <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
+                      
+                      <div className="relative z-10 flex flex-col md:flex-row items-start space-y-3 md:space-y-0 md:space-x-4">
+                        <div className="bg-success/20 backdrop-blur-sm p-2 md:p-3 rounded-full mx-auto md:mx-0 border border-success/30">
+                          <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success" />
                         </div>
-                        <p className="text-muted-foreground text-sm md:text-base">
-                          {item.description}
-                        </p>
+                        <div className="flex-1 text-center md:text-left">
+                          <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-3 mb-3">
+                            <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
+                            <h3 className="font-semibold text-foreground leading-tight text-sm md:text-base">
+                              {item.title}
+                            </h3>
+                          </div>
+                          <p className="text-muted-foreground text-sm md:text-base">
+                            {item.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="relative z-10 text-center mt-8 md:mt-12">
-                <Button 
-                  variant="cta-primary"
-                  size="xl"
-                  icon={<Rocket className="w-4 h-4 md:w-5 md:h-5" />}
-                >
-                  Заказать упаковку
-                </Button>
+                  ))}
+                </div>
+                
+                <div className="relative z-10 text-center mt-8 md:mt-12">
+                  <Button 
+                    variant="cta-primary"
+                    size="xl"
+                    icon={<Rocket className="w-4 h-4 md:w-5 md:h-5" />}
+                  >
+                    Заказать упаковку
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -286,89 +294,98 @@ const Index = () => {
       </SectionCard>
 
       {/* Quote Section - iOS 26 Liquid Glass Style */}
-      <SectionCard className="py-8 md:py-16 relative overflow-hidden">
-        {/* Background with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent"></div>
-        
+      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
-          <div className="max-w-2xl mx-auto">
-            {/* iOS Notification Style Card with enhanced liquid glass */}
-            <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
-              {/* Multiple liquid glass layers */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
-              <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
-              
-              <div className="relative z-10">
-                {/* iOS style notification header */}
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
-                  <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
+          <div className="relative max-w-2xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
+            
+            <div className="relative z-10 p-6 md:p-8">
+              {/* iOS Notification Style Card with enhanced liquid glass */}
+              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
+                {/* Multiple liquid glass layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
+                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
+                
+                <div className="relative z-10">
+                  {/* iOS style notification header */}
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
+                    <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
+                  </div>
+                  
+                  {/* Quote content */}
+                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                    "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
+                  </blockquote>
+                  
+                  {/* Author attribution */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                  </div>
                 </div>
                 
-                {/* Quote content */}
-                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                  "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
-                </blockquote>
-                
-                {/* Author attribution */}
-                <div className="flex items-center justify-center">
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
-                </div>
+                {/* Enhanced animated glow with multiple layers */}
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
+                <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
               </div>
-              
-              {/* Enhanced animated glow with multiple layers */}
-              <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
-              <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
             </div>
           </div>
         </div>
       </SectionCard>
 
       {/* Checklist Section */}
-      <SectionCard className="pt-6 md:pt-16 pb-3 md:pb-14 relative">
-        {/* Background with rounded corners and dashed border like SVG */}
-        <div className="absolute inset-0 m-2 md:m-8 rounded-[16px] md:rounded-[21px] bg-gradient-dark overflow-hidden">
-          {/* Inner content background */}
-          <div className="absolute inset-0 bg-gradient-dark"></div>
-        </div>
-        
-        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative z-10">
-          <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
-            ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
-          </h2>
-          {/* SVG-styled card with large drop shadow */}
-          <div className="max-w-lg md:max-w-2xl mx-auto relative">
-            {/* Drop shadow background */}
-            <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
+      <SectionCard className="pt-6 md:pt-16 pb-3 md:pb-14 bg-gradient-hero text-white">
+        <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative">
+          <div className="relative max-w-lg md:max-w-2xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
-            {/* Main glass morphism card */}
-            <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
-              <div className="flex items-center justify-center mb-4 md:mb-6">
-                <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
-              </div>
-              <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
-                <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
-              </h3>
-              <p className="text-muted-foreground mb-4 md:mb-6 text-xs md:text-base">
-                (разобрали на реальных примерах наших клиентов)
-              </p>
-              <Button 
-                variant="cta-secondary"
-                size="xl"
-                className="w-full md:w-auto"
-                icon={<Shield className="w-4 h-4 md:w-5 md:h-5" />}
-              >
-                Получить чек-лист бесплатно
-              </Button>
-              
-              {/* SVG corner decoration - hidden on mobile */}
-              <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 hidden md:block">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted-foreground md:w-6 md:h-6">
-                  <path d="M20.175 18.149C19.887 19.642 19.484 20.737 18.191 21.054C17.897 21.37 16.819 21.801 15.335 22.121" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            <div className="relative z-10 p-5 md:p-8 text-foreground">
+              <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
+                ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
+              </h2>
+              {/* SVG-styled card with large drop shadow */}
+              <div className="max-w-lg md:max-w-2xl mx-auto relative">
+                {/* Drop shadow background */}
+                <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
+                
+                {/* Main glass morphism card */}
+                <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
+                  <div className="flex items-center justify-center mb-4 md:mb-6">
+                    <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
+                  </div>
+                  <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
+                    <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
+                  </h3>
+                  <p className="text-muted-foreground mb-4 md:mb-6 text-xs md:text-base">
+                    (разобрали на реальных примерах наших клиентов)
+                  </p>
+                  <Button 
+                    variant="cta-secondary"
+                    size="xl"
+                    className="w-full md:w-auto"
+                    icon={<Shield className="w-4 h-4 md:w-5 md:h-5" />}
+                  >
+                    Получить чек-лист бесплатно
+                  </Button>
+                  
+                  {/* SVG corner decoration - hidden on mobile */}
+                  <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 hidden md:block">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted-foreground md:w-6 md:h-6">
+                      <path d="M20.175 18.149C19.887 19.642 19.484 20.737 18.191 21.054C17.897 21.37 16.819 21.801 15.335 22.121" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -376,74 +393,90 @@ const Index = () => {
       </SectionCard>
 
       {/* TapBlog Features */}
-      <SectionCard className="py-8 md:py-16">
+      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
-              <CardContent className="p-6 md:p-8">
-                <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
-                  Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
+          <div className="relative max-w-4xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
+            
+            <div className="relative z-10 p-6 md:p-8 text-foreground">
+              <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
+                <CardContent className="p-6 md:p-8">
+                  <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
+                    Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
+                  </h2>
+                </CardContent>
+              </Card>
+
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="mobile-subheading-scale md:text-4xl font-regular mb-4 md:mb-6 px-2">
+                  <span className="font-demibold">TapBlog</span> — готовое решение для системной упаковки и продажи ваших продуктов и услуг в Telegram
                 </h2>
-              </CardContent>
-            </Card>
+              </div>
 
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="mobile-subheading-scale md:text-4xl font-regular mb-4 md:mb-6 px-2">
-                <span className="font-demibold">TapBlog</span> — готовое решение для системной упаковки и продажи ваших продуктов и услуг в Telegram
-              </h2>
-            </div>
-
-            <div className="grid gap-3 md:gap-4 mb-8 md:mb-12">
-              {[
-                "Всё под ключ – от оформленного ТГ-канала с контент-стратегией до разработки web-app",
-                "Продуманная и прозрачная воронка от первого клика по рекламному объявлению до денег в кассе",
-                "WOW-эффект и яркое впечатление",
-                "Увеличение лояльности и доверия, эмоциональная связь",
-                "Гибкий функционал с внедрением ИИ – под ваши цели, задачи и потребности"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <Star className="w-5 h-5 md:w-6 md:h-6 text-warning mt-1 flex-shrink-0" />
-                  <p className="text-foreground font-medium text-sm md:text-base">{feature}</p>
-                </div>
-              ))}
+              <div className="grid gap-3 md:gap-4 mb-8 md:mb-12">
+                {[
+                  "Всё под ключ – от оформленного ТГ-канала с контент-стратегией до разработки web-app",
+                  "Продуманная и прозрачная воронка от первого клика по рекламному объявлению до денег в кассе",
+                  "WOW-эффект и яркое впечатление",
+                  "Увеличение лояльности и доверия, эмоциональная связь",
+                  "Гибкий функционал с внедрением ИИ – под ваши цели, задачи и потребности"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <Star className="w-5 h-5 md:w-6 md:h-6 text-warning mt-1 flex-shrink-0" />
+                    <p className="text-foreground font-medium text-sm md:text-base">{feature}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </SectionCard>
 
       {/* Target Audience */}
-      <SectionCard className="py-8 md:py-16 bg-gradient-subtle">
+      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="mobile-subheading-scale md:text-3xl font-regular text-center mb-8 md:mb-12 px-2">
-              Кому подходит <span className="font-demibold">наша упаковка?</span>
-            </h2>
+          <div className="relative max-w-3xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
-            <div className="grid gap-3 md:gap-4 mb-8 md:mb-12">
-              {[
-                "экспертам и компаниям, продающим услуги и продукты",
-                "брендам / онлайн-магазинам", 
-                "сообществам / клубам",
-                "авторам курсов / интенсивов / тренингов",
-                "авторам тематических ТГ-каналов"
-              ].map((audience, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success flex-shrink-0" />
-                  <p className="text-foreground font-medium text-sm md:text-base">{audience}</p>
-                </div>
-              ))}
-            </div>
+            <div className="relative z-10 p-6 md:p-8 text-foreground">
+              <h2 className="mobile-subheading-scale md:text-3xl font-regular text-center mb-8 md:mb-12 px-2">
+                Кому подходит <span className="font-demibold">наша упаковка?</span>
+              </h2>
+              
+              <div className="grid gap-3 md:gap-4 mb-8 md:mb-12">
+                {[
+                  "экспертам и компаниям, продающим услуги и продукты",
+                  "брендам / онлайн-магазинам", 
+                  "сообществам / клубам",
+                  "авторам курсов / интенсивов / тренингов",
+                  "авторам тематических ТГ-каналов"
+                ].map((audience, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success flex-shrink-0" />
+                    <p className="text-foreground font-medium text-sm md:text-base">{audience}</p>
+                  </div>
+                ))}
+              </div>
 
-            <Card className="bg-gradient-telegram text-white shadow-large">
-              <CardContent className="p-6 md:p-8 text-center">
-                <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
-                  <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
-                </h3>
-                <p className="text-base md:text-lg font-semibold">
-                  САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ 👇🏼
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="bg-gradient-telegram text-white shadow-large">
+                <CardContent className="p-6 md:p-8 text-center">
+                  <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
+                    <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
+                  </h3>
+                  <p className="text-base md:text-lg font-semibold">
+                    САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ 👇🏼
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </SectionCard>
