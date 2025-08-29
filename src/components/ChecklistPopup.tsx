@@ -47,11 +47,6 @@ const ChecklistPopup = () => {
           style={{
             backdropFilter: 'blur(40px)',
             WebkitBackdropFilter: 'blur(40px)',
-            background: `
-              linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)),
-              linear-gradient(0deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.07))
-            `,
-            mixBlendMode: 'normal',
           }}
         />
         <DialogContent 
