@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Upload, Download, Trash2, Type, Zap } from "lucide-react";
 import Header from "../components/Header";
+import { injectFontFace, applyGlobalFont, saveFontsToStorage } from "@/utils/customFonts";
 
 interface FontFile {
   id: string;
@@ -20,37 +21,36 @@ const FontUploader = () => {
   const [previewText, setPreviewText] = useState("Пример текста для предварительного просмотра");
   const { toast } = useToast();
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files) return;
 
-    Array.from(files).forEach((file) => {
+    const readAsDataURL = (file: File) =>
+      new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+
+    for (const file of Array.from(files)) {
       if (file.type === "font/ttf" || file.name.endsWith(".ttf")) {
-        const url = URL.createObjectURL(file);
-        const fontFamily = file.name.replace(".ttf", "").replace(/[-_]/g, " ");
-        
+        const dataUrl = await readAsDataURL(file);
+        const fontFamily = file.name.replace(/\.ttf$/i, "").replace(/[-_]/g, " ");
+
+        // Инжектим @font-face сразу
+        injectFontFace({ fontFamily, dataUrl });
+
         const newFont: FontFile = {
           id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
           name: file.name,
           file,
-          url,
-          fontFamily
+          url: dataUrl,
+          fontFamily,
         };
 
-        // Создаем CSS @font-face правило
-        const style = document.createElement("style");
-        style.textContent = `
-          @font-face {
-            font-family: "${fontFamily}";
-            src: url("${url}") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-          }
-        `;
-        document.head.appendChild(style);
+        setFonts((prev) => [...prev, newFont]);
 
-        setFonts(prev => [...prev, newFont]);
-        
         toast({
           title: "Шрифт загружен",
           description: `${file.name} успешно добавлен`,
@@ -62,13 +62,13 @@ const FontUploader = () => {
           variant: "destructive",
         });
       }
-    });
+    }
   };
 
   const removeFont = (id: string) => {
     const font = fonts.find(f => f.id === id);
     if (font) {
-      URL.revokeObjectURL(font.url);
+      if (font.url.startsWith('blob:')) URL.revokeObjectURL(font.url);
       setFonts(prev => prev.filter(f => f.id !== id));
       
       toast({
@@ -78,7 +78,7 @@ const FontUploader = () => {
     }
   };
 
-  const applyFontsToProject = async () => {
+  const applyFontsToProject = () => {
     if (fonts.length === 0) {
       toast({
         title: "Нет шрифтов",
@@ -88,93 +88,19 @@ const FontUploader = () => {
       return;
     }
 
-    try {
-      // Создаем CSS для @font-face правил
-      const fontFaceRules = fonts.map(font => `
-/* ${font.name} */
-@font-face {
-  font-family: "${font.fontFamily}";
-  src: url("${font.url}") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}`).join("\n");
+    // Сохраняем шрифты в localStorage и применяем глобально
+    const stored = fonts.map((f) => ({ fontFamily: f.fontFamily, dataUrl: f.url }));
+    saveFontsToStorage(stored);
 
-      // Создаем классы для Tailwind
-      const tailwindClasses = fonts.map(font => {
-        const className = font.fontFamily.toLowerCase().replace(/\s+/g, "-");
-        return `        '${className}': ['${font.fontFamily}', 'sans-serif'],`;
-      }).join("\n");
+    // Убеждаемся, что @font-face присутствует и применяем основной шрифт ко всему приложению
+    stored.forEach(injectFontFace);
+    applyGlobalFont(stored[0].fontFamily);
 
-      // Читаем текущий index.css
-      const indexCssResponse = await fetch('/src/index.css');
-      const currentIndexCss = await indexCssResponse.text();
-      
-      // Удаляем старые пользовательские шрифты если есть
-      const cleanCss = currentIndexCss.replace(
-        /\/\* === CUSTOM FONTS START === \*\/[\s\S]*?\/\* === CUSTOM FONTS END === \*\//g, 
-        ''
-      );
-
-      // Добавляем новые шрифты
-      const updatedIndexCss = cleanCss + `
-
-/* === CUSTOM FONTS START === */
-${fontFaceRules}
-/* === CUSTOM FONTS END === */`;
-
-      // Читаем текущий tailwind.config.ts
-      const tailwindConfigResponse = await fetch('/tailwind.config.ts');
-      const currentTailwindConfig = await tailwindConfigResponse.text();
-
-      // Обновляем секцию fontFamily в tailwind.config.ts
-      const fontFamilyRegex = /(fontFamily:\s*{[^}]*)(})/s;
-      const updatedTailwindConfig = currentTailwindConfig.replace(
-        fontFamilyRegex,
-        (match, start, end) => {
-          // Удаляем старые пользовательские шрифты
-          const cleanStart = start.replace(/\s*\/\/ Custom fonts[\s\S]*?(?=\s*})/g, '');
-          return `${cleanStart}
-        // Custom fonts
-${tailwindClasses}
-      ${end}`;
-        }
-      );
-
-      // Здесь мы показываем пользователю код, который нужно применить
-      // В реальном проекте это должно обновить файлы автоматически
-      const codeToShow = `
-=== ОБНОВИТЬ src/index.css ===
-${updatedIndexCss}
-
-=== ОБНОВИТЬ tailwind.config.ts ===
-${updatedTailwindConfig}
-`;
-
-      // Создаем файл с инструкциями
-      const blob = new Blob([codeToShow], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "font-integration-code.txt";
-      a.click();
-      URL.revokeObjectURL(url);
-
-      toast({
-        title: "Шрифты готовы к интеграции",
-        description: "Загружен файл с кодом для обновления проекта",
-      });
-
-    } catch (error) {
-      console.error("Error applying fonts:", error);
-      toast({
-        title: "Ошибка применения шрифтов",
-        description: "Не удалось применить шрифты к проекту",
-        variant: "destructive",
-      });
-    }
+    toast({
+      title: "Шрифты применены",
+      description: `Активирован шрифт: ${stored[0].fontFamily}`,
+    });
   };
-
   const downloadFontCSS = () => {
     const cssContent = fonts.map(font => `
 @font-face {

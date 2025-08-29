@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { telegramWebApp } from "@/utils/telegramWebApp";
+import { loadFontsFromStorageAndApply } from "@/utils/customFonts";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
@@ -15,6 +16,7 @@ const queryClient = new QueryClient();
 const App = () => {
   useEffect(() => {
     const cleanup = telegramWebApp.init();
+    loadFontsFromStorageAndApply();
     return cleanup;
   }, []);
 
