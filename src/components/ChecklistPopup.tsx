@@ -73,7 +73,7 @@ const ChecklistPopup = () => {
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
-              animationDuration: '5s'
+              animationDuration: '2s'
             }}
           >
             Забрать
