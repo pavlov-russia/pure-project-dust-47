@@ -43,18 +43,7 @@ const ChecklistPopup = () => {
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogPortal>
         <DialogOverlay 
-          className="fixed inset-0 z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
-          style={{
-            background: `
-              linear-gradient(180deg, rgba(15, 15, 15, 0.8) 0%, rgba(15, 15, 15, 0.6) 100%),
-              linear-gradient(135deg, rgba(245, 245, 245, 0.6) 0%, rgba(245, 245, 245, 0.3) 100%),
-              rgba(0, 0, 0, 0.01)
-            `,
-            backdropFilter: 'blur(40px) saturate(180%)',
-            WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-            mixBlendMode: 'normal',
-            filter: 'blur(0.5px)'
-          }}
+          className="fixed inset-0 z-50 bg-black/40 data-[state=open]:backdrop-blur-md data-[state=closed]:backdrop-blur-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-[2000ms]"
         />
         <DialogContent 
           hideClose
@@ -91,8 +80,9 @@ const ChecklistPopup = () => {
           </button>
         </div>
         
-        <p className="text-xs text-muted-foreground text-center mt-4">
-          * Разобрали на реальных примерах наших клиентов
+        <p className="text-xs text-muted-foreground text-center mt-4 flex items-center justify-center gap-1">
+          <Star className="w-3 h-3" />
+          Разобрали на реальных примерах наших клиентов
         </p>
         
         <button
