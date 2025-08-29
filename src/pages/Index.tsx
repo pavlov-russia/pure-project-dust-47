@@ -91,7 +91,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-accent/30 rounded-full animate-pulse scale-110"></div>
                 
                 {/* Main icon container */}
-                <div className="relative bg-white/15 backdrop-blur-sm p-4 rounded-full border-2 border-white/40 shadow-lg">
+                <div className="relative bg-white/15 backdrop-blur-sm p-[18px] rounded-full border-2 border-white/40 shadow-lg">
                   <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-white drop-shadow-lg" strokeWidth={2.5} />
                 </div>
               </div>
