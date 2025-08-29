@@ -134,20 +134,27 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
-          <div className="max-w-3xl mx-auto bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
+          <div className="relative max-w-3xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
+            
+            <div className="relative z-10 text-foreground p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
             {/* Express Test Title */}
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
               {/* Express Stamp - smaller with continuous animation */}
               <div className="relative inline-block">
                 <div className="relative [transform-origin:center] will-change-transform transform-gpu backface-hidden animate-[swing_3s_ease-in-out_infinite]"
                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}>
-                  <div className="font-black text-xl md:text-3xl text-white tracking-wider uppercase">
-                    EXPRESS
-                  </div>
-                </div>
-              </div>
-              
-              <span className="text-xl md:text-3xl font-bold text-white/80">-</span>
+                   <div className="font-black text-xl md:text-3xl text-foreground tracking-wider uppercase">
+                     EXPRESS
+                   </div>
+                 </div>
+               </div>
+               
+               <span className="text-xl md:text-3xl font-bold text-foreground/80">-</span>
               
               <h2 className="text-xl md:text-3xl font-bold">ТЕСТ</h2>
             </div>
@@ -170,6 +177,7 @@ const Index = () => {
             >
               Хочу мощную упаковку 🔥
             </Button>
+            </div>
           </div>
         </div>
       </section>
