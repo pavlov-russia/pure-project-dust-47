@@ -134,7 +134,7 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-6 md:py-16">
         <div className="container mx-auto px-4 md:px-12 max-w-full">
-          <div className="max-w-3xl mx-auto bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
+          <div className="max-w-3xl mx-auto backdrop-blur-md bg-gradient-telegram rounded-[20px] md:rounded-[24px] text-white shadow-large p-6 md:p-12 text-center aspect-square flex flex-col justify-center">
             {/* Express Test Title */}
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-8">
               {/* Express Stamp - smaller with continuous animation */}
@@ -371,7 +371,7 @@ const Index = () => {
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
-            <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
+            <Card className="backdrop-blur-md shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
               <CardContent className="p-6 md:p-8">
                 <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
                   Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
@@ -426,7 +426,7 @@ const Index = () => {
               ))}
             </div>
 
-            <Card className="bg-gradient-telegram text-white shadow-large">
+            <Card className="backdrop-blur-md bg-gradient-telegram text-white shadow-large">
               <CardContent className="p-6 md:p-8 text-center">
                 <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
                   <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
