@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { H1, H2, H3, GradientHeading } from '@/components/Typography';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const TypographyShowcase: React.FC = () => {
+  const [headingText, setHeadingText] = useState('Пример заголовка с выделением');
+  const [highlightWords, setHighlightWords] = useState('заголовка, выделением');
+  const [headingType, setHeadingType] = useState<'h1' | 'h2' | 'h3' | 'gradient'>('h1');
+
+  const renderPreviewHeading = () => {
+    const wordsArray = highlightWords.split(',').map(word => word.trim()).filter(Boolean);
+    
+    switch (headingType) {
+      case 'h1':
+        return <H1 highlightWords={wordsArray}>{headingText}</H1>;
+      case 'h2':
+        return <H2 highlightWords={wordsArray}>{headingText}</H2>;
+      case 'h3':
+        return <H3 highlightWords={wordsArray}>{headingText}</H3>;
+      case 'gradient':
+        return <GradientHeading level={1} highlightWords={wordsArray}>{headingText}</GradientHeading>;
+      default:
+        return <H1 highlightWords={wordsArray}>{headingText}</H1>;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 p-4">
       <div className="max-w-4xl mx-auto space-y-6">
@@ -16,6 +40,64 @@ const TypographyShowcase: React.FC = () => {
             Демонстрация концепции выделения ключевых слов в заголовках
           </p>
         </div>
+
+        {/* Интерактивный конструктор */}
+        <Card className="glass">
+          <CardHeader>
+            <CardTitle>Конструктор заголовков</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Панель управления */}
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="heading-text">Текст заголовка</Label>
+                  <Input
+                    id="heading-text"
+                    value={headingText}
+                    onChange={(e) => setHeadingText(e.target.value)}
+                    placeholder="Введите текст заголовка"
+                    className="mt-1"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="highlight-words">Ключевые слова (через запятую)</Label>
+                  <Input
+                    id="highlight-words"
+                    value={highlightWords}
+                    onChange={(e) => setHighlightWords(e.target.value)}
+                    placeholder="слово1, слово2, слово3"
+                    className="mt-1"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="heading-type">Тип заголовка</Label>
+                  <Select value={headingType} onValueChange={(value: 'h1' | 'h2' | 'h3' | 'gradient') => setHeadingType(value)}>
+                    <SelectTrigger className="mt-1">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="h1">H1 - Главный заголовок</SelectItem>
+                      <SelectItem value="h2">H2 - Заголовок раздела</SelectItem>
+                      <SelectItem value="h3">H3 - Подзаголовок</SelectItem>
+                      <SelectItem value="gradient">Градиентный заголовок</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              
+              {/* Превью */}
+              <div className="border-l border-border pl-6">
+                <Label className="text-sm font-medium text-muted-foreground mb-4 block">Превью:</Label>
+                <div className="min-h-[100px] flex items-center">
+                  {renderPreviewHeading()}
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Примеры использования */}
         <Card className="glass">
