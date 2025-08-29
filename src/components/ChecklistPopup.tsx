@@ -74,8 +74,6 @@ const ChecklistPopup = () => {
             className="relative w-full px-12 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95 pulse-button"
             style={{
               background: '#563AF0',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               animationDuration: '2s'
             }}
