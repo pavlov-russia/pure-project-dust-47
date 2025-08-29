@@ -12,6 +12,7 @@ import {
   loadFontsFromStorage,
   downloadCSS 
 } from '@/utils/customFonts';
+import { detectFontWeight, getFontWeightName, extractFontFamily } from '@/utils/fontWeightDetector';
 
 const FontUploader: React.FC = () => {
   const [fonts, setFonts] = useState<StoredFont[]>(loadFontsFromStorage());
@@ -36,11 +37,13 @@ const FontUploader: React.FC = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         const dataUrl = e.target?.result as string;
-        const fontFamily = file.name.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9]/g, '');
+        const fontFamily = extractFontFamily(file.name);
+        const fontWeight = detectFontWeight(file.name);
         
         const newFont: StoredFont = {
           name: file.name.replace(/\.[^/.]+$/, ""),
           fontFamily,
+          fontWeight,
           dataUrl,
           originalFileName: file.name
         };
@@ -197,25 +200,51 @@ const FontUploader: React.FC = () => {
               />
               
               <div className="grid gap-4">
-                {fonts.map((font, index) => (
-                  <div key={index} className="p-4 border rounded-lg bg-background/50">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium">{font.name}</span>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => handleDeleteFont(index)}
-                        className="text-destructive hover:text-destructive"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
+                {/* Группируем шрифты по семействам */}
+                {Object.entries(
+                  fonts.reduce((groups, font, index) => {
+                    if (!groups[font.fontFamily]) {
+                      groups[font.fontFamily] = [];
+                    }
+                    groups[font.fontFamily].push({ font, index });
+                    return groups;
+                  }, {} as { [key: string]: { font: StoredFont; index: number }[] })
+                ).map(([fontFamily, fontGroup]) => (
+                  <div key={fontFamily} className="border rounded-lg bg-background/50 p-4">
+                    <h3 className="font-semibold text-lg mb-3">{fontFamily}</h3>
+                    <div className="space-y-3">
+                      {fontGroup
+                        .sort((a, b) => parseInt(a.font.fontWeight) - parseInt(b.font.fontWeight))
+                        .map(({ font, index }) => (
+                        <div key={index} className="flex items-center justify-between p-3 bg-background/30 rounded border">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-sm font-medium">{font.name}</span>
+                              <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+                                {getFontWeightName(font.fontWeight)}
+                              </span>
+                            </div>
+                            <p 
+                              className="text-lg"
+                              style={{ 
+                                fontFamily: `'${font.fontFamily}', sans-serif`,
+                                fontWeight: font.fontWeight
+                              }}
+                            >
+                              {previewText}
+                            </p>
+                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleDeleteFont(index)}
+                            className="text-destructive hover:text-destructive ml-4"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      ))}
                     </div>
-                    <p 
-                      className="text-lg"
-                      style={{ fontFamily: `'${font.fontFamily}', sans-serif` }}
-                    >
-                      {previewText}
-                    </p>
                   </div>
                 ))}
               </div>

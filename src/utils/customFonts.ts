@@ -1,6 +1,7 @@
 export interface StoredFont {
   name: string;
   fontFamily: string;
+  fontWeight: string;
   dataUrl: string;
   originalFileName: string;
 }
@@ -21,7 +22,7 @@ export const injectFontFace = (font: StoredFont): void => {
     @font-face {
       font-family: '${font.fontFamily}';
       src: url('${font.dataUrl}') format('truetype');
-      font-weight: normal;
+      font-weight: ${font.fontWeight};
       font-style: normal;
       font-display: swap;
     }
@@ -71,7 +72,7 @@ export const generateCSSContent = (fonts: StoredFont[]): string => {
 @font-face {
   font-family: '${font.fontFamily}';
   src: url('${font.dataUrl}') format('truetype');
-  font-weight: normal;
+  font-weight: ${font.fontWeight};
   font-style: normal;
   font-display: swap;
 }
