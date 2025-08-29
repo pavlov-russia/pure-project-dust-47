@@ -27,7 +27,7 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <SectionCard className="pt-20 md:pt-48 bg-gradient-hero text-white text-center animate-[elasticScale_1s_ease-out]" data-hero>
+      <SectionCard className="pt-20 md:pt-48 bg-gradient-hero text-white text-center" data-hero>
         <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight">
           Управляйте впечатлением о своём бизнесе с <span className="font-demibold text-white">TapBlog</span>
         </h1>
