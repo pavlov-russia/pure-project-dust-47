@@ -267,7 +267,7 @@ const Index = () => {
                         }
                       ].map((item, index) => (
                          <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                           <div className="relative bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-xl hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
+                           <div className="relative overflow-hidden bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-none hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
                              <div className="relative z-10 flex flex-col h-full">
                                <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4">
                                  {item.title}
@@ -286,7 +286,7 @@ const Index = () => {
 
                    {/* Carousel Indicators */}
                    <div className="flex justify-center items-center gap-2 mt-6">
-                     {Array.from({ length: 6 }).map((_, index) => (
+                     {Array.from({ length: count }).map((_, index) => (
                        <button
                          key={index}
                          onClick={() => api?.scrollTo(index)}
