@@ -283,18 +283,27 @@ const Index = () => {
                           description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
                         }
                       ].map((item, index) => (
-                         <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                           <div className="relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-none hover:bg-white/25 transition-all duration-300 hover:scale-[1.01] min-h-[280px] flex flex-col">
-                             <div className="relative z-10 flex flex-col h-full text-center">
-                               <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4 flex-1">
-                                 {item.title}
-                               </h3>
-                               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                                 {item.description}
-                               </p>
-                             </div>
-                           </div>
-                         </CarouselItem>
+                          <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                            <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)] min-h-[280px] flex flex-col">
+                              {/* Multiple liquid glass layers */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
+                              <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
+                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
+                              
+                              <div className="relative z-10 flex flex-col h-full text-center">
+                                <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4 flex-1">
+                                  {item.title}
+                                </h3>
+                                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                                  {item.description}
+                                </p>
+                              </div>
+                              
+                              {/* Enhanced animated glow with multiple layers */}
+                              <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
+                              <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
+                            </div>
+                          </CarouselItem>
                       ))}
                     </CarouselContent>
                     <CarouselPrevious className="hidden md:flex -left-12 bg-white/80 border-white/30 hover:bg-white/90" />
