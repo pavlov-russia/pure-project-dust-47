@@ -288,7 +288,7 @@ const Index = () => {
                       ].map((item, index) => (
                          <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                            <div className="relative overflow-hidden bg-white/90 border border-white/30 rounded-[24px] p-6 md:p-8 shadow-none hover:bg-white/95 transition-all duration-300 hover:scale-[1.02] min-h-[280px] flex flex-col">
-                             <div className="relative z-10 flex flex-col h-full">
+                             <div className="relative z-10 flex flex-col h-full text-center">
                                <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4">
                                  {item.title}
                                </h3>
