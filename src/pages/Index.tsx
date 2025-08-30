@@ -26,6 +26,7 @@ const Index = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     if (!api) {
@@ -39,6 +40,18 @@ const Index = () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!api || isPaused) return;
+
+    const intervalId = setInterval(() => {
+      const nextIndex = current >= count ? 0 : current;
+      api.scrollTo(nextIndex);
+    }, 7000);
+
+    return () => clearInterval(intervalId);
+  }, [api, current, count, isPaused]);
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -238,7 +251,14 @@ const Index = () => {
                 <div className="absolute inset-0 bg-black/[0.01] rounded-[34px] pointer-events-none"></div>
                 
                  <div className="relative z-10">
-                   <Carousel setApi={setApi} className="w-full max-w-5xl mx-auto">
+                   <Carousel 
+                     setApi={setApi} 
+                     className="w-full max-w-5xl mx-auto"
+                     onMouseEnter={() => setIsPaused(true)}
+                     onMouseLeave={() => setIsPaused(false)}
+                     onTouchStart={() => setIsPaused(true)}
+                     onTouchEnd={() => setIsPaused(false)}
+                   >
                      <CarouselContent className="-ml-2 md:-ml-4">
                       {[
                         {
