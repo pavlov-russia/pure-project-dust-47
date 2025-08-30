@@ -313,7 +313,7 @@ const Index = () => {
                          key={index}
                          onClick={() => api?.scrollTo(index)}
                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                           current === index + 1 ? 'blur-[0.1px]' : 'blur-[1px]'
+                           current === index + 1 ? '' : 'blur-[0.5px]'
                          }`}
                          style={{
                            backgroundColor: current === index + 1 ? '#563AF0' : '#7962F4'
