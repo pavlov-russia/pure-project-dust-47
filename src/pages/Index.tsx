@@ -286,11 +286,6 @@ const Index = () => {
                          <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                            <div className="relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-none hover:bg-white/25 transition-all duration-300 hover:scale-[1.01] min-h-[280px] flex flex-col">
                              <div className="relative z-10 flex flex-col h-full text-center">
-                               {/* Мини-хедер в стиле Мудрость */}
-                               <div className="flex items-center justify-center mb-4">
-                                 <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90"></div>
-                                 <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Система</p>
-                               </div>
                                <h3 className="font-bold text-foreground leading-tight text-lg md:text-xl mb-4 flex-1">
                                  {item.title}
                                </h3>
