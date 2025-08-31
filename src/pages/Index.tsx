@@ -442,13 +442,11 @@ const Index = () => {
             <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
             <div className="relative z-10 p-6 md:p-8 text-foreground">
-              <Card className="shadow-large border-l-4 border-l-warning mb-6 md:mb-8">
-                <CardContent className="p-6 md:p-8">
-                  <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
-                    Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
-                  </h2>
-                </CardContent>
-              </Card>
+              <div className="border-l-4 border-l-warning mb-6 md:mb-8 pl-6 md:pl-8">
+                <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
+                  Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
+                </h2>
+              </div>
 
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="mobile-subheading-scale md:text-4xl font-regular mb-4 md:mb-6 px-2">
