@@ -336,19 +336,16 @@ const Index = () => {
                   <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
-                {/* Inner frame around quote and author */}
-                <div className="inline-block backdrop-blur-sm bg-white/10 border border-white/30 rounded-2xl px-4 py-3 max-w-lg">
-                  {/* Quote content */}
-                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                    "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
-                  </blockquote>
-                  
-                  {/* Author attribution */}
-                  <div className="flex items-center justify-center">
-                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
-                  </div>
+                {/* Quote content */}
+                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                  "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
+                </blockquote>
+                
+                {/* Author attribution */}
+                <div className="flex items-center justify-center">
+                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
                 </div>
               </div>
             </div>
