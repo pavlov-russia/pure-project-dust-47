@@ -4,9 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, MessageCircle } from "lucide-react";
+import { Calendar, MessageCircle, ChevronRight } from "lucide-react";
 
 const ConsultationForm = () => {
+  const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     niche: "",
     currentState: "",
@@ -14,99 +15,157 @@ const ConsultationForm = () => {
     budget: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form data:", formData);
-    // Handle form submission
+  const totalSteps = 4;
+  const progress = (currentStep / totalSteps) * 100;
+
+  const questions = [
+    {
+      question: "Какая у тебя ниша?",
+      placeholder: "Например, авто из Китая / авторские тренинги",
+      field: "niche" as keyof typeof formData,
+      type: "input"
+    },
+    {
+      question: "Опишите свою точку А",
+      placeholder: "Уже есть канал? Сколько подписчиков? Упакован ли продукт? Тестировали ли какие-то инструменты трафика? Расскажите, что есть сейчас",
+      field: "currentState" as keyof typeof formData,
+      type: "textarea"
+    },
+    {
+      question: "Планируете ли вы запускать трафик в ТГ в ближайшее время?",
+      field: "planTraffic" as keyof typeof formData,
+      type: "select",
+      options: [
+        { value: "yes", label: "Да, планирую продвигаться" },
+        { value: "no", label: "Пока нет" }
+      ]
+    },
+    {
+      question: "Какой бюджет вы готовы вкладывать в Телеграм?",
+      placeholder: "Укажите сумму",
+      field: "budget" as keyof typeof formData,
+      type: "input"
+    }
+  ];
+
+  const handleNext = () => {
+    if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      console.log("Form data:", formData);
+      // Handle form submission
+    }
   };
+
+  const handleInputChange = (value: string) => {
+    const currentQuestion = questions[currentStep - 1];
+    setFormData({...formData, [currentQuestion.field]: value});
+  };
+
+  const currentQuestion = questions[currentStep - 1];
+  const currentValue = formData[currentQuestion.field];
+  const isStepValid = currentValue.trim() !== "";
 
   return (
     <div className="bg-gradient-subtle py-16" data-consultation-form>
       <div className="container mx-auto px-6 max-w-full">
-        <Card className="max-w-2xl mx-auto shadow-large border-0">
-          <CardHeader className="text-center">
-            <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4">
-              <Calendar className="w-8 h-8 text-white" />
+        <Card className="max-w-lg mx-auto bg-card/40 backdrop-blur-xl border border-white/10 shadow-2xl">
+          <CardHeader className="text-center pb-6">
+            <div className="mx-auto w-20 h-20 bg-gradient-telegram rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <MessageCircle className="w-10 h-10 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold">
-              Запишитесь на бесплатную консультацию
+            <CardTitle className="text-2xl font-bold text-white mb-2">
+              Консультация по Telegram
             </CardTitle>
-            <p className="text-muted-foreground">
-              Составим индивидуальный план вашей упаковки в ТГ и подготовим ваш бизнес к запуску трафика
+            <p className="text-white/70 text-sm leading-relaxed">
+              Ответь на несколько вопросов для записи на консультацию
             </p>
           </CardHeader>
           
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
-                  1) Какая у вас ниша?
-                </label>
-                <Input
-                  placeholder="Например, авто из Китая / юридические услуги"
-                  value={formData.niche}
-                  onChange={(e) => setFormData({...formData, niche: e.target.value})}
-                  className="focus:border-primary"
-                  required
-                />
+          <CardContent className="px-8 pb-8">
+            {/* Progress Bar */}
+            <div className="mb-8">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-white/60 text-sm">Вопрос {currentStep} из {totalSteps}</span>
+                <span className="text-white/60 text-sm">{Math.round(progress)}%</span>
+              </div>
+              <div className="w-full bg-white/10 rounded-full h-2 mb-6">
+                <div 
+                  className="bg-gradient-telegram h-2 rounded-full transition-all duration-500 ease-out"
+                  style={{width: `${progress}%`}}
+                ></div>
+              </div>
+              
+              {/* Step Indicators */}
+              <div className="flex justify-center space-x-3">
+                {Array.from({length: totalSteps}, (_, i) => (
+                  <div
+                    key={i}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i + 1 <= currentStep 
+                        ? 'bg-gradient-telegram' 
+                        : 'bg-white/20'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Question */}
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-white mb-6">
+                {currentQuestion.question}
+              </h3>
+
+              {/* Input Field */}
+              <div className="space-y-4">
+                {currentQuestion.type === "input" && (
+                  <Input
+                    placeholder={currentQuestion.placeholder}
+                    value={currentValue}
+                    onChange={(e) => handleInputChange(e.target.value)}
+                    className="bg-card/20 border-white/20 text-white placeholder:text-white/40 focus:border-primary/50 focus:bg-card/30 rounded-xl"
+                  />
+                )}
+
+                {currentQuestion.type === "textarea" && (
+                  <Textarea
+                    placeholder={currentQuestion.placeholder}
+                    value={currentValue}
+                    onChange={(e) => handleInputChange(e.target.value)}
+                    className="bg-card/20 border-white/20 text-white placeholder:text-white/40 focus:border-primary/50 focus:bg-card/30 rounded-xl min-h-[120px] resize-none"
+                  />
+                )}
+
+                {currentQuestion.type === "select" && (
+                  <Select
+                    value={currentValue}
+                    onValueChange={handleInputChange}
+                  >
+                    <SelectTrigger className="bg-card/20 border-white/20 text-white focus:border-primary/50 focus:bg-card/30 rounded-xl">
+                      <SelectValue placeholder="Выберите вариант" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-card border-white/20">
+                      {currentQuestion.options?.map((option) => (
+                        <SelectItem key={option.value} value={option.value} className="text-white focus:bg-white/10">
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
-                  2) Опишите свою точку А
-                </label>
-                <Textarea
-                  placeholder="Уже есть канал? Сколько подписчиков? Упакован ли продукт? Тестировали ли какие-то инструменты трафика? Расскажите, что есть сейчас"
-                  value={formData.currentState}
-                  onChange={(e) => setFormData({...formData, currentState: e.target.value})}
-                  className="min-h-[100px] focus:border-primary resize-none"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
-                  3) Планируете ли вы запускать трафик в ТГ в ближайшее время?
-                </label>
-                <Select
-                  value={formData.planTraffic}
-                  onValueChange={(value) => setFormData({...formData, planTraffic: value})}
-                  required
-                >
-                  <SelectTrigger className="focus:border-primary">
-                    <SelectValue placeholder="Выберите вариант" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="yes">Да, планирую продвигаться</SelectItem>
-                    <SelectItem value="no">Пока нет</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">
-                  4) Какой бюджет вы готовы вкладывать в Телеграм?
-                </label>
-                <Input
-                  placeholder="Укажите сумму"
-                  value={formData.budget}
-                  onChange={(e) => setFormData({...formData, budget: e.target.value})}
-                  className="focus:border-primary"
-                  required
-                />
-              </div>
-
+              {/* Next Button */}
               <Button 
-                type="submit"
-                variant="form-submit"
-                size="xl"
-                className="w-full text-center leading-tight"
-                icon={<MessageCircle className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />}
+                onClick={handleNext}
+                disabled={!isStepValid}
+                className="w-full bg-gradient-telegram hover:opacity-90 text-white font-semibold py-4 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                <span className="block sm:inline">Отправить и записаться</span>
-                <span className="block sm:inline sm:ml-1">на консультацию</span>
+                {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
+                <ChevronRight className="w-5 h-5" />
               </Button>
-            </form>
+            </div>
           </CardContent>
         </Card>
       </div>
