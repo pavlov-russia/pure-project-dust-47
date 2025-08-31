@@ -323,29 +323,29 @@ const Index = () => {
       </SectionCard>
 
       {/* Quote Section - iOS 26 Liquid Glass Style */}
-      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
+      <SectionCard className="py-4 md:py-8 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
-          <div className="relative max-w-2xl mx-auto">
+          <div className="relative max-w-xl mx-auto">
             
-            <div className="relative z-10 p-6 md:p-8">
+            <div className="relative z-10 p-4 md:p-6">
               {/* Quote content without any frames */}
               <div className="text-center">
                 {/* iOS style notification header */}
-                <div className="flex items-center justify-center mb-4">
+                <div className="flex items-center justify-center mb-3">
                   <div className="w-2 h-2 rounded-full mr-2 opacity-90 animate-pulse" style={{ backgroundColor: '#563AF0' }}></div>
                   <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
                 {/* Quote content */}
-                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                <blockquote className="text-base md:text-xl font-medium text-foreground leading-relaxed mb-3">
                   "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
                 </blockquote>
                 
                 {/* Author attribution */}
                 <div className="flex items-center justify-center">
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                  <div className="w-6 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-2"></div>
                   <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                  <div className="w-6 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-2"></div>
                 </div>
               </div>
             </div>
