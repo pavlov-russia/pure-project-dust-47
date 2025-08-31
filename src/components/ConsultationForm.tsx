@@ -184,11 +184,15 @@ const ConsultationForm = () => {
                 </div>
                 
                 {/* Step Indicators with liquid glass dots */}
-                <div className="flex justify-center space-x-4">
+                <div className="flex justify-center items-center space-x-3">
                   {Array.from({length: totalSteps}, (_, i) => (
                     <div
                       key={i}
-                      className={`relative w-4 h-4 rounded-full transition-all duration-500 ${
+                      className={`relative transition-all duration-500 ${
+                        i + 1 === currentStep
+                          ? 'w-8 h-4 rounded-full' 
+                          : 'w-4 h-4 rounded-full'
+                      } ${
                         i + 1 <= currentStep 
                           ? 'scale-110' 
                           : 'scale-100'
