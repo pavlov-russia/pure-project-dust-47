@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +14,7 @@ const ConsultationForm = () => {
     planTraffic: "",
     budget: ""
   });
+  const [typedText, setTypedText] = useState("");
 
   const totalSteps = 4;
   const progress = (currentStep / totalSteps) * 100;
@@ -47,6 +48,26 @@ const ConsultationForm = () => {
       type: "input"
     }
   ];
+
+  // Typing animation effect
+  useEffect(() => {
+    if (currentStep === 1) {
+      const text = questions[0].placeholder;
+      let index = 0;
+      setTypedText("");
+      
+      const timer = setInterval(() => {
+        if (index < text.length) {
+          setTypedText(text.substring(0, index + 1));
+          index++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 100);
+
+      return () => clearInterval(timer);
+    }
+  }, [currentStep]);
 
   const handleNext = () => {
     if (currentStep < totalSteps) {
@@ -121,7 +142,7 @@ const ConsultationForm = () => {
               <div className="space-y-4">
                 {currentQuestion.type === "input" && (
                   <Input
-                    placeholder={currentQuestion.placeholder}
+                    placeholder={currentStep === 1 ? typedText + "|" : currentQuestion.placeholder}
                     value={currentValue}
                     onChange={(e) => handleInputChange(e.target.value)}
                     className="focus:border-primary rounded-xl"
