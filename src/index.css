@@ -193,8 +193,7 @@ All colors MUST be HSL.
   }
 
   body {
-    background: linear-gradient(135deg, #563AF0 0%, #5c41f1 20%, #6248f2 40%, #684ff3 60%, #6e56f4 80%, #563AF0 100%);
-    @apply text-foreground font-sans;
+    @apply bg-background text-foreground font-sans;
     font-family: var(--custom-font-family, 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
     /* Fullscreen setup */
     height: 100%;
@@ -265,7 +264,7 @@ All colors MUST be HSL.
     overflow-x: clip;
     overflow-y: auto;
     position: relative;
-    background: linear-gradient(135deg, #563AF0 0%, #5c41f1 20%, #6248f2 40%, #684ff3 60%, #6e56f4 80%, #563AF0 100%);
+    background: hsl(var(--background));
     min-height: 100vh;
     /* Safe area support */
     padding-top: var(--safe-area-inset-top);
