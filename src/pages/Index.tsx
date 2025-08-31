@@ -478,33 +478,43 @@ const Index = () => {
       {/* Target Audience */}
       <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="mobile-subheading-scale md:text-3xl font-regular mb-8 md:mb-12 px-2">
-              Кому подходит <span className="font-demibold">наша упаковка?</span>
-            </h2>
+          <div className="relative max-w-3xl mx-auto">
+            {/* iOS 26 Liquid Glass Effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
-            <div className="grid gap-4 md:gap-5 mb-8 md:mb-12">
-              {[
-                "экспертам и компаниям, продающим услуги и продукты",
-                "брендам / онлайн-магазинам", 
-                "сообществам / клубам",
-                "авторам курсов / интенсивов / тренингов",
-                "авторам тематических ТГ-каналов"
-              ].map((audience, index) => (
-                <div key={index} className="flex items-center justify-center space-x-4">
-                  <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success flex-shrink-0" />
-                  <p className="text-foreground font-medium text-sm md:text-base">{audience}</p>
-                </div>
-              ))}
-            </div>
+            <div className="relative z-10 p-6 md:p-8 text-foreground">
+              <h2 className="mobile-subheading-scale md:text-3xl font-regular text-center mb-8 md:mb-12 px-2">
+                Кому подходит <span className="font-demibold">наша упаковка?</span>
+              </h2>
+              
+              <div className="grid gap-3 md:gap-4 mb-8 md:mb-12">
+                {[
+                  "экспертам и компаниям, продающим услуги и продукты",
+                  "брендам / онлайн-магазинам", 
+                  "сообществам / клубам",
+                  "авторам курсов / интенсивов / тренингов",
+                  "авторам тематических ТГ-каналов"
+                ].map((audience, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-success flex-shrink-0" />
+                    <p className="text-foreground font-medium text-sm md:text-base">{audience}</p>
+                  </div>
+                ))}
+              </div>
 
-            <div className="text-center">
-              <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4 text-foreground">
-                <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
-              </h3>
-              <p className="text-base md:text-lg font-semibold text-foreground">
-                САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
-              </p>
+              <Card className="bg-gradient-telegram text-white shadow-large">
+                <CardContent className="p-6 md:p-8 text-center">
+                  <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
+                    <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
+                  </h3>
+                  <p className="text-base md:text-lg font-semibold">
+                    САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ 👇🏼
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
