@@ -292,17 +292,17 @@ const Index = () => {
                    {/* Carousel Indicators */}
                    <div className="flex justify-center items-center gap-2 mt-6">
                      {Array.from({ length: count }).map((_, index) => (
-                       <button
-                         key={index}
-                         onClick={() => api?.scrollTo(index)}
-                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                           current === index + 1 ? '' : 'blur-[0.5px]'
-                         }`}
-                         style={{
-                           backgroundColor: current === index + 1 ? '#563AF0' : '#563AF0'
-                         }}
-                         aria-label={`Go to slide ${index + 1}`}
-                       />
+                        <button
+                          key={index}
+                          onClick={() => api?.scrollTo(index)}
+                          className={`rounded-full transition-all duration-300 ${
+                            current === index + 1 ? 'w-8 md:w-10 h-2' : 'w-2 h-2 blur-[0.5px]'
+                          }`}
+                          style={{
+                            backgroundColor: '#563AF0'
+                          }}
+                          aria-label={`Перейти к слайду ${index + 1}`}
+                        />
                      ))}
                    </div>
                  </div>
