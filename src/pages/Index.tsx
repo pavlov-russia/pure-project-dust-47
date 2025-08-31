@@ -492,8 +492,10 @@ const Index = () => {
                 ))}
               </div>
 
-              <Card className="bg-gradient-telegram text-white shadow-large">
-                <CardContent className="p-6 md:p-8 text-center">
+              <Card className="bg-gradient-telegram text-white shadow-large relative overflow-hidden">
+                {/* Darker overlay */}
+                <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+                <CardContent className="p-6 md:p-8 text-center relative z-10">
                   <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4">
                     <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
                   </h3>
