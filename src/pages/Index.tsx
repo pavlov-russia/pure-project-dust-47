@@ -214,7 +214,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Real Packaging System */}
-      <SectionCard className="py-8 md:py-16 bg-background text-white">
+      <section className="py-8 md:py-16 bg-background text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="relative max-w-4xl mx-auto">
             {/* iOS 26 Liquid Glass Effect */}
@@ -244,83 +244,14 @@ const Index = () => {
                      onTouchStart={() => setIsPaused(true)}
                      onTouchEnd={() => setIsPaused(false)}
                    >
-                     <CarouselContent className="-ml-2 md:-ml-4">
-                      {[
-                        {
-                          title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
-                          description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
-                        },
-                        {
-                          title: "Кристальное позиционирование, понятное даже школьнику",
-                          description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
-                        },
-                        {
-                          title: "Продуманный путь клиента от А до Я",
-                          description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
-                        },
-                        {
-                          title: "Осмысленный и целевой контент",
-                          description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
-                        },
-                        {
-                          title: "Выраженный стиль коммуникации",
-                          description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
-                        },
-                        {
-                          title: "Визуальная идентичность",
-                          description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
-                        }
-                      ].map((item, index) => (
-                         <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                           <div className="relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[20px] p-4 md:p-5 shadow-none hover:bg-white/25 transition-all duration-300 hover:scale-[1.01] h-[280px] md:h-[320px] flex flex-col">
-                             <div className="relative z-10 flex flex-col h-full text-center justify-between">
-                               <h3 className="font-bold text-foreground leading-tight mb-2 text-base md:text-lg lg:text-xl">
-                                 {item.title}
-                               </h3>
-                               <p className="text-muted-foreground leading-relaxed flex-1 flex items-center justify-center text-sm md:text-base lg:text-lg overflow-hidden">
-                                 {item.description}
-                               </p>
-                             </div>
-                           </div>
-                         </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden md:flex -left-12 bg-white/80 border-white/30 hover:bg-white/90" />
-                    <CarouselNext className="hidden md:flex -right-12 bg-white/80 border-white/30 hover:bg-white/90" />
+...
                    </Carousel>
-
-                   {/* Carousel Indicators */}
-                   <div className="flex justify-center items-center gap-2 mt-6">
-                     {Array.from({ length: count }).map((_, index) => (
-                       <button
-                         key={index}
-                         onClick={() => api?.scrollTo(index)}
-                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                           current === index + 1 ? '' : 'blur-[0.5px]'
-                         }`}
-                         style={{
-                           backgroundColor: current === index + 1 ? '#563AF0' : '#563AF0'
-                         }}
-                         aria-label={`Go to slide ${index + 1}`}
-                       />
-                     ))}
-                   </div>
                  </div>
-                 
-                 <div className="relative z-10 text-center mt-8 md:mt-12">
-                  <Button 
-                    variant="cta-primary"
-                    size="xl"
-                    icon={<Rocket className="w-4 h-4 md:w-5 md:h-5" />}
-                  >
-                    Заказать упаковку
-                  </Button>
-                </div>
-              </div>
+               </div>
             </div>
           </div>
         </div>
-      </SectionCard>
+      </section>
 
       {/* Quote Section - iOS 26 Liquid Glass Style */}
       <section className="py-8 md:py-16 bg-background text-white">
