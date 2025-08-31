@@ -70,11 +70,11 @@ const ConsultationForm = () => {
     <div className="bg-gradient-subtle py-16" data-consultation-form>
       <div className="container mx-auto px-6 max-w-full">
         <Card className="max-w-lg mx-auto bg-card backdrop-blur-xl border shadow-2xl">
-          <CardHeader className="text-center pb-6">
-            <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-6 shadow-lg">
+          <CardHeader className="text-center pb-4">
+            <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4 shadow-lg">
               <MessageCircle className="w-8 h-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold text-foreground mb-2">
+            <CardTitle className="text-2xl font-bold text-foreground mb-1">
               Консультация по Telegram
             </CardTitle>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -82,14 +82,14 @@ const ConsultationForm = () => {
             </p>
           </CardHeader>
           
-          <CardContent className="px-8 pb-8">
+          <CardContent className="px-6 pb-6">
             {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-3">
+            <div className="mb-6">
+              <div className="flex justify-between items-center mb-2">
                 <span className="text-muted-foreground text-sm">Вопрос {currentStep} из {totalSteps}</span>
                 <span className="text-muted-foreground text-sm">{Math.round(progress)}%</span>
               </div>
-              <div className="w-full bg-muted rounded-full h-2 mb-6">
+              <div className="w-full bg-muted rounded-full h-2 mb-4">
                 <div 
                   className="bg-gradient-telegram h-2 rounded-full transition-all duration-500 ease-out"
                   style={{width: `${progress}%`}}
@@ -112,8 +112,8 @@ const ConsultationForm = () => {
             </div>
 
             {/* Question */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-foreground mb-6">
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
                 {currentQuestion.question}
               </h3>
 
