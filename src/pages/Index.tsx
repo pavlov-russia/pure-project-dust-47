@@ -399,7 +399,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-black/20 rounded-[24px] md:rounded-[34px] blur-[20px] md:blur-[38px] translate-y-3 md:translate-y-5"></div>
                 
                 {/* Main glass morphism card */}
-                <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-foreground shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
+                <div className="relative backdrop-blur-xl bg-white/10 border border-white/25 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-white shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
                   <div className="flex items-center justify-center mb-4 md:mb-6">
                     <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
                   </div>
