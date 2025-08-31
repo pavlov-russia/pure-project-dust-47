@@ -137,157 +137,218 @@ const ConsultationForm = () => {
       
       <div className="bg-transparent py-16" data-consultation-form>
         <div className="container mx-auto px-6 max-w-full">
-          <Card className="max-w-lg mx-auto backdrop-blur-xl bg-card/10 border-card/20 text-white shadow-2xl">
-            <CardHeader className="text-center pb-4">
-              <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4 shadow-lg">
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-xl font-bold text-white mb-1">
-                Консультация по Telegram
-              </CardTitle>
-              <p className="text-white/80 text-xs leading-relaxed">
-                Ответь на несколько вопросов для записи на консультацию
-              </p>
-            </CardHeader>
+          {/* iOS 26 Liquid Glass Container */}
+          <div className="max-w-lg mx-auto relative">
+            {/* Multiple liquid glass layers for iOS 26 effect */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/25 via-white/15 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.4)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/15 rounded-[40px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
-            <CardContent className="px-6 pb-6">
-              {/* Progress Bar */}
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white/70 text-xs">Вопрос {currentStep} из {totalSteps}</span>
-                  <span className="text-white/70 text-xs">{Math.round(progress)}%</span>
-                </div>
-                <div className="w-full bg-muted rounded-full h-2 mb-4">
-                  <div 
-                    className="bg-gradient-telegram h-2 rounded-full transition-all duration-500 ease-out"
-                    style={{width: `${progress}%`}}
-                  ></div>
+            {/* Content layer */}
+            <div className="relative z-10 p-8">
+              {/* Header */}
+              <div className="text-center mb-8">
+                {/* Telegram Icon with liquid glass effect */}
+                <div className="relative mx-auto w-20 h-20 mb-6">
+                  <div className="absolute inset-0 backdrop-blur-[40px] bg-white/20 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                  <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-full"></div>
+                  <div className="relative z-10 w-full h-full flex items-center justify-center">
+                    <MessageCircle className="w-10 h-10 text-white drop-shadow-lg" />
+                  </div>
                 </div>
                 
-                {/* Step Indicators */}
-                <div className="flex justify-center space-x-3">
+                <h1 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  Консультация по Telegram
+                </h1>
+                <p className="text-white/85 text-sm leading-relaxed">
+                  Ответь на несколько вопросов для записи на консультацию
+                </p>
+              </div>
+
+              {/* Progress Section with iOS 26 styling */}
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-white/80 text-sm font-medium">Вопрос {currentStep} из {totalSteps}</span>
+                  <span className="text-white/80 text-sm font-medium">{Math.round(progress)}%</span>
+                </div>
+                
+                {/* Progress Bar with liquid glass */}
+                <div className="relative mb-6">
+                  <div className="w-full h-3 backdrop-blur-sm bg-white/15 rounded-full border border-white/20 shadow-inner">
+                    <div 
+                      className="h-full bg-gradient-to-r from-white/70 to-white/90 rounded-full transition-all duration-700 ease-out shadow-sm"
+                      style={{width: `${progress}%`}}
+                    ></div>
+                  </div>
+                </div>
+                
+                {/* Step Indicators with liquid glass dots */}
+                <div className="flex justify-center space-x-4">
                   {Array.from({length: totalSteps}, (_, i) => (
                     <div
                       key={i}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      className={`relative w-4 h-4 rounded-full transition-all duration-500 ${
                         i + 1 <= currentStep 
-                          ? 'bg-gradient-telegram' 
-                          : 'bg-muted'
+                          ? 'scale-110' 
+                          : 'scale-100'
                       }`}
-                    />
+                    >
+                      <div className={`absolute inset-0 backdrop-blur-sm rounded-full border transition-all duration-500 ${
+                        i + 1 <= currentStep
+                          ? 'bg-white/80 border-white/50 shadow-lg' 
+                          : 'bg-white/20 border-white/30'
+                      }`}></div>
+                      {i + 1 <= currentStep && (
+                        <div className="absolute inset-[2px] bg-gradient-to-br from-white/40 to-white/60 rounded-full"></div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Question */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-white mb-4">
+              {/* Question Section */}
+              <div className="space-y-6">
+                <h2 className="text-xl font-semibold text-white leading-tight drop-shadow-sm">
                   {currentQuestion.question}
-                </h3>
+                </h2>
 
-                {/* Input Field with smooth transitions */}
-                <div className="space-y-4">
-                  <div 
-                    key={currentStep}
-                    className="animate-fade-in"
-                  >
-                    {currentQuestion.type === "input" && (
-                      <Input
-                        placeholder={typedText + "|"}
-                        value={currentValue}
-                        onChange={(e) => handleInputChange(e.target.value)}
-                        className="focus:border-primary rounded-xl text-sm overflow-hidden text-ellipsis"
-                      />
-                    )}
+                {/* Input Container with liquid glass */}
+                <div 
+                  key={currentStep}
+                  className="animate-fade-in"
+                >
+                  <div className="relative">
+                    {/* Input field background with iOS 26 liquid glass */}
+                    <div className="absolute inset-0 backdrop-blur-[40px] bg-white/15 border border-white/25 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                    <div className="absolute inset-[1px] bg-gradient-to-b from-white/10 via-transparent to-white/5 rounded-[15px]"></div>
+                    
+                    {/* Input fields */}
+                    <div className="relative z-10">
+                      {currentQuestion.type === "input" && (
+                        <Input
+                          placeholder={typedText + "|"}
+                          value={currentValue}
+                          onChange={(e) => handleInputChange(e.target.value)}
+                          className="bg-transparent border-none text-white placeholder:text-white/60 text-base p-4 h-14 rounded-2xl focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                        />
+                      )}
 
-                    {currentQuestion.type === "textarea" && (
-                      <Textarea
-                        placeholder={typedText + "|"}
-                        value={currentValue}
-                        onChange={(e) => handleInputChange(e.target.value)}
-                        className="focus:border-primary rounded-xl min-h-[120px] resize-none text-sm"
-                      />
-                    )}
+                      {currentQuestion.type === "textarea" && (
+                        <Textarea
+                          placeholder={typedText + "|"}
+                          value={currentValue}
+                          onChange={(e) => handleInputChange(e.target.value)}
+                          className="bg-transparent border-none text-white placeholder:text-white/60 text-base p-4 min-h-[120px] rounded-2xl resize-none focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                        />
+                      )}
 
-                    {currentQuestion.type === "select" && (
-                      <Select
-                        value={currentValue}
-                        onValueChange={handleInputChange}
-                      >
-                        <SelectTrigger className="focus:border-primary rounded-xl">
-                          <SelectValue placeholder="Выберите вариант" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {currentQuestion.options?.map((option) => (
-                            <SelectItem key={option.value} value={option.value}>
-                              {option.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    )}
+                      {currentQuestion.type === "select" && (
+                        <Select
+                          value={currentValue}
+                          onValueChange={handleInputChange}
+                        >
+                          <SelectTrigger className="bg-transparent border-none text-white h-14 p-4 rounded-2xl focus:ring-2 focus:ring-white/40 transition-all duration-300">
+                            <SelectValue placeholder="Выберите вариант" className="text-white/60" />
+                          </SelectTrigger>
+                          <SelectContent className="backdrop-blur-[40px] bg-white/90 border border-white/30 rounded-2xl">
+                            {currentQuestion.options?.map((option) => (
+                              <SelectItem key={option.value} value={option.value} className="text-gray-800 hover:bg-white/50">
+                                {option.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                {/* Navigation Buttons */}
-                <div className="flex gap-3">
+                {/* Navigation Buttons with iOS 26 liquid glass */}
+                <div className="flex gap-4 pt-4">
                   {currentStep > 1 && (
-                    <Button 
-                      onClick={handlePrevious}
-                      variant="outline"
-                      className="h-[56px] w-14 rounded-xl border-2 hover:bg-muted transition-all duration-300 flex-shrink-0 flex items-center justify-center"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </Button>
+                    <div className="relative">
+                      <div className="absolute inset-0 backdrop-blur-[40px] bg-white/15 border border-white/25 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                      <div className="absolute inset-[1px] bg-gradient-to-b from-white/10 via-transparent to-white/5 rounded-[15px]"></div>
+                      <Button 
+                        onClick={handlePrevious}
+                        className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white h-14 w-14 rounded-2xl transition-all duration-300 flex items-center justify-center"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </Button>
+                    </div>
                   )}
                   
-                  <Button 
-                    onClick={handleNext}
-                    disabled={!isStepValid}
-                    className="flex-1 h-[56px] bg-gradient-telegram hover:opacity-90 text-white font-semibold rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  >
-                    {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
-                    <ChevronRight className="w-5 h-5" />
-                  </Button>
+                  <div className="relative flex-1">
+                    <div className="absolute inset-0 backdrop-blur-[40px] bg-white/25 border border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                    <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
+                    <Button 
+                      onClick={handleNext}
+                      disabled={!isStepValid}
+                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-white font-semibold h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                    >
+                      {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
+                      <ChevronRight className="w-5 h-5" />
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Success Popup */}
+      {/* Success Popup with iOS 26 Liquid Glass */}
       {showSuccessPopup && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div 
-            className="backdrop-blur-xl bg-card/10 border-card/20 shadow-2xl rounded-2xl p-8 max-w-md mx-4 text-center text-white"
+            className="relative max-w-md w-full"
             style={{ animation: "elasticScale 1s ease-out" }}
           >
-            <button
-              onClick={() => setShowSuccessPopup(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            {/* Multiple liquid glass layers */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/25 via-white/15 to-white/20 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.4)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[31px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/15 rounded-[32px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[32px]"></div>
             
-            <div className="w-20 h-20 bg-gradient-telegram rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-white" />
+            {/* Content */}
+            <div className="relative z-10 p-8 text-center">
+              <button
+                onClick={() => setShowSuccessPopup(false)}
+                className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              
+              {/* Success Icon with liquid glass */}
+              <div className="relative w-24 h-24 mx-auto mb-6">
+                <div className="absolute inset-0 backdrop-blur-[40px] bg-white/20 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                <div className="absolute inset-[2px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-full"></div>
+                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                  <CheckCircle className="w-12 h-12 text-white drop-shadow-lg" />
+                </div>
+              </div>
+              
+              <h2 className="text-2xl font-bold text-white mb-4 drop-shadow-sm">
+                Заявка отправлена!
+              </h2>
+              
+              <p className="text-white/85 mb-8 leading-relaxed">
+                Спасибо за интерес к нашим услугам! Мы свяжемся с вами в ближайшее время для назначения консультации.
+              </p>
+              
+              {/* Close Button with liquid glass */}
+              <div className="relative">
+                <div className="absolute inset-0 backdrop-blur-[40px] bg-white/25 border border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
+                <Button 
+                  onClick={() => setShowSuccessPopup(false)}
+                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300"
+                >
+                  Закрыть
+                </Button>
+              </div>
             </div>
-            
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Заявка отправлена!
-            </h2>
-            
-            <p className="text-white/80 mb-6">
-              Спасибо за интерес к нашим услугам! Мы свяжемся с вами в ближайшее время для назначения консультации.
-            </p>
-            
-            <Button 
-              onClick={() => setShowSuccessPopup(false)}
-              className="bg-gradient-telegram hover:opacity-90 text-white px-8"
-            >
-              Закрыть
-            </Button>
           </div>
         </div>
       )}
