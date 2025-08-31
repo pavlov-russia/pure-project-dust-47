@@ -282,7 +282,7 @@ All colors MUST be HSL.
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(86, 58, 240, 0.35);
     backdrop-filter: blur(28px) saturate(85%) contrast(92%) brightness(105%);
     -webkit-backdrop-filter: blur(28px) saturate(85%) contrast(92%) brightness(105%);
     will-change: backdrop-filter;
