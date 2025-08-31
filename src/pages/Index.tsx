@@ -337,8 +337,6 @@ const Index = () => {
       <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
           <div className="relative max-w-2xl mx-auto">
-            {/* Simplified Glass Effect */}
-            <div className="absolute inset-0 backdrop-blur-[60px] bg-white/25 rounded-[40px] shadow-[0_20px_40px_rgba(0,0,0,0.1)]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
               {/* Quote content without any frames */}
