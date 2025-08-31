@@ -353,7 +353,7 @@ const Index = () => {
                 
                 {/* Quote content */}
                 <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                  "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">второго шанса</span> произвести первое впечатление"
+                  "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
                 </blockquote>
                 
                 {/* Author attribution */}
