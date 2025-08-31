@@ -244,8 +244,8 @@ const Index = () => {
                 </div>
               </div>
               
-              {/* Glass-morphism container */}
-              <div className="relative backdrop-blur-[40px] bg-white/70 border border-white/20 rounded-[34px] p-6 md:p-8 shadow-none">
+              {/* Container without frame */}
+              <div className="relative p-6 md:p-8">
                  <div className="relative z-10">
                    <Carousel 
                      setApi={setApi} 
