@@ -347,7 +347,7 @@ const Index = () => {
               <div className="text-center">
                 {/* iOS style notification header */}
                 <div className="flex items-center justify-center mb-4">
-                  <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
+                  <div className="w-2 h-2 rounded-full mr-2 opacity-90 animate-pulse" style={{ backgroundColor: '#563AF0' }}></div>
                   <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
