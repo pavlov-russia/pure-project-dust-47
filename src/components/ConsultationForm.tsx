@@ -135,17 +135,17 @@ const ConsultationForm = () => {
         `}
       </style>
       
-      <div className="bg-gradient-subtle py-16" data-consultation-form>
+      <div className="bg-transparent py-16" data-consultation-form>
         <div className="container mx-auto px-6 max-w-full">
-          <Card className="max-w-lg mx-auto bg-card backdrop-blur-xl border shadow-2xl">
+          <Card className="max-w-lg mx-auto backdrop-blur-xl bg-card/10 border-card/20 text-white shadow-2xl">
             <CardHeader className="text-center pb-4">
               <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4 shadow-lg">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
-              <CardTitle className="text-xl font-bold text-foreground mb-1">
+              <CardTitle className="text-xl font-bold text-white mb-1">
                 Консультация по Telegram
               </CardTitle>
-              <p className="text-muted-foreground text-xs leading-relaxed">
+              <p className="text-white/80 text-xs leading-relaxed">
                 Ответь на несколько вопросов для записи на консультацию
               </p>
             </CardHeader>
@@ -154,8 +154,8 @@ const ConsultationForm = () => {
               {/* Progress Bar */}
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-muted-foreground text-xs">Вопрос {currentStep} из {totalSteps}</span>
-                  <span className="text-muted-foreground text-xs">{Math.round(progress)}%</span>
+                  <span className="text-white/70 text-xs">Вопрос {currentStep} из {totalSteps}</span>
+                  <span className="text-white/70 text-xs">{Math.round(progress)}%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2 mb-4">
                   <div 
@@ -181,7 +181,7 @@ const ConsultationForm = () => {
 
               {/* Question */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground mb-4">
+                <h3 className="text-lg font-semibold text-white mb-4">
                   {currentQuestion.question}
                 </h3>
 
@@ -260,12 +260,12 @@ const ConsultationForm = () => {
       {showSuccessPopup && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
           <div 
-            className="bg-card border shadow-2xl rounded-2xl p-8 max-w-md mx-4 text-center"
+            className="backdrop-blur-xl bg-card/10 border-card/20 shadow-2xl rounded-2xl p-8 max-w-md mx-4 text-center text-white"
             style={{ animation: "elasticScale 1s ease-out" }}
           >
             <button
               onClick={() => setShowSuccessPopup(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -274,11 +274,11 @@ const ConsultationForm = () => {
               <CheckCircle className="w-10 h-10 text-white" />
             </div>
             
-            <h2 className="text-2xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Заявка отправлена!
             </h2>
             
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white/80 mb-6">
               Спасибо за интерес к нашим услугам! Мы свяжемся с вами в ближайшее время для назначения консультации.
             </p>
             
