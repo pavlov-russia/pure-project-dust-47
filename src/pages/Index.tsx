@@ -343,32 +343,24 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
-              {/* Quote content with glass border effect */}
-              <div className="relative">
-                {/* Glass border effects */}
-                <div className="absolute inset-0 rounded-[24px] border border-white/30 backdrop-blur-sm"></div>
-                <div className="absolute inset-[1px] rounded-[23px] border border-white/20"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 rounded-[24px]"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5 rounded-[24px]"></div>
+              {/* Quote content without any frames */}
+              <div className="text-center">
+                {/* iOS style notification header */}
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
+                  <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
+                </div>
                 
-                <div className="relative z-10 p-6 md:p-8 text-center">
-                  {/* iOS style notification header */}
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
-                    <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
-                  </div>
-                  
-                  {/* Quote content */}
-                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                    "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
-                  </blockquote>
-                  
-                  {/* Author attribution */}
-                  <div className="flex items-center justify-center">
-                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
-                  </div>
+                {/* Quote content */}
+                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                  "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
+                </blockquote>
+                
+                {/* Author attribution */}
+                <div className="flex items-center justify-center">
+                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
                 </div>
               </div>
             </div>
