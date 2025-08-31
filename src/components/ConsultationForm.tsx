@@ -69,15 +69,15 @@ const ConsultationForm = () => {
   return (
     <div className="bg-gradient-subtle py-16" data-consultation-form>
       <div className="container mx-auto px-6 max-w-full">
-        <Card className="max-w-lg mx-auto bg-card/40 backdrop-blur-xl border border-white/10 shadow-2xl">
+        <Card className="max-w-lg mx-auto bg-card backdrop-blur-xl border shadow-2xl">
           <CardHeader className="text-center pb-6">
             <div className="mx-auto w-20 h-20 bg-gradient-telegram rounded-full flex items-center justify-center mb-6 shadow-lg">
               <MessageCircle className="w-10 h-10 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold text-white mb-2">
+            <CardTitle className="text-2xl font-bold text-foreground mb-2">
               Консультация по Telegram
             </CardTitle>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Ответь на несколько вопросов для записи на консультацию
             </p>
           </CardHeader>
@@ -86,10 +86,10 @@ const ConsultationForm = () => {
             {/* Progress Bar */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-3">
-                <span className="text-white/60 text-sm">Вопрос {currentStep} из {totalSteps}</span>
-                <span className="text-white/60 text-sm">{Math.round(progress)}%</span>
+                <span className="text-muted-foreground text-sm">Вопрос {currentStep} из {totalSteps}</span>
+                <span className="text-muted-foreground text-sm">{Math.round(progress)}%</span>
               </div>
-              <div className="w-full bg-white/10 rounded-full h-2 mb-6">
+              <div className="w-full bg-muted rounded-full h-2 mb-6">
                 <div 
                   className="bg-gradient-telegram h-2 rounded-full transition-all duration-500 ease-out"
                   style={{width: `${progress}%`}}
@@ -104,7 +104,7 @@ const ConsultationForm = () => {
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       i + 1 <= currentStep 
                         ? 'bg-gradient-telegram' 
-                        : 'bg-white/20'
+                        : 'bg-muted'
                     }`}
                   />
                 ))}
@@ -113,7 +113,7 @@ const ConsultationForm = () => {
 
             {/* Question */}
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-white mb-6">
+              <h3 className="text-xl font-semibold text-foreground mb-6">
                 {currentQuestion.question}
               </h3>
 
@@ -124,7 +124,7 @@ const ConsultationForm = () => {
                     placeholder={currentQuestion.placeholder}
                     value={currentValue}
                     onChange={(e) => handleInputChange(e.target.value)}
-                    className="bg-card/20 border-white/20 text-white placeholder:text-white/40 focus:border-primary/50 focus:bg-card/30 rounded-xl"
+                    className="focus:border-primary rounded-xl"
                   />
                 )}
 
@@ -133,7 +133,7 @@ const ConsultationForm = () => {
                     placeholder={currentQuestion.placeholder}
                     value={currentValue}
                     onChange={(e) => handleInputChange(e.target.value)}
-                    className="bg-card/20 border-white/20 text-white placeholder:text-white/40 focus:border-primary/50 focus:bg-card/30 rounded-xl min-h-[120px] resize-none"
+                    className="focus:border-primary rounded-xl min-h-[120px] resize-none"
                   />
                 )}
 
@@ -142,12 +142,12 @@ const ConsultationForm = () => {
                     value={currentValue}
                     onValueChange={handleInputChange}
                   >
-                    <SelectTrigger className="bg-card/20 border-white/20 text-white focus:border-primary/50 focus:bg-card/30 rounded-xl">
+                    <SelectTrigger className="focus:border-primary rounded-xl">
                       <SelectValue placeholder="Выберите вариант" />
                     </SelectTrigger>
-                    <SelectContent className="bg-card border-white/20">
+                    <SelectContent>
                       {currentQuestion.options?.map((option) => (
-                        <SelectItem key={option.value} value={option.value} className="text-white focus:bg-white/10">
+                        <SelectItem key={option.value} value={option.value}>
                           {option.label}
                         </SelectItem>
                       ))}
