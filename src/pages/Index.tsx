@@ -214,7 +214,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Real Packaging System */}
-      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
+      <SectionCard className="py-8 md:py-16 bg-background text-white">
         <div className="container mx-auto px-4 md:px-6 max-w-full">
           <div className="relative max-w-4xl mx-auto">
             {/* iOS 26 Liquid Glass Effect */}
