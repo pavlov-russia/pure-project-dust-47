@@ -225,22 +225,11 @@ const Index = () => {
             <div className="relative z-10 p-6 md:p-8">
               {/* Wisdom Style Header */}
               <div className="max-w-2xl mx-auto mb-8 md:mb-12">
-                <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
-                  {/* Multiple liquid glass layers */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
-                  <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    {/* Quote content */}
-                    <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
-                      <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система
-                    </h2>
-                  </div>
-                  
-                  {/* Enhanced animated glow with multiple layers */}
-                  <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
-                  <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
+                <div className="text-center">
+                  {/* Quote content */}
+                  <h2 className="mobile-subheading-scale md:text-3xl font-medium text-foreground leading-relaxed">
+                    <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Настоящая упаковка</span> — это система
+                  </h2>
                 </div>
               </div>
               
@@ -347,16 +336,19 @@ const Index = () => {
                   <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
-                {/* Quote content */}
-                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                  "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
-                </blockquote>
-                
-                {/* Author attribution */}
-                <div className="flex items-center justify-center">
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                {/* Inner frame around quote and author */}
+                <div className="inline-block backdrop-blur-sm bg-white/10 border border-white/30 rounded-2xl px-4 py-3 max-w-lg">
+                  {/* Quote content */}
+                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                    "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
+                  </blockquote>
+                  
+                  {/* Author attribution */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                  </div>
                 </div>
               </div>
             </div>
