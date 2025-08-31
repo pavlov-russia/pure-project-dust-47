@@ -370,12 +370,6 @@ const Index = () => {
       <SectionCard className="pt-6 md:pt-16 pb-3 md:pb-14 bg-gradient-hero text-white">
         <div className="container mx-auto px-3 md:px-6 text-center max-w-full relative">
           <div className="relative max-w-lg md:max-w-2xl mx-auto">
-            {/* iOS 26 Liquid Glass Effect */}
-            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
-            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
-            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
-            
             <div className="relative z-10 p-5 md:p-8 text-foreground">
               <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
                 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
