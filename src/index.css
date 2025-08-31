@@ -194,6 +194,7 @@ All colors MUST be HSL.
 
   body {
     background: linear-gradient(135deg, #7962f4 0%, #7e68f5 20%, #8370f6 40%, #8776f7 60%, #8b7cf8 80%, #7962f4 100%);
+    backdrop-filter: blur(20px);
     @apply text-foreground font-sans;
     font-family: var(--custom-font-family, 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
     /* Fullscreen setup */
@@ -266,6 +267,7 @@ All colors MUST be HSL.
     overflow-y: auto;
     position: relative;
     background: linear-gradient(135deg, #7962f4 0%, #7e68f5 20%, #8370f6 40%, #8776f7 60%, #8b7cf8 80%, #7962f4 100%);
+    backdrop-filter: blur(20px);
     min-height: 100vh;
     /* Safe area support */
     padding-top: var(--safe-area-inset-top);
