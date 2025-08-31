@@ -53,7 +53,7 @@ const Index = () => {
     return () => clearInterval(intervalId);
   }, [api, current, count, isPaused]);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#7962f4] via-[#9c88ff] to-[#6b5ce6]">
+    <div className="min-h-screen bg-gradient-to-br from-[#7962f4] via-[#8574f7] to-[#7962f4]">
       <Header />
       <ChecklistPopup />
       
