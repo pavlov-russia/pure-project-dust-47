@@ -77,7 +77,6 @@ const Index = () => {
             {/* CTA Button with liquid glass */}
             <div className="relative inline-block">
               <div className="absolute inset-0 backdrop-blur-[40px] bg-white/25 border border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
-              <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
               <Button 
                 className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 flex items-center gap-3"
                 icon={
