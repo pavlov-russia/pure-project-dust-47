@@ -285,10 +285,10 @@ const Index = () => {
                          <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                            <div className="relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[20px] p-4 md:p-5 shadow-none hover:bg-white/25 transition-all duration-300 hover:scale-[1.01] h-[280px] md:h-[320px] flex flex-col">
                              <div className="relative z-10 flex flex-col h-full text-center justify-between">
-                               <h3 className="font-bold text-foreground leading-tight mb-3 text-sm md:text-base lg:text-lg">
+                               <h3 className="font-bold text-foreground leading-tight mb-2 text-base md:text-lg lg:text-xl">
                                  {item.title}
                                </h3>
-                               <p className="text-muted-foreground leading-relaxed flex-1 flex items-center justify-center text-xs md:text-sm lg:text-base overflow-hidden">
+                               <p className="text-muted-foreground leading-relaxed flex-1 flex items-center justify-center text-sm md:text-base lg:text-lg overflow-hidden">
                                  {item.description}
                                </p>
                              </div>
