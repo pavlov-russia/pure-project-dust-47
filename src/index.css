@@ -25,8 +25,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Brand colors: #563AF0, #7962F4, #FFFFFF, #E9E9E9, #272727 */
-    --background: 253 74% 70%;      /* #7962F4 */
+    /* Brand colors: #563AF0, #563AF0, #FFFFFF, #E9E9E9, #272727 */
+    --background: 253 74% 70%;      /* #563AF0 */
     --foreground: 0 0% 15%;         /* #272727 */
 
     --card: 0 0% 100%;              /* #FFFFFF */
@@ -44,7 +44,7 @@ All colors MUST be HSL.
     --muted: 0 0% 91%;              /* #E9E9E9 */
     --muted-foreground: 0 0% 47%;   /* Darker gray */
 
-    --accent: 253 74% 70%;          /* #7962F4 */
+    --accent: 253 74% 70%;          /* #563AF0 */
     --accent-foreground: 0 0% 100%; /* #FFFFFF */
 
     --destructive: 246 77% 59%;     /* #563AF0 */
@@ -54,7 +54,7 @@ All colors MUST be HSL.
     --input: 0 0% 91%;              /* #E9E9E9 */
     --ring: 246 77% 59%;            /* #563AF0 */
 
-    --success: 253 74% 70%;         /* #7962F4 */
+    --success: 253 74% 70%;         /* #563AF0 */
     --success-foreground: 0 0% 100%; /* #FFFFFF */
 
     --warning: 246 77% 59%;         /* #563AF0 */
@@ -112,7 +112,7 @@ All colors MUST be HSL.
     --popover: 0 0% 15%;            /* #272727 */
     --popover-foreground: 0 0% 100%; /* #FFFFFF */
 
-    --primary: 253 74% 70%;         /* #7962F4 */
+    --primary: 253 74% 70%;         /* #563AF0 */
     --primary-foreground: 0 0% 15%; /* #272727 */
 
     --secondary: 0 0% 91%;          /* #E9E9E9 */
@@ -129,7 +129,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 91%;             /* #E9E9E9 */
     --input: 0 0% 91%;              /* #E9E9E9 */
-    --ring: 253 74% 70%;            /* #7962F4 */
+    --ring: 253 74% 70%;            /* #563AF0 */
     
     --sidebar-background: 0 0% 15%;
     --sidebar-foreground: 0 0% 100%;
@@ -371,19 +371,19 @@ All colors MUST be HSL.
   @keyframes glow-pulse {
     0% {
       box-shadow: 
-        0 0 20px #7962F4,
-        0 0 40px #7962F4,
-        0 0 80px rgba(121, 98, 244, 0.6),
-        0 0 120px rgba(121, 98, 244, 0.4),
+        0 0 20px #563AF0,
+        0 0 40px #563AF0,
+        0 0 80px rgba(86, 58, 240, 0.6),
+        0 0 120px rgba(86, 58, 240, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     }
     100% {
       box-shadow: 
-        0 0 30px #7962F4,
-        0 0 60px #7962F4,
-        0 0 120px rgba(121, 98, 244, 0.8),
-        0 0 160px rgba(121, 98, 244, 0.6),
+        0 0 30px #563AF0,
+        0 0 60px #563AF0,
+        0 0 120px rgba(86, 58, 240, 0.8),
+        0 0 160px rgba(86, 58, 240, 0.6),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     }

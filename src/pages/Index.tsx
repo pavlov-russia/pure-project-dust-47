@@ -53,7 +53,7 @@ const Index = () => {
     return () => clearInterval(intervalId);
   }, [api, current, count, isPaused]);
   return (
-    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #7962f4 0%, #7e68f5 20%, #8370f6 40%, #8776f7 60%, #8b7cf8 80%, #7962f4 100%)'}}>
+    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #563AF0 0%, #5c41f1 20%, #6248f2 40%, #684ff3 60%, #6e56f4 80%, #563AF0 100%)'}}>
       <Header />
       <ChecklistPopup />
       
@@ -310,7 +310,7 @@ const Index = () => {
                            current === index + 1 ? '' : 'blur-[0.5px]'
                          }`}
                          style={{
-                           backgroundColor: current === index + 1 ? '#563AF0' : '#7962F4'
+                           backgroundColor: current === index + 1 ? '#563AF0' : '#563AF0'
                          }}
                          aria-label={`Go to slide ${index + 1}`}
                        />
