@@ -244,7 +244,7 @@ const ConsultationForm = () => {
                   <Button 
                     onClick={handleNext}
                     disabled={!isStepValid}
-                    className="flex-1 bg-gradient-telegram hover:opacity-90 text-white font-semibold py-4 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="flex-1 h-[56px] bg-gradient-telegram hover:opacity-90 text-white font-semibold rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
                     <ChevronRight className="w-5 h-5" />
