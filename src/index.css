@@ -265,6 +265,8 @@ All colors MUST be HSL.
     overflow-x: clip;
     overflow-y: auto;
     position: relative;
+    background: linear-gradient(135deg, #7962f4 0%, #9c88ff 50%, #6b5ce6 100%);
+    min-height: 100vh;
     /* Safe area support */
     padding-top: var(--safe-area-inset-top);
     padding-left: var(--safe-area-inset-left);
