@@ -221,7 +221,6 @@ const Index = () => {
             <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
             <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
-            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
               {/* Wisdom Style Header */}
@@ -342,7 +341,6 @@ const Index = () => {
             <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/30 via-white/10 to-white/20 rounded-[40px] shadow-[0_32px_64px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]"></div>
             <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[39px]"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
-            <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
               {/* iOS Notification Style Card with enhanced liquid glass */}
