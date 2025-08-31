@@ -346,7 +346,7 @@ const Index = () => {
             
             <div className="relative z-10 p-6 md:p-8">
               {/* iOS Notification Style Card with enhanced liquid glass */}
-              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 border border-white/30 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
+              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
                 {/* Multiple liquid glass layers */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
