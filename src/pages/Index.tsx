@@ -325,7 +325,7 @@ const Index = () => {
       {/* Quote Section - iOS 26 Liquid Glass Style */}
       <SectionCard className="py-4 md:py-8 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
-          <div className="relative max-w-lg mx-auto">
+          <div className="relative max-w-md mx-auto">
             
             <div className="relative z-10 p-4 md:p-6">
               {/* Quote content without any frames */}
