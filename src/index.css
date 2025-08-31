@@ -26,7 +26,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Brand colors: #563AF0, #7962F4, #FFFFFF, #E9E9E9, #272727 */
-    --background: 0 0% 100%;        /* #FFFFFF */
+    --background: 253 74% 70%;      /* #7962F4 */
     --foreground: 0 0% 15%;         /* #272727 */
 
     --card: 0 0% 100%;              /* #FFFFFF */
@@ -193,7 +193,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, #7962f4 0%, #9c88ff 50%, #6b5ce6 100%);
+    @apply text-foreground font-sans;
     font-family: var(--custom-font-family, 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
     /* Fullscreen setup */
     height: 100%;
