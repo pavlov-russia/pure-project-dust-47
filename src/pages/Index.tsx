@@ -378,7 +378,7 @@ const Index = () => {
             
             <div className="relative z-10 p-5 md:p-8 text-foreground">
               <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-6 px-1 md:px-2 text-white leading-tight">
-                ☝🏼 Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
+                Мудрые учатся на чужих ошибках — забирайте <span className="font-demibold">оберег от слитого бюджета</span>
               </h2>
               {/* SVG-styled card with large drop shadow */}
               <div className="max-w-lg md:max-w-2xl mx-auto relative">
