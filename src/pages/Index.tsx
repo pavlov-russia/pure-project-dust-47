@@ -337,8 +337,6 @@ const Index = () => {
       <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
           <div className="relative max-w-2xl mx-auto">
-            {/* Simplified Glass Effect */}
-            <div className="absolute inset-0 backdrop-blur-[60px] bg-white/25 rounded-[40px] shadow-[0_20px_40px_rgba(0,0,0,0.1)]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
               {/* Quote content without any frames */}
@@ -349,16 +347,18 @@ const Index = () => {
                   <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
-                {/* Quote content */}
-                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                  "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
-                </blockquote>
-                
-                {/* Author attribution */}
-                <div className="flex items-center justify-center">
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                {/* Quote content with border */}
+                <div className="backdrop-blur-[60px] bg-white/25 rounded-[40px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-white/30 p-6 md:p-8">
+                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                    "У вас не будет <span className="font-semibold" style={{ color: '#563AF0' }}>второго шанса</span> произвести первое впечатление"
+                  </blockquote>
+                  
+                  {/* Author attribution */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                  </div>
                 </div>
               </div>
             </div>
