@@ -21,6 +21,8 @@ const SectionCard: React.FC<SectionCardProps> = ({ children, className, ...rest 
         className
       )}
       style={{
+        backdropFilter: 'blur(28px) saturate(160%)',
+        WebkitBackdropFilter: 'blur(28px) saturate(160%)',
         boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.4), 0 12px 40px rgba(17,1,61,0.25)',
         isolation: 'isolate'
       }}
