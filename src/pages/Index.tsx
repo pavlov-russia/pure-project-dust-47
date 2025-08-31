@@ -343,36 +343,25 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[40px]"></div>
             
             <div className="relative z-10 p-6 md:p-8">
-              {/* iOS Notification Style Card with enhanced liquid glass */}
-              <div className="glass relative overflow-hidden backdrop-blur-xl bg-white/20 rounded-[28px] p-6 md:p-8 shadow-[0_8px_32px_rgba(86,58,240,0.12)] hover:bg-white/25 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_12px_48px_rgba(86,58,240,0.18)]">
-                {/* Multiple liquid glass layers */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-primary/5 rounded-[28px] pointer-events-none"></div>
-                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-[27px] pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-accent/10 rounded-[28px] pointer-events-none"></div>
-                
-                <div className="relative z-10">
-                  {/* iOS style notification header */}
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
-                    <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
-                  </div>
-                  
-                  {/* Quote content */}
-                  <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
-                    "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
-                  </blockquote>
-                  
-                  {/* Author attribution */}
-                  <div className="flex items-center justify-center">
-                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
-                    <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
-                    <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
-                  </div>
+              {/* Quote content without any frames */}
+              <div className="text-center">
+                {/* iOS style notification header */}
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-2 h-2 bg-gradient-to-r from-success to-accent rounded-full mr-2 opacity-90 animate-pulse"></div>
+                  <p className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Мудрость</p>
                 </div>
                 
-                {/* Enhanced animated glow with multiple layers */}
-                <div className="absolute -inset-[2px] bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[30px] opacity-60 blur-md pointer-events-none animate-pulse"></div>
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-[29px] opacity-40 pointer-events-none"></div>
+                {/* Quote content */}
+                <blockquote className="text-lg md:text-2xl font-medium text-foreground leading-relaxed mb-4">
+                  "У вас не будет <span className="font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">второго шанса</span> произвести первое впечатление"
+                </blockquote>
+                
+                {/* Author attribution */}
+                <div className="flex items-center justify-center">
+                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent mr-3"></div>
+                  <p className="text-sm font-medium text-muted-foreground">Коко Шанель</p>
+                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent via-primary/40 to-transparent ml-3"></div>
+                </div>
               </div>
             </div>
           </div>
