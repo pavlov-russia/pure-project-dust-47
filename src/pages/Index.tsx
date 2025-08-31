@@ -60,9 +60,6 @@ const Index = () => {
       {/* Hero Section */}
       <SectionCard className="pt-20 md:pt-48 bg-transparent text-white text-center" data-hero>
         <div className="relative max-w-5xl mx-auto">
-          {/* Simple liquid glass effect */}
-          <div className="absolute inset-0 backdrop-blur-[60px] bg-gradient-to-br from-white/20 via-white/10 to-white/15 rounded-[32px] border border-white/25"></div>
-          
           <div className="relative z-10 p-8 md:p-12">
             <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight text-foreground">
               Управляйте впечатлением о своём бизнесе с <span className="font-demibold text-foreground">TapBlog</span>
