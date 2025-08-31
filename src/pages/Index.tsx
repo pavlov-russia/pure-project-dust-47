@@ -502,9 +502,8 @@ const Index = () => {
               <h3 className="text-lg md:text-xl font-regular mb-3 md:mb-4 text-foreground">
                 <span className="font-demibold">УПАКОВКА</span> – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
               </h3>
-              <p className="text-base md:text-lg font-semibold text-foreground flex items-center justify-center gap-2">
-                САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ 
-                <span className="text-xl">👆</span>
+              <p className="text-base md:text-lg font-semibold text-foreground">
+                САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
               </p>
             </div>
           </div>
