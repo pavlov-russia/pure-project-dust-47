@@ -235,8 +235,7 @@ const ConsultationForm = () => {
                     <Button 
                       onClick={handlePrevious}
                       variant="outline"
-                      size="icon"
-                      className="h-12 w-12 rounded-xl border-2 hover:bg-muted transition-all duration-300 flex-shrink-0"
+                      className="h-[56px] w-14 rounded-xl border-2 hover:bg-muted transition-all duration-300 flex-shrink-0 flex items-center justify-center"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </Button>
