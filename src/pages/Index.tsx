@@ -62,7 +62,6 @@ const Index = () => {
         <div className="relative max-w-5xl mx-auto">
           {/* Simple liquid glass effect */}
           <div className="absolute inset-0 backdrop-blur-[60px] bg-gradient-to-br from-white/20 via-white/10 to-white/15 rounded-[32px] border border-white/25"></div>
-          <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[31px]"></div>
           
           <div className="relative z-10 p-8 md:p-12">
             <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight text-foreground">
