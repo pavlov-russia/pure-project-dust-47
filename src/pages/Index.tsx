@@ -388,7 +388,6 @@ const Index = () => {
                 {/* Main glass morphism card */}
                 <div className="relative backdrop-blur-xl bg-white/10 border border-white/25 rounded-[24px] md:rounded-[34px] p-5 md:p-8 text-white shadow-[0_8px_32px_rgba(86,58,240,0.12)]">
                   <div className="flex items-center justify-center mb-4 md:mb-6">
-                    <Shield className="w-8 h-8 md:w-12 md:h-12 text-warning" />
                   </div>
                   <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
                     <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
@@ -399,10 +398,9 @@ const Index = () => {
                   <Button 
                     variant="cta-secondary"
                     size="xl"
-                    className="w-full md:w-auto"
-                    icon={<Shield className="w-4 h-4 md:w-5 md:h-5" />}
+                    className="w-full md:w-auto text-sm md:text-base px-6 md:px-8 py-3 md:py-4"
                   >
-                    Получить чек-лист бесплатно
+                    <span className="whitespace-nowrap">Получить чек-лист бесплатно</span>
                   </Button>
                   
                   {/* SVG corner decoration - hidden on mobile */}
