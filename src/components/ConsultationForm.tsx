@@ -74,10 +74,10 @@ const ConsultationForm = () => {
             <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-4 shadow-lg">
               <MessageCircle className="w-8 h-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold text-foreground mb-1">
+            <CardTitle className="text-xl font-bold text-foreground mb-1">
               Консультация по Telegram
             </CardTitle>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-xs leading-relaxed">
               Ответь на несколько вопросов для записи на консультацию
             </p>
           </CardHeader>
@@ -86,8 +86,8 @@ const ConsultationForm = () => {
             {/* Progress Bar */}
             <div className="mb-6">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground text-sm">Вопрос {currentStep} из {totalSteps}</span>
-                <span className="text-muted-foreground text-sm">{Math.round(progress)}%</span>
+                <span className="text-muted-foreground text-xs">Вопрос {currentStep} из {totalSteps}</span>
+                <span className="text-muted-foreground text-xs">{Math.round(progress)}%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2 mb-4">
                 <div 
@@ -113,7 +113,7 @@ const ConsultationForm = () => {
 
             {/* Question */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
                 {currentQuestion.question}
               </h3>
 
