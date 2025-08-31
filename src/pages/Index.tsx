@@ -323,7 +323,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Quote Section - iOS 26 Liquid Glass Style */}
-      <section className="py-8 md:py-16 bg-gradient-hero text-white">
+      <SectionCard className="py-8 md:py-16 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-full relative">
           <div className="relative max-w-2xl mx-auto">
             
@@ -351,7 +351,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </SectionCard>
 
       {/* Checklist Section */}
       <SectionCard className="pt-6 md:pt-16 pb-3 md:pb-14 bg-gradient-hero text-white">
