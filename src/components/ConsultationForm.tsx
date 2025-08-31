@@ -50,35 +50,51 @@ const ConsultationForm = () => {
     }
   ];
 
-  // Looped typing animation effect for all questions
+  // Fixed typing animation effect
   useEffect(() => {
     const currentQuestion = questions[currentStep - 1];
-    if (currentQuestion.placeholder) {
+    if (!currentQuestion.placeholder) return;
+    
+    setTypedText(""); // Clear immediately
+    let isMounted = true;
+    let timeoutId: NodeJS.Timeout;
+    
+    const startTyping = () => {
+      if (!isMounted) return;
+      
       const text = currentQuestion.placeholder;
       let index = 0;
-      setTypedText("");
       
-      const typeText = () => {
-        const timer = setInterval(() => {
-          if (index < text.length) {
-            setTypedText(text.substring(0, index + 1));
-            index++;
-          } else {
-            clearInterval(timer);
-            // Wait 2 seconds then restart
-            setTimeout(() => {
+      const typeChar = () => {
+        if (!isMounted || index > text.length) return;
+        
+        setTypedText(text.substring(0, index));
+        index++;
+        
+        if (index <= text.length) {
+          timeoutId = setTimeout(typeChar, 50);
+        } else {
+          // Wait 2 seconds then restart
+          timeoutId = setTimeout(() => {
+            if (isMounted) {
               index = 0;
-              setTypedText("");
-              typeText();
-            }, 2000);
-          }
-        }, 50);
-        return timer;
+              startTyping();
+            }
+          }, 2000);
+        }
       };
-
-      const timer = typeText();
-      return () => clearInterval(timer);
-    }
+      
+      typeChar();
+    };
+    
+    // Small delay to prevent flickering
+    timeoutId = setTimeout(startTyping, 100);
+    
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+      setTypedText("");
+    };
   }, [currentStep]);
 
   const handleNext = () => {
