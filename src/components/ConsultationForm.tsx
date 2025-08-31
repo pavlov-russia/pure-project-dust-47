@@ -71,8 +71,8 @@ const ConsultationForm = () => {
       <div className="container mx-auto px-6 max-w-full">
         <Card className="max-w-lg mx-auto bg-card backdrop-blur-xl border shadow-2xl">
           <CardHeader className="text-center pb-6">
-            <div className="mx-auto w-20 h-20 bg-gradient-telegram rounded-full flex items-center justify-center mb-6 shadow-lg">
-              <MessageCircle className="w-10 h-10 text-white" />
+            <div className="mx-auto w-16 h-16 bg-gradient-telegram rounded-full flex items-center justify-center mb-6 shadow-lg">
+              <MessageCircle className="w-8 h-8 text-white" />
             </div>
             <CardTitle className="text-2xl font-bold text-foreground mb-2">
               Консультация по Telegram
