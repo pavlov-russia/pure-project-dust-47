@@ -50,7 +50,7 @@ const ConsultationForm = () => {
     }
   ];
 
-  // Typing animation effect for all questions
+  // Looped typing animation effect for all questions
   useEffect(() => {
     const currentQuestion = questions[currentStep - 1];
     if (currentQuestion.placeholder) {
@@ -58,15 +58,25 @@ const ConsultationForm = () => {
       let index = 0;
       setTypedText("");
       
-      const timer = setInterval(() => {
-        if (index < text.length) {
-          setTypedText(text.substring(0, index + 1));
-          index++;
-        } else {
-          clearInterval(timer);
-        }
-      }, 50);
+      const typeText = () => {
+        const timer = setInterval(() => {
+          if (index < text.length) {
+            setTypedText(text.substring(0, index + 1));
+            index++;
+          } else {
+            clearInterval(timer);
+            // Wait 2 seconds then restart
+            setTimeout(() => {
+              index = 0;
+              setTypedText("");
+              typeText();
+            }, 2000);
+          }
+        }, 50);
+        return timer;
+      };
 
+      const timer = typeText();
       return () => clearInterval(timer);
     }
   }, [currentStep]);
