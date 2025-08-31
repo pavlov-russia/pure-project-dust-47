@@ -50,10 +50,11 @@ const ConsultationForm = () => {
     }
   ];
 
-  // Typing animation effect
+  // Typing animation effect for all questions
   useEffect(() => {
-    if (currentStep === 1) {
-      const text = questions[0].placeholder;
+    const currentQuestion = questions[currentStep - 1];
+    if (currentQuestion.placeholder) {
+      const text = currentQuestion.placeholder;
       let index = 0;
       setTypedText("");
       
@@ -64,7 +65,7 @@ const ConsultationForm = () => {
         } else {
           clearInterval(timer);
         }
-      }, 100);
+      }, 50);
 
       return () => clearInterval(timer);
     }
@@ -152,43 +153,48 @@ const ConsultationForm = () => {
                   {currentQuestion.question}
                 </h3>
 
-                {/* Input Field */}
+                {/* Input Field with smooth transitions */}
                 <div className="space-y-4">
-                  {currentQuestion.type === "input" && (
-                    <Input
-                      placeholder={currentStep === 1 ? typedText + "|" : currentQuestion.placeholder}
-                      value={currentValue}
-                      onChange={(e) => handleInputChange(e.target.value)}
-                      className="focus:border-primary rounded-xl"
-                    />
-                  )}
+                  <div 
+                    key={currentStep}
+                    className="animate-fade-in"
+                  >
+                    {currentQuestion.type === "input" && (
+                      <Input
+                        placeholder={typedText + "|"}
+                        value={currentValue}
+                        onChange={(e) => handleInputChange(e.target.value)}
+                        className="focus:border-primary rounded-xl text-sm overflow-hidden text-ellipsis"
+                      />
+                    )}
 
-                  {currentQuestion.type === "textarea" && (
-                    <Textarea
-                      placeholder={currentQuestion.placeholder}
-                      value={currentValue}
-                      onChange={(e) => handleInputChange(e.target.value)}
-                      className="focus:border-primary rounded-xl min-h-[120px] resize-none"
-                    />
-                  )}
+                    {currentQuestion.type === "textarea" && (
+                      <Textarea
+                        placeholder={typedText + "|"}
+                        value={currentValue}
+                        onChange={(e) => handleInputChange(e.target.value)}
+                        className="focus:border-primary rounded-xl min-h-[120px] resize-none text-sm"
+                      />
+                    )}
 
-                  {currentQuestion.type === "select" && (
-                    <Select
-                      value={currentValue}
-                      onValueChange={handleInputChange}
-                    >
-                      <SelectTrigger className="focus:border-primary rounded-xl">
-                        <SelectValue placeholder="Выберите вариант" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {currentQuestion.options?.map((option) => (
-                          <SelectItem key={option.value} value={option.value}>
-                            {option.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  )}
+                    {currentQuestion.type === "select" && (
+                      <Select
+                        value={currentValue}
+                        onValueChange={handleInputChange}
+                      >
+                        <SelectTrigger className="focus:border-primary rounded-xl">
+                          <SelectValue placeholder="Выберите вариант" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {currentQuestion.options?.map((option) => (
+                            <SelectItem key={option.value} value={option.value}>
+                              {option.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
+                  </div>
                 </div>
 
                 {/* Next Button */}
