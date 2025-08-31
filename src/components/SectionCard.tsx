@@ -10,7 +10,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ children, className, ...rest 
   return (
     <section 
       className={cn(
-        "mx-auto my-2 md:my-6 max-w-6xl rounded-[16px] md:rounded-[24px] relative overflow-hidden px-4 py-4 md:px-12 md:py-16",
+        "mx-auto max-w-6xl rounded-[16px] md:rounded-[24px] relative overflow-hidden px-4 py-4 md:px-12 md:py-16",
         "bg-white/10 border border-white/25",
         "before:absolute before:inset-0 before:pointer-events-none",
         "before:bg-[radial-gradient(140px_70px_at_calc(100%-36px)_50%,rgba(255,255,255,0.35),rgba(255,255,255,0.14)_45%,transparent_75%)]",
