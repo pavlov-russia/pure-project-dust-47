@@ -235,17 +235,17 @@ const ConsultationForm = () => {
                     <Button 
                       onClick={handlePrevious}
                       variant="outline"
-                      className="flex-1 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                      size="icon"
+                      className="h-12 w-12 rounded-xl border-2 hover:bg-muted transition-all duration-300 flex-shrink-0"
                     >
                       <ChevronLeft className="w-5 h-5" />
-                      Назад
                     </Button>
                   )}
                   
                   <Button 
                     onClick={handleNext}
                     disabled={!isStepValid}
-                    className={`${currentStep > 1 ? 'flex-2' : 'w-full'} bg-gradient-telegram hover:opacity-90 text-white font-semibold py-4 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+                    className="flex-1 bg-gradient-telegram hover:opacity-90 text-white font-semibold py-4 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
                     <ChevronRight className="w-5 h-5" />
