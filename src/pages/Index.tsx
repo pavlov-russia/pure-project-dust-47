@@ -392,7 +392,7 @@ const Index = () => {
                   <h3 className="text-base md:text-xl font-regular mb-3 md:mb-4 leading-snug">
                     <span className="font-demibold">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-demibold">50% продаж</span>
                   </h3>
-                  <p className="text-muted-foreground mb-4 md:mb-6 text-xs md:text-base">
+                  <p className="mb-4 md:mb-6 text-xs md:text-base text-black">
                     (разобрали на реальных примерах наших клиентов)
                   </p>
                   <Button 
