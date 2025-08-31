@@ -443,7 +443,7 @@ const Index = () => {
             
             <div className="relative z-10 p-6 md:p-8 text-foreground">
               <div className="mb-6 md:mb-8">
-                <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6 border-2 border-warning rounded-xl p-4 md:p-6">
+                <h2 className="text-lg md:text-2xl font-regular text-center mb-4 md:mb-6">
                   Попытка сэкономить на упаковке или сделать её наскоро — <span className="font-demibold">гарантированно сольёт ваш бюджет впустую!</span>
                 </h2>
               </div>
