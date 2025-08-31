@@ -84,7 +84,7 @@ const Index = () => {
       </SectionCard>
 
       {/* Strategic Packaging Section */}
-      <SectionCard className="text-white">
+      <SectionCard className="bg-gradient-hero text-white">
         <div className="text-center mb-4 md:mb-8">
           <h2 className="mobile-subheading-scale md:text-4xl font-bold mb-4 md:mb-6 px-2">
             <span className="font-bold text-white">Стратегическая упаковка</span> — катализатор доверия и конверсии
