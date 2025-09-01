@@ -162,7 +162,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'swing': 'swing 3s ease-in-out infinite',
-				'pulse-slow': 'pulse-slow 6s ease-in-out infinite'
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite'
 			}
 		}
 	},
