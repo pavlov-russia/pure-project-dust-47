@@ -105,7 +105,7 @@ const Index = () => {
                     >
                       ЭТО НЕ УПАКОВКА!
                       <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none"
+                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-sm"
                         style={{ 
                           width: '120%',
                           transform: 'translate(-50%, -50%) rotate(-20deg) scaleX(var(--strike-scale))',
@@ -113,7 +113,7 @@ const Index = () => {
                         }}
                       ></span>
                       <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none"
+                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-sm"
                         style={{ 
                           width: '120%',
                           transform: 'translate(-50%, -50%) rotate(20deg) scaleX(var(--strike-scale))',
