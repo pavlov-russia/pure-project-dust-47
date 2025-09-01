@@ -53,7 +53,7 @@ const Index = () => {
       </section>
       
       {/* Strategy Section */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="container mx-auto px-2 max-w-full">
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
