@@ -27,16 +27,16 @@ const Index = () => {
           <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
           
           <div className="relative z-10 p-8 md:p-12 text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white">
               Управляйте впечатлением о своём бизнесе с{" "}
               <span className="font-bold text-white">TapBlog</span>
             </h1>
             
-            <p className="text-lg md:text-xl mb-8 leading-relaxed text-white/90 max-w-md mx-auto">
+            <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
               У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
             </p>
             
-            <p className="text-lg md:text-xl mb-10 font-semibold text-white leading-relaxed">
+            <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
               И мы поможем использовать их в вашу пользу!
             </p>
             
