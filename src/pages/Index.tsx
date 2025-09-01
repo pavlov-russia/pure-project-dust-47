@@ -79,7 +79,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
-              <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 max-w-lg mx-auto">
+              <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 max-w-lg mx-auto px-6">
                 <p className="text-center text-white font-semibold text-sm md:text-base tracking-wide">
                   СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
                 </p>
