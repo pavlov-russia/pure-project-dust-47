@@ -65,7 +65,7 @@ const Index = () => {
                 Это основа, без которой продвижение теряет смысл, а вы – бюджет
               </p>
               
-              <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20">
+              <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000">
                 <p className="text-center text-white font-semibold text-lg tracking-wide">
                   СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
                 </p>
