@@ -59,7 +59,9 @@ const Index = () => {
       </section>
       
       {/* Consultation Form */}
-      <ConsultationForm />
+      <div className="-mt-16">
+        <ConsultationForm />
+      </div>
       </div>
     </div>
   );
