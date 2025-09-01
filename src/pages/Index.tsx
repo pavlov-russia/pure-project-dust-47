@@ -78,13 +78,22 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
-              
-              <div className="w-full bg-white/15 rounded-2xl px-6 py-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 -mx-8">
-                <p className="text-center text-white font-semibold text-lg tracking-wide">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-              </div>
-              
+            </div>
+          </div>
+        </div>
+        
+        {/* Карточка на всю ширину экрана */}
+        <div className="w-full px-4">
+          <div className="bg-white/15 rounded-2xl px-6 py-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000">
+            <p className="text-center text-white font-semibold text-lg tracking-wide">
+              СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+            </p>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-2 max-w-full">
+          <div className="w-full relative">
+            <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
                 <p className="text-base md:text-lg leading-relaxed">
                   <span className="text-red-300">‼️</span> <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
