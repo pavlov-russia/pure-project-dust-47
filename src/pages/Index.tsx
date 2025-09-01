@@ -11,7 +11,7 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <SectionCard className="pt-20 md:pt-48 bg-transparent text-white text-center" data-hero>
+      <section className="pt-20 md:pt-48 text-white text-center w-full" data-hero>
         <div className="relative max-w-5xl mx-auto">
           <div className="relative z-10 p-8 md:p-12">
             <h1 className="mobile-heading-scale md:text-6xl font-regular mb-4 md:mb-6 leading-tight text-foreground">
@@ -34,7 +34,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </SectionCard>
+      </section>
       
       {/* Consultation Form */}
       <ConsultationForm />
