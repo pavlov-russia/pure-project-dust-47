@@ -71,13 +71,6 @@ const Index = () => {
               <p className="text-lg md:text-xl text-white/90 text-center mb-8 leading-relaxed">
                 Это основа, без которой продвижение теряет смысл, а вы – бюджет
               </p>
-              
-              {/* Декоративная полоска снизу */}
-              <div className="w-full h-[3px] mb-8 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
-              </div>
             </div>
           </div>
         </div>
