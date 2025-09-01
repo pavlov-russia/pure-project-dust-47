@@ -99,11 +99,11 @@ const Index = () => {
                   <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
-                <div className="pl-4 border-l-2 border-white/30">
-                  <p className="text-base md:text-lg leading-relaxed mb-4">
+                <div className="pl-4">
+                  <p className="text-base md:text-lg leading-relaxed mb-4 text-center">
                     Чаще всего это лишь визуальный фасад:
                   </p>
-                  <p className="text-base md:text-lg leading-relaxed">
+                  <p className="text-base md:text-lg leading-relaxed text-center">
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white">ЭТО НЕ УПАКОВКА!</span>
                   </p>
                 </div>
