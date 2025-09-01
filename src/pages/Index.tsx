@@ -6,7 +6,13 @@ import SectionCard from "@/components/SectionCard";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#563AF0] via-[#7962F4] to-[#FFFFFF]">
+    <div 
+      className="min-h-screen w-full fixed inset-0"
+      style={{
+        background: 'linear-gradient(135deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)'
+      }}
+    >
+      <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
       <ChecklistPopup />
       
@@ -54,6 +60,7 @@ const Index = () => {
       
       {/* Consultation Form */}
       <ConsultationForm />
+      </div>
     </div>
   );
 };
