@@ -155,6 +155,17 @@ export default {
 					"50%": {
 						opacity: "0.5"
 					}
+				},
+				'strikethrough': {
+					"0%": {
+						width: "0%"
+					},
+					"50%": {
+						width: "100%"
+					},
+					"100%": {
+						width: "0%"
+					}
 				}
 			},
 			animation: {
@@ -162,7 +173,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
 				'swing': 'swing 3s ease-in-out infinite',
-				'pulse-slow': 'pulse-slow 3s ease-in-out infinite'
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'strikethrough': 'strikethrough 2s ease-in-out infinite'
 			}
 		}
 	},
