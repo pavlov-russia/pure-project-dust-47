@@ -96,7 +96,7 @@ const Index = () => {
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
                 <p className="text-base md:text-lg leading-relaxed">
-                  <span className="text-red-300">‼️</span> <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+                  <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
                 <div className="pl-4 border-l-2 border-white/30">
