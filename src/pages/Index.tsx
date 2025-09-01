@@ -99,6 +99,13 @@ const Index = () => {
                   <p className="text-base md:text-lg leading-relaxed text-center">
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white">ЭТО НЕ УПАКОВКА!</span>
                   </p>
+                  
+                  {/* Декоративная полоска после "ЭТО НЕ УПАКОВКА!" */}
+                  <div className="w-full h-[3px] mt-8 relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
+                  </div>
                 </div>
               </div>
             </div>
