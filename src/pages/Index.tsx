@@ -76,7 +76,7 @@ const Index = () => {
         </div>
         
         {/* Карточка на всю ширину экрана */}
-        <div className="w-full px-6 -mt-8">
+        <div className="w-full px-6 -mt-10">
           <div className="bg-white/15 rounded-2xl px-6 py-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000">
             <p className="text-center text-white font-semibold text-sm tracking-wide">
               СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
