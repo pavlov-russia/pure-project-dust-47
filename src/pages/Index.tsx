@@ -34,11 +34,14 @@ const Index = () => {
               И мы поможем использовать их в вашу пользу!
             </p>
             
-            {/* CTA Button with iOS style - Telegram adapted */}
+            {/* CTA Button with header style - no icon */}
             <div className="relative inline-block w-full max-w-xs mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl shadow-lg"></div>
               <Button 
-                className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-4 py-3 rounded-2xl transition-all duration-300 text-sm md:text-base w-full"
+                variant="glass-breath"
+                className="transition-all duration-300 h-12 w-full px-4 py-3 rounded-2xl text-sm md:text-base"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.18)',
+                }}
               >
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
                 <span className="sm:hidden">Получить КП</span>
