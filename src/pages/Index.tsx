@@ -84,7 +84,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="container mx-auto px-2 max-w-full">
+        <div className="container mx-auto px-2 max-w-full -mt-4">
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
