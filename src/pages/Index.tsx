@@ -9,7 +9,7 @@ const Index = () => {
     <div 
       className="min-h-screen w-full fixed inset-0"
       style={{
-        background: 'linear-gradient(135deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)'
+        background: 'linear-gradient(135deg, #563AF0 0%, #563AF0 25%, #7962F4 50%, #7962F4 75%, #FFFFFF 100%)'
       }}
     >
       <div className="relative z-10 min-h-screen overflow-y-auto">
