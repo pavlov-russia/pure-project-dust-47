@@ -3,6 +3,7 @@ import ChecklistPopup from "@/components/ChecklistPopup";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
+import { TriangleAlert } from "lucide-react";
 
 const Index = () => {
   return (
@@ -88,7 +89,8 @@ const Index = () => {
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
-                <p className="text-base md:text-lg leading-relaxed text-center">
+                <p className="text-base md:text-lg leading-relaxed text-center flex items-center justify-center gap-2">
+                  <TriangleAlert className="text-red-400" size={20} />
                   <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
