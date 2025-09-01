@@ -98,14 +98,11 @@ const Index = () => {
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-center">
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span 
-                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block relative animate-cross-strike" 
-                      style={{
-                        '--strike-scale': '0'
-                      } as React.CSSProperties}
+                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block relative" 
                     >
                       ЭТО НЕ УПАКОВКА!
                       <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-[1px]"
+                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-[1px] animate-strike-first"
                         style={{ 
                           width: '120%',
                           transform: 'translate(-50%, -50%) rotate(-20deg) scaleX(var(--strike-scale))',
@@ -113,7 +110,7 @@ const Index = () => {
                         }}
                       ></span>
                       <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-[1px]"
+                        className="absolute left-1/2 top-1/2 h-1 bg-destructive pointer-events-none blur-[1px] animate-strike-second"
                         style={{ 
                           width: '120%',
                           transform: 'translate(-50%, -50%) rotate(20deg) scaleX(var(--strike-scale))',

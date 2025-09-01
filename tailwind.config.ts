@@ -163,6 +163,31 @@ export default {
 					"50%": {
 						"--strike-scale": "1"
 					}
+				},
+				'strike-first': {
+					"0%": {
+						"--strike-scale": "0"
+					},
+					"40%": {
+						"--strike-scale": "1"
+					},
+					"100%": {
+						"--strike-scale": "1"
+					}
+				},
+				'strike-second': {
+					"0%": {
+						"--strike-scale": "0"
+					},
+					"40%": {
+						"--strike-scale": "0"
+					},
+					"80%": {
+						"--strike-scale": "1"
+					},
+					"100%": {
+						"--strike-scale": "1"
+					}
 				}
 			},
 			animation: {
@@ -171,7 +196,9 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'swing': 'swing 3s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-				'cross-strike': 'cross-strike 2s ease-in-out infinite'
+				'cross-strike': 'cross-strike 2s ease-in-out infinite',
+				'strike-first': 'strike-first 2s ease-in-out infinite',
+				'strike-second': 'strike-second 2s ease-in-out infinite'
 			}
 		}
 	},
