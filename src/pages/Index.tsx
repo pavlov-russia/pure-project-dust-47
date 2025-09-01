@@ -98,6 +98,7 @@ const Index = () => {
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-center">
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white">ЭТО НЕ УПАКОВКА!</span>
+                    <img src="/lovable-uploads/d21b70fb-b59a-4fa2-99a4-f39d93747493.png" alt="" className="inline-block ml-2 w-6 h-6" />
                   </p>
                 </div>
               </div>
