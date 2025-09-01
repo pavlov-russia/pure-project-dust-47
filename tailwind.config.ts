@@ -157,14 +157,11 @@ export default {
 					}
 				},
 				'cross-strike': {
-					"0%": {
-						"--strike-width": "0%"
+					"0%, 100%": {
+						"--strike-scale": "0"
 					},
 					"50%": {
-						"--strike-width": "100%"
-					},
-					"100%": {
-						"--strike-width": "0%"
+						"--strike-scale": "1"
 					}
 				}
 			},

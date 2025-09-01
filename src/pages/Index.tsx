@@ -100,22 +100,24 @@ const Index = () => {
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span 
                       className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block relative animate-cross-strike" 
                       style={{
-                        '--strike-width': '0%'
+                        '--strike-scale': '0'
                       } as React.CSSProperties}
                     >
                       ЭТО НЕ УПАКОВКА!
                       <span 
-                        className="absolute top-1/2 left-0 w-full h-0.5 bg-red-500 transform -translate-y-1/2 origin-left transition-all duration-500"
+                        className="absolute left-1/2 top-1/2 h-0.5 bg-destructive pointer-events-none"
                         style={{ 
-                          width: 'var(--strike-width)',
-                          transform: 'translateY(-50%) rotate(-8deg)'
+                          width: '120%',
+                          transform: 'translate(-50%, -50%) rotate(-10deg) scaleX(var(--strike-scale))',
+                          transformOrigin: 'center'
                         }}
                       ></span>
                       <span 
-                        className="absolute top-1/2 left-0 w-full h-0.5 bg-red-500 transform -translate-y-1/2 origin-left transition-all duration-500"
+                        className="absolute left-1/2 top-1/2 h-0.5 bg-destructive pointer-events-none"
                         style={{ 
-                          width: 'var(--strike-width)',
-                          transform: 'translateY(-50%) rotate(8deg)'
+                          width: '120%',
+                          transform: 'translate(-50%, -50%) rotate(10deg) scaleX(var(--strike-scale))',
+                          transformOrigin: 'center'
                         }}
                       ></span>
                     </span>
