@@ -17,7 +17,7 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-48 pb-0 w-full min-h-screen flex items-center justify-center" data-hero>
+      <section className="pt-20 md:pt-32 pb-8 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
           {/* iOS 26 Liquid Glass Effect */}
@@ -59,9 +59,7 @@ const Index = () => {
       </section>
       
       {/* Consultation Form */}
-      <div className="-mt-120">
-        <ConsultationForm />
-      </div>
+      <ConsultationForm />
       </div>
     </div>
   );
