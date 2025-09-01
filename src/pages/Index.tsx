@@ -55,7 +55,7 @@ const Index = () => {
       {/* Strategy Section */}
       <section className="py-12">
         <div className="container mx-auto px-6 max-w-full">
-          <div className="w-full relative">
+          <div className="max-w-lg mx-auto relative">
             <div className="p-8 md:p-12 relative z-10">
               {/* Декоративная полоска сверху */}
               <div className="w-full h-[3px] mb-8 relative">
