@@ -108,7 +108,7 @@ const Index = () => {
                         className="absolute left-1/2 top-1/2 h-0.5 bg-destructive pointer-events-none"
                         style={{ 
                           width: '120%',
-                          transform: 'translate(-50%, -50%) rotate(-10deg) scaleX(var(--strike-scale))',
+                          transform: 'translate(-50%, -50%) rotate(-20deg) scaleX(var(--strike-scale))',
                           transformOrigin: 'center'
                         }}
                       ></span>
@@ -116,7 +116,7 @@ const Index = () => {
                         className="absolute left-1/2 top-1/2 h-0.5 bg-destructive pointer-events-none"
                         style={{ 
                           width: '120%',
-                          transform: 'translate(-50%, -50%) rotate(10deg) scaleX(var(--strike-scale))',
+                          transform: 'translate(-50%, -50%) rotate(20deg) scaleX(var(--strike-scale))',
                           transformOrigin: 'center'
                         }}
                       ></span>
