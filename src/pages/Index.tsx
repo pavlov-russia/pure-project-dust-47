@@ -101,10 +101,11 @@ const Index = () => {
                   </p>
                   
                   {/* Декоративная полоска после "ЭТО НЕ УПАКОВКА!" */}
-                  <div className="w-full h-[3px] mt-8 relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
+                  <div className="w-full h-[6px] mt-8 relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[3px] opacity-90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
                   </div>
                 </div>
               </div>
