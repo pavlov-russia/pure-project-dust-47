@@ -97,7 +97,7 @@ const Index = () => {
                     Чаще всего это лишь визуальный фасад:
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-center">
-                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white">ЭТО НЕ УПАКОВКА!</span>
+                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block">ЭТО НЕ УПАКОВКА!</span>
                   </p>
                   
                   {/* Декоративная полоска после "ЭТО НЕ УПАКОВКА!" */}
