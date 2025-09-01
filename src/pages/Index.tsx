@@ -97,7 +97,25 @@ const Index = () => {
                     Чаще всего это лишь визуальный фасад:
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-center">
-                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block">ЭТО НЕ УПАКОВКА!</span>
+                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span 
+                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block relative animate-cross-strike" 
+                      style={{
+                        '--line-1-width': '0%',
+                        '--line-2-width': '0%'
+                      } as React.CSSProperties}
+                    >
+                      ЭТО НЕ УПАКОВКА!
+                      <span className="absolute inset-0 overflow-hidden">
+                        <span 
+                          className="absolute top-1/2 left-0 h-0.5 bg-red-500 transform -translate-y-1/2 rotate-12 origin-left transition-all duration-300"
+                          style={{ width: 'var(--line-1-width)' }}
+                        ></span>
+                        <span 
+                          className="absolute top-1/2 left-0 h-0.5 bg-red-500 transform -translate-y-1/2 -rotate-12 origin-left transition-all duration-300"
+                          style={{ width: 'var(--line-2-width)' }}
+                        ></span>
+                      </span>
+                    </span>
                   </p>
                   
                   {/* Декоративная полоска после "ЭТО НЕ УПАКОВКА!" */}
