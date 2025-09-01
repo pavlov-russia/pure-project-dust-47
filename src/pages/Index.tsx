@@ -57,6 +57,12 @@ const Index = () => {
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
             <div className="p-8 md:p-12 relative z-10">
+              {/* Декоративная полоска сверху */}
+              <div className="w-full h-[1px] mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-60 blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-40"></div>
+              </div>
+              
               <h2 className="text-lg md:text-3xl font-bold text-white mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
@@ -64,6 +70,12 @@ const Index = () => {
               <p className="text-lg md:text-xl text-white/90 text-center mb-8 leading-relaxed">
                 Это основа, без которой продвижение теряет смысл, а вы – бюджет
               </p>
+              
+              {/* Декоративная полоска снизу */}
+              <div className="w-full h-[1px] mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-60 blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-40"></div>
+              </div>
               
               <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000">
                 <p className="text-center text-white font-semibold text-lg tracking-wide">
