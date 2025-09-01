@@ -6,7 +6,7 @@ import SectionCard from "@/components/SectionCard";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-[#563AF0] via-[#7962F4] to-[#FFFFFF]">
       <Header />
       <ChecklistPopup />
       
