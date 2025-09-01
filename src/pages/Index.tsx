@@ -58,10 +58,10 @@ const Index = () => {
           <div className="max-w-lg mx-auto relative">
             <div className="p-8 md:p-12 relative z-10">
               {/* Декоративная полоска сверху */}
-              <div className="w-full h-[2px] mb-8 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-80 blur-[1px]"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-90"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4]/80 to-transparent"></div>
+              <div className="w-full h-[3px] mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
               <h2 className="text-lg md:text-3xl font-bold text-white mb-4 text-center leading-tight">
@@ -73,10 +73,10 @@ const Index = () => {
               </p>
               
               {/* Декоративная полоска снизу */}
-              <div className="w-full h-[2px] mb-8 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-80 blur-[1px]"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-90"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4]/80 to-transparent"></div>
+              <div className="w-full h-[3px] mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
               <div className="bg-white/15 rounded-2xl p-6 mb-8 border border-white/20 animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000">
