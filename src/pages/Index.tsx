@@ -97,8 +97,11 @@ const Index = () => {
                     Чаще всего это лишь визуальный фасад:
                   </p>
                   <p className="text-base md:text-lg leading-relaxed text-center">
-                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов – <span 
-                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white mt-4 inline-block relative" 
+                    название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов –
+                  </p>
+                  <div className="text-center mt-4">
+                    <span 
+                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white inline-block relative" 
                     >
                       ЭТО НЕ УПАКОВКА!
                       <span 
@@ -118,7 +121,7 @@ const Index = () => {
                         }}
                       ></span>
                     </span>
-                  </p>
+                  </div>
                   
                   {/* Декоративная полоска после "ЭТО НЕ УПАКОВКА!" */}
                   <div className="w-full h-[3px] mt-8 relative">
