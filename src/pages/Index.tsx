@@ -95,7 +95,7 @@ const Index = () => {
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
-                <p className="text-base md:text-lg leading-relaxed">
+                <p className="text-base md:text-lg leading-relaxed text-center">
                   <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
