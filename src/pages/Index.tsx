@@ -17,7 +17,7 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <section className="pt-16 md:pt-20 pb-8 w-full min-h-screen flex items-center justify-center" data-hero>
+      <section className="pt-20 md:pt-48 pb-16 w-full min-h-screen flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
           {/* iOS 26 Liquid Glass Effect */}
@@ -26,17 +26,17 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 via-transparent to-purple-600/20 rounded-[40px]"></div>
           <div className="absolute inset-0 border border-white/30 rounded-[40px]"></div>
           
-          <div className="relative z-10 p-4 md:p-6 text-center">
-            <h1 className="text-xl md:text-3xl font-bold mb-2 leading-tight text-white">
+          <div className="relative z-10 p-8 md:p-12 text-center">
+            <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white">
               Управляйте впечатлением о своём бизнесе с{" "}
               <span className="font-bold text-white">TapBlog</span>
             </h1>
             
-            <p className="text-sm md:text-base mb-3 leading-relaxed text-white/90 max-w-md mx-auto">
+            <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
               У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
             </p>
             
-            <p className="text-sm md:text-base mb-4 font-semibold text-white leading-relaxed">
+            <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
               И мы поможем использовать их в вашу пользу!
             </p>
             
