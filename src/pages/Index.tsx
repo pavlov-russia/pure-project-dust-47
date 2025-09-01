@@ -56,7 +56,7 @@ const Index = () => {
       <section className="py-12">
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
-            <div className="backdrop-blur-[40px] bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10">
+            <div className="p-8 md:p-12 relative z-10">
               <h2 className="text-lg md:text-3xl font-bold text-white mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
