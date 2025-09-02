@@ -342,6 +342,88 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Target Audience Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-6 max-w-full">
+          <div className="text-center mb-8">
+            {/* Декоративная полоска сверху */}
+            <div className="w-full h-[3px] mb-8 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
+            </div>
+            
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
+              Кому подходит наша упаковка?
+            </h2>
+            
+            <div className="space-y-4 max-w-3xl mx-auto mb-12">
+              {[
+                "экспертам и компаниям, продающим услуги и продукты",
+                "брендам / онлайн-магазинам", 
+                "сообществам / клубам",
+                "авторам курсов / интенсивов / тренингов",
+                "авторам тематических ТГ-каналов"
+              ].map((text, index) => (
+                <div
+                  key={index}
+                  className="animate-slide-in-right opacity-0"
+                  style={{
+                    animationDelay: `${index * 0.2}s`,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer group">
+                    <div className="flex items-center space-x-3 text-left">
+                      <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span className="text-white text-sm md:text-base font-medium group-hover:text-white/90 transition-colors duration-300">
+                        {text}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="space-y-6 mb-8">
+              <p className="text-lg md:text-xl font-bold text-white tracking-wide">
+                УПАКОВКА – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
+              </p>
+              <p className="text-lg md:text-xl font-bold text-white tracking-wide">
+                САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
+              </p>
+            </div>
+            
+            <div className="mb-8">
+              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6">
+                Запишитесь на бесплатную консультацию — составим индивидуальный план вашей упаковки в ТГ и подготовим ваш бизнес к запуску трафика
+              </p>
+              
+              {/* Стрелка вниз */}
+              <div className="flex justify-center">
+                <div className="animate-bounce">
+                  <svg className="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            {/* Декоративная полоска снизу */}
+            <div className="w-full h-[3px] mt-8 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[3px] opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Consultation Form */}
       <div className="-mt-12">
         <ConsultationForm />

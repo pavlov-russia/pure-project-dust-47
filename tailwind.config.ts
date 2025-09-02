@@ -180,6 +180,16 @@ export default {
 					"100%": {
 						width: "0%"
 					}
+				},
+				'slide-in-right': {
+					"0%": {
+						opacity: "0",
+						transform: "translateX(-100px)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translateX(0)"
+					}
 				}
 			},
 			animation: {
@@ -189,7 +199,8 @@ export default {
 				'swing': 'swing 3s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'cross-strike': 'cross-strike 2s ease-in-out infinite',
-				'strike-horizontal': 'strike-horizontal 4s linear infinite'
+				'strike-horizontal': 'strike-horizontal 4s linear infinite',
+				'slide-in-right': 'slide-in-right 0.6s ease-out'
 			}
 		}
 	},
