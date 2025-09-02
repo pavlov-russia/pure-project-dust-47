@@ -11,7 +11,9 @@ const Index = () => {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const [isTargetSectionInView, setIsTargetSectionInView] = useState(false);
   const sectionRef = useRef(null);
+  const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
   
   const carouselData = [
@@ -59,7 +61,7 @@ const Index = () => {
     });
   }, [api]);
 
-  // Intersection Observer для отслеживания видимости блока
+  // Intersection Observer для отслеживания видимости блока карусели
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -70,6 +72,22 @@ const Index = () => {
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Intersection Observer для отслеживания видимости блока целевой аудитории
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTargetSectionInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (targetSectionRef.current) {
+      observer.observe(targetSectionRef.current);
     }
 
     return () => observer.disconnect();
@@ -343,7 +361,7 @@ const Index = () => {
       </section>
 
       {/* Target Audience Section */}
-      <section className="py-8">
+      <section ref={targetSectionRef} className="py-8">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
@@ -360,9 +378,13 @@ const Index = () => {
               ].map((text, index) => (
                 <div
                   key={index}
-                  className="animate-slide-in-right opacity-0"
+                  className={`transition-all duration-600 ${
+                    isTargetSectionInView 
+                      ? 'animate-slide-in-right opacity-100' 
+                      : 'opacity-0 translate-x-[-100px]'
+                  }`}
                   style={{
-                    animationDelay: `${index * 0.2}s`,
+                    animationDelay: isTargetSectionInView ? `${index * 0.2}s` : '0s',
                     animationFillMode: 'forwards'
                   }}
                 >
