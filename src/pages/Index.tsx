@@ -137,7 +137,7 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-0 w-full min-h-screen flex items-center justify-center" data-hero>
+      <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
             <div className="backdrop-blur-[40px] bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center">
