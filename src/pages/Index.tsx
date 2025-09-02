@@ -3,6 +3,7 @@ import ChecklistPopup from "@/components/ChecklistPopup";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
   return (
@@ -158,6 +159,106 @@ const Index = () => {
               >
                 🚀 Хочу мощную упаковку
               </Button>
+            </div>
+          </SectionCard>
+        </div>
+      </section>
+
+      {/* System Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-6 max-w-full">
+          <SectionCard className="bg-white/10 border-white/20">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                Настоящая упаковка — это система:
+              </h2>
+              
+              <div className="relative max-w-4xl mx-auto">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          Глубинная распаковка вашего продукта, УТП и анализ аудитории
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие
+                        </p>
+                      </div>
+                    </CarouselItem>
+                    
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          ✔️ Кристальное позиционирование, понятное даже школьнику
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?
+                        </p>
+                      </div>
+                    </CarouselItem>
+                    
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          Продуманный путь клиента от А до Я
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен
+                        </p>
+                      </div>
+                    </CarouselItem>
+                    
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          Осмысленный и целевой контент
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?
+                        </p>
+                      </div>
+                    </CarouselItem>
+                    
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          Выраженный стиль коммуникации
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих
+                        </p>
+                      </div>
+                    </CarouselItem>
+                    
+                    <CarouselItem>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          Визуальная идентичность
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию
+                        </p>
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                  
+                  <CarouselPrevious className="hidden md:flex" />
+                  <CarouselNext className="hidden md:flex" />
+                </Carousel>
+              </div>
+              
+              <div className="mt-8">
+                <Button 
+                  variant="glass-breath"
+                  className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base"
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.18)',
+                  }}
+                >
+                  Заказать упаковку
+                </Button>
+              </div>
             </div>
           </SectionCard>
         </div>
