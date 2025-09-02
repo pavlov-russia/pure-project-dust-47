@@ -539,6 +539,6 @@ All colors MUST be HSL.
 
 /* адаптив */
 @media (max-width:480px) {
-  :root { --height: 54px; --dot: 6px; --speed: 12s; }
+  :root { --height: 54px; --dot: 6px; --speed: 6s; }
   .led-msg { font-size: 18px; }
 }
