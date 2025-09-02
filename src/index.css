@@ -485,8 +485,8 @@ All colors MUST be HSL.
   height: var(--height);
   border-radius: 6px;
   background:
-    radial-gradient(#000 28%, transparent 30%) 0 0/var(--dot) var(--dot),
-    radial-gradient(#000 28%, transparent 30%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot),
+    radial-gradient(#563AF0 28%, transparent 30%) 0 0/var(--dot) var(--dot),
+    radial-gradient(#563AF0 28%, transparent 30%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot),
     var(--panel);
   box-shadow: inset 0 0 24px rgba(0,0,0,.9);
   padding: 0 20px;
