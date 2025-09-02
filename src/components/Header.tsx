@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Header = () => {
   const [showCTA, setShowCTA] = useState(false);
@@ -7,6 +8,7 @@ const Header = () => {
   const headerContainerRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLDivElement | null>(null);
   const [leftOffset, setLeftOffset] = useState(0);
+  const isMobile = useIsMobile();
   const handleCTAClick = () => {
     // Находим форму консультации и скроллим к ней
     const consultationForm = document.querySelector('[data-consultation-form]');
@@ -110,10 +112,14 @@ const Header = () => {
       <div 
         className="relative overflow-hidden rounded-[24px] border-0"
         style={{
-          backdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.15)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          backdropFilter: isMobile ? 'none' : 'blur(40px)',
+          WebkitBackdropFilter: isMobile ? 'none' : 'blur(40px)',
+          backgroundColor: isMobile ? 'hsl(var(--background) / 0.92)' : 'hsl(var(--background) / 0.6)',
+          border: '1px solid hsl(var(--foreground) / 0.08)',
+          transform: 'translateZ(0)',
+          willChange: 'opacity, transform',
+          isolation: 'isolate',
+          contain: 'paint'
         }}
       >
         <div className={`container mx-auto px-3 md:px-6 pb-[20px] md:pb-[25px] relative max-w-full mt-3 md:mt-4 transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
@@ -157,8 +163,8 @@ const Header = () => {
             onClick={handleCTAClick}
             className={`slow-pulse transition-all duration-300 !h-[30px] !min-h-[30px] !py-0 w-auto px-3 md:h-10 md:py-2 md:px-4 rounded-2xl ${showCTA ? 'animate-fade-in' : ''}`}
             style={{
-              backgroundColor: 'rgba(255,255,255,0.18)',
-              animation: showCTA ? 'breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none',
+              backgroundColor: 'hsl(var(--background) / 0.18)',
+              animation: isMobile ? 'none' : (showCTA ? 'breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none'),
               willChange: 'transform, box-shadow, background-color',
             }}
             icon={
