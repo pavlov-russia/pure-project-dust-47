@@ -196,86 +196,82 @@ const Index = () => {
         </div>
         
         {/* Бегущая строка с LED-рамкой */}
-        <div className="w-full -mt-10 mb-8 overflow-hidden">
-          {/* LED рамка - верхняя часть */}
-          <div className="w-full h-6 bg-gradient-to-r from-transparent via-primary to-transparent relative flex items-center justify-center">
-            <div className="flex items-center justify-center w-full h-full">
-              {Array.from({ length: 40 }).map((_, i) => (
+        <div className="w-full -mt-10 mb-8 overflow-hidden relative">
+          {/* LED рамка */}
+          <div className="relative bg-primary/80 p-1">
+            {/* Верхняя строка точек */}
+            <div className="flex justify-between items-center w-full mb-1">
+              {Array.from({ length: 60 }).map((_, i) => (
                 <div
-                  key={i}
-                  className="w-1 h-1 rounded-full bg-white/90 mx-0.5 animate-pulse"
+                  key={`top-${i}`}
+                  className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
                   style={{
-                    animationDelay: `${i * 0.1}s`,
+                    animationDelay: `${i * 0.05}s`,
                     animationDuration: '2s'
                   }}
                 />
               ))}
             </div>
-          </div>
-          
-          {/* Основной контент с боковыми LED полосами */}
-          <div className="relative bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20">
-            {/* Левая LED полоса */}
-            <div className="absolute left-0 top-0 w-6 h-full bg-gradient-to-b from-primary to-primary/80 flex flex-col items-center justify-center">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-1 h-1 rounded-full bg-white/90 my-1 animate-pulse"
-                  style={{
-                    animationDelay: `${i * 0.2}s`,
-                    animationDuration: '1.5s'
-                  }}
-                />
-              ))}
-            </div>
             
-            {/* Правая LED полоса */}
-            <div className="absolute right-0 top-0 w-6 h-full bg-gradient-to-b from-primary to-primary/80 flex flex-col items-center justify-center">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-1 h-1 rounded-full bg-white/90 my-1 animate-pulse"
-                  style={{
-                    animationDelay: `${i * 0.2 + 0.1}s`,
-                    animationDuration: '1.5s'
-                  }}
-                />
-              ))}
-            </div>
-            
-            {/* Бегущий текст */}
-            <div className="px-12 py-6">
-              <div className="flex animate-marquee whitespace-nowrap">
-                <div className="flex shrink-0">
-                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                  </p>
-                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                  </p>
-                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                  </p>
-                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                  </p>
-                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                  </p>
+            {/* Основной контент с боковыми точками */}
+            <div className="relative flex items-center">
+              {/* Левая колонка точек */}
+              <div className="flex flex-col justify-between h-16 mr-1">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={`left-${i}`}
+                    className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
+                    style={{
+                      animationDelay: `${i * 0.1}s`,
+                      animationDuration: '1.8s'
+                    }}
+                  />
+                ))}
+              </div>
+              
+              {/* Центральная область с текстом */}
+              <div className="flex-1 bg-primary/60 rounded-sm py-4 px-4 min-h-[4rem] flex items-center">
+                <div className="flex animate-marquee whitespace-nowrap w-full">
+                  <div className="flex shrink-0">
+                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </span>
+                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </span>
+                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </span>
+                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </span>
+                  </div>
                 </div>
               </div>
+              
+              {/* Правая колонка точек */}
+              <div className="flex flex-col justify-between h-16 ml-1">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={`right-${i}`}
+                    className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
+                    style={{
+                      animationDelay: `${i * 0.1 + 0.5}s`,
+                      animationDuration: '1.8s'
+                    }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          
-          {/* LED рамка - нижняя часть */}
-          <div className="w-full h-6 bg-gradient-to-r from-transparent via-primary to-transparent relative flex items-center justify-center">
-            <div className="flex items-center justify-center w-full h-full">
-              {Array.from({ length: 40 }).map((_, i) => (
+            
+            {/* Нижняя строка точек */}
+            <div className="flex justify-between items-center w-full mt-1">
+              {Array.from({ length: 60 }).map((_, i) => (
                 <div
-                  key={i}
-                  className="w-1 h-1 rounded-full bg-white/90 mx-0.5 animate-pulse"
+                  key={`bottom-${i}`}
+                  className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
                   style={{
-                    animationDelay: `${i * 0.1 + 1}s`,
+                    animationDelay: `${i * 0.05 + 1}s`,
                     animationDuration: '2s'
                   }}
                 />
