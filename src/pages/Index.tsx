@@ -12,6 +12,7 @@ const Index = () => {
   const [count, setCount] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [isTargetSectionInView, setIsTargetSectionInView] = useState(false);
+  const [hasTargetAnimationPlayed, setHasTargetAnimationPlayed] = useState(false);
   const sectionRef = useRef(null);
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
@@ -81,7 +82,10 @@ const Index = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsTargetSectionInView(entry.isIntersecting);
+        if (entry.isIntersecting && !hasTargetAnimationPlayed) {
+          setIsTargetSectionInView(true);
+          setHasTargetAnimationPlayed(true);
+        }
       },
       { threshold: 0.3 }
     );
@@ -91,7 +95,7 @@ const Index = () => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [hasTargetAnimationPlayed]);
 
   // Автопролистывание
   const startAutoPlay = () => {
@@ -379,12 +383,12 @@ const Index = () => {
                 <div
                   key={index}
                   className={`transition-all duration-600 ${
-                    isTargetSectionInView 
+                    hasTargetAnimationPlayed 
                       ? 'animate-slide-in-right opacity-100' 
                       : 'opacity-0 translate-x-[-100px]'
                   }`}
                   style={{
-                    animationDelay: isTargetSectionInView ? `${index * 0.2}s` : '0s',
+                    animationDelay: hasTargetAnimationPlayed ? `${index * 0.2}s` : '0s',
                     animationFillMode: 'forwards'
                   }}
                 >
