@@ -168,6 +168,13 @@ const Index = () => {
       <section className="py-8">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
+            {/* Декоративная полоска сверху */}
+            <div className="w-full h-[3px] mb-8 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[2px]"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
+            </div>
+            
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Настоящая упаковка — это система:
             </h2>
@@ -257,6 +264,14 @@ const Index = () => {
               >
                 Заказать упаковку
               </Button>
+            </div>
+            
+            {/* Декоративная полоска снизу */}
+            <div className="w-full h-[3px] mt-8 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent blur-[3px] opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7962F4] to-transparent opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
             </div>
           </div>
         </div>
