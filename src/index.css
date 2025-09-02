@@ -465,7 +465,6 @@ All colors MUST be HSL.
 .led-wrap {
   width: 100%;
   margin: 10px 0;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
 }
 
 /* корпус табло */
@@ -488,7 +487,7 @@ All colors MUST be HSL.
     radial-gradient(#563AF0 28%, transparent 30%) 0 0/var(--dot) var(--dot),
     radial-gradient(#563AF0 28%, transparent 30%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot),
     var(--panel);
-  box-shadow: inset 0 0 24px rgba(0,0,0,.9);
+  box-shadow: none;
   padding: 0 20px;
   overflow:hidden;
 }
