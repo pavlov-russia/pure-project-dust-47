@@ -105,19 +105,11 @@ const Index = () => {
                     >
                       ЭТО НЕ УПАКОВКА!
                       <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-pink-500 pointer-events-none blur-[1px] animate-strike-first"
+                        className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal"
                         style={{ 
-                          width: '120%',
-                          transform: 'translate(-50%, -50%) rotate(-20deg) scaleX(var(--strike-scale))',
-                          transformOrigin: 'center'
-                        }}
-                      ></span>
-                      <span 
-                        className="absolute left-1/2 top-1/2 h-1 bg-pink-500 pointer-events-none blur-[1px] animate-strike-second"
-                        style={{ 
-                          width: '120%',
-                          transform: 'translate(-50%, -50%) rotate(20deg) scaleX(var(--strike-scale))',
-                          transformOrigin: 'center'
+                          width: '100%',
+                          transform: 'translateY(-50%) scaleX(var(--strike-scale))',
+                          transformOrigin: 'left center'
                         }}
                       ></span>
                     </span>

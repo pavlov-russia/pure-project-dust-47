@@ -164,26 +164,9 @@ export default {
 						"--strike-scale": "1"
 					}
 				},
-				'strike-first': {
+				'strike-horizontal': {
 					"0%": {
 						"--strike-scale": "0"
-					},
-					"40%": {
-						"--strike-scale": "1"
-					},
-					"100%": {
-						"--strike-scale": "1"
-					}
-				},
-				'strike-second': {
-					"0%": {
-						"--strike-scale": "0"
-					},
-					"40%": {
-						"--strike-scale": "0"
-					},
-					"80%": {
-						"--strike-scale": "1"
 					},
 					"100%": {
 						"--strike-scale": "1"
@@ -197,8 +180,7 @@ export default {
 				'swing': 'swing 3s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'cross-strike': 'cross-strike 2s ease-in-out infinite',
-				'strike-first': 'strike-first 2s ease-in-out infinite',
-				'strike-second': 'strike-second 2s ease-in-out infinite'
+				'strike-horizontal': 'strike-horizontal 0.6s ease-out forwards'
 			}
 		}
 	},
