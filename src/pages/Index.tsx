@@ -195,26 +195,60 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Бегущая строка */}
+        {/* Бегущая строка с LED рамкой */}
         <div className="w-full -mt-10 mb-8 overflow-hidden">
           <div className="px-6 py-6">
-            <div className="flex animate-marquee whitespace-nowrap">
-              <div className="flex shrink-0">
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
+            {/* LED рамка */}
+            <div className="relative bg-foreground rounded-lg p-1">
+              {/* Верхняя граница с точками */}
+              <div className="absolute top-0 left-0 right-0 h-1 flex justify-between items-center px-2">
+                {Array.from({ length: 50 }).map((_, i) => (
+                  <div key={`top-${i}`} className="w-1 h-1 bg-primary rounded-full opacity-80 animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
+                ))}
+              </div>
+              
+              {/* Нижняя граница с точками */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 flex justify-between items-center px-2">
+                {Array.from({ length: 50 }).map((_, i) => (
+                  <div key={`bottom-${i}`} className="w-1 h-1 bg-primary rounded-full opacity-80 animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
+                ))}
+              </div>
+              
+              {/* Левая граница с точками */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 flex flex-col justify-between items-center py-2">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={`left-${i}`} className="w-1 h-1 bg-primary rounded-full opacity-80 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                ))}
+              </div>
+              
+              {/* Правая граница с точками */}
+              <div className="absolute right-0 top-0 bottom-0 w-1 flex flex-col justify-between items-center py-2">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={`right-${i}`} className="w-1 h-1 bg-primary rounded-full opacity-80 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                ))}
+              </div>
+              
+              {/* Контент бегущей строки */}
+              <div className="bg-foreground/90 rounded overflow-hidden py-4 px-6 mx-2 my-2">
+                <div className="flex animate-marquee whitespace-nowrap">
+                  <div className="flex shrink-0">
+                    <p className="text-primary font-semibold text-lg md:text-xl tracking-wide mr-12 filter drop-shadow-sm">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </p>
+                    <p className="text-primary font-semibold text-lg md:text-xl tracking-wide mr-12 filter drop-shadow-sm">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </p>
+                    <p className="text-primary font-semibold text-lg md:text-xl tracking-wide mr-12 filter drop-shadow-sm">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </p>
+                    <p className="text-primary font-semibold text-lg md:text-xl tracking-wide mr-12 filter drop-shadow-sm">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </p>
+                    <p className="text-primary font-semibold text-lg md:text-xl tracking-wide mr-12 filter drop-shadow-sm">
+                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
