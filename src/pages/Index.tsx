@@ -198,10 +198,24 @@ const Index = () => {
         {/* Бегущая строка */}
         <div className="w-full -mt-10 mb-8 overflow-hidden">
           <div className="px-6 py-6">
-            <div className="animate-marquee whitespace-nowrap">
-              <p className="text-white font-semibold text-lg md:text-xl tracking-wide inline-block">
-                СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </p>
+            <div className="flex animate-marquee whitespace-nowrap">
+              <div className="flex shrink-0">
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+              </div>
             </div>
           </div>
         </div>
