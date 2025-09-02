@@ -382,14 +382,13 @@ const Index = () => {
               ].map((text, index) => (
                 <div
                   key={index}
-                  className={`transition-all duration-600 ${
+                  className={`transition-all duration-700 ease-out ${
                     hasTargetAnimationPlayed 
-                      ? 'animate-slide-in-right opacity-100' 
+                      ? 'opacity-100 translate-x-0' 
                       : 'opacity-0 translate-x-[-100px]'
                   }`}
                   style={{
-                    animationDelay: hasTargetAnimationPlayed ? `${index * 0.2}s` : '0s',
-                    animationFillMode: 'forwards'
+                    transitionDelay: hasTargetAnimationPlayed ? `${index * 150}ms` : '0ms'
                   }}
                 >
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer group">
