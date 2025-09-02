@@ -448,71 +448,59 @@ All colors MUST be HSL.
   }
 }
 
-/* ===== LED MARQUEE STYLES ===== */
-/* ===== НАСТРОЙКИ ===== */
-:root{
-  --border-size: 8px;      /* толщина точечной рамки */
-  --dot: 7px;              /* шаг сетки точек (и рамки, и панели) */
-  --height: 62px;          /* высота панели (подгони под размер текста) */
-  --speed: 18s;            /* скорость прокрутки (меньше — быстрее) */
-  --panel: #0b0f1f;        /* фон панели */
-  --txt:   #7aa9ff;        /* основной цвет текста */
-  --glow:  #3b82f6;        /* неоновое свечение */
-  --rim:   #9aa0a6;        /* цвет металлической окантовки */
+/* ===== LED MARQUEE STYLES - Адаптированный под палитру ===== */
+:root {
+  --border-size: 8px;     /* толщина рамки */
+  --dot: 7px;             /* шаг точек */
+  --height: 64px;         /* высота панели */
+  --speed: 16s;           /* скорость прокрутки */
+  --panel: #272727;       /* фон внутри */
+  --txt: #ffffff;         /* белый текст */
+  --glow: #e9e9e9;        /* мягкое свечение текста */
+  --rim: #7962F4;         /* рамка */
+  --rim-light: #563AF0;   /* внутренний акцент рамки */
 }
 
-/* Внешняя тень/объём */
-.led-wrap{
-  width:100%;
+/* общий контейнер */
+.led-wrap {
+  width: 100%;
   margin: 10px 0;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
 }
 
-/* Корпус табло с точечной рамкой */
-.led-box{
+/* корпус табло */
+.led-box {
   position: relative;
-  border-radius: 8px;
-  background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(0,0,0,.35));
-  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(0,0,0,.4));
+  border: 2px solid var(--rim);
   padding: var(--border-size);
   overflow: hidden;
 }
 
-/* Точечная рамка (по периметру), без сотен div */
-.led-box::before{
+/* светящаяся точечная рамка */
+.led-box::before {
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(currentColor 32%, transparent 34%) 0 0/var(--dot) var(--dot);
-  color: #ffffff;
-  /* оставляем только края, центр «вырезаем» внутренней маской */
+    radial-gradient(var(--rim-light) 35%, transparent 36%) 0 0/var(--dot) var(--dot);
   -webkit-mask:
-    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
           mask:
-    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   padding: var(--border-size);
   pointer-events:none;
-  filter:
-    drop-shadow(0 0 3px rgba(255,255,255,.8))
-    drop-shadow(0 0 6px rgba(255,255,255,.45));
+  filter: drop-shadow(0 0 4px var(--rim-light));
+  border-radius:10px;
 }
 
-/* Тонкая металлическая кромка */
-.led-box::after{
-  content:"";
-  position:absolute; inset:0;
-  border-radius:8px;
-  box-shadow: inset 0 0 0 1px var(--rim);
-  pointer-events:none;
-}
-
-/* Внутренняя LED-панель */
-.led-panel{
+/* панель внутри */
+.led-panel {
   position: relative;
   height: var(--height);
   border-radius: 6px;
@@ -524,40 +512,33 @@ All colors MUST be HSL.
   overflow:hidden;
 }
 
-/* Бегущая дорожка */
-.led-track{
+/* трек с текстом */
+.led-track {
   position:absolute; inset:0;
   display:inline-flex; align-items:center;
   gap:48px;
   white-space:nowrap;
-  padding:0 18px;
-  animation: led-marquee var(--speed) linear infinite;
-  will-change: transform;
+  padding:0 20px;
+  animation: marquee var(--speed) linear infinite;
 }
 
-/* «точечный» текст + свечение */
-.led-msg{
-  font: 800 28px/1.05 "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color: transparent;
-  background:
-    radial-gradient(var(--txt) 30%, transparent 32%) 0 0/var(--dot) var(--dot),
-    radial-gradient(var(--txt) 30%, transparent 32%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot);
-  -webkit-background-clip:text; background-clip:text;
-  filter:
-    drop-shadow(0 0 5px var(--glow))
-    drop-shadow(0 0 12px var(--glow));
+/* сам текст */
+.led-msg {
+  font: 700 26px/1 "Segoe UI", Arial, sans-serif;
+  color: var(--txt);
+  letter-spacing:.05em;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 4px var(--glow));
 }
 
-/* Анимация бесшовной прокрутки (две копии текста подряд) */
-@keyframes led-marquee{
-  from{ transform: translateX(0); }
-  to  { transform: translateX(-50%); }
+/* анимация прокрутки */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-/* Адаптив */
-@media (max-width: 480px){
-  :root{ --height: 52px; --dot: 6px; --speed: 14s; }
-  .led-msg{ font-size: 18px; }
+/* адаптив */
+@media (max-width:480px) {
+  :root { --height: 54px; --dot: 6px; --speed: 12s; }
+  .led-msg { font-size: 18px; }
 }

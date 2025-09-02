@@ -195,11 +195,11 @@ const Index = () => {
           </div>
         </div>
         
-        {/* LED MARQUEE */}
+        {/* LED MARQUEE – адаптированный под палитру */}
         <div className="led-wrap">
           <div className="led-box">
             <div className="led-panel">
-              <div className="led-track" aria-label="бегущая строка">
+              <div className="led-track">
                 <span className="led-msg">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
                 <span className="led-msg" aria-hidden="true">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
               </div>
