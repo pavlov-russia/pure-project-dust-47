@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [showCTA, setShowCTA] = useState(false);
-
+  const ctaStateRef = useRef(false);
   const handleCTAClick = () => {
     // Находим форму консультации и скроллим к ней
     const consultationForm = document.querySelector('[data-consultation-form]');
@@ -26,12 +26,22 @@ const Header = () => {
       const observer = new IntersectionObserver(
         (entries) => {
           const entry = entries[0];
-          // Показываем кнопку, когда Hero почти вышел из области (видимость < 20%)
-          setShowCTA(entry.intersectionRatio < 0.2);
+          const prev = ctaStateRef.current;
+          let next = prev;
+          // Гистерезис: включаем при < 15%, скрываем при > 35%
+          if (prev) {
+            if (entry.intersectionRatio > 0.35) next = false;
+          } else {
+            if (entry.intersectionRatio < 0.15) next = true;
+          }
+          if (next !== prev) {
+            ctaStateRef.current = next;
+            setShowCTA(next);
+          }
         },
         {
           root: rootEl,
-          threshold: [0, 0.2, 0.5, 1],
+          threshold: [0, 0.15, 0.35, 0.5, 1],
         }
       );
 
@@ -46,7 +56,17 @@ const Header = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollTop = rootEl.scrollTop;
-          setShowCTA(scrollTop > 400);
+          const prev = ctaStateRef.current;
+          let next = prev;
+          if (prev) {
+            if (scrollTop < 360) next = false;
+          } else {
+            if (scrollTop > 420) next = true;
+          }
+          if (next !== prev) {
+            ctaStateRef.current = next;
+            setShowCTA(next);
+          }
           ticking = false;
         });
         ticking = true;
@@ -78,10 +98,11 @@ const Header = () => {
             : 'pt-[60px] md:pt-[60px]'
         }`}>
         {/* Logo - анимированное перемещение между центром и левой позицией */}
-        <div className="flex items-center absolute bottom-[2px] z-10 transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]"
+        <div className="flex items-center absolute bottom-[2px] z-10 transition-[left,transform] duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]"
              style={{
                left: showCTA ? '12px' : '50%',
-               transform: showCTA ? 'translateX(0)' : 'translateX(-50%)'
+               transform: showCTA ? 'translateX(0) translateZ(0)' : 'translateX(-50%) translateZ(0)',
+               willChange: 'left, transform'
              }}>
           <svg width="120" height="24" viewBox="0 0 257 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-[30px] md:h-8 w-auto drop-shadow-sm">
             <path fillRule="evenodd" clipRule="evenodd" d="M0 2.38041C0 1.06574 1.06574 0 2.3804 0H8.8075C10.1222 0 11.1879 1.06574 11.1879 2.3804V8.33142C11.1879 9.64608 12.2536 10.7118 13.5683 10.7118H19.2813C20.5959 10.7118 21.6617 11.7776 21.6617 13.0922V19.0432C21.6617 20.3579 20.5959 21.4236 19.2813 21.4236H13.5683C12.2536 21.4236 11.1879 22.4894 11.1879 23.8041V29.7551C11.1879 31.0697 12.2536 32.1355 13.5683 32.1355H19.2813C20.5959 32.1355 21.6617 33.2012 21.6617 34.5159V40.4669C21.6617 41.7816 20.5959 42.8473 19.2813 42.8473H12.8542C11.5395 42.8473 10.4738 41.7816 10.4738 40.4669V34.5159C10.4738 33.2012 9.40804 32.1355 8.09338 32.1355H2.38041C1.06574 32.1355 0 31.0697 0 29.7551V2.38041Z" fill="currentColor" className="text-primary"/>
