@@ -195,27 +195,91 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Бегущая строка */}
+        {/* Бегущая строка с LED-рамкой */}
         <div className="w-full -mt-10 mb-8 overflow-hidden">
-          <div className="px-6 py-6">
-            <div className="flex animate-marquee whitespace-nowrap">
-              <div className="flex shrink-0">
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
-                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
-                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                </p>
+          {/* LED рамка - верхняя часть */}
+          <div className="w-full h-6 bg-gradient-to-r from-transparent via-primary to-transparent relative flex items-center justify-center">
+            <div className="flex items-center justify-center w-full h-full">
+              {Array.from({ length: 40 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1 h-1 rounded-full bg-white/90 mx-0.5 animate-pulse"
+                  style={{
+                    animationDelay: `${i * 0.1}s`,
+                    animationDuration: '2s'
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Основной контент с боковыми LED полосами */}
+          <div className="relative bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20">
+            {/* Левая LED полоса */}
+            <div className="absolute left-0 top-0 w-6 h-full bg-gradient-to-b from-primary to-primary/80 flex flex-col items-center justify-center">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1 h-1 rounded-full bg-white/90 my-1 animate-pulse"
+                  style={{
+                    animationDelay: `${i * 0.2}s`,
+                    animationDuration: '1.5s'
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Правая LED полоса */}
+            <div className="absolute right-0 top-0 w-6 h-full bg-gradient-to-b from-primary to-primary/80 flex flex-col items-center justify-center">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1 h-1 rounded-full bg-white/90 my-1 animate-pulse"
+                  style={{
+                    animationDelay: `${i * 0.2 + 0.1}s`,
+                    animationDuration: '1.5s'
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Бегущий текст */}
+            <div className="px-12 py-6">
+              <div className="flex animate-marquee whitespace-nowrap">
+                <div className="flex shrink-0">
+                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                  </p>
+                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                  </p>
+                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                  </p>
+                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                  </p>
+                  <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                    СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                  </p>
+                </div>
               </div>
+            </div>
+          </div>
+          
+          {/* LED рамка - нижняя часть */}
+          <div className="w-full h-6 bg-gradient-to-r from-transparent via-primary to-transparent relative flex items-center justify-center">
+            <div className="flex items-center justify-center w-full h-full">
+              {Array.from({ length: 40 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1 h-1 rounded-full bg-white/90 mx-0.5 animate-pulse"
+                  style={{
+                    animationDelay: `${i * 0.1 + 1}s`,
+                    animationDuration: '2s'
+                  }}
+                />
+              ))}
             </div>
           </div>
         </div>
