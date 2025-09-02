@@ -114,7 +114,7 @@ const Header = () => {
         style={{
           backdropFilter: isMobile ? 'none' : 'blur(40px)',
           WebkitBackdropFilter: isMobile ? 'none' : 'blur(40px)',
-          backgroundColor: isMobile ? 'hsl(var(--background) / 0.95)' : 'hsl(var(--background) / 0.6)',
+          backgroundColor: isMobile ? 'hsl(var(--background) / 0.99)' : 'hsl(var(--background) / 0.6)',
           border: '1px solid hsl(var(--foreground) / 0.08)',
           transform: 'translateZ(0)',
           willChange: 'opacity, transform',
