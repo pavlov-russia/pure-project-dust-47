@@ -128,6 +128,41 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Express Test Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-6 max-w-full">
+          <SectionCard className="bg-white/10 border-white/20">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                ЭКСПРЕСС-ТЕСТ
+              </h2>
+              
+              <h3 className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
+                Как понять, что ваше предложение не упаковано или упаковано плохо?
+              </h3>
+              
+              <p className="text-base md:text-lg text-white mb-4 leading-relaxed">
+                Очень просто. Трафик есть, а продаж нет или они минимальны.
+              </p>
+              
+              <p className="text-sm text-white/70 mb-8 italic">
+                *при условии адекватного профессионального трафик-менеджера
+              </p>
+              
+              <Button 
+                variant="glass-breath"
+                className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.18)',
+                }}
+              >
+                🚀 Хочу мощную упаковку
+              </Button>
+            </div>
+          </SectionCard>
+        </div>
+      </section>
+
       {/* Consultation Form */}
       <div className="-mt-12">
         <ConsultationForm />
