@@ -195,12 +195,14 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Карточка на всю ширину экрана */}
-        <div className="w-full px-6 -mt-10">
-          <div className="px-6 py-6 mb-8">
-            <p className="text-center text-white font-semibold text-sm tracking-wide">
-              СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-            </p>
+        {/* Бегущая строка */}
+        <div className="w-full -mt-10 mb-8 overflow-hidden">
+          <div className="px-6 py-6">
+            <div className="animate-marquee whitespace-nowrap">
+              <p className="text-white font-semibold text-sm tracking-wide inline-block">
+                СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+              </p>
+            </div>
           </div>
         </div>
         

@@ -190,6 +190,14 @@ export default {
 						opacity: "1",
 						transform: "translateX(0)"
 					}
+				},
+				'marquee': {
+					"0%": {
+						transform: "translateX(100%)"
+					},
+					"100%": {
+						transform: "translateX(-100%)"
+					}
 				}
 			},
 			animation: {
@@ -200,7 +208,8 @@ export default {
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'cross-strike': 'cross-strike 2s ease-in-out infinite',
 				'strike-horizontal': 'strike-horizontal 4s linear infinite',
-				'slide-in-right': 'slide-in-right 0.6s ease-out'
+				'slide-in-right': 'slide-in-right 0.6s ease-out',
+				'marquee': 'marquee 10s linear infinite'
 			}
 		}
 	},
