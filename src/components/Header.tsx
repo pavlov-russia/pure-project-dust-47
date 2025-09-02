@@ -112,8 +112,7 @@ const Header = () => {
         style={{
           backdropFilter: 'blur(40px)',
           WebkitBackdropFilter: 'blur(40px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.07)',
-          mixBlendMode: 'screen',
+          backgroundColor: 'rgba(255, 255, 255, 0.15)',
           border: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
