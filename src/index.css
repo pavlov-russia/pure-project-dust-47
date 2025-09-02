@@ -472,32 +472,12 @@ All colors MUST be HSL.
 .led-box {
   position: relative;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(0,0,0,.4));
-  border: 2px solid var(--rim);
-  padding: var(--border-size);
+  background: transparent;
+  padding: 0;
   overflow: hidden;
 }
 
-/* светящаяся точечная рамка */
-.led-box::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(var(--rim-light) 35%, transparent 36%) 0 0/var(--dot) var(--dot);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-          mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  padding: var(--border-size);
-  pointer-events:none;
-  filter: drop-shadow(0 0 4px var(--rim-light));
-  border-radius:10px;
-}
+/* светящаяся точечная рамка - убрана */
 
 /* панель внутри */
 .led-panel {
