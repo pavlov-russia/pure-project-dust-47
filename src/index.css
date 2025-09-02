@@ -283,7 +283,7 @@ All colors MUST be HSL.
     content: "";
     position: fixed;
     inset: -100px;
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, #563AF0 0%, #563AF0 25%, #7962F4 50%, #7962F4 75%, #FFFFFF 100%);
     backdrop-filter: blur(28px) saturate(85%) contrast(92%) brightness(105%);
     -webkit-backdrop-filter: blur(28px) saturate(85%) contrast(92%) brightness(105%);
     will-change: backdrop-filter;
