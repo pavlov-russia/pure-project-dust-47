@@ -200,8 +200,8 @@ const Index = () => {
           <div className="led-box">
             <div className="led-panel">
               <div className="led-track">
-                <span className="led-msg">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК •&nbsp;&nbsp;</span>
-                <span className="led-msg" aria-hidden="true">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК •&nbsp;&nbsp;</span>
+                <span className="led-msg">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК •&nbsp;</span>
+                <span className="led-msg" aria-hidden="true">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК •&nbsp;</span>
               </div>
             </div>
           </div>
