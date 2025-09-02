@@ -190,17 +190,6 @@ export default {
 						opacity: "1",
 						transform: "translateX(0)"
 					}
-				},
-				'gradient-flow': {
-					"0%": {
-						backgroundPosition: "0% 50%"
-					},
-					"50%": {
-						backgroundPosition: "100% 50%"
-					},
-					"100%": {
-						backgroundPosition: "0% 50%"
-					}
 				}
 			},
 			animation: {
@@ -211,8 +200,7 @@ export default {
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'cross-strike': 'cross-strike 2s ease-in-out infinite',
 				'strike-horizontal': 'strike-horizontal 4s linear infinite',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'gradient-flow': 'gradient-flow 15s ease-in-out infinite'
+				'slide-in-right': 'slide-in-right 0.6s ease-out'
 			}
 		}
 	},

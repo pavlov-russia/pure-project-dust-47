@@ -132,10 +132,9 @@ const Index = () => {
   };
   return (
     <div 
-      className="min-h-screen w-full fixed inset-0 animate-gradient-flow"
+      className="min-h-screen w-full fixed inset-0"
       style={{
-        background: 'linear-gradient(135deg, hsl(246 77% 59%) 0%, hsl(253 74% 70%) 25%, hsl(0 0% 100%) 50%, hsl(253 74% 70%) 75%, hsl(246 77% 59%) 100%)',
-        backgroundSize: '400% 400%'
+        background: 'linear-gradient(135deg, #563AF0 0%, #563AF0 25%, #7962F4 50%, #7962F4 75%, #FFFFFF 100%)'
       }}
     >
       <div className="relative z-10 min-h-screen overflow-y-auto">
