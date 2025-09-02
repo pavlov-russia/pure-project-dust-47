@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [showCTA, setShowCTA] = useState(false);
   const ctaStateRef = useRef(false);
+  const headerContainerRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLDivElement | null>(null);
+  const [leftOffset, setLeftOffset] = useState(0);
   const handleCTAClick = () => {
     // Находим форму консультации и скроллим к ней
     const consultationForm = document.querySelector('[data-consultation-form]');
@@ -14,6 +17,28 @@ const Header = () => {
       });
     }
   };
+
+  useLayoutEffect(() => {
+    const compute = () => {
+      const container = headerContainerRef.current;
+      const logo = logoRef.current;
+      if (!container || !logo) return;
+      const cw = container.clientWidth;
+      const lw = logo.clientWidth;
+      const pl = parseFloat(getComputedStyle(container).paddingLeft || '12') || 12;
+      const offset = pl - cw / 2 + lw / 2;
+      setLeftOffset(offset);
+    };
+    compute();
+    const ro = new ResizeObserver(compute);
+    if (headerContainerRef.current) ro.observe(headerContainerRef.current);
+    if (logoRef.current) ro.observe(logoRef.current);
+    window.addEventListener('resize', compute);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', compute);
+    };
+  }, []);
 
   useEffect(() => {
     const rootEl = document.getElementById('root');
@@ -96,13 +121,15 @@ const Header = () => {
           showCTA 
             ? 'pt-[93px] md:pt-[130px]' 
             : 'pt-[60px] md:pt-[60px]'
-        }`}>
+        }`} ref={headerContainerRef}>
         {/* Logo - анимированное перемещение между центром и левой позицией */}
-        <div className="flex items-center absolute bottom-[2px] z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+        <div
+          ref={logoRef}
+          className="flex items-center absolute bottom-[2px] z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
              style={{
                left: '50%',
                transform: showCTA 
-                 ? 'translateX(calc(-50% + 12px - 50vw)) translateZ(0)' 
+                 ? `translateX(calc(-50% + ${leftOffset}px)) translateZ(0)`
                  : 'translateX(-50%) translateZ(0)',
                willChange: 'transform',
                backfaceVisibility: 'hidden'
