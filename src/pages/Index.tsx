@@ -379,17 +379,15 @@ const Index = () => {
       {/* Protection Section */}
       <section className="py-8">
         <div className="container mx-auto px-6 max-w-full">
-          <SectionCard className="bg-white/10 border-white/20">
-            <div className="text-center space-y-4">
-              <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
-                Мудрые учатся на чужих ошибках — забирайте оберег от слитого бюджета
-              </h3>
-              
-              <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl mx-auto">
-                5 ошибок в вашем Телеграм-канале, которые съедают более 50% продаж (разобрали на реальных примерах наших клиентов)
-              </p>
-            </div>
-          </SectionCard>
+          <div className="text-center space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
+              Мудрые учатся на чужих ошибках — забирайте оберег от слитого бюджета
+            </h3>
+            
+            <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl mx-auto">
+              5 ошибок в вашем Телеграм-канале, которые съедают более 50% продаж (разобрали на реальных примерах наших клиентов)
+            </p>
+          </div>
         </div>
       </section>
 
