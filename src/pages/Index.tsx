@@ -359,6 +359,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Quote Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-6 max-w-full">
+          <SectionCard className="bg-white/10 border-white/20">
+            <div className="text-center">
+              <blockquote className="text-xl md:text-3xl font-bold text-white mb-6 leading-tight italic">
+                «У вас не будет второго шанса произвести первое впечатление»
+              </blockquote>
+              
+              <cite className="text-base md:text-lg text-white/80 not-italic">
+                ©️Коко Шанель
+              </cite>
+            </div>
+          </SectionCard>
+        </div>
+      </section>
+
       {/* Target Audience Section */}
       <section ref={targetSectionRef} className="py-8">
         <div className="container mx-auto px-6 max-w-full">
