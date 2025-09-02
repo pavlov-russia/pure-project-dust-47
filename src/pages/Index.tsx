@@ -368,9 +368,19 @@ const Index = () => {
                 «У вас не будет второго шанса произвести первое впечатление»
               </blockquote>
               
-              <cite className="text-base md:text-lg text-white/80 not-italic">
+              <cite className="text-base md:text-lg text-white/80 not-italic mb-8">
                 ©️Коко Шанель
               </cite>
+              
+              <div className="text-center space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
+                  Мудрые учатся на чужих ошибках — забирайте оберег от слитого бюджета
+                </h3>
+                
+                <p className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl mx-auto">
+                  5 ошибок в вашем Телеграм-канале, которые съедают более 50% продаж (разобрали на реальных примерах наших клиентов)
+                </p>
+              </div>
             </div>
           </SectionCard>
         </div>
