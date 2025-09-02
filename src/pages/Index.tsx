@@ -200,7 +200,7 @@ const Index = () => {
           <div className="px-6 py-6">
             <div className="animate-marquee whitespace-nowrap">
               <p className="text-white font-semibold text-lg md:text-xl tracking-wide inline-block">
-                СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </p>
             </div>
           </div>
