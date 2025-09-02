@@ -167,7 +167,7 @@ const Index = () => {
       {/* System Section */}
       <section className="py-8">
         <div className="container mx-auto px-6 max-w-full">
-          <SectionCard className="bg-white/10">
+          <div className="bg-white/10 mx-auto max-w-6xl rounded-[16px] md:rounded-[24px] relative overflow-hidden px-4 py-4 md:px-12 md:py-16">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
                 Настоящая упаковка — это система:
@@ -260,7 +260,7 @@ const Index = () => {
                 </Button>
               </div>
             </div>
-          </SectionCard>
+          </div>
         </div>
       </section>
 
