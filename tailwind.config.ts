@@ -168,7 +168,10 @@ export default {
 					"0%": {
 						"--strike-scale": "0"
 					},
-					"50%": {
+					"30%": {
+						"--strike-scale": "1"
+					},
+					"70%": {
 						"--strike-scale": "1"
 					},
 					"100%": {
@@ -183,7 +186,7 @@ export default {
 				'swing': 'swing 3s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'cross-strike': 'cross-strike 2s ease-in-out infinite',
-				'strike-horizontal': 'strike-horizontal 2s ease-in-out infinite'
+				'strike-horizontal': 'strike-horizontal 4s linear infinite'
 			}
 		}
 	},
