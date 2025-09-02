@@ -195,98 +195,26 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Бегущая строка с LED рамкой */}
+        {/* Бегущая строка */}
         <div className="w-full -mt-10 mb-8 overflow-hidden">
           <div className="px-6 py-6">
-            {/* LED рамка */}
-            <div className="relative bg-black/40 backdrop-blur-sm rounded-2xl border border-primary/30 shadow-glow overflow-hidden">
-              {/* Верхние LED точки */}
-              <div className="absolute top-0 left-0 w-full h-2 flex justify-between items-center px-2">
-                {Array.from({ length: 20 }).map((_, i) => (
-                  <div
-                    key={`top-${i}`}
-                    className="w-1 h-1 rounded-full bg-primary animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.1}s`,
-                      animationDuration: '2s'
-                    }}
-                  />
-                ))}
-              </div>
-              
-              {/* Нижние LED точки */}
-              <div className="absolute bottom-0 left-0 w-full h-2 flex justify-between items-center px-2">
-                {Array.from({ length: 20 }).map((_, i) => (
-                  <div
-                    key={`bottom-${i}`}
-                    className="w-1 h-1 rounded-full bg-primary animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.1 + 1}s`,
-                      animationDuration: '2s'
-                    }}
-                  />
-                ))}
-              </div>
-              
-              {/* Левые LED точки */}
-              <div className="absolute left-0 top-0 h-full w-2 flex flex-col justify-between items-center py-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`left-${i}`}
-                    className="w-1 h-1 rounded-full bg-primary animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.15}s`,
-                      animationDuration: '2s'
-                    }}
-                  />
-                ))}
-              </div>
-              
-              {/* Правые LED точки */}
-              <div className="absolute right-0 top-0 h-full w-2 flex flex-col justify-between items-center py-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`right-${i}`}
-                    className="w-1 h-1 rounded-full bg-primary animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.15 + 0.5}s`,
-                      animationDuration: '2s'
-                    }}
-                  />
-                ))}
-              </div>
-              
-              {/* Угловые LED точки */}
-              <div className="absolute top-1 left-1 w-2 h-2 rounded-full bg-accent animate-pulse" 
-                   style={{ animationDuration: '1.5s' }} />
-              <div className="absolute top-1 right-1 w-2 h-2 rounded-full bg-accent animate-pulse" 
-                   style={{ animationDuration: '1.5s', animationDelay: '0.3s' }} />
-              <div className="absolute bottom-1 left-1 w-2 h-2 rounded-full bg-accent animate-pulse" 
-                   style={{ animationDuration: '1.5s', animationDelay: '0.6s' }} />
-              <div className="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-accent animate-pulse" 
-                   style={{ animationDuration: '1.5s', animationDelay: '0.9s' }} />
-              
-              {/* Бегущий текст */}
-              <div className="px-8 py-4 mx-2 my-2 bg-black/60 rounded-xl">
-                <div className="flex animate-marquee whitespace-nowrap">
-                  <div className="flex shrink-0">
-                    <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12 drop-shadow-lg">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </p>
-                    <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12 drop-shadow-lg">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </p>
-                    <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12 drop-shadow-lg">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </p>
-                    <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12 drop-shadow-lg">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </p>
-                    <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12 drop-shadow-lg">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </p>
-                  </div>
-                </div>
+            <div className="flex animate-marquee whitespace-nowrap">
+              <div className="flex shrink-0">
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
+                <p className="text-white font-semibold text-lg md:text-xl tracking-wide mr-12">
+                  СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
+                </p>
               </div>
             </div>
           </div>
