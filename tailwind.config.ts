@@ -168,10 +168,10 @@ export default {
 					"0%": {
 						"--strike-scale": "0"
 					},
-					"30%": {
+					"60%": {
 						"--strike-scale": "1"
 					},
-					"70%": {
+					"80%": {
 						"--strike-scale": "1"
 					},
 					"100%": {
