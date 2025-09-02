@@ -435,7 +435,7 @@ const Index = () => {
       </section>
 
       {/* Consultation Form */}
-      <div className="-mt-20">
+      <div className="-mt-20 pb-0">
         <ConsultationForm />
       </div>
       </div>
