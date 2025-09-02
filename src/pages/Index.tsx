@@ -4,8 +4,110 @@ import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
+  const [api, setApi] = useState(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
+  const timerRef = useRef(null);
+  
+  const carouselData = [
+    {
+      title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
+      description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+    },
+    {
+      title: "✔️ Кристальное позиционирование, понятное даже школьнику",
+      description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
+    },
+    {
+      title: "Продуманный путь клиента от А до Я",
+      description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
+    },
+    {
+      title: "Осмысленный и целевой контент",
+      description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
+    },
+    {
+      title: "Выраженный стиль коммуникации",
+      description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
+    },
+    {
+      title: "Визуальная идентичность",
+      description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
+    }
+  ];
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+      // Сбрасываем таймер при ручном переключении
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      startAutoPlay();
+    });
+  }, [api]);
+
+  // Intersection Observer для отслеживания видимости блока
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Автопролистывание
+  const startAutoPlay = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
+    if (isInView && api) {
+      timerRef.current = setTimeout(() => {
+        const nextSlide = (current + 1) % count;
+        api.scrollTo(nextSlide);
+      }, 5000);
+    }
+  };
+
+  useEffect(() => {
+    if (isInView && api && count > 0) {
+      startAutoPlay();
+    } else if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [isInView, api, current, count]);
+
+  const goToSlide = (index) => {
+    if (api) {
+      api.scrollTo(index);
+    }
+  };
   return (
     <div 
       className="min-h-screen w-full fixed inset-0"
@@ -165,7 +267,7 @@ const Index = () => {
       </section>
 
       {/* System Section */}
-      <section className="py-8">
+      <section ref={sectionRef} className="py-8">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
             {/* Декоративная полоска сверху */}
@@ -180,78 +282,41 @@ const Index = () => {
             </h2>
             
             <div className="relative max-w-4xl mx-auto">
-              <Carousel className="w-full">
+              <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        Глубинная распаковка вашего продукта, УТП и анализ аудитории
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие
-                      </p>
-                    </div>
-                  </CarouselItem>
-                  
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        ✔️ Кристальное позиционирование, понятное даже школьнику
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?
-                      </p>
-                    </div>
-                  </CarouselItem>
-                  
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        Продуманный путь клиента от А до Я
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен
-                      </p>
-                    </div>
-                  </CarouselItem>
-                  
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        Осмысленный и целевой контент
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?
-                      </p>
-                    </div>
-                  </CarouselItem>
-                  
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        Выраженный стиль коммуникации
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих
-                      </p>
-                    </div>
-                  </CarouselItem>
-                  
-                  <CarouselItem>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-4">
-                        Визуальная идентичность
-                      </h3>
-                      <p className="text-sm md:text-base text-white/90 leading-relaxed">
-                        Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию
-                      </p>
-                    </div>
-                  </CarouselItem>
+                  {carouselData.map((item, index) => (
+                    <CarouselItem key={index}>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </CarouselItem>
+                  ))}
                 </CarouselContent>
                 
                 <CarouselPrevious className="hidden md:flex" />
                 <CarouselNext className="hidden md:flex" />
               </Carousel>
+              
+              {/* Индикатор точек */}
+              <div className="flex justify-center space-x-2 mt-6">
+                {Array.from({ length: count }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === current 
+                        ? 'bg-white scale-125' 
+                        : 'bg-white/40 hover:bg-white/60'
+                    }`}
+                    aria-label={`Перейти к слайду ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
             
             <div className="mt-8">
