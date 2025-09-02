@@ -201,7 +201,7 @@ const Index = () => {
             <div className="led-panel">
               <div className="led-track">
                 <span className="led-msg">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
-                <span className="led-msg" aria-hidden="true">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
+                <span className="led-msg" aria-hidden="true"> СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
               </div>
             </div>
           </div>
