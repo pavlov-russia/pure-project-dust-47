@@ -364,6 +364,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Consultation Form */}
+      <div className="-mt-12">
+        <ConsultationForm />
+      </div>
+
       {/* Target Audience Section */}
       <section ref={targetSectionRef} className="py-8">
         <div className="container mx-auto px-6 max-w-full">
@@ -432,12 +437,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Consultation Form */}
-      <div className="-mt-12">
-        <ConsultationForm />
-      </div>
+       </section>
       </div>
     </div>
   );
