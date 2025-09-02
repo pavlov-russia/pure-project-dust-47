@@ -137,20 +137,20 @@ const Index = () => {
       <ChecklistPopup />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-16 min-h-screen w-full flex items-center justify-center" data-hero>
+      <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
             <div className="backdrop-blur-[40px] bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4 leading-tight text-white">
+            <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white">
               Управляйте впечатлением о своём бизнесе с{" "}
               <span className="font-bold text-white">TapBlog</span>
             </h1>
             
-            <p className="text-base md:text-lg mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
+            <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
               У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
             </p>
             
-            <p className="text-base md:text-lg mb-8 font-semibold text-white leading-relaxed">
+            <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
               И мы поможем использовать их в вашу пользу!
             </p>
             
