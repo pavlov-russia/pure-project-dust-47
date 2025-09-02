@@ -377,7 +377,7 @@ const Index = () => {
       </section>
 
       {/* Protection Section */}
-      <section className="py-8">
+      <section className="pt-2 pb-8">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center space-y-4">
             <h3 className="text-lg md:text-xl font-bold text-white leading-tight">
