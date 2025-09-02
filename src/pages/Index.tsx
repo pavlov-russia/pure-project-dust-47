@@ -195,87 +195,14 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Бегущая строка с LED-рамкой */}
-        <div className="w-full -mt-10 mb-8 overflow-hidden relative">
-          {/* LED рамка */}
-          <div className="relative bg-primary/80 p-1">
-            {/* Верхняя строка точек */}
-            <div className="flex justify-between items-center w-full mb-1">
-              {Array.from({ length: 60 }).map((_, i) => (
-                <div
-                  key={`top-${i}`}
-                  className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
-                  style={{
-                    animationDelay: `${i * 0.05}s`,
-                    animationDuration: '2s'
-                  }}
-                />
-              ))}
-            </div>
-            
-            {/* Основной контент с боковыми точками */}
-            <div className="relative flex items-center">
-              {/* Левая колонка точек */}
-              <div className="flex flex-col justify-between h-16 mr-1">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`left-${i}`}
-                    className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.1}s`,
-                      animationDuration: '1.8s'
-                    }}
-                  />
-                ))}
+        {/* LED MARQUEE */}
+        <div className="led-wrap">
+          <div className="led-box">
+            <div className="led-panel">
+              <div className="led-track" aria-label="бегущая строка">
+                <span className="led-msg">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
+                <span className="led-msg" aria-hidden="true">СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК • </span>
               </div>
-              
-              {/* Центральная область с текстом */}
-              <div className="flex-1 bg-primary/60 rounded-sm py-4 px-4 min-h-[4rem] flex items-center">
-                <div className="flex animate-marquee whitespace-nowrap w-full">
-                  <div className="flex shrink-0">
-                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </span>
-                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </span>
-                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </span>
-                    <span className="text-white font-bold text-lg md:text-xl tracking-wider mr-16">
-                      СНАЧАЛА УПАКОВКА — ПОТОМ ТРАФИК
-                    </span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Правая колонка точек */}
-              <div className="flex flex-col justify-between h-16 ml-1">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <div
-                    key={`right-${i}`}
-                    className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
-                    style={{
-                      animationDelay: `${i * 0.1 + 0.5}s`,
-                      animationDuration: '1.8s'
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            {/* Нижняя строка точек */}
-            <div className="flex justify-between items-center w-full mt-1">
-              {Array.from({ length: 60 }).map((_, i) => (
-                <div
-                  key={`bottom-${i}`}
-                  className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"
-                  style={{
-                    animationDelay: `${i * 0.05 + 1}s`,
-                    animationDuration: '2s'
-                  }}
-                />
-              ))}
             </div>
           </div>
         </div>
