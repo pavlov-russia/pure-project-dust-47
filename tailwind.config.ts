@@ -166,16 +166,16 @@ export default {
 				},
 				'strike-horizontal': {
 					"0%": {
-						"--strike-scale": "0"
+						width: "0%"
 					},
-					"60%": {
-						"--strike-scale": "1"
+					"50%": {
+						width: "100%"
 					},
-					"80%": {
-						"--strike-scale": "1"
+					"85%": {
+						width: "100%"
 					},
 					"100%": {
-						"--strike-scale": "0"
+						width: "0%"
 					}
 				}
 			},

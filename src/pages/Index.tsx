@@ -107,9 +107,8 @@ const Index = () => {
                       <span 
                         className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal"
                         style={{ 
-                          width: '100%',
-                          transform: 'translateY(-50%) scaleX(var(--strike-scale))',
-                          transformOrigin: 'left center'
+                          transform: 'translateY(-50%)',
+                          width: '0%'
                         }}
                       ></span>
                     </span>
