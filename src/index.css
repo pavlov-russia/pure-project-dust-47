@@ -264,7 +264,7 @@ All colors MUST be HSL.
     overflow-x: clip;
     overflow-y: auto;
     position: relative;
-    background: hsl(var(--background));
+    background: transparent;
     min-height: 100vh;
     /* Safe area support */
     padding-top: var(--safe-area-inset-top);
