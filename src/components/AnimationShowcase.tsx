@@ -22,7 +22,7 @@ const AnimationShowcase = () => {
           .tg-sp::after{
             content: "";
             position: absolute;
-            inset: -2px;
+            inset: 0;
             pointer-events: auto;
             background:
               radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/4px 4px,
