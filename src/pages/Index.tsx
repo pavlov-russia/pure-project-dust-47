@@ -399,8 +399,8 @@ const Index = () => {
             <style>
               {`
                 :root{
-                  --dot: 10px;
-                  --dot-color: rgba(255,255,255,.92);
+                  --dot: 3px;
+                  --dot-color: rgba(255,255,255,.85);
                   --fade: .18s;
                 }
 
@@ -436,8 +436,10 @@ const Index = () => {
                   transition: opacity var(--fade) linear;
                   pointer-events:auto;
                   animation:
-                    tg-drift 10s linear infinite,
-                    tg-twinkle 2.2s ease-in-out infinite alternate;
+                    tg-drift 8s linear infinite,
+                    tg-drift-vertical 12s linear infinite,
+                    tg-twinkle 1.8s ease-in-out infinite alternate,
+                    tg-chaos 6s ease-in-out infinite;
                 }
 
                 @media (hover:hover){
@@ -449,10 +451,27 @@ const Index = () => {
 
                 @keyframes tg-drift{
                   from { background-position: 0 0, calc(var(--dot)/2) calc(var(--dot)/2); }
-                  to   { background-position: 200px 0, calc(200px + var(--dot)/2) calc(var(--dot)/2); }
+                  to   { background-position: 100px 0, calc(100px + var(--dot)/2) calc(var(--dot)/2); }
+                }
+                @keyframes tg-drift-vertical{
+                  0% { background-position-y: 0, calc(var(--dot)/2); }
+                  25% { background-position-y: 15px, calc(15px + var(--dot)/2); }
+                  50% { background-position-y: -10px, calc(-10px + var(--dot)/2); }
+                  75% { background-position-y: 8px, calc(8px + var(--dot)/2); }
+                  100% { background-position-y: 0, calc(var(--dot)/2); }
                 }
                 @keyframes tg-twinkle{
-                  from { opacity:.9; } to { opacity:.55; }
+                  from { opacity:.85; } to { opacity:.45; }
+                }
+                @keyframes tg-chaos{
+                  0% { transform: translate(0, 0) scale(1); }
+                  15% { transform: translate(2px, -1px) scale(1.05); }
+                  30% { transform: translate(-1px, 2px) scale(0.95); }
+                  45% { transform: translate(1px, 1px) scale(1.02); }
+                  60% { transform: translate(-2px, -1px) scale(0.98); }
+                  75% { transform: translate(1px, -2px) scale(1.03); }
+                  90% { transform: translate(-1px, 1px) scale(0.97); }
+                  100% { transform: translate(0, 0) scale(1); }
                 }
               `}
             </style>
