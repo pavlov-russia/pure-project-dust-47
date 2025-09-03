@@ -452,7 +452,7 @@ All colors MUST be HSL.
 :root {
   --border-size: 2px;     /* толщина рамки */
   --dot: 3px;             /* шаг точек */
-  --height: 64px;         /* высота панели */
+  --height: 30px;         /* высота панели */
   --speed: 4s;            /* скорость прокрутки */
   --panel: #7962F4;       /* фон внутри */
   --txt: #ffffff;         /* белый текст */
