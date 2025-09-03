@@ -138,6 +138,25 @@ const Index = () => {
                   transform-origin: center;
                   transform-box: fill-box;
                 }
+                .btn-grab {
+                  transition: all 0.2s ease;
+                  filter: brightness(1);
+                  animation: grab-pulse 2s ease-in-out infinite;
+                }
+                .btn-grab:active {
+                  transform: scale(0.94);
+                  filter: brightness(1.2) saturate(1.3);
+                }
+                @keyframes grab-pulse {
+                  0%, 100% { 
+                    filter: brightness(1) saturate(1);
+                    transform: scale(1);
+                  }
+                  50% { 
+                    filter: brightness(1.1) saturate(1.2);
+                    transform: scale(1.02);
+                  }
+                }
               `}</style>
               <svg width="160" height="110" viewBox="0 0 288 199" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_25_18)">
@@ -395,29 +414,6 @@ const Index = () => {
             </p>
             
             <div className="text-center mt-4">
-              <style>
-                {`
-                  .btn-grab {
-                    transition: all 0.2s ease;
-                    filter: brightness(1);
-                    animation: grab-pulse 2s ease-in-out infinite;
-                  }
-                  .btn-grab:active {
-                    transform: scale(0.94);
-                    filter: brightness(1.2) saturate(1.3);
-                  }
-                  @keyframes grab-pulse {
-                    0%, 100% { 
-                      filter: brightness(1) saturate(1);
-                      transform: scale(1);
-                    }
-                    50% { 
-                      filter: brightness(1.1) saturate(1.2);
-                      transform: scale(1.02);
-                    }
-                  }
-                `}
-              </style>
               <span className="btn-grab text-white font-bold text-lg underline cursor-pointer select-none">
                 ЗАБРАТЬ!
               </span>
