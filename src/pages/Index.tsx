@@ -383,7 +383,7 @@ const Index = () => {
       </section>
 
       {/* Quote Section */}
-      <section className="py-8 bg-gradient-to-b from-white to-[#563AF0]">
+      <section className="py-8 bg-gradient-to-b from-white to-[#7460f1]">
         <div className="container mx-auto px-6 max-w-full">
           <SectionCard className="bg-white/10 border-white/20">
             <div className="text-center">
@@ -400,7 +400,7 @@ const Index = () => {
       </section>
 
       {/* Protection Section */}
-      <section className="pt-2 pb-8">
+      <section className="pt-2 pb-8 bg-gradient-to-b from-[#7460f1] to-[#563AF0]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center space-y-4">
             <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
