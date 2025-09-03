@@ -294,7 +294,7 @@ const Index = () => {
       </section>
 
       {/* System Section */}
-      <section ref={sectionRef} className="py-8">
+      <section ref={sectionRef} className="py-8 bg-gradient-to-b from-[#563AF0] to-white">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
             {/* Декоративная полоска сверху */}
