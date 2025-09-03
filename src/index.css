@@ -488,7 +488,7 @@ All colors MUST be HSL.
     radial-gradient(#563AF0 28%, transparent 30%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot),
     var(--panel);
   box-shadow: none;
-  padding: 0 4px;
+  padding: 4px;
   overflow:hidden;
 }
 
