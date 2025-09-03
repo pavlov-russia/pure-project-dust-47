@@ -108,7 +108,50 @@ const Index = () => {
       api.scrollTo(index);
     }
   };
-  return <div className="min-h-screen w-full fixed inset-0 bg-transparent">
+  return <div className="min-h-screen w-full fixed inset-0">
+      {/* Wave Gradient Backgrounds */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Hero Section Background - gradient 1: #563AF0 → #7962F4 → #FFFFFF */}
+        <div className="absolute inset-0 h-screen" style={{
+          background: `linear-gradient(180deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)`
+        }}></div>
+        
+        {/* Strategy Section Background - gradient 2: #FFFFFF → #7962F4 → #563AF0 */}
+        <div className="absolute inset-0 top-[100vh] h-screen" style={{
+          background: `linear-gradient(180deg, #FFFFFF 0%, #7962F4 50%, #563AF0 100%)`
+        }}></div>
+        
+        {/* Express Test Section Background - gradient 1: #563AF0 → #7962F4 → #FFFFFF */}
+        <div className="absolute inset-0 top-[200vh] h-screen" style={{
+          background: `linear-gradient(180deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)`
+        }}></div>
+        
+        {/* System Section Background - gradient 2: #FFFFFF → #7962F4 → #563AF0 */}
+        <div className="absolute inset-0 top-[300vh] h-screen" style={{
+          background: `linear-gradient(180deg, #FFFFFF 0%, #7962F4 50%, #563AF0 100%)`
+        }}></div>
+        
+        {/* Quote Section Background - gradient 1: #563AF0 → #7962F4 → #FFFFFF */}
+        <div className="absolute inset-0 top-[400vh] h-screen" style={{
+          background: `linear-gradient(180deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)`
+        }}></div>
+        
+        {/* Protection Section Background - gradient 2: #FFFFFF → #7962F4 → #563AF0 */}
+        <div className="absolute inset-0 top-[500vh] h-screen" style={{
+          background: `linear-gradient(180deg, #FFFFFF 0%, #7962F4 50%, #563AF0 100%)`
+        }}></div>
+        
+        {/* Target Audience Section Background - gradient 1: #563AF0 → #7962F4 → #FFFFFF */}
+        <div className="absolute inset-0 top-[600vh] h-screen" style={{
+          background: `linear-gradient(180deg, #563AF0 0%, #7962F4 50%, #FFFFFF 100%)`
+        }}></div>
+        
+        {/* Consultation Form Background - gradient 2: #FFFFFF → #7962F4 → #563AF0 */}
+        <div className="absolute inset-0 top-[700vh] h-screen" style={{
+          background: `linear-gradient(180deg, #FFFFFF 0%, #7962F4 50%, #563AF0 100%)`
+        }}></div>
+      </div>
+      
       <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
       <ChecklistPopup />
