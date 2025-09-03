@@ -237,7 +237,9 @@ const Index = () => {
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов –
                   </p>
                   <div className="text-center mt-4">
-                    <span className="bg-red-100 px-2 py-1 rounded font-semibold text-red-800 inline-block relative">
+                    <span className="px-2 py-1 rounded font-semibold text-white inline-block relative" style={{
+                      background: `linear-gradient(135deg, #563AF0 0%, #7962F4 50%, #272727 100%)`
+                    }}>
                       ЭТО НЕ УПАКОВКА!
                       <span className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal" style={{
                         transform: 'translateY(-50%)',
