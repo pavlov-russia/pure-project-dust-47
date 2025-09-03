@@ -391,7 +391,20 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              <span className="censored-text" data-censored>
+              <span
+                className="censored-text"
+                data-censored
+                role="button"
+                tabIndex={0}
+                aria-label="Показать скрытый текст"
+                onClick={(e) => e.currentTarget.classList.add('revealed')}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    (e.currentTarget as HTMLElement).classList.add('revealed');
+                  }
+                }}
+              >
                 разобрали на реальных примерах наших клиентов
               </span>
             </p>
@@ -408,6 +421,7 @@ const Index = () => {
                   content: "";
                   position: absolute;
                   inset: -1px;
+                  pointer-events: none;
                   background-image: 
                     linear-gradient(45deg, #563AF0 25%, transparent 25%),
                     linear-gradient(-45deg, #7962F4 25%, transparent 25%),
@@ -416,7 +430,7 @@ const Index = () => {
                   background-size: 4px 4px;
                   background-position: 0 0, 0 2px, 2px -2px, -2px 0;
                   opacity: 0.95;
-                  transition: all 0.3s ease;
+                  transition: opacity 0.24s ease, transform 0.24s ease;
                   border-radius: 2px;
                   animation: pixelate 0.8s infinite;
                 }
@@ -442,6 +456,7 @@ const Index = () => {
                     background-size: 6px 6px;
                     background-position: 0 0, 0 3px, 3px -3px, -3px 0;
                     inset: -2px;
+                    pointer-events: none;
                   }
 
                   @keyframes pixelate {
@@ -462,7 +477,7 @@ const Index = () => {
 
                 .censored-text.revealed::before {
                   opacity: 0;
-                  transform: scale(1.1);
+                  pointer-events: none;
                 }
 
                 .censored-text:hover::before {
@@ -471,25 +486,6 @@ const Index = () => {
                 }
               `}
             </style>
-            
-            <script dangerouslySetInnerHTML={{
-              __html: `
-                document.addEventListener('DOMContentLoaded', function() {
-                  setTimeout(() => {
-                    const censoredElements = document.querySelectorAll('[data-censored]');
-                    censoredElements.forEach(el => {
-                      el.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        this.classList.add('revealed');
-                        setTimeout(() => {
-                          this.classList.remove('revealed');
-                        }, 5000);
-                      });
-                    });
-                  }, 500);
-                });
-              `
-            }} />
           </div>
         </div>
       </section>
