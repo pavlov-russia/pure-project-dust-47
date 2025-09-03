@@ -126,11 +126,7 @@ const Header = () => {
           showCTA 
             ? 'pt-[93px] md:pt-[130px]' 
             : 'pt-[60px] md:pt-[60px]'
-        }`} 
-        ref={headerContainerRef}
-        style={{
-          transitionDelay: showCTA ? '400ms' : '0ms'
-        }}>
+        }`} ref={headerContainerRef}>
         {/* Logo - анимированное перемещение между центром и левой позицией */}
         <div
           ref={logoRef}
@@ -140,7 +136,7 @@ const Header = () => {
                transform: showCTA 
                  ? `translateX(calc(-50% + ${leftOffset}px)) translateZ(0)`
                  : 'translateX(-50%) translateZ(0)',
-               transitionDelay: '0ms',
+               transitionDelay: showCTA ? '300ms' : '0ms',
                willChange: 'transform',
                backfaceVisibility: 'hidden'
              }}>
