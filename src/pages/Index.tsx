@@ -185,31 +185,7 @@ const Index = () => {
       </section>
       
       {/* Strategy Section */}
-      <section className="py-8 bg-white relative overflow-hidden">
-        {/* Background large organic shapes */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Large purple organic shape 1 */}
-          <div className="absolute top-0 right-0 w-96 h-96 opacity-20">
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <path d="M100,50 C200,20 350,80 380,200 C380,300 250,380 150,350 C50,320 20,150 100,50 Z" fill="#563AF0"/>
-            </svg>
-          </div>
-          
-          {/* Large purple organic shape 2 */}
-          <div className="absolute bottom-0 left-0 w-80 h-80 opacity-15">
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <path d="M200,20 C320,40 380,120 360,240 C340,360 200,380 80,320 C20,280 10,100 200,20 Z" fill="#563AF0"/>
-            </svg>
-          </div>
-          
-          {/* Medium purple organic shape 3 */}
-          <div className="absolute top-1/3 left-1/4 w-64 h-64 opacity-10">
-            <svg viewBox="0 0 400 400" className="w-full h-full">
-              <path d="M150,80 C250,60 350,140 320,240 C290,340 180,360 100,300 C20,240 50,100 150,80 Z" fill="#563AF0"/>
-            </svg>
-          </div>
-        </div>
-        
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-2 max-w-full">
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
