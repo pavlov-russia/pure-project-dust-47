@@ -154,10 +154,10 @@ const Header = () => {
         </div>
         
         {/* CTA Button - показывается только после скролла, позиционирован справа по центру по вертикали */}
-        <div className={`absolute right-3 md:right-6 bottom-[2px] transition-all duration-500 ease-out delay-200 ${
+        <div className={`absolute right-3 md:right-6 bottom-[2px] transition-all duration-500 ease-out ${
           showCTA 
-            ? 'opacity-100 scale-100' 
-            : 'opacity-0 scale-95 pointer-events-none'
+            ? 'opacity-100 scale-100 delay-200' 
+            : 'opacity-0 scale-95 pointer-events-none delay-0'
         }`}>
           <Button 
             variant="glass-breath"
