@@ -450,8 +450,8 @@ All colors MUST be HSL.
 
 /* ===== LED MARQUEE STYLES - Адаптированный под палитру ===== */
 :root {
-  --border-size: 8px;     /* толщина рамки */
-  --dot: 7px;             /* шаг точек */
+  --border-size: 2px;     /* толщина рамки */
+  --dot: 3px;             /* шаг точек */
   --height: 64px;         /* высота панели */
   --speed: 4s;            /* скорость прокрутки */
   --panel: #7962F4;       /* фон внутри */
