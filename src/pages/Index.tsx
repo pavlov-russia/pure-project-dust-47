@@ -400,7 +400,7 @@ const Index = () => {
               {`
                 :root{
                   --dot: 3px;
-                  --dot-color: rgba(255,255,255,.85);
+                  --dot-color: rgba(255,255,255,.25);
                   --fade: .18s;
                 }
 
@@ -433,7 +433,8 @@ const Index = () => {
                     radial-gradient(var(--dot-color) 45%, transparent 55%) 0 0/2px 2px,
                     radial-gradient(var(--dot-color) 40%, transparent 50%) 1px 1px/2.5px 2.5px,
                     radial-gradient(var(--dot-color) 50%, transparent 60%) 0.5px 1.5px/1.8px 1.8px;
-                  opacity:.8;
+                  opacity:.4;
+                  mix-blend-mode: normal;
                   transition: opacity var(--fade) linear;
                   pointer-events:auto;
                   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -448,7 +449,7 @@ const Index = () => {
                 }
 
                 .tg-spoiler.revealed::after{ opacity:0; pointer-events:none; }
-                .tg-spoiler.hiding::after{ opacity:.8; pointer-events:auto; }
+                .tg-spoiler.hiding::after{ opacity:.4; pointer-events:auto; }
 
                 @keyframes tg-drift{
                   from { background-position: 0 0, 1px 1px, 0.5px 1.5px; }
@@ -460,7 +461,7 @@ const Index = () => {
                   100% { background-position-y: 0, 1px, 1.5px; }
                 }
                 @keyframes tg-twinkle{
-                  from { opacity:.8; } to { opacity:.5; }
+                  from { opacity:.4; } to { opacity:.15; }
                 }
               `}
             </style>
