@@ -458,15 +458,10 @@ const Index = () => {
                         <path d="M6 16C8 18 10 20 12 22C16 18 20 14 26 8" stroke="#563AF0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                       </svg>
                     </div>
-                    {/* Handwriting Animation - только показывать когда предыдущий завершен */}
-                    {(index === 0 || completedAnimations >= index) && (
-                      <HandwritingAnimation 
-                        text={text}
-                        delay={index === 0 ? 500 : 100} // Первый с задержкой, остальные сразу после предыдущего
-                        className="text-white/90 text-base md:text-lg flex-1"
-                        onComplete={() => setCompletedAnimations(prev => Math.max(prev, index + 1))}
-                      />
-                    )}
+                    {/* Static text */}
+                    <span className="text-white/90 text-base md:text-lg flex-1">
+                      {text}
+                    </span>
                   </div>
                 ))}
               </div>
