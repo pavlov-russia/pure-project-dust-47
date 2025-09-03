@@ -185,7 +185,7 @@ const Index = () => {
       </section>
       
       {/* Strategy Section */}
-      <section className="py-8">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-2 max-w-full">
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
@@ -196,11 +196,11 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
-              <h2 className="text-lg md:text-3xl font-bold text-white mb-4 text-center leading-tight">
+              <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
               
-              <p className="text-lg md:text-xl text-white/90 text-center mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 text-center mb-8 leading-relaxed">
                 Это основа, без которой продвижение теряет смысл, а вы – бюджет
               </p>
             </div>
@@ -224,9 +224,9 @@ const Index = () => {
         }}>
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
-              <div className="space-y-6 text-white/90">
+              <div className="space-y-6 text-gray-700">
                 <p className="text-base md:text-lg leading-relaxed text-center">
-                  <strong className="text-white">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+                  <strong className="text-gray-900">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
                 <div className="pl-4">
@@ -237,7 +237,7 @@ const Index = () => {
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов –
                   </p>
                   <div className="text-center mt-4">
-                    <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white inline-block relative">
+                    <span className="bg-red-100 px-2 py-1 rounded font-semibold text-red-800 inline-block relative">
                       ЭТО НЕ УПАКОВКА!
                       <span className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal" style={{
                         transform: 'translateY(-50%)',
