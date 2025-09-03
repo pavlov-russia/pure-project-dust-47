@@ -428,13 +428,22 @@ const Index = () => {
                 .tg-spoiler::after{
                   content:"";
                   position:absolute;
-                  left:0; top:0; right:0; bottom:0;
+                  left:-3px; top:-2px; right:-3px; bottom:-2px;
                   background:
-                    radial-gradient(var(--dot-color) 35%, transparent 36%) 0 0/var(--dot) var(--dot),
-                    radial-gradient(var(--dot-color) 35%, transparent 36%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot);
-                  opacity:.9;
+                    radial-gradient(var(--dot-color) 25%, transparent 45%) 0 0/var(--dot) var(--dot),
+                    radial-gradient(var(--dot-color) 25%, transparent 45%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot);
+                  opacity:.85;
                   transition: opacity var(--fade) linear;
                   pointer-events:auto;
+                  filter: blur(0.5px);
+                  mask: 
+                    radial-gradient(ellipse 120% 100% at center, black 60%, transparent 85%),
+                    linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+                  mask-composite: intersect;
+                  -webkit-mask: 
+                    radial-gradient(ellipse 120% 100% at center, black 60%, transparent 85%),
+                    linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+                  -webkit-mask-composite: source-in;
                   animation:
                     tg-drift 8s linear infinite,
                     tg-drift-vertical 12s linear infinite,
