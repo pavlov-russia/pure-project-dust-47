@@ -121,7 +121,7 @@ const Index = () => {
             
             {/* Background Owl - positioned randomly with rotation */}
             <div className="absolute top-8 right-4 opacity-8 pointer-events-none transform rotate-12">
-              <style jsx>{`
+              <style>{`
                 @keyframes wink {
                   0%, 85%, 100% { transform: scaleY(1); }
                   90%, 95% { transform: scaleY(0.1); }
@@ -129,6 +129,7 @@ const Index = () => {
                 .winking-eye {
                   animation: wink 3s infinite;
                   transform-origin: center;
+                  transform-box: fill-box;
                 }
               `}</style>
               <svg width="160" height="110" viewBox="0 0 290 201" fill="none" xmlns="http://www.w3.org/2000/svg">
