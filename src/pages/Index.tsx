@@ -391,110 +391,122 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              <div className="tg-spoiler" data-spoiler role="button" tabIndex={0} aria-label="Показать скрытый текст">
-                <span className="tg-text">разобрали на реальных примерах наших клиентов</span>
-              </div>
+              <span className="tg-spoiler" data-spoiler>
+                разобрали на реальных примерах наших клиентов
+              </span>
             </p>
             
             <style>
               {`
                 :root{
-                  --dot: 3px;
-                  --dot-color: rgba(255,255,255,.25);
-                  --fade: .18s;
+                  --tg-spoiler-dot-size: 8px;
+                  --tg-spoiler-dot-color: rgba(255,255,255,.95);
+                  --tg-spoiler-fade: .18s;
+                  --tg-spoiler-twinkle-a: .9;
+                  --tg-spoiler-twinkle-b: .55;
                 }
 
                 .tg-spoiler{
                   position: relative;
                   display: inline;
-                  background: transparent !important;
-                  border: 0 !important;
-                  box-shadow: none !important;
-                  border-radius: 0 !important;
                   cursor: pointer;
+                  -webkit-tap-highlight-color: transparent;
+                  text-decoration: none;
+                  outline: none;
                 }
-
-                .tg-text{
-                  color: transparent;
-                  -webkit-text-fill-color: transparent;
-                  transition: color var(--fade) linear, -webkit-text-fill-color var(--fade) linear;
-                }
-                @media (hover:hover){
-                  .tg-spoiler:hover .tg-text{ color:#fff; -webkit-text-fill-color:#fff; }
-                }
-                .tg-spoiler.revealed .tg-text{ color:#fff; -webkit-text-fill-color:#fff; }
-                .tg-spoiler.hiding .tg-text{ color:transparent; -webkit-text-fill-color:transparent; }
 
                 .tg-spoiler::after{
                   content:"";
-                  position:absolute;
-                  left:-1px; top:-1px; right:-1px; bottom:-1px;
+                  position: absolute;
+                  inset: -2px;
+                  pointer-events: auto;
                   background:
-                    radial-gradient(var(--dot-color) 45%, transparent 55%) 0 0/2px 2px,
-                    radial-gradient(var(--dot-color) 40%, transparent 50%) 1px 1px/2.5px 2.5px,
-                    radial-gradient(var(--dot-color) 50%, transparent 60%) 0.5px 1.5px/1.8px 1.8px;
-                  opacity:.4;
-                  mix-blend-mode: normal;
-                  transition: opacity var(--fade) linear;
-                  pointer-events:auto;
-                  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+                    radial-gradient(var(--tg-spoiler-dot-color) 36%, transparent 37%) 0 0/var(--tg-spoiler-dot-size) var(--tg-spoiler-dot-size),
+                    radial-gradient(var(--tg-spoiler-dot-color) 36%, transparent 37%) calc(var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2)/var(--tg-spoiler-dot-size) var(--tg-spoiler-dot-size);
+                  border-radius: 4px;
+                  opacity: var(--tg-spoiler-twinkle-a);
+                  transition: opacity var(--tg-spoiler-fade) linear;
                   animation:
-                    tg-drift 12s linear infinite,
-                    tg-drift-vertical 15s linear infinite,
-                    tg-twinkle 2s ease-in-out infinite alternate;
+                    tg-spoiler-drift 10s linear infinite,
+                    tg-spoiler-twinkle 2.2s ease-in-out infinite alternate;
+                }
+
+                .tg-spoiler.revealed::after{
+                  opacity: 0;
+                  pointer-events: none;
+                }
+
+                .tg-spoiler.hiding::after{
+                  opacity: var(--tg-spoiler-twinkle-a);
+                  pointer-events: auto;
                 }
 
                 @media (hover:hover){
-                  .tg-spoiler:hover::after{ opacity:0; pointer-events:none; }
+                  .tg-spoiler:active::after{
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: none;
+                  }
                 }
 
-                .tg-spoiler.revealed::after{ opacity:0; pointer-events:none; }
-                .tg-spoiler.hiding::after{ opacity:.4; pointer-events:auto; }
+                @keyframes tg-spoiler-drift{
+                  from { background-position: 0px 0, calc(var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2); }
+                  to   { background-position: 200px 0, calc(200px + var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2); }
+                }
+                @keyframes tg-spoiler-twinkle{
+                  from { opacity: var(--tg-spoiler-twinkle-a); }
+                  to   { opacity: var(--tg-spoiler-twinkle-b); }
+                }
 
-                @keyframes tg-drift{
-                  from { background-position: 0 0, 1px 1px, 0.5px 1.5px; }
-                  to   { background-position: 50px 0, 51px 1px, 50.5px 1.5px; }
+                @media (prefers-reduced-motion: reduce){
+                  .tg-spoiler::after{ animation: none; }
                 }
-                @keyframes tg-drift-vertical{
-                  0% { background-position-y: 0, 1px, 1.5px; }
-                  50% { background-position-y: 8px, 9px, 9.5px; }
-                  100% { background-position-y: 0, 1px, 1.5px; }
-                }
-                @keyframes tg-twinkle{
-                  from { opacity:.4; } to { opacity:.15; }
-                }
+
+                .tg-spoiler a{ pointer-events: none; }
+                .tg-spoiler.revealed a{ pointer-events: auto; }
               `}
             </style>
             
             <script>
               {`
                 (function(){
-                  const DURATION = 20000;
-                  const isTouchOnly = window.matchMedia('(hover: none)').matches;
+                  const DURATION_MS = 20000;
 
-                  document.querySelectorAll('[data-spoiler]').forEach(el=>{
-                    let t=null;
+                  document.querySelectorAll('[data-spoiler]').forEach(sp=>{
+                    let timer = null;
+                    const isTouchOnly = window.matchMedia('(hover: none)').matches;
 
-                    const reveal = ()=>{
-                      el.classList.add('revealed');
-                      el.classList.remove('hiding');
-                      clearTimeout(t);
-                      t = setTimeout(()=>{
-                        el.classList.remove('revealed');
-                        el.classList.add('hiding');
-                        setTimeout(()=> el.classList.remove('hiding'), 250);
-                      }, DURATION);
-                    };
+                    sp.addEventListener('click', (e)=>{
+                      if(!isTouchOnly){
+                        e.preventDefault();
+                        if(sp.classList.contains('revealed')){
+                          sp.classList.remove('revealed');
+                          sp.classList.add('hiding');
+                          setTimeout(()=> sp.classList.remove('hiding'), 180);
+                        }else{
+                          sp.classList.add('revealed');
+                        }
+                        return;
+                      }
 
-                    el.addEventListener('click', e=>{
-                      if(!isTouchOnly) return;
-                      reveal();
-                    }, {passive:true});
+                      e.preventDefault();
+                      sp.classList.add('revealed');
+                      sp.classList.remove('hiding');
+                      clearTimeout(timer);
+                      timer = setTimeout(()=>{
+                        sp.classList.remove('revealed');
+                        sp.classList.add('hiding');
+                        setTimeout(()=> sp.classList.remove('hiding'), 180);
+                      }, DURATION_MS);
+                    }, {passive:false});
 
-                    el.addEventListener('keydown', e=>{
-                      if(!isTouchOnly) return;
+                    sp.setAttribute('tabindex', '0');
+                    sp.setAttribute('role', 'button');
+                    sp.setAttribute('aria-label', 'Показать скрытый текст');
+                    sp.addEventListener('keydown', (e)=>{
                       if(e.key === 'Enter' || e.key === ' '){
-                        e.preventDefault(); reveal();
+                        e.preventDefault();
+                        sp.click();
                       }
                     });
                   });
