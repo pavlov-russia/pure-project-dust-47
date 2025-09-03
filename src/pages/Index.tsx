@@ -436,6 +436,30 @@ const Index = () => {
                   }
                 }
 
+                /* Адаптация для мобильных устройств */
+                @media (max-width: 768px) {
+                  .censored-text::before {
+                    background-size: 6px 6px;
+                    background-position: 0 0, 0 3px, 3px -3px, -3px 0;
+                    inset: -2px;
+                  }
+
+                  @keyframes pixelate {
+                    0%, 100% { 
+                      background-position: 0 0, 0 3px, 3px -3px, -3px 0;
+                    }
+                    25% { 
+                      background-position: 2px 0, 2px 3px, 5px -3px, -1px 0;
+                    }
+                    50% { 
+                      background-position: 3px 0, 3px 3px, 6px -3px, 0px 0;
+                    }
+                    75% { 
+                      background-position: 2px 2px, 2px 5px, 5px -1px, -1px 2px;
+                    }
+                  }
+                }
+
                 .censored-text.revealed::before {
                   opacity: 0;
                   transform: scale(1.1);
