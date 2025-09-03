@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect, useRef } from "react";
-
 const Index = () => {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
@@ -16,42 +15,31 @@ const Index = () => {
   const sectionRef = useRef(null);
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
-  
-  const carouselData = [
-    {
-      title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
-      description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
-    },
-    {
-      title: "✔️ Кристальное позиционирование, понятное даже школьнику",
-      description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
-    },
-    {
-      title: "Продуманный путь клиента от А до Я",
-      description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
-    },
-    {
-      title: "Осмысленный и целевой контент",
-      description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
-    },
-    {
-      title: "Выраженный стиль коммуникации",
-      description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
-    },
-    {
-      title: "Визуальная идентичность",
-      description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
-    }
-  ];
-
+  const carouselData = [{
+    title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
+    description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+  }, {
+    title: "✔️ Кристальное позиционирование, понятное даже школьнику",
+    description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
+  }, {
+    title: "Продуманный путь клиента от А до Я",
+    description: "От первого клика по рекламе до оставления довольного отзыва о вашем продукте и рекомендаций вас знакомым — каждый шаг должен быть удобен, прост и понятен"
+  }, {
+    title: "Осмысленный и целевой контент",
+    description: "Что, кому, как и зачем вы доносите? Какие задачи решает каждое слово в контенте?"
+  }, {
+    title: "Выраженный стиль коммуникации",
+    description: "Чтобы отстроиться от пресных конкурентов, показать аутентичность и привлечь своих"
+  }, {
+    title: "Визуальная идентичность",
+    description: "Не просто «красиво», а работающий дизайн, который доносит нужные смыслы, усиливает доверие и подводит к нужному действию"
+  }];
   useEffect(() => {
     if (!api) {
       return;
     }
-
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap());
-
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
       // Сбрасываем таймер при ручном переключении
@@ -64,36 +52,30 @@ const Index = () => {
 
   // Intersection Observer для отслеживания видимости блока карусели
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsInView(entry.isIntersecting);
+    }, {
+      threshold: 0.3
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
 
   // Intersection Observer для отслеживания видимости блока целевой аудитории
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasTargetAnimationPlayed) {
-          setIsTargetSectionInView(true);
-          setHasTargetAnimationPlayed(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hasTargetAnimationPlayed) {
+        setIsTargetSectionInView(true);
+        setHasTargetAnimationPlayed(true);
+      }
+    }, {
+      threshold: 0.3
+    });
     if (targetSectionRef.current) {
       observer.observe(targetSectionRef.current);
     }
-
     return () => observer.disconnect();
   }, [hasTargetAnimationPlayed]);
 
@@ -102,7 +84,6 @@ const Index = () => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-    
     if (isInView && api) {
       timerRef.current = setTimeout(() => {
         const nextSlide = (current + 1) % count;
@@ -110,28 +91,24 @@ const Index = () => {
       }, 5000);
     }
   };
-
   useEffect(() => {
     if (isInView && api && count > 0) {
       startAutoPlay();
     } else if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
       }
     };
   }, [isInView, api, current, count]);
-
-  const goToSlide = (index) => {
+  const goToSlide = index => {
     if (api) {
       api.scrollTo(index);
     }
   };
-  return (
-    <div className="min-h-screen w-full fixed inset-0 bg-transparent">
+  return <div className="min-h-screen w-full fixed inset-0 bg-transparent">
       <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
       <ChecklistPopup />
@@ -140,7 +117,7 @@ const Index = () => {
       <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
-            <div className="backdrop-blur-[40px] bg-white/10 rounded-3xl p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center">
+            <div className="backdrop-blur-[40px] bg-white/10 p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center py-[150px] rounded-3xl">
             <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white">
               Управляйте впечатлением о своём бизнесе с{" "}
               <span className="font-bold text-white">TapBlog</span>
@@ -156,13 +133,9 @@ const Index = () => {
             
             {/* CTA Button with header style - no icon */}
             <div className="relative inline-block w-full max-w-xs mx-auto">
-              <Button 
-                variant="glass-breath"
-                className="transition-all duration-300 h-12 w-full px-4 py-3 rounded-2xl text-sm md:text-base"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.18)',
-                }}
-              >
+              <Button variant="glass-breath" className="transition-all duration-300 h-12 w-full px-4 py-3 rounded-2xl text-sm md:text-base" style={{
+                  backgroundColor: 'rgba(255,255,255,0.18)'
+                }}>
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
                 <span className="sm:hidden">Получить КП</span>
               </Button>
@@ -207,7 +180,9 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="container mx-auto px-2 max-w-full" style={{ marginTop: '-10px' }}>
+        <div className="container mx-auto px-2 max-w-full" style={{
+          marginTop: '-10px'
+        }}>
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-white/90">
@@ -223,17 +198,12 @@ const Index = () => {
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов –
                   </p>
                   <div className="text-center mt-4">
-                    <span 
-                      className="bg-white/20 px-2 py-1 rounded font-semibold text-white inline-block relative" 
-                    >
+                    <span className="bg-white/20 px-2 py-1 rounded font-semibold text-white inline-block relative">
                       ЭТО НЕ УПАКОВКА!
-                      <span 
-                        className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal"
-                        style={{ 
-                          transform: 'translateY(-50%)',
-                          width: '0%'
-                        }}
-                      ></span>
+                      <span className="absolute left-0 top-1/2 h-0.5 bg-pink-500 pointer-events-none animate-strike-horizontal" style={{
+                        transform: 'translateY(-50%)',
+                        width: '0%'
+                      }}></span>
                     </span>
                   </div>
                   
@@ -272,13 +242,9 @@ const Index = () => {
                 *при условии адекватного профессионального трафик-менеджера
               </p>
               
-              <Button 
-                variant="glass-breath"
-                className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.18)',
-                }}
-              >
+              <Button variant="glass-breath" className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base" style={{
+                backgroundColor: 'rgba(255,255,255,0.18)'
+              }}>
                 🚀 Хочу мощную упаковку
               </Button>
             </div>
@@ -304,8 +270,7 @@ const Index = () => {
             <div className="relative max-w-4xl mx-auto">
               <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
-                  {carouselData.map((item, index) => (
-                    <CarouselItem key={index}>
+                  {carouselData.map((item, index) => <CarouselItem key={index}>
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
                         <h3 className="text-lg md:text-xl font-bold text-white mb-4">
                           {item.title}
@@ -314,8 +279,7 @@ const Index = () => {
                           {item.description}
                         </p>
                       </div>
-                    </CarouselItem>
-                  ))}
+                    </CarouselItem>)}
                 </CarouselContent>
                 
                 <CarouselPrevious className="hidden md:flex" />
@@ -324,29 +288,16 @@ const Index = () => {
               
               {/* Индикатор точек */}
               <div className="flex justify-center space-x-2 mt-6">
-                {Array.from({ length: count }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === current 
-                        ? 'bg-white scale-125' 
-                        : 'bg-white/40 hover:bg-white/60'
-                    }`}
-                    aria-label={`Перейти к слайду ${index + 1}`}
-                  />
-                ))}
+                {Array.from({
+                  length: count
+                }).map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === current ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Перейти к слайду ${index + 1}`} />)}
               </div>
             </div>
             
             <div className="mt-8">
-              <Button 
-                variant="glass-breath"
-                className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.18)',
-                }}
-              >
+              <Button variant="glass-breath" className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base" style={{
+                backgroundColor: 'rgba(255,255,255,0.18)'
+              }}>
                 Заказать упаковку
               </Button>
             </div>
@@ -403,24 +354,9 @@ const Index = () => {
             </h2>
             
             <div className="space-y-4 max-w-3xl mx-auto mb-12">
-              {[
-                "экспертам и компаниям, продающим услуги и продукты",
-                "брендам / онлайн-магазинам", 
-                "сообществам / клубам",
-                "авторам курсов / интенсивов / тренингов",
-                "авторам тематических ТГ-каналов"
-              ].map((text, index) => (
-                <div
-                  key={index}
-                  className={`transition-all duration-700 ease-out ${
-                    hasTargetAnimationPlayed 
-                      ? 'opacity-100 translate-x-0' 
-                      : 'opacity-0 translate-x-[-100px]'
-                  }`}
-                  style={{
-                    transitionDelay: hasTargetAnimationPlayed ? `${index * 150}ms` : '0ms'
-                  }}
-                >
+              {["экспертам и компаниям, продающим услуги и продукты", "брендам / онлайн-магазинам", "сообществам / клубам", "авторам курсов / интенсивов / тренингов", "авторам тематических ТГ-каналов"].map((text, index) => <div key={index} className={`transition-all duration-700 ease-out ${hasTargetAnimationPlayed ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-100px]'}`} style={{
+                transitionDelay: hasTargetAnimationPlayed ? `${index * 150}ms` : '0ms'
+              }}>
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer group">
                     <div className="flex items-center space-x-3 text-left">
                       <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-[#7962F4] to-[#9580FF] rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-lg">
@@ -433,8 +369,7 @@ const Index = () => {
                       </span>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
             
             <div className="space-y-6 mb-8">
@@ -469,8 +404,6 @@ const Index = () => {
         <ConsultationForm />
       </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
