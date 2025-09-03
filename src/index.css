@@ -451,7 +451,7 @@ All colors MUST be HSL.
 /* ===== LED MARQUEE STYLES - Адаптированный под палитру ===== */
 :root {
   --dot: 3px;             /* шаг точек */
-  --height: 24px;         /* высота панели */
+  --height: 60px;         /* увеличенная высота панели */
   --speed: 4s;            /* скорость прокрутки */
   --panel: #000000;       /* черный фон внутри */
   --txt: #ffffff;         /* белый текст */
@@ -476,9 +476,10 @@ All colors MUST be HSL.
 .led-panel {
   position: relative;
   height: var(--height);
-  background: transparent;
+  background: var(--panel);
   padding: 4px;
   overflow:hidden;
+  border-radius: 8px;
 }
 
 /* трек с текстом */
