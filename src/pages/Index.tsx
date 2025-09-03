@@ -133,9 +133,9 @@ const Index = () => {
             
             {/* CTA Button with header style - no icon */}
             <div className="relative inline-block w-full max-w-xs mx-auto">
-              <Button variant="glass-breath" className="transition-all duration-300 h-12 w-full px-4 py-3 rounded-2xl text-sm md:text-base" style={{
+              <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }}>
+                }} className="transition-all duration-300 h-12 w-full px-4 rounded-2xl md:text-base py-[40px] my-[180px] text-4xl font-regular">
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
                 <span className="sm:hidden">Получить КП</span>
               </Button>
