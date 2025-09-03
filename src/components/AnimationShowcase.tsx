@@ -35,27 +35,26 @@ const AnimationShowcase = () => {
           .tg-spoiler::after{
             content:"";
             position:absolute;
-            left:-3px; top:-2px; right:-3px; bottom:-2px;
+            left:-5px; top:-3px; right:-5px; bottom:-3px;
             background:
-              radial-gradient(var(--dot-color) 25%, transparent 45%) 0 0/var(--dot) var(--dot),
-              radial-gradient(var(--dot-color) 25%, transparent 45%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot);
-            opacity:.85;
+              radial-gradient(var(--dot-color) 30%, transparent 60%) 0 0/3px 3px,
+              radial-gradient(var(--dot-color) 40%, transparent 70%) 1.5px 1.5px/2px 2px,
+              radial-gradient(var(--dot-color) 35%, transparent 65%) 2px 1px/4px 4px,
+              radial-gradient(var(--dot-color) 25%, transparent 55%) 0.5px 2.5px/1.5px 1.5px,
+              radial-gradient(var(--dot-color) 45%, transparent 75%) 3px 0.5px/2.5px 2.5px,
+              radial-gradient(var(--dot-color) 20%, transparent 50%) 1px 3px/3.5px 3.5px;
+            opacity:.75;
             transition: opacity var(--fade) linear;
             pointer-events:auto;
-            filter: blur(0.5px);
-            mask: 
-              radial-gradient(ellipse 120% 100% at center, black 60%, transparent 85%),
-              linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-            mask-composite: intersect;
-            -webkit-mask: 
-              radial-gradient(ellipse 120% 100% at center, black 60%, transparent 85%),
-              linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-            -webkit-mask-composite: source-in;
+            filter: blur(0.3px);
+            border-radius: 50% 40% 60% 30%;
+            transform-origin: center;
             animation:
               tg-drift 8s linear infinite,
               tg-drift-vertical 12s linear infinite,
               tg-twinkle 1.8s ease-in-out infinite alternate,
-              tg-chaos 6s ease-in-out infinite;
+              tg-chaos 6s ease-in-out infinite,
+              tg-morph 15s ease-in-out infinite;
           }
 
           @media (hover:hover){
