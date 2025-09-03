@@ -474,16 +474,20 @@ const Index = () => {
             
             <script dangerouslySetInnerHTML={{
               __html: `
-                setTimeout(() => {
-                  document.querySelectorAll('[data-censored]').forEach(el => {
-                    el.addEventListener('click', () => {
-                      el.classList.add('revealed');
-                      setTimeout(() => {
-                        el.classList.remove('revealed');
-                      }, 5000);
+                document.addEventListener('DOMContentLoaded', function() {
+                  setTimeout(() => {
+                    const censoredElements = document.querySelectorAll('[data-censored]');
+                    censoredElements.forEach(el => {
+                      el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        this.classList.add('revealed');
+                        setTimeout(() => {
+                          this.classList.remove('revealed');
+                        }, 5000);
+                      });
                     });
-                  });
-                }, 100);
+                  }, 500);
+                });
               `
             }} />
           </div>
