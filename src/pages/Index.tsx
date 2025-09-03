@@ -135,7 +135,7 @@ const Index = () => {
             <div className="relative inline-block mx-auto">
               <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }} className="transition-all duration-300 h-12 w-full rounded-2xl md:text-base text-4xl font-regular px-0 py-[2px] mx-0 my-[192px]">
+                }} className="transition-all duration-300 h-12 rounded-2xl md:text-base text-base font-regular px-4">
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
                 <span className="sm:hidden">Получить КП</span>
               </Button>
