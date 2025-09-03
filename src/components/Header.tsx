@@ -162,7 +162,7 @@ const Header = () => {
           <Button 
             variant="glass-breath"
             onClick={handleCTAClick}
-            className={`slow-pulse transition-all duration-300 !h-[30px] !min-h-[30px] !py-0 w-auto px-3 md:h-10 md:py-2 md:px-4 rounded-2xl ${showCTA ? 'animate-fade-in' : ''}`}
+            className="slow-pulse transition-all duration-300 !h-[30px] !min-h-[30px] !py-0 w-auto px-3 md:h-10 md:py-2 md:px-4 rounded-2xl"
             style={{
               backgroundColor: 'hsl(var(--background) / 0.18)',
               animation: isMobile ? 'none' : (showCTA ? 'breath-glass 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none'),
