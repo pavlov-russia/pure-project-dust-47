@@ -407,18 +407,33 @@ const Index = () => {
                 .censored-text::before {
                   content: "";
                   position: absolute;
-                  inset: -2px;
-                  background: linear-gradient(90deg, 
-                    transparent 0%, 
-                    #563AF0 10%, 
-                    #7962F4 50%, 
-                    #563AF0 90%, 
-                    transparent 100%
-                  );
-                  filter: blur(3px);
-                  opacity: 0.9;
+                  inset: -1px;
+                  background-image: 
+                    linear-gradient(45deg, #563AF0 25%, transparent 25%),
+                    linear-gradient(-45deg, #7962F4 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #9580FF 75%),
+                    linear-gradient(-45deg, transparent 75%, #6B46C1 75%);
+                  background-size: 4px 4px;
+                  background-position: 0 0, 0 2px, 2px -2px, -2px 0;
+                  opacity: 0.95;
                   transition: all 0.3s ease;
-                  border-radius: 4px;
+                  border-radius: 2px;
+                  animation: pixelate 0.8s infinite;
+                }
+
+                @keyframes pixelate {
+                  0%, 100% { 
+                    background-position: 0 0, 0 2px, 2px -2px, -2px 0;
+                  }
+                  25% { 
+                    background-position: 1px 0, 1px 2px, 3px -2px, -1px 0;
+                  }
+                  50% { 
+                    background-position: 2px 0, 2px 2px, 4px -2px, 0px 0;
+                  }
+                  75% { 
+                    background-position: 1px 1px, 1px 3px, 3px -1px, -1px 1px;
+                  }
                 }
 
                 .censored-text.revealed::before {
@@ -427,8 +442,8 @@ const Index = () => {
                 }
 
                 .censored-text:hover::before {
-                  opacity: 0.7;
-                  filter: blur(2px);
+                  opacity: 0.8;
+                  animation-duration: 0.4s;
                 }
               `}
             </style>
