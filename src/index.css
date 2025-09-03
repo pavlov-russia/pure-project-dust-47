@@ -494,9 +494,11 @@ All colors MUST be HSL.
 
 /* сам текст */
 .led-msg {
-  font: 700 44px/1 "Segoe UI", Arial, sans-serif;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.2;
   color: var(--txt);
-  letter-spacing:.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -509,5 +511,5 @@ All colors MUST be HSL.
 /* адаптив */
 @media (max-width:480px) {
   :root { --height: 20px; --dot: 6px; --speed: 4s; }
-  .led-msg { font-size: 26px; }
+  .led-msg { font-size: 12px; }
 }
