@@ -17,6 +17,8 @@ const Index = () => {
   const [hasTargetAnimationPlayed, setHasTargetAnimationPlayed] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [hasCountdownRun, setHasCountdownRun] = useState(false);
+  const [freezeCountdown, setFreezeCountdown] = useState(false);
   const sectionRef = useRef(null);
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
@@ -116,7 +118,7 @@ const Index = () => {
   return <div className="min-h-screen w-full fixed inset-0 bg-transparent">
       <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
-      <ChecklistPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <ChecklistPopup isOpen={isPopupOpen} onClose={() => { setIsPopupOpen(false); setFreezeCountdown(true); }} />
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
@@ -161,7 +163,7 @@ const Index = () => {
               </h1>
               
               <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
-                У вас есть менее <AnimatedCountdown onComplete={() => setIsPopupOpen(true)} /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+                У вас есть менее <AnimatedCountdown active={!hasCountdownRun} frozen={freezeCountdown} onComplete={() => { setHasCountdownRun(true); setIsPopupOpen(true); }} /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
               </p>
               
               <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">

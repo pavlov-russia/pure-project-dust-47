@@ -2,28 +2,42 @@ import { useState, useEffect } from "react";
 
 interface AnimatedCountdownProps {
   onComplete: () => void;
+  active: boolean;
+  frozen: boolean;
 }
 
-const AnimatedCountdown = ({ onComplete }: AnimatedCountdownProps) => {
+const AnimatedCountdown = ({ onComplete, active, frozen }: AnimatedCountdownProps) => {
   const [count, setCount] = useState(7);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    if (frozen) {
+      setIsAnimating(false);
+      setCount(7);
+      return;
+    }
+    if (!active) return;
+
+    let outer: any;
+    let inner: any;
+
     if (count > 0) {
-      const timer = setTimeout(() => {
+      outer = setTimeout(() => {
         setIsAnimating(true);
-        setTimeout(() => {
+        inner = setTimeout(() => {
           setCount(prev => prev - 1);
           setIsAnimating(false);
         }, 500); // Half of animation duration
       }, 1000);
-
-      return () => clearTimeout(timer);
     } else {
-      // Count reached 0, trigger popup
-      setTimeout(onComplete, 500);
+      outer = setTimeout(onComplete, 500);
     }
-  }, [count, onComplete]);
+
+    return () => {
+      if (outer) clearTimeout(outer);
+      if (inner) clearTimeout(inner);
+    };
+  }, [count, onComplete, active, frozen]);
 
   return (
     <span 
