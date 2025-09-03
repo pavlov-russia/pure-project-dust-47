@@ -452,13 +452,11 @@ const Index = () => {
                   "Гибкий функционал с внедрением ИИ – под ваши цели, задачи и потребности"
                 ].map((text, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    {/* Checkmark Icon */}
+                    {/* Stylized Checkmark */}
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
+                      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 16L12 22L26 8" stroke="#563AF0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" transform="rotate(-5 16 16)"/>
+                      </svg>
                     </div>
                     {/* Handwriting Animation - только показывать когда предыдущий завершен */}
                     {(index === 0 || completedAnimations >= index) && (
