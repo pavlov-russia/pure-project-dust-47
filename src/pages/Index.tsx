@@ -400,10 +400,21 @@ const Index = () => {
                   .btn-grab {
                     transition: all 0.2s ease;
                     filter: brightness(1);
+                    animation: grab-pulse 2s ease-in-out infinite;
                   }
                   .btn-grab:active {
                     transform: scale(0.94);
                     filter: brightness(1.2) saturate(1.3);
+                  }
+                  @keyframes grab-pulse {
+                    0%, 100% { 
+                      filter: brightness(1) saturate(1);
+                      transform: scale(1);
+                    }
+                    50% { 
+                      filter: brightness(1.1) saturate(1.2);
+                      transform: scale(1.02);
+                    }
                   }
                 `}
               </style>
