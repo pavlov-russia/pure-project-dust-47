@@ -6,7 +6,9 @@ import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect, useRef } from "react";
+
 const Index = () => {
+  // All state declarations together
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
