@@ -5,116 +5,84 @@ const AnimationShowcase = () => {
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800 p-6">
       <style>
         {`
-          :root{
-            --tg-spoiler-dot-size: 8px;
-            --tg-spoiler-dot-color: rgba(255,255,255,.95);
-            --tg-spoiler-fade: .18s;
-            --tg-spoiler-twinkle-a: .9;
-            --tg-spoiler-twinkle-b: .55;
-          }
-
-          .tg-spoiler{
-            position: relative;
+          .tg-sp{
+            all: unset;
             display: inline;
+            position: relative;
             cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            text-decoration: none;
-            outline: none;
+            color: #fff;
+            line-height: inherit;
+            background: transparent !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
           }
 
-          .tg-spoiler::after{
-            content:"";
+          .tg-sp::after{
+            content: "";
             position: absolute;
             inset: -2px;
             pointer-events: auto;
             background:
-              radial-gradient(var(--tg-spoiler-dot-color) 36%, transparent 37%) 0 0/var(--tg-spoiler-dot-size) var(--tg-spoiler-dot-size),
-              radial-gradient(var(--tg-spoiler-dot-color) 36%, transparent 37%) calc(var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2)/var(--tg-spoiler-dot-size) var(--tg-spoiler-dot-size);
-            border-radius: 4px;
-            opacity: var(--tg-spoiler-twinkle-a);
-            transition: opacity var(--tg-spoiler-fade) linear;
-            animation:
-              tg-spoiler-drift 10s linear infinite,
-              tg-spoiler-twinkle 2.2s ease-in-out infinite alternate;
+              radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/8px 8px,
+              radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 4px 4px/8px 8px;
+            opacity: .9;
+            transition: opacity .18s linear;
+            animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
+            -webkit-mask: 
+              radial-gradient(closest-side, #000 80%, transparent 100%);
+            mask: 
+              radial-gradient(closest-side, #000 80%, transparent 100%);
           }
 
-          .tg-spoiler.revealed::after{
-            opacity: 0;
-            pointer-events: none;
-          }
-
-          .tg-spoiler.hiding::after{
-            opacity: var(--tg-spoiler-twinkle-a);
-            pointer-events: auto;
-          }
+          .tg-sp.revealed::after{ opacity: 0; pointer-events: none; }
 
           @media (hover:hover){
-            .tg-spoiler:active::after{
-              opacity: 0;
-              pointer-events: none;
-              transition: none;
-            }
+            .tg-sp:hover::after{ opacity: 0; pointer-events: none; }
           }
 
-          @keyframes tg-spoiler-drift{
-            from { background-position: 0px 0, calc(var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2); }
-            to   { background-position: 200px 0, calc(200px + var(--tg-spoiler-dot-size)/2) calc(var(--tg-spoiler-dot-size)/2); }
+          @keyframes sp-drift{
+            from{ background-position: 0 0, 4px 4px; }
+            to  { background-position: 200px 0, calc(200px + 4px) 4px; }
           }
-          @keyframes tg-spoiler-twinkle{
-            from { opacity: var(--tg-spoiler-twinkle-a); }
-            to   { opacity: var(--tg-spoiler-twinkle-b); }
+          @keyframes sp-twinkle{
+            from{ opacity:.9; } to{ opacity:.55; }
           }
 
           @media (prefers-reduced-motion: reduce){
-            .tg-spoiler::after{ animation: none; }
+            .tg-sp::after{ animation: none; }
           }
-
-          .tg-spoiler a{ pointer-events: none; }
-          .tg-spoiler.revealed a{ pointer-events: auto; }
         `}
       </style>
       
       <script>
         {`
           (function(){
-            const DURATION_MS = 20000;
+            const DURATION = 20000;
+            const isTouchOnly = window.matchMedia('(hover: none)').matches;
 
-            document.querySelectorAll('[data-spoiler]').forEach(sp=>{
-              let timer = null;
-              const isTouchOnly = window.matchMedia('(hover: none)').matches;
+            document.querySelectorAll('[data-sp]').forEach(el=>{
+              el.setAttribute('role','button');
+              el.setAttribute('tabindex','0');
+              el.setAttribute('aria-label','Показать скрытый текст');
 
-              sp.addEventListener('click', (e)=>{
-                if(!isTouchOnly){
-                  e.preventDefault();
-                  if(sp.classList.contains('revealed')){
-                    sp.classList.remove('revealed');
-                    sp.classList.add('hiding');
-                    setTimeout(()=> sp.classList.remove('hiding'), 180);
-                  }else{
-                    sp.classList.add('revealed');
-                  }
-                  return;
-                }
+              let timer=null;
 
-                e.preventDefault();
-                sp.classList.add('revealed');
-                sp.classList.remove('hiding');
+              const reveal=()=>{
+                el.classList.add('revealed');
                 clearTimeout(timer);
-                timer = setTimeout(()=>{
-                  sp.classList.remove('revealed');
-                  sp.classList.add('hiding');
-                  setTimeout(()=> sp.classList.remove('hiding'), 180);
-                }, DURATION_MS);
+                timer=setTimeout(()=> el.classList.remove('revealed'), DURATION);
+              };
+
+              el.addEventListener('click', e=>{
+                if(!isTouchOnly) return;
+                e.preventDefault(); reveal();
               }, {passive:false});
 
-              sp.setAttribute('tabindex', '0');
-              sp.setAttribute('role', 'button');
-              sp.setAttribute('aria-label', 'Показать скрытый текст');
-              sp.addEventListener('keydown', (e)=>{
-                if(e.key === 'Enter' || e.key === ' '){
-                  e.preventDefault();
-                  sp.click();
-                }
+              el.addEventListener('keydown', e=>{
+                if(!isTouchOnly) return;
+                if(e.key==='Enter' || e.key===' '){ e.preventDefault(); reveal(); }
               });
             });
           })();
@@ -192,7 +160,7 @@ const AnimationShowcase = () => {
             <CardContent>
               <p className="text-white/90 text-lg">
                 Это секретная информация: {" "}
-                <span className="tg-spoiler" data-spoiler>
+                <span className="tg-sp" data-sp>
                   скрытый текст, кликните чтобы увидеть
                 </span>
               </p>
@@ -234,7 +202,7 @@ const AnimationShowcase = () => {
             <CardContent>
               <p className="text-white/90 text-lg">
                 <strong><em>Жирный курсив</em></strong>, <u><strong>подчёркнутый жирный</strong></u>, и даже{" "}
-                <span className="tg-spoiler" data-spoiler>
+                <span className="tg-sp" data-sp>
                   скрытый жирный курсив
                 </span>
               </p>
@@ -268,7 +236,7 @@ const AnimationShowcase = () => {
               
               <p className="text-white/90">
                 Секретная информация: {" "}
-                <span className="tg-spoiler" data-spoiler>
+                <span className="tg-sp" data-sp>
                   только для посвящённых
                 </span>
               </p>
