@@ -35,26 +35,19 @@ const AnimationShowcase = () => {
           .tg-spoiler::after{
             content:"";
             position:absolute;
-            left:-5px; top:-3px; right:-5px; bottom:-3px;
+            left:-1px; top:-1px; right:-1px; bottom:-1px;
             background:
-              radial-gradient(var(--dot-color) 30%, transparent 60%) 0 0/3px 3px,
-              radial-gradient(var(--dot-color) 40%, transparent 70%) 1.5px 1.5px/2px 2px,
-              radial-gradient(var(--dot-color) 35%, transparent 65%) 2px 1px/4px 4px,
-              radial-gradient(var(--dot-color) 25%, transparent 55%) 0.5px 2.5px/1.5px 1.5px,
-              radial-gradient(var(--dot-color) 45%, transparent 75%) 3px 0.5px/2.5px 2.5px,
-              radial-gradient(var(--dot-color) 20%, transparent 50%) 1px 3px/3.5px 3.5px;
-            opacity:.75;
+              radial-gradient(var(--dot-color) 45%, transparent 55%) 0 0/2px 2px,
+              radial-gradient(var(--dot-color) 40%, transparent 50%) 1px 1px/2.5px 2.5px,
+              radial-gradient(var(--dot-color) 50%, transparent 60%) 0.5px 1.5px/1.8px 1.8px;
+            opacity:.8;
             transition: opacity var(--fade) linear;
             pointer-events:auto;
-            filter: blur(0.3px);
-            border-radius: 50% 40% 60% 30%;
-            transform-origin: center;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
             animation:
-              tg-drift 8s linear infinite,
-              tg-drift-vertical 12s linear infinite,
-              tg-twinkle 1.8s ease-in-out infinite alternate,
-              tg-chaos 6s ease-in-out infinite,
-              tg-morph 15s ease-in-out infinite;
+              tg-drift 12s linear infinite,
+              tg-drift-vertical 15s linear infinite,
+              tg-twinkle 2s ease-in-out infinite alternate;
           }
 
           @media (hover:hover){

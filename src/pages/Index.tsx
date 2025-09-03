@@ -428,26 +428,19 @@ const Index = () => {
                 .tg-spoiler::after{
                   content:"";
                   position:absolute;
-                  left:-5px; top:-3px; right:-5px; bottom:-3px;
+                  left:-1px; top:-1px; right:-1px; bottom:-1px;
                   background:
-                    radial-gradient(var(--dot-color) 30%, transparent 60%) 0 0/3px 3px,
-                    radial-gradient(var(--dot-color) 40%, transparent 70%) 1.5px 1.5px/2px 2px,
-                    radial-gradient(var(--dot-color) 35%, transparent 65%) 2px 1px/4px 4px,
-                    radial-gradient(var(--dot-color) 25%, transparent 55%) 0.5px 2.5px/1.5px 1.5px,
-                    radial-gradient(var(--dot-color) 45%, transparent 75%) 3px 0.5px/2.5px 2.5px,
-                    radial-gradient(var(--dot-color) 20%, transparent 50%) 1px 3px/3.5px 3.5px;
-                  opacity:.75;
+                    radial-gradient(var(--dot-color) 45%, transparent 55%) 0 0/2px 2px,
+                    radial-gradient(var(--dot-color) 40%, transparent 50%) 1px 1px/2.5px 2.5px,
+                    radial-gradient(var(--dot-color) 50%, transparent 60%) 0.5px 1.5px/1.8px 1.8px;
+                  opacity:.8;
                   transition: opacity var(--fade) linear;
                   pointer-events:auto;
-                  filter: blur(0.3px);
-                  border-radius: 50% 40% 60% 30%;
-                  transform-origin: center;
+                  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
                   animation:
-                    tg-drift 8s linear infinite,
-                    tg-drift-vertical 12s linear infinite,
-                    tg-twinkle 1.8s ease-in-out infinite alternate,
-                    tg-chaos 6s ease-in-out infinite,
-                    tg-morph 15s ease-in-out infinite;
+                    tg-drift 12s linear infinite,
+                    tg-drift-vertical 15s linear infinite,
+                    tg-twinkle 2s ease-in-out infinite alternate;
                 }
 
                 @media (hover:hover){
@@ -455,38 +448,19 @@ const Index = () => {
                 }
 
                 .tg-spoiler.revealed::after{ opacity:0; pointer-events:none; }
-                .tg-spoiler.hiding::after{ opacity:.75; pointer-events:auto; }
+                .tg-spoiler.hiding::after{ opacity:.8; pointer-events:auto; }
 
                 @keyframes tg-drift{
-                  from { background-position: 0 0, 1.5px 1.5px, 2px 1px, 0.5px 2.5px, 3px 0.5px, 1px 3px; }
-                  to   { background-position: 80px 0, 81.5px 1.5px, 82px 1px, 80.5px 2.5px, 83px 0.5px, 81px 3px; }
+                  from { background-position: 0 0, 1px 1px, 0.5px 1.5px; }
+                  to   { background-position: 50px 0, 51px 1px, 50.5px 1.5px; }
                 }
                 @keyframes tg-drift-vertical{
-                  0% { background-position-y: 0, 1.5px, 1px, 2.5px, 0.5px, 3px; }
-                  25% { background-position-y: 12px, 13.5px, 13px, 14.5px, 12.5px, 15px; }
-                  50% { background-position-y: -8px, -6.5px, -7px, -5.5px, -7.5px, -5px; }
-                  75% { background-position-y: 6px, 7.5px, 7px, 8.5px, 6.5px, 9px; }
-                  100% { background-position-y: 0, 1.5px, 1px, 2.5px, 0.5px, 3px; }
+                  0% { background-position-y: 0, 1px, 1.5px; }
+                  50% { background-position-y: 8px, 9px, 9.5px; }
+                  100% { background-position-y: 0, 1px, 1.5px; }
                 }
                 @keyframes tg-twinkle{
-                  from { opacity:.75; } to { opacity:.35; }
-                }
-                @keyframes tg-chaos{
-                  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-                  15% { transform: translate(1px, -0.5px) scale(1.03) rotate(1deg); }
-                  30% { transform: translate(-0.5px, 1px) scale(0.97) rotate(-0.5deg); }
-                  45% { transform: translate(0.8px, 0.8px) scale(1.01) rotate(0.8deg); }
-                  60% { transform: translate(-1px, -0.3px) scale(0.99) rotate(-1.2deg); }
-                  75% { transform: translate(0.6px, -1px) scale(1.02) rotate(0.6deg); }
-                  90% { transform: translate(-0.3px, 0.5px) scale(0.98) rotate(-0.8deg); }
-                  100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-                }
-                @keyframes tg-morph{
-                  0% { border-radius: 50% 40% 60% 30%; }
-                  25% { border-radius: 40% 60% 30% 50%; }
-                  50% { border-radius: 60% 30% 50% 40%; }
-                  75% { border-radius: 30% 50% 40% 60%; }
-                  100% { border-radius: 50% 40% 60% 30%; }
+                  from { opacity:.8; } to { opacity:.5; }
                 }
               `}
             </style>
