@@ -416,7 +416,7 @@ const Index = () => {
             </p>
             
             <div className="text-center mt-4">
-              <span className="btn-grab text-white font-bold text-lg underline cursor-pointer select-none">
+              <span className="btn-grab text-white font-bold text-2xl md:text-3xl underline cursor-pointer select-none px-4 py-2 inline-block">
                 ЗАБРАТЬ!
               </span>
             </div>
