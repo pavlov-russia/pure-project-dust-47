@@ -20,6 +20,7 @@ const Index = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [hasCountdownRun, setHasCountdownRun] = useState(false);
   const [freezeCountdown, setFreezeCountdown] = useState(false);
+  const [completedAnimations, setCompletedAnimations] = useState(0);
   const sectionRef = useRef(null);
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
@@ -467,12 +468,15 @@ const Index = () => {
                         </defs>
                       </svg>
                     </div>
-                    {/* Handwriting Animation */}
-                    <HandwritingAnimation 
-                      text={text}
-                      delay={index * 800}
-                      className="text-white/90 text-base md:text-lg flex-1"
-                    />
+                    {/* Handwriting Animation - только показывать когда предыдущий завершен */}
+                    {(index === 0 || completedAnimations >= index) && (
+                      <HandwritingAnimation 
+                        text={text}
+                        delay={index === 0 ? 500 : 100} // Первый с задержкой, остальные сразу после предыдущего
+                        className="text-white/90 text-base md:text-lg flex-1"
+                        onComplete={() => setCompletedAnimations(prev => Math.max(prev, index + 1))}
+                      />
+                    )}
                   </div>
                 ))}
               </div>
