@@ -139,8 +139,10 @@ const Index = () => {
                   transform-box: fill-box;
                 }
                 .btn-grab {
+                  display: inline-block;
                   transition: all 0.2s ease;
                   filter: brightness(1);
+                  will-change: transform, filter;
                   animation: grab-pulse 2s ease-in-out infinite;
                 }
                 .btn-grab:active {
@@ -153,8 +155,8 @@ const Index = () => {
                     transform: scale(1);
                   }
                   50% { 
-                    filter: brightness(1.1) saturate(1.2);
-                    transform: scale(1.02);
+                    filter: brightness(1.15) saturate(1.3);
+                    transform: scale(1.06);
                   }
                 }
               `}</style>
