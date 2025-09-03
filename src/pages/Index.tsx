@@ -390,7 +390,7 @@ const Index = () => {
               <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">50% продаж</span>
             </p>
             
-            <p className="text-sm text-white/70 italic mt-2 mx-auto -mx-5 md:-mx-5">
+            <p className="text-sm text-white/70 italic mt-2 mx-auto" style={{ marginLeft: '-18px', marginRight: '-18px' }}>
               • разобрали на реальных примерах наших клиентов •
             </p>
           </div>
