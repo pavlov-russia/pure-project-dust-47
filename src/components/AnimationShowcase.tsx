@@ -22,8 +22,15 @@ const AnimationShowcase = () => {
           }
 
           .tg-text{
-            color:#fff;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            transition: color var(--fade) linear, -webkit-text-fill-color var(--fade) linear;
           }
+          @media (hover:hover){
+            .tg-spoiler:hover .tg-text{ color:#fff; -webkit-text-fill-color:#fff; }
+          }
+          .tg-spoiler.revealed .tg-text{ color:#fff; -webkit-text-fill-color:#fff; }
+          .tg-spoiler.hiding .tg-text{ color:transparent; -webkit-text-fill-color:transparent; }
 
           .tg-spoiler::after{
             content:"";
