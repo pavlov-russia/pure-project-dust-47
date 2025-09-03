@@ -418,8 +418,8 @@ const Index = () => {
                   inset: -2px;
                   pointer-events: auto;
                   background:
-                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/8px 8px,
-                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 4px 4px/8px 8px;
+                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/4px 4px,
+                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 2px 2px/4px 4px;
                   opacity: .9;
                   transition: opacity .18s linear;
                   animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
@@ -436,8 +436,8 @@ const Index = () => {
                 }
 
                 @keyframes sp-drift{
-                  from{ background-position: 0 0, 4px 4px; }
-                  to  { background-position: 200px 0, calc(200px + 4px) 4px; }
+                  from{ background-position: 0 0, 2px 2px; }
+                  to  { background-position: 200px 0, calc(200px + 2px) 2px; }
                 }
                 @keyframes sp-twinkle{
                   from{ opacity:.9; } to{ opacity:.55; }
