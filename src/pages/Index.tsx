@@ -415,7 +415,7 @@ const Index = () => {
                 .tg-sp::after{
                   content: "";
                   position: absolute;
-                  inset: 0;
+                  top: 0; left: 0; right: 0; bottom: 0;
                   pointer-events: auto;
                   background:
                     radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/4px 4px,
@@ -424,9 +424,11 @@ const Index = () => {
                   transition: opacity .18s linear;
                   animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
                   -webkit-mask: 
-                    radial-gradient(closest-side, #000 80%, transparent 100%);
+                    linear-gradient(black, black);
                   mask: 
-                    radial-gradient(closest-side, #000 80%, transparent 100%);
+                    linear-gradient(black, black);
+                  -webkit-mask-size: 100% 100%;
+                  mask-size: 100% 100%;
                 }
 
                 .tg-sp.revealed::after{ opacity: 0; pointer-events: none; }
