@@ -393,6 +393,12 @@ const Index = () => {
             <p className="text-sm text-white/70 italic mt-2 mx-auto" style={{ marginLeft: '-18px', marginRight: '-18px' }}>
               • разобрали на реальных примерах наших клиентов •
             </p>
+            
+            <div className="text-center mt-4">
+              <span className="text-white font-bold text-lg underline cursor-pointer select-none transform transition-all duration-150 hover:scale-95 active:scale-90 animate-pulse">
+                ЗАБРАТЬ!
+              </span>
+            </div>
           </div>
         </div>
       </section>
