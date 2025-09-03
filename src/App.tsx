@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
 import FontUploader from "./pages/FontUploader";
 import TypographyShowcase from "./pages/TypographyShowcase";
+import CheckmarkAnimations from "./pages/CheckmarkAnimations";
 
 
 const queryClient = new QueryClient();
@@ -31,7 +32,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/animations" element={<AnimationShowcase />} />
+            <Route path="/animations" element={<CheckmarkAnimations />} />
             <Route path="/fonts" element={<FontUploader />} />
             <Route path="/typography" element={<TypographyShowcase />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
