@@ -165,7 +165,7 @@ const Index = () => {
             </div>
             
             {/* CTA Button positioned at bottom with minimal margins */}
-            <div className="px-2 pb-2">
+            <div className="absolute inset-x-2 bottom-2">
               <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
                 }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-regular text-xs">
