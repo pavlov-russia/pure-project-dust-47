@@ -149,27 +149,27 @@ const Index = () => {
               </svg>
             </div>
             
-            <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white relative z-10">
-              Управляйте впечатлением о своём бизнесе с{" "}
-              <span className="font-bold text-white">TapBlog</span>
-            </h1>
+            <div className="flex-1 flex flex-col justify-center">
+              <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white relative z-10">
+                Управляйте впечатлением о своём бизнесе с{" "}
+                <span className="font-bold text-white">TapBlog</span>
+              </h1>
+              
+              <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
+                У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+              </p>
+              
+              <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
+                И мы поможем использовать их в вашу пользу!
+              </p>
+            </div>
             
-            <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
-              У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
-            </p>
-            
-            <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
-              И мы поможем использовать их в вашу пользу!
-            </p>
-            
-            {/* CTA Button with header style - no icon */}
-            <div className="relative inline-block mx-auto rounded-none">
+            {/* CTA Button positioned at bottom with minimal margins */}
+            <div className="px-2 pb-2">
               <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }} className="transition-all duration-300 h-12 rounded-2xl md:text-base font-regular py-0 my-0 mx-px px-0 text-xs">
-                <span className="hidden sm:inline">Получить индивидуальное КП</span>
-                <span className="sm:hidden">Получить индивидуальное
- предложение</span>
+                }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-regular text-xs">
+                Получить индивидуальное предложение
               </Button>
             </div>
           </div>
