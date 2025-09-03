@@ -391,8 +391,62 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              разобрали на реальных примерах наших клиентов
+              <span className="censored-text" data-censored>
+                разобрали на реальных примерах наших клиентов
+              </span>
             </p>
+            
+            <style>
+              {`
+                .censored-text {
+                  position: relative;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                }
+
+                .censored-text::before {
+                  content: "";
+                  position: absolute;
+                  inset: -2px;
+                  background: linear-gradient(90deg, 
+                    transparent 0%, 
+                    #563AF0 10%, 
+                    #7962F4 50%, 
+                    #563AF0 90%, 
+                    transparent 100%
+                  );
+                  filter: blur(3px);
+                  opacity: 0.9;
+                  transition: all 0.3s ease;
+                  border-radius: 4px;
+                }
+
+                .censored-text.revealed::before {
+                  opacity: 0;
+                  transform: scale(1.1);
+                }
+
+                .censored-text:hover::before {
+                  opacity: 0.7;
+                  filter: blur(2px);
+                }
+              `}
+            </style>
+            
+            <script dangerouslySetInnerHTML={{
+              __html: `
+                setTimeout(() => {
+                  document.querySelectorAll('[data-censored]').forEach(el => {
+                    el.addEventListener('click', () => {
+                      el.classList.add('revealed');
+                      setTimeout(() => {
+                        el.classList.remove('revealed');
+                      }, 5000);
+                    });
+                  });
+                }, 100);
+              `
+            }} />
           </div>
         </div>
       </section>
