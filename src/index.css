@@ -498,7 +498,6 @@ All colors MUST be HSL.
   color: var(--txt);
   letter-spacing:.05em;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 4px var(--glow));
 }
 
 /* анимация прокрутки */
