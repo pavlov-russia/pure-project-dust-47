@@ -22,7 +22,7 @@ const AnimationShowcase = () => {
           .tg-sp::after{
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
             pointer-events: auto;
             background:
               radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/4px 4px,
@@ -31,11 +31,9 @@ const AnimationShowcase = () => {
             transition: opacity .18s linear;
             animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
             -webkit-mask: 
-              linear-gradient(black, black);
+              radial-gradient(closest-side, #000 80%, transparent 100%);
             mask: 
-              linear-gradient(black, black);
-            -webkit-mask-size: 100% 100%;
-            mask-size: 100% 100%;
+              radial-gradient(closest-side, #000 80%, transparent 100%);
           }
 
           .tg-sp.revealed::after{ opacity: 0; pointer-events: none; }
