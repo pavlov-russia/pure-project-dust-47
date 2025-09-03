@@ -387,7 +387,11 @@ const Index = () => {
             </h3>
             
             <p className="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
-              <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">50% продаж</span> (разобрали на реальных примерах наших клиентов)
+              <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">50% продаж</span>
+            </p>
+            
+            <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
+              разобрали на реальных примерах наших клиентов
             </p>
           </div>
         </div>
