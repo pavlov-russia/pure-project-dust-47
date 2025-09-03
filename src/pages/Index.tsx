@@ -455,7 +455,12 @@ const Index = () => {
                     {/* Curved Checkmark */}
                     <div className="flex-shrink-0 mt-1">
                       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 16C8 18 10 20 12 22C16 18 20 14 26 8" stroke="#563AF0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                        <path d="M16 2L20.12 12.24H30.24L22.06 18.26L26.18 28.5L16 22.48L5.82 28.5L9.94 18.26L1.76 12.24H11.88L16 2Z" fill="#563AF0"/>
+                        <circle cx="8" cy="8" r="1.5" fill="#563AF0"/>
+                        <circle cx="24" cy="8" r="1.5" fill="#563AF0"/>
+                        <circle cx="28" cy="20" r="1.5" fill="#563AF0"/>
+                        <circle cx="4" cy="20" r="1.5" fill="#563AF0"/>
+                        <circle cx="16" cy="28" r="1.5" fill="#563AF0"/>
                       </svg>
                     </div>
                     {/* Static text */}
