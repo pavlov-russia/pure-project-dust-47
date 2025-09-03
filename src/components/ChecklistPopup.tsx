@@ -58,7 +58,7 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               </h3>
               
               <p className="text-white/90 mb-8 leading-relaxed">
-                <span className="font-semibold text-lg" style={{ color: '#563AF0' }}>5 ошибок</span><br />в вашем Телеграм-канале, которые съедают более <span className="font-semibold text-lg" style={{ color: '#563AF0' }}>50% продаж</span>
+                <span className="font-semibold text-lg" style={{ color: '#563AF0' }}>5 ошибок</span><br />в вашем Телеграм-канале, которые съедают более<br /><span className="font-semibold text-lg" style={{ color: '#563AF0' }}>50% продаж</span>
               </p>
               
               <p className="text-xs text-white/70 mb-6">
