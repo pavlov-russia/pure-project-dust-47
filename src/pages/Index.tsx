@@ -415,6 +415,53 @@ const Index = () => {
                 .tg-sp::after{
                   content: "";
                   position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  pointer-events: auto;
+                  background:
+                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/2px 2px,
+                    radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 1px 1px/2px 2px;
+                  opacity: .9;
+                  transition: opacity .18s linear;
+                  animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
+                  -webkit-mask: 
+                    radial-gradient(closest-side, #000 80%, transparent 100%);
+                  mask: 
+                    radial-gradient(closest-side, #000 80%, transparent 100%);
+                }
+
+                .tg-sp.revealed::after{ opacity: 0; pointer-events: none; }
+
+                @media (hover:hover){
+                  .tg-sp:hover::after{ opacity: 0; pointer-events: none; }
+                }
+
+                @keyframes sp-drift{
+                  from{ background-position: 0 0, 1px 1px; }
+                  to  { background-position: 100px 0, calc(100px + 1px) 1px; }
+                }
+                @keyframes sp-twinkle{
+                  from{ opacity:.9; } to{ opacity:.55; }
+                }
+
+                @media (prefers-reduced-motion: reduce){
+                  .tg-sp::after{ animation: none; }
+                }
+                  cursor: pointer;
+                  color: #fff;
+                  line-height: inherit;
+                  background: transparent !important;
+                  border: 0 !important;
+                  box-shadow: none !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                }
+
+                .tg-sp::after{
+                  content: "";
+                  position: absolute;
                   inset: 0;
                   pointer-events: auto;
                   background:
@@ -449,38 +496,40 @@ const Index = () => {
               `}
             </style>
             
-            <script>
-              {`
+            <script dangerouslySetInnerHTML={{
+              __html: `
                 (function(){
                   const DURATION = 20000;
                   const isTouchOnly = window.matchMedia('(hover: none)').matches;
 
-                  document.querySelectorAll('[data-sp]').forEach(el=>{
-                    el.setAttribute('role','button');
-                    el.setAttribute('tabindex','0');
-                    el.setAttribute('aria-label','Показать скрытый текст');
+                  setTimeout(() => {
+                    document.querySelectorAll('[data-sp]').forEach(el=>{
+                      el.setAttribute('role','button');
+                      el.setAttribute('tabindex','0');
+                      el.setAttribute('aria-label','Показать скрытый текст');
 
-                    let timer=null;
+                      let timer=null;
 
-                    const reveal=()=>{
-                      el.classList.add('revealed');
-                      clearTimeout(timer);
-                      timer=setTimeout(()=> el.classList.remove('revealed'), DURATION);
-                    };
+                      const reveal=()=>{
+                        el.classList.add('revealed');
+                        clearTimeout(timer);
+                        timer=setTimeout(()=> el.classList.remove('revealed'), DURATION);
+                      };
 
-                    el.addEventListener('click', e=>{
-                      if(!isTouchOnly) return;
-                      e.preventDefault(); reveal();
-                    }, {passive:false});
+                      el.addEventListener('click', e=>{
+                        if(!isTouchOnly) return;
+                        e.preventDefault(); reveal();
+                      }, {passive:false});
 
-                    el.addEventListener('keydown', e=>{
-                      if(!isTouchOnly) return;
-                      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); reveal(); }
+                      el.addEventListener('keydown', e=>{
+                        if(!isTouchOnly) return;
+                        if(e.key==='Enter' || e.key===' '){ e.preventDefault(); reveal(); }
+                      });
                     });
-                  });
+                  }, 100);
                 })();
-              `}
-            </script>
+              `
+            }} />
           </div>
         </div>
       </section>
