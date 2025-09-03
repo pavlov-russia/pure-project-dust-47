@@ -121,10 +121,10 @@ const Index = () => {
       <ChecklistPopup isOpen={isPopupOpen} onClose={() => { setIsPopupOpen(false); setFreezeCountdown(true); }} />
       
       {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center bg-gradient-to-b from-[#7962F4] to-white" data-hero>
+      <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
-            <div className="max-w-lg mx-auto relative text-center rounded-3xl py-[199px]">
+            <div className="backdrop-blur-[40px] bg-white/10 p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center rounded-3xl py-[199px]">
             
             {/* Background Owl - positioned randomly with rotation */}
             <div className="absolute top-8 right-4 opacity-8 pointer-events-none transform rotate-12">
