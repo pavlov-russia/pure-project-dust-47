@@ -132,10 +132,10 @@ const Index = () => {
             </p>
             
             {/* CTA Button with header style - no icon */}
-            <div className="relative inline-block w-full max-w-xs mx-auto">
+            <div className="relative inline-block w-full max-w-xs mx-auto py-0 my-0">
               <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }} className="transition-all duration-300 h-10 w-full px-4 rounded-2xl text-sm md:text-base py-3 my-8">
+                }} className="transition-all duration-300 h-12 w-full rounded-2xl md:text-base text-4xl font-regular px-0 py-[2px] mx-0 my-[192px]">
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
                 <span className="sm:hidden">Получить КП</span>
               </Button>
