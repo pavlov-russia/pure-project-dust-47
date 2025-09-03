@@ -15,71 +15,72 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogPortal>
-        <DialogOverlay 
-          style={{
-            backdropFilter: 'blur(4px)',
-            WebkitBackdropFilter: 'blur(4px)',
-            backgroundColor: 'transparent'
-          }}
-        />
-        <DialogContent
-          hideClose
-          className="sm:max-w-md border-0 shadow-2xl rounded-3xl overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 duration-[2000ms]"
-          style={{
-            backdropFilter: 'blur(40px)',
-            WebkitBackdropFilter: 'blur(40px)',
-            backgroundColor: 'rgba(255, 255, 255, 0.70)',
-            mixBlendMode: 'screen',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-          }}
-        >
-        <DialogHeader className="text-center space-y-4 px-12">
-          <DialogTitle className="text-xl font-bold text-foreground leading-tight">
-            Забирайте оберег от слитого бюджета
-          </DialogTitle>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            <span className="font-semibold text-warning">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-semibold text-destructive">50% продаж</span>
-          </p>
-        </DialogHeader>
-        
-        <div className="flex justify-center mt-6 px-4">
-          <button
-            className="relative w-full px-12 py-4 rounded-2xl font-semibold text-white text-lg transition-all duration-300 ease-out hover:scale-105 active:scale-95 pulse-button"
-            style={{
-              background: '#563AF0',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              animationDuration: '2s'
-            }}
+    <>
+      <style>
+        {`
+          @keyframes elasticScale {
+            0% { opacity: 0; transform: scale(0); }
+            60% { opacity: 1; transform: scale(1.2); }
+            80% { transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+          }
+        `}
+      </style>
+
+      {/* ChecklistPopup with iOS 26 Liquid Glass */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div 
+            className="relative max-w-md w-full"
+            style={{ animation: "elasticScale 1s ease-out" }}
           >
-            Забрать
-          </button>
+            {/* Multiple liquid glass layers */}
+            <div className="absolute inset-0 backdrop-blur-[80px] bg-gradient-to-br from-white/25 via-white/15 to-white/20 rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.4)]"></div>
+            <div className="absolute inset-[1px] bg-gradient-to-b from-white/20 via-transparent to-white/10 rounded-[31px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/15 rounded-[32px]"></div>
+            <div className="absolute inset-0 border border-white/30 rounded-[32px]"></div>
+            
+            {/* Content */}
+            <div className="relative z-10 p-8 text-center">
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              
+              <div className="mb-6">
+                <FileText className="w-16 h-16 mx-auto mb-4 text-white" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                Забирайте оберег от слитого бюджета
+              </h3>
+              
+              <p className="text-white/90 mb-8 leading-relaxed">
+                <span className="font-semibold text-yellow-300">5 ошибок</span> в вашем Телеграм-канале, которые съедают более <span className="font-semibold text-red-300">50% продаж</span>
+              </p>
+              
+              <p className="text-xs text-white/70 mb-6">
+                * Разобрали на реальных примерах наших клиентов
+              </p>
+
+              {/* Button with liquid glass */}
+              <div className="relative">
+                <div className="absolute inset-0 backdrop-blur-[40px] bg-white/25 border border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
+                <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
+                <Button 
+                  onClick={onClose}
+                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300 w-full"
+                >
+                  Забрать
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <p className="text-xs text-muted-foreground text-center mt-4">
-          * Разобрали на реальных примерах наших клиентов
-        </p>
-        
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 rounded-full p-2 transition-opacity hover:opacity-90"
-          style={{
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            backgroundColor: 'rgba(255, 255, 255, 0.55)',
-            border: '1px solid rgba(0, 0, 0, 0.06)',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.5)'
-          }}
-          aria-label="Закрыть"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6L18 18M18 6L6 18" stroke="#4B5563" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </button>
-        </DialogContent>
-      </DialogPortal>
-    </Dialog>
+      )}
+    </>
   );
 };
 
