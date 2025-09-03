@@ -1,252 +1,271 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const AnimationShowcase = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800 p-6">
       <style>
         {`
-          .tg-sp{
-            all: unset;
-            display: inline;
+          /* Button Animation Styles */
+          .btn-press-1 {
+            transition: all 0.1s ease;
+          }
+          .btn-press-1:active {
+            transform: scale(0.95);
+            box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
+          }
+
+          .btn-press-2 {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .btn-press-2:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          }
+
+          .btn-press-3 {
+            transition: all 0.15s ease-out;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+          }
+          .btn-press-3:active {
+            transform: translateY(6px);
+            box-shadow: 0 0px 0px rgba(0,0,0,0.2);
+          }
+
+          .btn-press-4 {
+            transition: all 0.1s ease;
+            transform-origin: center;
+          }
+          .btn-press-4:active {
+            transform: scale(0.9) rotate(2deg);
+          }
+
+          .btn-press-5 {
+            transition: all 0.2s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+          }
+          .btn-press-5:active {
+            transform: scale(0.98);
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.1);
+          }
+
+          .btn-press-6 {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          }
+          .btn-press-6:active {
+            transform: scale(1.1);
+          }
+
+          .btn-press-7 {
+            transition: all 0.2s ease;
             position: relative;
-            cursor: pointer;
-            color: #fff;
-            line-height: inherit;
-            background: transparent !important;
-            border: 0 !important;
-            box-shadow: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
+            overflow: hidden;
           }
-
-          .tg-sp::after{
-            content: "";
+          .btn-press-7:active {
+            transform: scale(0.96);
+          }
+          .btn-press-7:active::before {
+            content: '';
             position: absolute;
-            inset: 0;
-            pointer-events: auto;
-            background:
-              radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 0 0/4px 4px,
-              radial-gradient(rgba(255,255,255,.95) 36%, transparent 37%) 2px 2px/4px 4px;
-            opacity: .9;
-            transition: opacity .18s linear;
-            animation: sp-drift 10s linear infinite, sp-twinkle 2.2s ease-in-out infinite alternate;
-            -webkit-mask: 
-              radial-gradient(closest-side, #000 80%, transparent 100%);
-            mask: 
-              radial-gradient(closest-side, #000 80%, transparent 100%);
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out;
           }
 
-          .tg-sp.revealed::after{ opacity: 0; pointer-events: none; }
-
-          @media (hover:hover){
-            .tg-sp:hover::after{ opacity: 0; pointer-events: none; }
+          @keyframes ripple {
+            to {
+              width: 200px;
+              height: 200px;
+              opacity: 0;
+            }
           }
 
-          @keyframes sp-drift{
-            from{ background-position: 0 0, 2px 2px; }
-            to  { background-position: 200px 0, calc(200px + 2px) 2px; }
+          .btn-press-8 {
+            transition: all 0.15s ease;
+            transform-style: preserve-3d;
           }
-          @keyframes sp-twinkle{
-            from{ opacity:.9; } to{ opacity:.55; }
+          .btn-press-8:active {
+            transform: rotateX(10deg) scale(0.98);
           }
 
-          @media (prefers-reduced-motion: reduce){
-            .tg-sp::after{ animation: none; }
+          .btn-press-9 {
+            transition: all 0.2s ease;
+            filter: brightness(1);
+          }
+          .btn-press-9:active {
+            transform: scale(0.94);
+            filter: brightness(1.2) saturate(1.3);
+          }
+
+          .btn-press-10 {
+            transition: all 0.1s ease;
+            animation: float 3s ease-in-out infinite;
+          }
+          .btn-press-10:active {
+            transform: scale(0.85) rotate(-5deg);
+            animation-play-state: paused;
+          }
+
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+          }
+
+          .demo-button {
+            width: 200px;
+            height: 50px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            user-select: none;
           }
         `}
       </style>
       
-      <script>
-        {`
-          (function(){
-            const DURATION = 20000;
-            const isTouchOnly = window.matchMedia('(hover: none)').matches;
-
-            document.querySelectorAll('[data-sp]').forEach(el=>{
-              el.setAttribute('role','button');
-              el.setAttribute('tabindex','0');
-              el.setAttribute('aria-label','Показать скрытый текст');
-
-              let timer=null;
-
-              const reveal=()=>{
-                el.classList.add('revealed');
-                clearTimeout(timer);
-                timer=setTimeout(()=> el.classList.remove('revealed'), DURATION);
-              };
-
-              el.addEventListener('click', e=>{
-                if(!isTouchOnly) return;
-                e.preventDefault(); reveal();
-              }, {passive:false});
-
-              el.addEventListener('keydown', e=>{
-                if(!isTouchOnly) return;
-                if(e.key==='Enter' || e.key===' '){ e.preventDefault(); reveal(); }
-              });
-            });
-          })();
-        `}
-      </script>
-      
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            Варианты форматирования текста
+            10 Вариантов Анимации Нажатия Кнопки
           </h1>
           <p className="text-white/80 mb-6">
-            Примеры различных стилей написания текста
+            Нажмите на любую кнопку, чтобы увидеть анимацию
           </p>
         </div>
 
-        <div className="grid gap-6">
-          {/* Italic */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Button 1 - Scale Down */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Курсив</CardTitle>
+              <CardTitle className="text-white">1. Сжатие с тенью</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <em>Это текст написан курсивом</em>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">&lt;em&gt;Это текст написан курсивом&lt;/em&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-1 bg-blue-500 hover:bg-blue-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Bold */}
+          {/* Button 2 - Push Down */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Жирный</CardTitle>
+              <CardTitle className="text-white">2. Вдавливание</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <strong>Это жирный текст</strong>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">&lt;strong&gt;Это жирный текст&lt;/strong&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-2 bg-green-500 hover:bg-green-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Underline */}
+          {/* Button 3 - Button Press */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Подчёркивание</CardTitle>
+              <CardTitle className="text-white">3. Физическое нажатие</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <u>Это подчёркнутый текст</u>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">&lt;u&gt;Это подчёркнутый текст&lt;/u&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-3 bg-purple-500 hover:bg-purple-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Strikethrough */}
+          {/* Button 4 - Rotate and Scale */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Зачёркнутый</CardTitle>
+              <CardTitle className="text-white">4. Поворот с сжатием</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <s>Это зачёркнутый текст</s>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">&lt;s&gt;Это зачёркнутый текст&lt;/s&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-4 bg-red-500 hover:bg-red-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Hidden/Spoiler */}
+          {/* Button 5 - Border Glow */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Скрытый (как в Telegram)</CardTitle>
+              <CardTitle className="text-white">5. Свечение границы</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                Это секретная информация: {" "}
-                <span className="tg-sp" data-sp>
-                  скрытый текст, кликните чтобы увидеть
-                </span>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">Телеграм-стиль спойлер с анимированными точками</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-5 bg-orange-500 hover:bg-orange-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Quote */}
+          {/* Button 6 - Bounce */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Цитата</CardTitle>
+              <CardTitle className="text-white">6. Отскок</CardTitle>
             </CardHeader>
-            <CardContent>
-              <blockquote className="text-white/90 text-lg border-l-4 border-white/40 pl-4 italic">
-                "Это цитата или важное высказывание"
-              </blockquote>
-              <code className="text-xs text-white/60 mt-2 block">&lt;blockquote&gt;"Это цитата или важное высказывание"&lt;/blockquote&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-6 bg-pink-500 hover:bg-pink-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Monospace */}
+          {/* Button 7 - Ripple Effect */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Моноширинный</CardTitle>
+              <CardTitle className="text-white">7. Эффект волны</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <code className="bg-white/20 px-2 py-1 rounded font-mono">Это моноширинный текст</code>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">&lt;code&gt;Это моноширинный текст&lt;/code&gt;</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-7 bg-cyan-500 hover:bg-cyan-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Combined */}
+          {/* Button 8 - 3D Press */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Комбинированное форматирование</CardTitle>
+              <CardTitle className="text-white">8. 3D наклон</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-white/90 text-lg">
-                <strong><em>Жирный курсив</em></strong>, <u><strong>подчёркнутый жирный</strong></u>, и даже{" "}
-                <span className="tg-sp" data-sp>
-                  скрытый жирный курсив
-                </span>
-              </p>
-              <code className="text-xs text-white/60 mt-2 block">Комбинация различных стилей форматирования</code>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-8 bg-indigo-500 hover:bg-indigo-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
 
-          {/* Typography showcase */}
+          {/* Button 9 - Brightness Change */}
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-white">Пример статьи с разными форматами</CardTitle>
+              <CardTitle className="text-white">9. Яркость и насыщенность</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <h2 className="text-xl font-bold text-white">Заголовок статьи</h2>
-              
-              <p className="text-white/90">
-                Обычный текст с <strong>важными</strong> выделениями и <em>акцентами</em>.
-              </p>
-              
-              <blockquote className="border-l-4 border-white/40 pl-4 italic text-white/80">
-                "Цитата выдающегося человека о важной теме"
-              </blockquote>
-              
-              <p className="text-white/90">
-                В коде используется <code className="bg-white/20 px-1 py-0.5 rounded font-mono text-sm">console.log()</code> для вывода информации.
-              </p>
-              
-              <p className="text-white/90">
-                <s>Устаревшая информация</s> была заменена на актуальную.
-              </p>
-              
-              <p className="text-white/90">
-                Секретная информация: {" "}
-                <span className="tg-sp" data-sp>
-                  только для посвящённых
-                </span>
-              </p>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-9 bg-yellow-500 hover:bg-yellow-600 text-white">
+                Нажми меня
+              </button>
+            </CardContent>
+          </Card>
+
+          {/* Button 10 - Floating with Stop */}
+          <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-white">10. Плавающая с остановкой</CardTitle>
+            </CardHeader>
+            <CardContent className="flex justify-center">
+              <button className="demo-button btn-press-10 bg-teal-500 hover:bg-teal-600 text-white">
+                Нажми меня
+              </button>
             </CardContent>
           </Card>
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-white/80">
-            Все примеры готовы к использованию в вашем проекте
+          <p className="text-white/80 mb-4">
+            Каждая анимация имеет уникальный эффект нажатия
+          </p>
+          <p className="text-white/60 text-sm">
+            Попробуйте нажать и удерживать кнопки для лучшего понимания анимации
           </p>
         </div>
       </div>
