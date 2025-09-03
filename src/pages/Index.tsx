@@ -391,7 +391,7 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              разобрали на реальных примерах наших клиентов
+              • разобрали на реальных примерах наших клиентов •
             </p>
           </div>
         </div>
