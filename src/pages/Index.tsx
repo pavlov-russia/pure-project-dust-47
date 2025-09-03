@@ -391,8 +391,118 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              разобрали на реальных примерах наших клиентов
+              <div className="tg-spoiler" data-spoiler>
+                <span className="tg-spoiler-text">
+                  разобрали на реальных примерах наших клиентов
+                </span>
+                <button className="tg-spoiler-cover" aria-label="Показать скрытый текст"></button>
+              </div>
             </p>
+            
+            <style>
+              {`
+                :root{
+                  --dot: 10px;
+                  --dot-color: rgba(255,255,255,.92);
+                  --twinkle-a: .85;
+                  --twinkle-b: .55;
+                  --reveal-fade: .18s;
+                  --text-color: #fff;
+                }
+
+                .tg-spoiler{
+                  position: relative;
+                  display: inline-block;
+                  border-radius: 10px;
+                }
+
+                .tg-spoiler-text{
+                  color: var(--text-color);
+                }
+
+                .tg-spoiler-cover{
+                  position:absolute;
+                  inset:-2px;
+                  border-radius: inherit;
+                  display:block;
+                  padding:0;
+                  margin:0;
+                  background:
+                    radial-gradient(var(--dot-color) 35%, transparent 36%) 0 0/var(--dot) var(--dot),
+                    radial-gradient(var(--dot-color) 35%, transparent 36%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot);
+                  mix-blend-mode: normal;
+                  opacity: var(--twinkle-a);
+                  transition: opacity var(--reveal-fade) linear;
+                  border:none;
+                  cursor: pointer;
+                  animation:
+                    tg-drift 10s linear infinite,
+                    tg-twinkle 2.2s ease-in-out infinite alternate;
+                }
+
+                @media (hover:hover){
+                  .tg-spoiler:hover > .tg-spoiler-cover{
+                    opacity: 0;
+                    pointer-events: none;
+                  }
+                }
+
+                .tg-spoiler.revealed > .tg-spoiler-cover{
+                  opacity: 0;
+                  pointer-events: none;
+                }
+
+                .tg-spoiler.hiding > .tg-spoiler-cover{
+                  opacity: var(--twinkle-a);
+                  pointer-events: auto;
+                }
+
+                @keyframes tg-drift{
+                  from { background-position: 0 0, calc(var(--dot)/2) calc(var(--dot)/2); }
+                  to   { background-position: 200px 0, calc(200px + var(--dot)/2) calc(var(--dot)/2); }
+                }
+
+                @keyframes tg-twinkle{
+                  from { opacity: var(--twinkle-a); }
+                  to   { opacity: var(--twinkle-b); }
+                }
+              `}
+            </style>
+            
+            <script>
+              {`
+                (function(){
+                  const SPOILER_DURATION_MS = 20000;
+                  const isTouchOnly = window.matchMedia('(hover: none)').matches;
+
+                  document.querySelectorAll('[data-spoiler]').forEach(el=>{
+                    const cover = el.querySelector('.tg-spoiler-cover');
+                    let hideTimer = null;
+
+                    cover.addEventListener('click', (e)=>{
+                      if(!isTouchOnly) return;
+                      e.preventDefault();
+                      el.classList.add('revealed');
+                      el.classList.remove('hiding');
+                      clearTimeout(hideTimer);
+                      hideTimer = setTimeout(()=>{
+                        el.classList.remove('revealed');
+                        el.classList.add('hiding');
+                        setTimeout(()=> el.classList.remove('hiding'), 300);
+                      }, SPOILER_DURATION_MS);
+                    }, {passive:true});
+
+                    cover.addEventListener('keydown', (e)=>{
+                      if(!isTouchOnly) return;
+                      if(e.key === 'Enter' || e.key === ' '){
+                        e.preventDefault();
+                        cover.click();
+                      }
+                    });
+                  });
+                })();
+              `}
+            </script>
           </div>
         </div>
       </section>
