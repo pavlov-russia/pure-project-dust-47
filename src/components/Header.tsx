@@ -136,6 +136,7 @@ const Header = () => {
                transform: showCTA 
                  ? `translateX(calc(-50% + ${leftOffset}px)) translateZ(0)`
                  : 'translateX(-50%) translateZ(0)',
+               transitionDelay: showCTA ? '300ms' : '0ms',
                willChange: 'transform',
                backfaceVisibility: 'hidden'
              }}>
