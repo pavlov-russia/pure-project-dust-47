@@ -395,7 +395,7 @@ const Index = () => {
             </p>
             
             <div className="text-center mt-4">
-              <span className="text-white font-bold text-lg underline cursor-pointer select-none transform transition-all duration-150 hover:scale-95 active:scale-90 animate-pulse">
+              <span className="text-white font-bold text-lg underline cursor-pointer select-none transform transition-all duration-500 hover:scale-95 active:scale-90 animate-[pulse_3s_ease-in-out_infinite]">
                 ЗАБРАТЬ!
               </span>
             </div>
