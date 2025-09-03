@@ -496,7 +496,7 @@ All colors MUST be HSL.
 /* сам текст */
 .led-msg {
   font-family: 'Press Start 2P', 'Courier New', monospace;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 1.2;
   color: var(--txt);
   letter-spacing: 0.1em;
@@ -511,6 +511,6 @@ All colors MUST be HSL.
 
 /* адаптив */
 @media (max-width:480px) {
-  :root { --height: 20px; --dot: 6px; --speed: 4s; }
-  .led-msg { font-size: 16px; }
+  :root { --height: 50px; --dot: 6px; --speed: 4s; }
+  .led-msg { font-size: 24px; }
 }
