@@ -391,32 +391,7 @@ const Index = () => {
             </p>
             
             <p className="text-sm text-white/70 italic mt-2 max-w-2xl mx-auto">
-              <span 
-                className="bg-white/20 text-transparent hover:text-white/70 active:text-white/70 transition-colors duration-200 cursor-pointer select-none px-1 rounded"
-                style={{
-                  background: 'rgba(255,255,255,0.2)',
-                  color: 'rgba(255,255,255,0.2)'
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.7)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.color = 'rgba(255,255,255,0.2)';
-                }}
-                onClick={(e) => {
-                  const target = e.target as HTMLElement;
-                  const isRevealed = target.dataset.revealed === 'true';
-                  if (isRevealed) {
-                    target.style.color = 'rgba(255,255,255,0.2)';
-                    target.dataset.revealed = 'false';
-                  } else {
-                    target.style.color = 'rgba(255,255,255,0.7)';
-                    target.dataset.revealed = 'true';
-                  }
-                }}
-              >
-                разобрали на реальных примерах наших клиентов
-              </span>
+              разобрали на реальных примерах наших клиентов
             </p>
           </div>
         </div>
