@@ -476,10 +476,7 @@ All colors MUST be HSL.
 .led-panel {
   position: relative;
   height: var(--height);
-  background:
-    radial-gradient(#563AF0 28%, transparent 30%) 0 0/var(--dot) var(--dot),
-    radial-gradient(#563AF0 28%, transparent 30%) calc(var(--dot)/2) calc(var(--dot)/2)/var(--dot) var(--dot),
-    var(--panel);
+  background: transparent;
   padding: 4px;
   overflow:hidden;
 }
