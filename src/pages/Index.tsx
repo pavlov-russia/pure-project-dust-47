@@ -117,7 +117,7 @@ const Index = () => {
       <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
         <div className="container mx-auto px-6 max-w-full">
           <div className="max-w-lg mx-auto relative">
-            <div className="backdrop-blur-[40px] bg-white/10 p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center rounded-3xl py-[200px]">
+            <div className="backdrop-blur-[40px] bg-white/10 p-8 md:p-12 border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative z-10 text-center rounded-3xl py-[199px]">
             <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white">
               Управляйте впечатлением о своём бизнесе с{" "}
               <span className="font-bold text-white">TapBlog</span>
@@ -132,12 +132,13 @@ const Index = () => {
             </p>
             
             {/* CTA Button with header style - no icon */}
-            <div className="relative inline-block mx-auto">
+            <div className="relative inline-block mx-auto rounded-none">
               <Button variant="glass-breath" style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }} className="transition-all duration-300 h-12 rounded-2xl md:text-base text-base font-regular px-4">
+                }} className="transition-all duration-300 h-12 rounded-2xl md:text-base font-regular py-0 my-0 mx-px px-0 text-xs">
                 <span className="hidden sm:inline">Получить индивидуальное КП</span>
-                <span className="sm:hidden">Получить КП</span>
+                <span className="sm:hidden">Получить индивидуальное
+ предложение</span>
               </Button>
             </div>
           </div>
