@@ -505,7 +505,7 @@ All colors MUST be HSL.
 
 /* сам текст */
 .led-msg {
-  font: 700 32px/1 "Segoe UI", Arial, sans-serif;
+  font: 700 38px/1 "Segoe UI", Arial, sans-serif;
   color: var(--txt);
   letter-spacing:.05em;
   text-transform: uppercase;
@@ -521,5 +521,5 @@ All colors MUST be HSL.
 /* адаптив */
 @media (max-width:480px) {
   :root { --height: 25px; --dot: 6px; --speed: 4s; }
-  .led-msg { font-size: 18px; }
+  .led-msg { font-size: 22px; }
 }
