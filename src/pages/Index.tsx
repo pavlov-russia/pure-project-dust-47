@@ -395,7 +395,19 @@ const Index = () => {
             </p>
             
             <div className="text-center mt-4">
-              <span className="text-white font-bold text-lg underline cursor-pointer select-none transform transition-all duration-500 hover:scale-95 active:scale-90 animate-[pulse_3s_ease-in-out_infinite]">
+              <style>
+                {`
+                  .btn-grab {
+                    transition: all 0.2s ease;
+                    filter: brightness(1);
+                  }
+                  .btn-grab:active {
+                    transform: scale(0.94);
+                    filter: brightness(1.2) saturate(1.3);
+                  }
+                `}
+              </style>
+              <span className="btn-grab text-white font-bold text-lg underline cursor-pointer select-none">
                 ЗАБРАТЬ!
               </span>
             </div>
