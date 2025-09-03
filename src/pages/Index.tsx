@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ChecklistPopup from "@/components/ChecklistPopup";
+import AnimatedCountdown from "@/components/AnimatedCountdown";
 import ConsultationForm from "@/components/ConsultationForm";
 import Header from "@/components/Header";
 import SectionCard from "@/components/SectionCard";
@@ -12,6 +13,8 @@ const Index = () => {
   const [isInView, setIsInView] = useState(false);
   const [isTargetSectionInView, setIsTargetSectionInView] = useState(false);
   const [hasTargetAnimationPlayed, setHasTargetAnimationPlayed] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const sectionRef = useRef(null);
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
@@ -111,7 +114,7 @@ const Index = () => {
   return <div className="min-h-screen w-full fixed inset-0 bg-transparent">
       <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
-      <ChecklistPopup />
+      <ChecklistPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
       
       {/* Hero Section */}
       <section className="pt-20 md:pt-32 pb-0 w-full flex items-center justify-center" data-hero>
@@ -156,7 +159,7 @@ const Index = () => {
               </h1>
               
               <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
-                У вас есть менее 7 секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+                У вас есть менее <AnimatedCountdown onComplete={() => setIsPopupOpen(true)} /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
               </p>
               
               <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
