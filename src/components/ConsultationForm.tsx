@@ -158,10 +158,10 @@ const ConsultationForm = () => {
                   </div>
                 </div>
                 
-                <h1 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                <h1 className="text-2xl font-bold text-[#272727] mb-3 drop-shadow-lg">
                   Консультация по Telegram
                 </h1>
-                <p className="text-white/85 text-sm leading-relaxed">
+                <p className="text-[#272727] text-sm leading-relaxed">
                   Ответьте на несколько вопросов для записи на консультацию
                 </p>
               </div>
@@ -169,15 +169,15 @@ const ConsultationForm = () => {
               {/* Progress Section with iOS 26 styling */}
               <div className="mb-8">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-white/80 text-sm font-medium">Вопрос {currentStep} из {totalSteps}</span>
-                  <span className="text-white/80 text-sm font-medium">{Math.round(progress)}%</span>
+                  <span className="text-[#272727] text-sm font-medium">Вопрос {currentStep} из {totalSteps}</span>
+                  <span className="text-[#272727] text-sm font-medium">{Math.round(progress)}%</span>
                 </div>
                 
                 {/* Progress Bar with liquid glass */}
                 <div className="relative mb-6">
-                  <div className="w-full h-3 backdrop-blur-sm bg-white/15 rounded-full border border-white/20 shadow-inner">
+                  <div className="w-full h-3 backdrop-blur-sm bg-[rgba(86,58,240,0.2)] rounded-full border border-[rgba(86,58,240,0.3)] shadow-inner">
                     <div 
-                      className="h-full bg-gradient-to-r from-white/70 to-white/90 rounded-full transition-all duration-700 ease-out shadow-sm"
+                      className="h-full bg-gradient-to-r from-[#563AF0] to-[#7962F4] rounded-full transition-all duration-700 ease-out shadow-sm"
                       style={{width: `${progress}%`}}
                     ></div>
                   </div>
@@ -200,11 +200,11 @@ const ConsultationForm = () => {
                     >
                       <div className={`absolute inset-0 backdrop-blur-sm rounded-full border transition-all duration-500 ${
                         i + 1 <= currentStep
-                          ? 'bg-white/80 border-white/50 shadow-lg' 
-                          : 'bg-white/20 border-white/30'
+                          ? 'bg-[#563AF0] border-[#7962F4] shadow-lg' 
+                          : 'bg-[rgba(158,158,158,0.3)] border-[rgba(158,158,158,0.5)]'
                       }`}></div>
                       {i + 1 <= currentStep && (
-                        <div className="absolute inset-[2px] bg-gradient-to-br from-white/40 to-white/60 rounded-full"></div>
+                        <div className="absolute inset-[2px] bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.6)] rounded-full"></div>
                       )}
                     </div>
                   ))}
@@ -213,7 +213,7 @@ const ConsultationForm = () => {
 
               {/* Question Section */}
               <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-white leading-tight drop-shadow-sm">
+                <h2 className="text-xl font-semibold text-[#272727] leading-tight drop-shadow-sm">
                   {currentQuestion.question}
                 </h2>
 
@@ -234,7 +234,7 @@ const ConsultationForm = () => {
                           placeholder={typedText + "|"}
                           value={currentValue}
                           onChange={(e) => handleInputChange(e.target.value)}
-                          className="bg-transparent border-none text-white placeholder:text-white/60 text-base p-4 h-14 rounded-2xl focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                          className="bg-transparent border-none text-[#272727] placeholder:text-[#9E9E9E] text-base p-4 h-14 rounded-2xl focus:ring-2 focus:ring-[#563AF0] transition-all duration-300"
                         />
                       )}
 
@@ -243,7 +243,7 @@ const ConsultationForm = () => {
                           placeholder={typedText + "|"}
                           value={currentValue}
                           onChange={(e) => handleInputChange(e.target.value)}
-                          className="bg-transparent border-none text-white placeholder:text-white/60 text-base p-4 min-h-[120px] rounded-2xl resize-none focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                          className="bg-transparent border-none text-[#272727] placeholder:text-[#9E9E9E] text-base p-4 min-h-[120px] rounded-2xl resize-none focus:ring-2 focus:ring-[#563AF0] transition-all duration-300"
                         />
                       )}
 
@@ -252,12 +252,12 @@ const ConsultationForm = () => {
                           value={currentValue}
                           onValueChange={handleInputChange}
                         >
-                          <SelectTrigger className="bg-transparent border-none text-white h-14 p-4 rounded-2xl focus:ring-2 focus:ring-white/40 transition-all duration-300">
-                            <SelectValue placeholder="Выберите вариант" className="text-white/60" />
+                          <SelectTrigger className="bg-transparent border-none text-[#272727] h-14 p-4 rounded-2xl focus:ring-2 focus:ring-[#563AF0] transition-all duration-300">
+                            <SelectValue placeholder="Выберите вариант" className="text-[#9E9E9E]" />
                           </SelectTrigger>
                           <SelectContent className="backdrop-blur-[40px] bg-white/90 border border-white/30 rounded-2xl">
                             {currentQuestion.options?.map((option) => (
-                              <SelectItem key={option.value} value={option.value} className="text-gray-800 hover:bg-white/50">
+                              <SelectItem key={option.value} value={option.value} className="text-[#272727] hover:bg-[rgba(86,58,240,0.1)]">
                                 {option.label}
                               </SelectItem>
                             ))}
@@ -276,7 +276,7 @@ const ConsultationForm = () => {
                       <div className="absolute inset-[1px] bg-gradient-to-b from-white/10 via-transparent to-white/5 rounded-[15px]"></div>
                       <Button 
                         onClick={handlePrevious}
-                        className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white h-14 w-14 rounded-2xl transition-all duration-300 flex items-center justify-center"
+                        className="relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] h-14 w-14 rounded-2xl transition-all duration-300 flex items-center justify-center"
                       >
                         <ChevronLeft className="w-6 h-6" />
                       </Button>
@@ -289,7 +289,7 @@ const ConsultationForm = () => {
                     <Button 
                       onClick={handleNext}
                       disabled={!isStepValid}
-                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-white font-semibold h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-[#272727] font-semibold h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     >
                       {currentStep === totalSteps ? "Записаться на консультацию" : "Далее"}
                       <ChevronRight className="w-5 h-5" />
