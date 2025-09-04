@@ -23,7 +23,7 @@ const buttonVariants = cva(
         "cta-tertiary": "bg-secondary/60 text-foreground u-strong hover:bg-secondary/80 border border-white/20 backdrop-blur-sm rounded-full",
         
         // Specialized variants
-        "glass-breath": "relative u-strong bg-[#563AF0] text-white border-2 border-[#563AF0] hover:bg-white hover:text-[#563AF0] transition-all duration-300 hover:scale-105 focus:ring-white/30 rounded-full",
+        "glass-breath": "relative u-strong bg-[#563AF0] text-white border-2 border-[#563AF0] hover:!bg-white hover:!text-[#563AF0] active:!bg-white active:!text-[#563AF0] focus:!bg-white focus:!text-[#563AF0] transition-all duration-300 hover:scale-105 focus:ring-white/30 rounded-full",
         "form-submit": "bg-gradient-telegram text-white u-strong shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] focus:ring-primary/30 rounded-full",
         "hero-accent": "bg-white text-foreground u-strong shadow-md hover:bg-secondary hover:shadow-lg hover:scale-[1.01] focus:ring-primary/30 rounded-full",
       },
