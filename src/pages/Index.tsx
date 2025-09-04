@@ -201,9 +201,7 @@ const Index = () => {
             
             {/* CTA Button positioned at bottom with minimal margins */}
             <div className="absolute inset-x-[14px] bottom-4">
-              <Button variant="glass-breath" style={{
-                  backgroundColor: 'rgba(255,255,255,0.18)'
-                }} onClick={() => {
+              <Button variant="glass-breath" onClick={() => {
                   const consultationForm = document.querySelector('[data-consultation-form]') as HTMLElement | null;
                   const rootEl = document.getElementById('root');
                   if (!consultationForm) return;
@@ -234,8 +232,8 @@ const Index = () => {
                       behavior: 'smooth'
                     });
                   }
-                 }} className="btn w-full transition-all duration-300 h-12 rounded-2xl md:text-base text-xs">
-                Получить индивидуальное предложение
+                 }} className="btn w-full">
+                 Получить индивидуальное предложение
               </Button>
             </div>
           </div>
@@ -351,9 +349,7 @@ const Index = () => {
                 *при условии адекватного профессионального трафик-менеджера
               </p>
               
-              <Button variant="glass-breath" className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base" style={{
-                backgroundColor: 'rgba(255,255,255,0.18)'
-              }}>
+              <Button variant="glass-breath">
                 🚀 Хочу мощную упаковку
               </Button>
             </div>
@@ -404,9 +400,7 @@ const Index = () => {
             </div>
             
             <div className="mt-8">
-              <Button variant="glass-breath" className="transition-all duration-300 h-12 px-6 py-3 rounded-2xl text-sm md:text-base" style={{
-                backgroundColor: 'rgba(255,255,255,0.18)'
-              }}>
+              <Button variant="glass-breath">
                 Заказать упаковку
               </Button>
             </div>
