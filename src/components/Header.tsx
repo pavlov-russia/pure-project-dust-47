@@ -10,23 +10,35 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
-    const consultationForm = document.querySelector('[data-consultation-form]');
-    
-    if (consultationForm) {
-      // Учитываем высоту фиксированной шапки
-      const headerHeight = isMobile ? 155 : 120; // 155px на мобильных, 120px на десктопе
+    const consultationForm = document.querySelector('[data-consultation-form]') as HTMLElement | null;
+    const rootEl = document.getElementById('root');
+
+    if (!consultationForm) return;
+
+    // Учитываем высоту фиксированной шапки
+    const headerHeight = isMobile ? 155 : 120; // 155px на мобильных, 120px на десктопе
+
+    if (rootEl) {
       const formRect = consultationForm.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      // Вычисляем позицию для центрирования формы
-      const formTop = formRect.top + scrollTop;
-      const viewportHeight = window.innerHeight;
-      const targetPosition = formTop - headerHeight - (viewportHeight - formRect.height) / 2;
-      
-      window.scrollTo({
-        top: Math.max(0, targetPosition),
-        behavior: 'smooth'
+      const rootRect = rootEl.getBoundingClientRect();
+      const relativeTop = formRect.top - rootRect.top; // позиция формы относительно контейнера прокрутки
+      const containerHeight = rootEl.clientHeight;
+
+      const target = relativeTop + rootEl.scrollTop - headerHeight - (containerHeight - formRect.height) / 2;
+      const maxScroll = rootEl.scrollHeight - containerHeight;
+
+      rootEl.scrollTo({
+        top: Math.max(0, Math.min(maxScroll, target)),
+        behavior: 'smooth',
       });
+    } else {
+      // Фолбэк для случая, если прокручивается окно
+      const formRect = consultationForm.getBoundingClientRect();
+      const pageY = window.pageYOffset || document.documentElement.scrollTop;
+      const viewportHeight = window.innerHeight;
+      const target = formRect.top + pageY - headerHeight - (viewportHeight - formRect.height) / 2;
+
+      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
     }
   };
 
