@@ -10,22 +10,23 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
-    console.log('=== Начало handleCTAClick ===');
     const consultationForm = document.querySelector('[data-consultation-form]');
-    console.log('Форма найдена:', !!consultationForm);
     
     if (consultationForm) {
-      console.log('Начинаем скролл...');
+      // Учитываем высоту фиксированной шапки
+      const headerHeight = isMobile ? 155 : 120; // 155px на мобильных, 120px на десктопе
+      const formRect = consultationForm.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       
-      // Сначала попробуем простой scrollIntoView
-      consultationForm.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
+      // Вычисляем позицию для центрирования формы
+      const formTop = formRect.top + scrollTop;
+      const viewportHeight = window.innerHeight;
+      const targetPosition = formTop - headerHeight - (viewportHeight - formRect.height) / 2;
+      
+      window.scrollTo({
+        top: Math.max(0, targetPosition),
+        behavior: 'smooth'
       });
-      
-      console.log('scrollIntoView выполнен');
-    } else {
-      console.error('Форма не найдена!');
     }
   };
 
