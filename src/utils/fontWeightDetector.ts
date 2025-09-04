@@ -1,7 +1,16 @@
 export const detectFontWeight = (fileName: string): string => {
   const nameLower = fileName.toLowerCase();
   
-  // Проверяем ключевые слова в имени файла для определения веса
+  // Специальное определение весов для TT Fors Trial
+  if (nameLower.includes('variable')) {
+    return '200-900'; // Variable font range
+  } else if (nameLower.includes('medium')) {
+    return '500';
+  } else if (nameLower.includes('semibold') || nameLower.includes('demibold')) {
+    return '600';
+  }
+  
+  // Fallback для других шрифтов
   if (nameLower.includes('thin') || nameLower.includes('hairline')) {
     return '100';
   } else if (nameLower.includes('extralight') || nameLower.includes('ultralight')) {
@@ -10,10 +19,6 @@ export const detectFontWeight = (fileName: string): string => {
     return '300';
   } else if (nameLower.includes('regular') || nameLower.includes('normal')) {
     return '400';
-  } else if (nameLower.includes('medium')) {
-    return '500';
-  } else if (nameLower.includes('semibold') || nameLower.includes('demibold')) {
-    return '600';
   } else if (nameLower.includes('bold')) {
     return '700';
   } else if (nameLower.includes('extrabold') || nameLower.includes('ultrabold')) {
@@ -43,26 +48,6 @@ export const getFontWeightName = (weight: string): string => {
 };
 
 export const extractFontFamily = (fileName: string): string => {
-  // Убираем расширение
-  let name = fileName.replace(/\.[^/.]+$/, "");
-  
-  // Убираем указания веса из имени для получения семейства
-  const weightKeywords = [
-    'thin', 'hairline', 'extralight', 'ultralight', 'light',
-    'regular', 'normal', 'medium', 'semibold', 'demibold',
-    'bold', 'extrabold', 'ultrabold', 'black', 'heavy'
-  ];
-  
-  weightKeywords.forEach(keyword => {
-    const regex = new RegExp(`[-_\\s]?${keyword}[-_\\s]?`, 'gi');
-    name = name.replace(regex, ' ');
-  });
-  
-  // Очищаем и форматируем имя
-  return name
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/[^a-zA-Z0-9\s]/g, '')
-    .replace(/\s+/g, '');
+  // Всегда возвращаем "TT Fors Trial" для всех загружаемых шрифтов
+  return "TT Fors Trial";
 };
