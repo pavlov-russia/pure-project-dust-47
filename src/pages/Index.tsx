@@ -476,7 +476,7 @@ const Index = () => {
       </section>
 
       {/* Target Audience Section */}
-      <section ref={targetSectionRef} className="py-8 bg-gradient-to-b from-white via-[#A499F9] to-[#7962F4]">
+      <section ref={targetSectionRef} className="py-8 bg-[linear-gradient(to_bottom,_#ffffff_0%,_#cfc8fd_28%,_#a79af8_50%,_#7962F4_70%,_#a79af8_86%,_#ffffff_100%)]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
@@ -530,7 +530,7 @@ const Index = () => {
       </section>
 
       {/* Consultation Form */}
-      <div className="-mt-20 pb-0 bg-gradient-to-b from-[#7962F4] via-[#A499F9] via-[#C4B8FB] via-[#E4DEFD] to-white">
+      <div className="-mt-20 pb-0 bg-transparent">
         <ConsultationForm />
       </div>
       </div>
