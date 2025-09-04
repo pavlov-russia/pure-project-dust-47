@@ -135,7 +135,7 @@ const ConsultationForm = () => {
         `}
       </style>
       
-      <div className="bg-transparent py-16 pb-4 md:pb-16" data-consultation-form>
+      <div className="bg-gradient-to-b from-[#563AF0] to-white py-16 pb-4 md:pb-16" data-consultation-form>
         <div className="container mx-auto px-6 max-w-full">
           {/* iOS 26 Liquid Glass Container */}
           <div className="max-w-lg mx-auto relative">
