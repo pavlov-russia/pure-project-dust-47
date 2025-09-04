@@ -217,7 +217,7 @@ const ConsultationForm = () => {
                           placeholder={typedText + "|"}
                           value={currentValue}
                           onChange={(e) => handleInputChange(e.target.value)}
-                          className="bg-transparent border-none text-[#272727] placeholder:text-[#9E9E9E] text-base p-4 min-h-[120px] rounded-2xl resize-none focus:ring-2 focus:ring-[#563AF0] transition-all duration-300"
+                          className="bg-transparent border-none text-[#272727] placeholder:text-[#9E9E9E] text-base p-4 min-h-[160px] rounded-2xl resize-none focus:ring-2 focus:ring-[#563AF0] transition-all duration-300"
                         />
                       )}
 
