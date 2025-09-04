@@ -183,42 +183,6 @@ const ConsultationForm = () => {
                   </div>
                 </div>
                 
-                {/* Step Indicators with liquid glass dots */}
-                <div className="flex justify-center items-center space-x-3">
-                  {Array.from({length: totalSteps}, (_, i) => {
-                    const stepNumber = i + 1;
-                    const isCurrentStep = stepNumber === currentStep;
-                    const stepQuestion = questions[i];
-                    const stepValue = formData[stepQuestion.field];
-                    const isStepCompleted = stepValue.trim() !== "";
-                    
-                    return (
-                      <div
-                        key={i}
-                        className={`relative transition-all duration-500 ${
-                          isCurrentStep
-                            ? 'w-8 h-4 rounded-full' 
-                            : 'w-4 h-4 rounded-full'
-                        } ${
-                          stepNumber <= currentStep
-                            ? 'scale-110' 
-                            : 'scale-100'
-                        }`}
-                      >
-                        <div className={`absolute inset-0 backdrop-blur-sm rounded-full border transition-all duration-500 ${
-                          isStepCompleted
-                            ? 'bg-[#563AF0] border-[#7962F4] shadow-lg' 
-                            : stepNumber <= currentStep
-                            ? 'bg-[#563AF0]/50 border-[#7962F4]/50 shadow-md'
-                            : 'bg-[rgba(158,158,158,0.3)] border-[rgba(158,158,158,0.5)]'
-                        }`}></div>
-                        {isStepCompleted && (
-                          <div className="absolute inset-[2px] bg-gradient-to-br from-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0.6)] rounded-full"></div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
 
               {/* Question Section */}
