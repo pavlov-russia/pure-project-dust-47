@@ -10,22 +10,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // Original variants with new design system
-        default: "bg-[#563AF0] text-white hover:bg-white hover:text-[#563AF0] border-2 border-[#563AF0] transition-all duration-300",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-[#563AF0] text-white hover:bg-white hover:text-[#563AF0] border-2 border-[#563AF0] transition-all duration-300 rounded-full",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-full",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full",
+        ghost: "hover:bg-accent hover:text-accent-foreground rounded-full",
         link: "text-primary underline-offset-4 hover:underline",
         
         // New CTA variants - hierarchy system
-        "cta-primary": "bg-gradient-telegram text-white u-strong shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus:ring-primary/30",
-        "cta-secondary": "border-2 border-primary bg-transparent text-primary u-strong hover:bg-primary hover:text-white focus:ring-primary/30",
-        "cta-tertiary": "bg-secondary/60 text-foreground u-strong hover:bg-secondary/80 border border-white/20 backdrop-blur-sm",
+        "cta-primary": "bg-gradient-telegram text-white u-strong shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus:ring-primary/30 rounded-full",
+        "cta-secondary": "border-2 border-primary bg-transparent text-primary u-strong hover:bg-primary hover:text-white focus:ring-primary/30 rounded-full",
+        "cta-tertiary": "bg-secondary/60 text-foreground u-strong hover:bg-secondary/80 border border-white/20 backdrop-blur-sm rounded-full",
         
         // Specialized variants
-        "glass-breath": "relative u-strong bg-[#563AF0] text-white border-2 border-[#563AF0] hover:bg-white hover:text-[#563AF0] transition-all duration-300 hover:scale-105 focus:ring-white/30",
-        "form-submit": "bg-gradient-telegram text-white u-strong shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] focus:ring-primary/30",
-        "hero-accent": "bg-white text-foreground u-strong shadow-md hover:bg-secondary hover:shadow-lg hover:scale-[1.01] focus:ring-primary/30",
+        "glass-breath": "relative u-strong bg-[#563AF0] text-white border-2 border-[#563AF0] hover:bg-white hover:text-[#563AF0] transition-all duration-300 hover:scale-105 focus:ring-white/30 rounded-full",
+        "form-submit": "bg-gradient-telegram text-white u-strong shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] focus:ring-primary/30 rounded-full",
+        "hero-accent": "bg-white text-foreground u-strong shadow-md hover:bg-secondary hover:shadow-lg hover:scale-[1.01] focus:ring-primary/30 rounded-full",
       },
       size: {
         default: "h-10 px-4 py-2 text-sm",
