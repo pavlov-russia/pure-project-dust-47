@@ -10,18 +10,22 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
+    console.log('=== Начало handleCTAClick ===');
     const consultationForm = document.querySelector('[data-consultation-form]');
+    console.log('Форма найдена:', !!consultationForm);
+    
     if (consultationForm) {
-      // Простой скролл к форме с центрированием
-      const headerHeight = isMobile ? 100 : 80;
-      const rect = consultationForm.getBoundingClientRect();
-      const absoluteTop = window.pageYOffset + rect.top;
-      const centeredPosition = absoluteTop - (window.innerHeight - rect.height) / 2 + headerHeight / 2;
+      console.log('Начинаем скролл...');
       
-      window.scrollTo({
-        top: Math.max(0, centeredPosition),
-        behavior: 'smooth'
+      // Сначала попробуем простой scrollIntoView
+      consultationForm.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
       });
+      
+      console.log('scrollIntoView выполнен');
+    } else {
+      console.error('Форма не найдена!');
     }
   };
 
