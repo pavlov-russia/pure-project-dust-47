@@ -142,7 +142,7 @@ const TypographyShowcase: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+          <h1 className="typo-h1 text-4xl md:text-5xl bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
             Фирменные шрифты проекта
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -175,7 +175,7 @@ const TypographyShowcase: React.FC = () => {
               >
                 <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary/50 transition-colors">
                   <Upload className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <p className="text-lg font-medium">Нажмите для выбора TTF файлов</p>
+                  <p className="text-lg u-strong">Нажмите для выбора TTF файлов</p>
                   <p className="text-sm text-muted-foreground">Поддерживаются только файлы .ttf</p>
                 </div>
               </label>
@@ -212,7 +212,7 @@ const TypographyShowcase: React.FC = () => {
                   }, {} as { [key: string]: { font: StoredFont; index: number }[] })
                 ).map(([fontFamily, fontGroup]) => (
                   <div key={fontFamily} className="border rounded-lg bg-background/50 p-4">
-                    <h3 className="font-semibold text-lg mb-3">{fontFamily}</h3>
+                    <h3 className="typo-h2 text-lg mb-3">{fontFamily}</h3>
                     <div className="space-y-3">
                       {fontGroup
                         .sort((a, b) => parseInt(a.font.fontWeight) - parseInt(b.font.fontWeight))
@@ -220,7 +220,7 @@ const TypographyShowcase: React.FC = () => {
                         <div key={index} className="flex items-center justify-between p-3 bg-background/30 rounded border">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
-                              <span className="text-sm font-medium">{font.name}</span>
+                              <span className="text-sm u-strong">{font.name}</span>
                               <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
                                 {getFontWeightName(font.fontWeight)}
                               </span>
@@ -289,7 +289,7 @@ const TypographyShowcase: React.FC = () => {
           <Card className="glass">
             <CardContent className="pt-6 text-center">
               <Type className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Шрифты не загружены</h3>
+              <h3 className="typo-h2 text-xl mb-2">Шрифты не загружены</h3>
               <p className="text-muted-foreground">
                 Загрузите TTF файлы фирменных шрифтов, чтобы начать работу
               </p>

@@ -158,7 +158,7 @@ const ConsultationForm = () => {
                   </div>
                 </div>
                 
-                <h1 className="text-2xl font-extrabold text-[#272727] mb-3 drop-shadow-lg">
+                <h1 className="typo-h1 text-2xl text-[#272727] mb-3 drop-shadow-lg">
                   Консультация по Telegram
                 </h1>
                 <p className="text-[#272727] text-sm leading-relaxed">
@@ -169,8 +169,8 @@ const ConsultationForm = () => {
               {/* Progress Section with iOS 26 styling */}
               <div className="mb-8">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-[#272727] text-sm font-medium">Вопрос {currentStep} из {totalSteps}</span>
-                  <span className="text-[#272727] text-sm font-medium">{Math.round(progress)}%</span>
+                   <span className="text-[#272727] text-sm u-strong">Вопрос {currentStep} из {totalSteps}</span>
+                   <span className="text-[#272727] text-sm u-strong">{Math.round(progress)}%</span>
                 </div>
                 
                 {/* Progress Bar with liquid glass */}
@@ -187,7 +187,7 @@ const ConsultationForm = () => {
 
               {/* Question Section */}
               <div className="space-y-6">
-                <h2 className="text-lg md:text-xl font-semibold text-[#272727] leading-tight drop-shadow-sm text-center">
+                <h2 className="typo-h2 text-lg md:text-xl text-[#272727] leading-tight drop-shadow-sm text-center">
                   {currentQuestion.question}
                 </h2>
 
@@ -263,7 +263,7 @@ const ConsultationForm = () => {
                     <Button 
                       onClick={handleNext}
                       disabled={!isStepValid}
-                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-[#272727] font-bold uppercase h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                      className="btn relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-[#272727] h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     >
                       {currentStep === totalSteps ? "Записаться" : "Далее"}
                       <ChevronRight className="w-5 h-5" />
@@ -307,7 +307,7 @@ const ConsultationForm = () => {
                 </div>
               </div>
               
-              <h2 className="text-2xl font-semibold text-[#272727] mb-4 drop-shadow-sm">
+              <h2 className="typo-h2 text-2xl text-[#272727] mb-4 drop-shadow-sm">
                 Заявка отправлена!
               </h2>
               
@@ -321,7 +321,7 @@ const ConsultationForm = () => {
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
                 <Button 
                   onClick={() => setShowSuccessPopup(false)}
-                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] font-bold uppercase px-8 py-3 rounded-2xl transition-all duration-300"
+                  className="btn relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] px-8 py-3 rounded-2xl transition-all duration-300"
                 >
                   Закрыть
                 </Button>

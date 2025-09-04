@@ -8,7 +8,7 @@ const BrandTypography: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+          <h1 className="typo-h1 text-4xl md:text-5xl bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
             Фирменная типографика
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -27,31 +27,31 @@ const BrandTypography: React.FC = () => {
           <CardContent className="space-y-4">
             <div className="grid gap-4 text-sm">
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">H1 — Заголовок главный</span>
+                <span className="u-strong">H1 — Заголовок главный</span>
                 <span className="text-muted-foreground">Вес 800, цвет #563AF0</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">H2 — Подзаголовок</span>
+                <span className="u-strong">H2 — Подзаголовок</span>
                 <span className="text-muted-foreground">Вес 600, адаптивный размер</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">H3 — Подзаголовок меньший</span>
+                <span className="u-strong">H3 — Подзаголовок меньший</span>
                 <span className="text-muted-foreground">Вес 500, адаптивный размер</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">Body — Основной текст</span>
+                <span className="u-strong">Body — Основной текст</span>
                 <span className="text-muted-foreground">Вес 400, цвет #272727</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">Caption — Подписи</span>
+                <span className="u-strong">Caption — Подписи</span>
                 <span className="text-muted-foreground">Вес 300, 12px, цвет #7962F4</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">.u-strong — Акценты в тексте</span>
+                <span className="u-strong">.u-strong — Акценты в тексте</span>
                 <span className="text-muted-foreground">Вес 600 (DemiBold)</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-background/50 rounded border">
-                <span className="font-medium">.btn — CTA кнопки</span>
+                <span className="u-strong">.btn — CTA кнопки</span>
                 <span className="text-muted-foreground">Bold, UPPERCASE, #563AF0</span>
               </div>
             </div>
@@ -94,35 +94,35 @@ const BrandTypography: React.FC = () => {
               <div className="text-center space-y-2">
                 <div className="w-full h-16 rounded-lg" style={{ backgroundColor: '#563AF0' }}></div>
                 <div className="text-sm">
-                  <div className="font-medium">Primary</div>
+                  <div className="u-strong">Primary</div>
                   <div className="text-muted-foreground">#563AF0</div>
                 </div>
               </div>
               <div className="text-center space-y-2">
                 <div className="w-full h-16 rounded-lg" style={{ backgroundColor: '#7962F4' }}></div>
                 <div className="text-sm">
-                  <div className="font-medium">Primary Light</div>
+                  <div className="u-strong">Primary Light</div>
                   <div className="text-muted-foreground">#7962F4</div>
                 </div>
               </div>
               <div className="text-center space-y-2">
                 <div className="w-full h-16 rounded-lg border" style={{ backgroundColor: '#FFFFFF' }}></div>
                 <div className="text-sm">
-                  <div className="font-medium">White</div>
+                  <div className="u-strong">White</div>
                   <div className="text-muted-foreground">#FFFFFF</div>
                 </div>
               </div>
               <div className="text-center space-y-2">
                 <div className="w-full h-16 rounded-lg" style={{ backgroundColor: '#E9E9E9' }}></div>
                 <div className="text-sm">
-                  <div className="font-medium">Muted</div>
+                  <div className="u-strong">Muted</div>
                   <div className="text-muted-foreground">#E9E9E9</div>
                 </div>
               </div>
               <div className="text-center space-y-2">
                 <div className="w-full h-16 rounded-lg" style={{ backgroundColor: '#272727' }}></div>
                 <div className="text-sm">
-                  <div className="font-medium">Dark</div>
+                  <div className="u-strong">Dark</div>
                   <div className="text-muted-foreground">#272727</div>
                 </div>
               </div>

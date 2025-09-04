@@ -53,7 +53,7 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 <FileText className="w-16 h-16 mx-auto mb-4 text-white" />
               </div>
               
-              <h3 className="text-2xl font-medium text-white mb-4 leading-tight">
+              <h3 className="typo-h3 text-2xl text-white mb-4 leading-tight">
                 Забирайте оберег от слитого бюджета
               </h3>
               
@@ -71,7 +71,7 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
                 <Button 
                   onClick={onClose}
-                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-bold uppercase px-8 py-3 rounded-2xl transition-all duration-300 w-full"
+                  className="btn relative z-10 bg-transparent border-none hover:bg-white/10 text-white px-8 py-3 rounded-2xl transition-all duration-300 w-full"
                 >
                   Забрать
                 </Button>

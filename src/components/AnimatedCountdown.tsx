@@ -42,7 +42,7 @@ const AnimatedCountdown = ({ onComplete, active, frozen }: AnimatedCountdownProp
   return (
     <span 
       className={`
-        inline-block text-white font-bold mx-1
+        inline-block text-white u-strong mx-1
         ${isAnimating ? 'animate-elastic-scale' : ''}
       `}
       style={{

@@ -182,9 +182,9 @@ const Index = () => {
             </div>
             
             <div className="flex-1 flex flex-col justify-center">
-              <h1 className="text-xl md:text-3xl font-extrabold mb-4 leading-tight text-white relative z-10">
+              <h1 className="typo-h1 text-xl md:text-3xl mb-4 leading-tight text-white relative z-10">
                 Управляйте впечатлением о своём бизнесе с{" "}
-                <span className="font-extrabold text-white">TapBlog</span>
+                <span className="typo-h1 text-white">TapBlog</span>
               </h1>
               
               <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
@@ -194,7 +194,7 @@ const Index = () => {
                   }} /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
               </p>
               
-              <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">
+              <p className="text-sm md:text-base mb-8 u-strong text-white leading-relaxed">
                 И мы поможем использовать их в вашу пользу!
               </p>
             </div>
@@ -234,7 +234,7 @@ const Index = () => {
                       behavior: 'smooth'
                     });
                   }
-                 }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base text-xs font-bold uppercase">
+                 }} className="btn w-full transition-all duration-300 h-12 rounded-2xl md:text-base text-xs">
                 Получить индивидуальное предложение
               </Button>
             </div>
@@ -264,7 +264,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
-              <h2 className="text-lg md:text-3xl font-semibold text-[#272727] mb-4 text-center leading-tight">
+              <h2 className="typo-h2 text-lg md:text-3xl text-[#272727] mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
               
@@ -294,7 +294,7 @@ const Index = () => {
             <div className="p-8 md:p-12 relative z-10">
               <div className="space-y-6 text-[#272727]">
                 <p className="text-base md:text-lg leading-relaxed text-center">
-                  <strong className="text-[#563AF0]">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+                  <span className="u-accent u-strong">Опасная иллюзия:</span> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
                 <div className="pl-4">
@@ -305,7 +305,7 @@ const Index = () => {
                     название канала, красивая аватарка, описание, закреп, несколько постов и пара кейсов –
                   </p>
                   <div className="text-center mt-4">
-                    <span className="px-2 py-1 rounded font-semibold text-white inline-block relative" style={{
+                    <span className="px-2 py-1 rounded u-strong text-white inline-block relative" style={{
                       background: `linear-gradient(135deg, #563AF0 0%, #7962F4 50%, #272727 100%)`
                     }}>
                       ЭТО НЕ УПАКОВКА!
@@ -335,7 +335,7 @@ const Index = () => {
         <div className="container mx-auto px-6 max-w-full">
           <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-4 leading-tight">
+              <h2 className="typo-h2 text-2xl md:text-4xl text-[#272727] mb-4 leading-tight">
                 ЭКСПРЕСС-ТЕСТ
               </h2>
               
@@ -372,7 +372,7 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
             </div>
             
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
+            <h2 className="typo-h2 text-2xl md:text-4xl text-white mb-6 leading-tight">
               Настоящая упаковка — это система:
             </h2>
             
@@ -381,7 +381,7 @@ const Index = () => {
                 <CarouselContent>
                   {carouselData.map((item, index) => <CarouselItem key={index}>
                       <div className="bg-[rgba(255,255,255,0.95)] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[rgba(86,58,240,0.2)] h-full">
-                        <h3 className="text-lg md:text-xl font-bold text-[#563AF0] mb-4">
+                        <h3 className="typo-h3 text-lg md:text-xl u-accent mb-4">
                           {item.title}
                         </h3>
                         <p className="text-sm md:text-base text-[#272727] leading-relaxed">
@@ -427,7 +427,7 @@ const Index = () => {
         <div className="container mx-auto px-6 max-w-full">
           <SectionCard className="bg-white/10 border-white/20">
             <div className="text-center">
-              <blockquote className="text-xl md:text-3xl font-bold text-white mb-6 leading-tight italic">
+              <blockquote className="text-xl md:text-3xl u-strong text-white mb-6 leading-tight italic">
                 «У вас не будет второго шанса произвести первое впечатление»
               </blockquote>
               
@@ -443,7 +443,7 @@ const Index = () => {
       <section className="pt-2 pb-8 bg-gradient-to-b from-[#7460f1] to-[#563AF0]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center space-y-4">
-            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
+            <h3 className="typo-h3 text-xl md:text-2xl text-white leading-tight">
               Мудрые учатся на чужих ошибках — забирайте оберег от слитого бюджета
             </h3>
             
@@ -459,7 +459,7 @@ const Index = () => {
             </p>
             
             <div className="text-center mt-4">
-              <span className="btn-grab text-white font-bold text-2xl md:text-3xl underline cursor-pointer select-none px-4 py-2 inline-block">
+              <span className="btn-grab text-white u-strong text-2xl md:text-3xl underline cursor-pointer select-none px-4 py-2 inline-block">
                 ЗАБРАТЬ!
               </span>
             </div>
@@ -473,7 +473,7 @@ const Index = () => {
           <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center space-y-8">
               {/* Main Heading */}
-              <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-6 leading-tight">
+              <h2 className="typo-h2 text-2xl md:text-4xl text-[#272727] mb-6 leading-tight">
                 Попытка сэкономить на упаковке или сделать её наскоро —
                 гарантированно сольёт ваш бюджет впустую!
               </h2>
@@ -512,7 +512,7 @@ const Index = () => {
       <section ref={targetSectionRef} className="py-8 bg-[linear-gradient(to_bottom,_#ffffff_0%,_#cfc8fd_28%,_#a79af8_50%,_#7962F4_70%,_#a79af8_86%,_#ffffff_100%)]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-8 leading-tight">
+            <h2 className="typo-h2 text-2xl md:text-4xl text-[#272727] mb-8 leading-tight">
               Кому подходит наша упаковка?
             </h2>
             
@@ -536,11 +536,11 @@ const Index = () => {
             </div>
             
             <div className="space-y-6 mb-8">
-              <p className="text-lg md:text-xl font-bold text-[#272727] tracking-wide">
-                УПАКОВКА – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
-              </p>
-              <p className="text-lg md:text-xl font-bold text-[#272727] tracking-wide">
-                САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
+               <p className="text-lg md:text-xl u-strong text-[#272727] tracking-wide">
+                 УПАКОВКА – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
+               </p>
+               <p className="text-lg md:text-xl u-strong text-[#272727] tracking-wide">
+                 САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
               </p>
             </div>
             

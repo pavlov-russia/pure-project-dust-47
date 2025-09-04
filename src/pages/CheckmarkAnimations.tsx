@@ -166,7 +166,7 @@ const StarAnimations = () => {
       
       <main className="container mx-auto px-4 pt-24 pb-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
+          <h1 className="typo-h1 text-4xl md:text-6xl text-white mb-6">
             Варианты звёздочек
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
@@ -183,7 +183,7 @@ const StarAnimations = () => {
               <div className="flex justify-center mb-4">
                 {variant.svg}
               </div>
-              <h3 className="text-white font-medium text-sm">
+              <h3 className="typo-h3 text-white text-sm">
                 {variant.name}
               </h3>
             </div>
@@ -192,7 +192,7 @@ const StarAnimations = () => {
 
         <div className="mt-16 text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="typo-h2 text-2xl text-white mb-4">
               Как использовать
             </h2>
             <p className="text-white/80 text-left">
