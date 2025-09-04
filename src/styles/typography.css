@@ -19,7 +19,7 @@
 
 /* Базовые правила */
 html, body {
-  font-family: "TT Fors Trial", sans-serif;
+  font-family: "TT Fors Trial", sans-serif !important;
   color: var(--c-dark);
 }
 
