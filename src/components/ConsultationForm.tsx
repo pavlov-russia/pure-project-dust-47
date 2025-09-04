@@ -213,7 +213,7 @@ const ConsultationForm = () => {
 
               {/* Question Section */}
               <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-[#272727] leading-tight drop-shadow-sm">
+                <h2 className="text-xl font-semibold text-[#272727] leading-tight drop-shadow-sm whitespace-nowrap">
                   {currentQuestion.question}
                 </h2>
 
