@@ -226,11 +226,11 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
-              <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-4 text-center leading-tight">
+              <h2 className="text-lg md:text-3xl font-bold text-[#272727] mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
               
-              <p className="text-lg md:text-xl text-gray-700 text-center mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-[#272727] text-center mb-8 leading-relaxed">
                 Это основа, без которой продвижение теряет смысл, а вы – бюджет
               </p>
             </div>
@@ -254,9 +254,9 @@ const Index = () => {
         }}>
           <div className="w-full relative">
             <div className="p-8 md:p-12 relative z-10">
-              <div className="space-y-6 text-gray-700">
+              <div className="space-y-6 text-[#272727]">
                 <p className="text-base md:text-lg leading-relaxed text-center">
-                  <strong className="text-gray-900">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
+                  <strong className="text-[#563AF0]">Опасная иллюзия:</strong> многие эксперты/владельцы бизнеса уверены, что их предложение «упаковано».
                 </p>
                 
                 <div className="pl-4">
@@ -295,7 +295,7 @@ const Index = () => {
       {/* Express Test Section */}
       <section className="py-8 bg-gradient-to-b from-white to-[#563AF0]">
         <div className="container mx-auto px-6 max-w-full">
-          <SectionCard className="bg-white/10 border-white/20">
+          <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
                 ЭКСПРЕСС-ТЕСТ
@@ -342,11 +342,11 @@ const Index = () => {
               <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
                   {carouselData.map((item, index) => <CarouselItem key={index}>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 h-full">
-                        <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                      <div className="bg-[rgba(255,255,255,0.95)] backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[rgba(86,58,240,0.2)] h-full">
+                        <h3 className="text-lg md:text-xl font-bold text-[#563AF0] mb-4">
                           {item.title}
                         </h3>
-                        <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                        <p className="text-sm md:text-base text-[#272727] leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -429,7 +429,7 @@ const Index = () => {
       {/* TapBlog Solution Section */}
       <section className="py-8 bg-gradient-to-b from-[#563AF0] to-white">
         <div className="container mx-auto px-6 max-w-full">
-          <SectionCard className="bg-white/10 border-white/20">
+          <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center space-y-8">
               {/* Main Heading */}
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
@@ -487,14 +487,14 @@ const Index = () => {
               {["экспертам и компаниям, продающим услуги и продукты", "брендам / онлайн-магазинам", "сообществам / клубам", "авторам курсов / интенсивов / тренингов", "авторам тематических ТГ-каналов"].map((text, index) => <div key={index} className={`transition-all duration-700 ease-out ${hasTargetAnimationPlayed ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-100px]'}`} style={{
                 transitionDelay: hasTargetAnimationPlayed ? `${index * 150}ms` : '0ms'
               }}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer group">
+                  <div className="bg-[rgba(86,58,240,0.08)] backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-[rgba(86,58,240,0.2)] hover:bg-[rgba(86,58,240,0.12)] transition-all duration-300 cursor-pointer group">
                     <div className="flex items-center space-x-3 text-left">
                       <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-[#7962F4] to-[#9580FF] rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-lg">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="text-white text-sm md:text-base font-medium group-hover:text-white/90 transition-colors duration-300">
+                      <span className="text-[#272727] text-sm md:text-base font-medium group-hover:text-[#563AF0] transition-colors duration-300">
                         {text}
                       </span>
                     </div>
