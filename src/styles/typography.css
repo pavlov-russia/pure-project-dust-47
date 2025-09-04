@@ -67,6 +67,13 @@ small,.typo-caption{
 .u-muted{color:#8F8F8F;}
 .u-allcaps{text-transform:uppercase; letter-spacing:.04em;}
 
+/* Семантические классы для защиты от ошибок */
+.typo-h1 { font-weight: 800; }            /* Экстрабольд для H1 */
+.typo-h2 { font-weight: 600; }            /* Семибольд для H2 */
+.typo-h3 { font-weight: 500; }            /* Медиум для H3 */
+.typo-body { font-weight: 400; }          /* Нормал для Body */
+.typo-caption { font-weight: 300; }       /* Лайт для Caption */
+
 /* CTA-кнопки - точные правила применения */
 .btn{
   font-weight:700;                         /* Bold для CTA */

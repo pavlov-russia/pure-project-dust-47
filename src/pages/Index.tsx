@@ -182,9 +182,9 @@ const Index = () => {
             </div>
             
             <div className="flex-1 flex flex-col justify-center">
-              <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white relative z-10">
+              <h1 className="text-xl md:text-3xl font-extrabold mb-4 leading-tight text-white relative z-10">
                 Управляйте впечатлением о своём бизнесе с{" "}
-                <span className="font-bold text-white">TapBlog</span>
+                <span className="font-extrabold text-white">TapBlog</span>
               </h1>
               
               <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
@@ -234,7 +234,7 @@ const Index = () => {
                       behavior: 'smooth'
                     });
                   }
-                }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base text-xs font-normal">
+                 }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base text-xs font-bold uppercase">
                 Получить индивидуальное предложение
               </Button>
             </div>
@@ -264,7 +264,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#9580FF] to-transparent opacity-70"></div>
               </div>
               
-              <h2 className="text-lg md:text-3xl font-bold text-[#272727] mb-4 text-center leading-tight">
+              <h2 className="text-lg md:text-3xl font-semibold text-[#272727] mb-4 text-center leading-tight">
                 Стратегическая упаковка — катализатор доверия и конверсии
               </h2>
               

@@ -202,8 +202,8 @@ const Header = () => {
               </svg>
             }
           >
-            <span className="hidden sm:inline text-xs">Получить индивидуальное КП</span>
-            <span className="sm:hidden text-xs">Получить КП</span>
+            <span className="hidden sm:inline text-xs font-bold uppercase">Получить индивидуальное КП</span>
+            <span className="sm:hidden text-xs font-bold uppercase">Получить КП</span>
           </Button>
         </div>
         </div>

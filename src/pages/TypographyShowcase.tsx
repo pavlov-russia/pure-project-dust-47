@@ -142,7 +142,7 @@ const TypographyShowcase: React.FC = () => {
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
             Фирменные шрифты проекта
           </h1>
           <p className="text-muted-foreground text-lg">
