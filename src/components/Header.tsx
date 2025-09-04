@@ -10,52 +10,18 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
-    console.log('Кнопка КП нажата');
-    // Находим форму консультации и скроллим к ней с учетом центрирования
     const consultationForm = document.querySelector('[data-consultation-form]');
-    console.log('Найденная форма:', consultationForm);
     if (consultationForm) {
-      const viewportHeight = window.innerHeight;
-      const formRect = consultationForm.getBoundingClientRect();
-      const formElement = consultationForm as HTMLElement;
+      // Простой скролл к форме с центрированием
+      const headerHeight = isMobile ? 100 : 80;
+      const rect = consultationForm.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const centeredPosition = absoluteTop - (window.innerHeight - rect.height) / 2 + headerHeight / 2;
       
-      // Получаем реальную высоту хедера
-      const header = document.querySelector('header');
-      const headerHeight = header ? header.offsetHeight : (isMobile ? 120 : 80);
-      
-      // Для мобильных устройств используем более точный расчет
-      if (isMobile) {
-        // Получаем текущую позицию скролла
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const formHeight = formRect.height;
-        
-        // Вычисляем абсолютную позицию формы на странице
-        const formTopAbsolute = currentScrollTop + formRect.top;
-        
-        // Вычисляем целевую позицию для центрирования
-        const targetScrollTop = formTopAbsolute - (viewportHeight - formHeight) / 2 + headerHeight / 2;
-        
-        window.scrollTo({
-          top: Math.max(0, targetScrollTop),
-          behavior: 'smooth'
-        });
-      } else {
-        // Для десктопа используем существующий подход
-        const elementHeight = formRect.height;
-        const offset = (viewportHeight - elementHeight) / 2 - headerHeight;
-        
-        consultationForm.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
-        });
-        
-        setTimeout(() => {
-          window.scrollBy({
-            top: -offset,
-            behavior: 'smooth'
-          });
-        }, 500);
-      }
+      window.scrollTo({
+        top: Math.max(0, centeredPosition),
+        behavior: 'smooth'
+      });
     }
   };
 
