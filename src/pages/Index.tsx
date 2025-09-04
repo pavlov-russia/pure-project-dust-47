@@ -297,19 +297,19 @@ const Index = () => {
         <div className="container mx-auto px-6 max-w-full">
           <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-4 leading-tight">
                 ЭКСПРЕСС-ТЕСТ
               </h2>
               
-              <h3 className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
+              <h3 className="text-lg md:text-xl text-[#272727] mb-6 leading-relaxed">
                 Как понять, что ваше предложение не упаковано или упаковано плохо?
               </h3>
               
-              <p className="text-base md:text-lg text-white mb-4 leading-relaxed">
+              <p className="text-base md:text-lg text-[#272727] mb-4 leading-relaxed">
                 Очень просто. Трафик есть, а продаж нет или они минимальны.
               </p>
               
-              <p className="text-sm text-white/70 mb-8 italic">
+              <p className="text-sm text-[#9E9E9E] mb-8 italic">
                 *при условии адекватного профессионального трафик-менеджера
               </p>
               
@@ -361,7 +361,7 @@ const Index = () => {
               <div className="flex justify-center space-x-2 mt-6">
                 {Array.from({
                   length: count
-                }).map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === current ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/60'}`} aria-label={`Перейти к слайду ${index + 1}`} />)}
+                }).map((_, index) => <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full transition-all duration-300 ${index === current ? 'bg-[#563AF0] scale-125' : 'bg-[#9E9E9E] hover:bg-[#7962F4]'}`} aria-label={`Перейти к слайду ${index + 1}`} />)}
               </div>
             </div>
             
@@ -432,13 +432,13 @@ const Index = () => {
           <SectionCard className="bg-[rgba(86,58,240,0.08)] border-[rgba(86,58,240,0.2)]">
             <div className="text-center space-y-8">
               {/* Main Heading */}
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-6 leading-tight">
                 Попытка сэкономить на упаковке или сделать её наскоро —
                 гарантированно сольёт ваш бюджет впустую!
               </h2>
               
               {/* Subheading */}
-              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-[#272727] mb-8 leading-relaxed">
                 TapBlog — готовое решение для системной упаковки и продажи ваших продуктов и услуг в Telegram
               </p>
               
@@ -464,7 +464,7 @@ const Index = () => {
                       </svg>
                     </div>
                     {/* Static text */}
-                    <span className="text-white/90 text-base md:text-lg flex-1">
+                    <span className="text-[#272727] text-base md:text-lg flex-1">
                       {text}
                     </span>
                   </div>
@@ -519,7 +519,7 @@ const Index = () => {
               {/* Стрелка вниз */}
               <div className="flex justify-center">
                 <div className="animate-bounce">
-                  <svg className="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#272727]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
                 </div>

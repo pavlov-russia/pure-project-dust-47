@@ -154,7 +154,7 @@ const ConsultationForm = () => {
                   <div className="absolute inset-0 backdrop-blur-[40px] bg-white/20 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
                   <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-full"></div>
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
-                    <MessageCircle className="w-10 h-10 text-white drop-shadow-lg" />
+                    <MessageCircle className="w-10 h-10 text-[#563AF0] drop-shadow-lg" />
                   </div>
                 </div>
                 
@@ -319,7 +319,7 @@ const ConsultationForm = () => {
             <div className="relative z-10 p-8 text-center">
               <button
                 onClick={() => setShowSuccessPopup(false)}
-                className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                className="absolute top-4 right-4 text-[#9E9E9E] hover:text-[#272727] transition-colors p-2 rounded-full hover:bg-white/10"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -329,15 +329,15 @@ const ConsultationForm = () => {
                 <div className="absolute inset-0 backdrop-blur-[40px] bg-white/20 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
                 <div className="absolute inset-[2px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-full"></div>
                 <div className="relative z-10 w-full h-full flex items-center justify-center">
-                  <CheckCircle className="w-12 h-12 text-white drop-shadow-lg" />
+                  <CheckCircle className="w-12 h-12 text-[#563AF0] drop-shadow-lg" />
                 </div>
               </div>
               
-              <h2 className="text-2xl font-bold text-white mb-4 drop-shadow-sm">
+              <h2 className="text-2xl font-bold text-[#272727] mb-4 drop-shadow-sm">
                 Заявка отправлена!
               </h2>
               
-              <p className="text-white/85 mb-8 leading-relaxed">
+              <p className="text-[#272727] mb-8 leading-relaxed">
                 Спасибо за интерес к нашим услугам! Мы свяжемся с вами в ближайшее время для назначения консультации.
               </p>
               
@@ -347,7 +347,7 @@ const ConsultationForm = () => {
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
                 <Button 
                   onClick={() => setShowSuccessPopup(false)}
-                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300"
+                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] font-semibold px-8 py-3 rounded-2xl transition-all duration-300"
                 >
                   Закрыть
                 </Button>
