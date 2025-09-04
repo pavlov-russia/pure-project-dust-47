@@ -427,7 +427,7 @@ const Index = () => {
       </section>
 
       {/* TapBlog Solution Section */}
-      <section className="py-8">
+      <section className="py-8 bg-gradient-to-b from-[#563AF0] to-white">
         <div className="container mx-auto px-6 max-w-full">
           <SectionCard className="bg-white/10 border-white/20">
             <div className="text-center space-y-8">
