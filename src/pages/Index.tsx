@@ -476,7 +476,7 @@ const Index = () => {
       </section>
 
       {/* Target Audience Section */}
-      <section ref={targetSectionRef} className="py-8 bg-gradient-to-b from-[#563AF0] to-white">
+      <section ref={targetSectionRef} className="py-8 bg-gradient-to-b from-white to-[#563AF0]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
