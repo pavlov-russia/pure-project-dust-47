@@ -117,7 +117,7 @@ const Index = () => {
       api.scrollTo(index);
     }
   };
-  return <div className="min-h-screen w-full fixed inset-0 bg-transparent">
+    return <div className="min-h-screen w-full fixed inset-0 bg-white">
       <div className="relative z-10 min-h-screen overflow-y-auto">
       <Header />
       <ChecklistPopup isOpen={isPopupOpen} onClose={() => { setIsPopupOpen(false); setFreezeCountdown(true); }} />
@@ -530,7 +530,7 @@ const Index = () => {
       </section>
 
       {/* Consultation Form */}
-      <div className="-mt-20 pb-0">
+      <div className="-mt-20 pb-0 bg-gradient-to-b from-[#563AF0] to-white">
         <ConsultationForm />
       </div>
       </div>
