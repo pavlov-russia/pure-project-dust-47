@@ -13,26 +13,41 @@ const Header = () => {
     // Находим форму консультации и скроллим к ней с учетом центрирования
     const consultationForm = document.querySelector('[data-consultation-form]');
     if (consultationForm) {
-      const rect = consultationForm.getBoundingClientRect();
-      const headerHeight = 80; // Примерная высота хедера
       const viewportHeight = window.innerHeight;
-      const elementHeight = rect.height;
+      const formRect = consultationForm.getBoundingClientRect();
       
-      // Вычисляем offset для центрирования
-      const offset = (viewportHeight - elementHeight) / 2 - headerHeight;
+      // Получаем реальную высоту хедера
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : (isMobile ? 120 : 80);
       
-      consultationForm.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
-      });
-      
-      // Дополнительная корректировка для точного центрирования
-      setTimeout(() => {
-        window.scrollBy({
-          top: -offset,
+      // Для мобильных устройств используем более точный расчет
+      if (isMobile) {
+        // Вычисляем позицию для центрирования с учетом мобильной шапки
+        const formHeight = formRect.height;
+        const formElement = consultationForm as HTMLElement;
+        const targetTop = formElement.offsetTop - (viewportHeight - formHeight) / 2 + headerHeight / 2;
+        
+        window.scrollTo({
+          top: Math.max(0, targetTop),
           behavior: 'smooth'
         });
-      }, 500);
+      } else {
+        // Для десктопа используем существующий подход
+        const elementHeight = formRect.height;
+        const offset = (viewportHeight - elementHeight) / 2 - headerHeight;
+        
+        consultationForm.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+        
+        setTimeout(() => {
+          window.scrollBy({
+            top: -offset,
+            behavior: 'smooth'
+          });
+        }, 500);
+      }
     }
   };
 
