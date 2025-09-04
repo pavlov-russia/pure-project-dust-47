@@ -232,9 +232,9 @@ const Index = () => {
                       behavior: 'smooth'
                     });
                   }
-                 }} className="btn w-full">
+                 }} className="w-full">
                  Получить индивидуальное предложение
-              </Button>
+               </Button>
             </div>
           </div>
           </div>
