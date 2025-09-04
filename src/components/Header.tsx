@@ -10,13 +10,29 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
-    // Находим форму консультации и скроллим к ней
+    // Находим форму консультации и скроллим к ней с учетом центрирования
     const consultationForm = document.querySelector('[data-consultation-form]');
     if (consultationForm) {
+      const rect = consultationForm.getBoundingClientRect();
+      const headerHeight = 80; // Примерная высота хедера
+      const viewportHeight = window.innerHeight;
+      const elementHeight = rect.height;
+      
+      // Вычисляем offset для центрирования
+      const offset = (viewportHeight - elementHeight) / 2 - headerHeight;
+      
       consultationForm.scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
       });
+      
+      // Дополнительная корректировка для точного центрирования
+      setTimeout(() => {
+        window.scrollBy({
+          top: -offset,
+          behavior: 'smooth'
+        });
+      }, 500);
     }
   };
 
