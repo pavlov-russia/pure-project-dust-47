@@ -61,7 +61,7 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
       return (
         <span 
           key={index}
-          className="font-regular" // Regular
+          className="font-normal" // Regular
           style={{ fontWeight: '400' }}
         >
           {part}
@@ -73,7 +73,7 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
   return (
     <Tag 
       className={cn(
-        "font-regular", // Базовый Regular weight
+        "font-normal", // Базовый Regular weight
         levelStyles[level],
         "leading-tight tracking-tight",
         className

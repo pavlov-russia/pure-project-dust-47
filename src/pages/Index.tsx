@@ -201,7 +201,7 @@ const Index = () => {
                 style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
                 }} 
-                className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-regular text-xs"
+                className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-normal text-xs"
                 onClick={() => {
                   const consultationForm = document.querySelector('[data-consultation-form]') as HTMLElement | null;
                   const rootEl = document.getElementById('root');
