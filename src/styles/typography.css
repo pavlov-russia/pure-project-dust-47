@@ -1,0 +1,37 @@
+/* Typography styles for TT Fors Trial font family */
+
+/* Font face declarations will be injected dynamically */
+
+/* Base typography using TT Fors Trial */
+.font-primary {
+  font-family: 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Weight classes for TT Fors Trial */
+.font-variable {
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-demibold {
+  font-weight: 600;
+}
+
+/* Variable font utility for dynamic weight control */
+.font-variable-weight {
+  font-variation-settings: 'wght' var(--font-weight, 400);
+}
+
+/* Headings with TT Fors Trial */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Body text with TT Fors Trial */
+body {
+  font-family: var(--custom-font-family, 'TT Fors Trial', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+}
