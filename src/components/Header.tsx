@@ -17,7 +17,7 @@ const Header = () => {
 
     // Учитываем высоту фиксированной шапки
     const headerHeight = isMobile ? 155 : 120; // 155px на мобильных, 120px на десктопе
-    const offsetUp = isMobile ? 60 : 40; // дополнительное смещение вверх
+    const offsetUp = isMobile ? -30 : -20; // смещение вниз для более низкой центровки
 
     if (rootEl) {
       const formRect = consultationForm.getBoundingClientRect();
