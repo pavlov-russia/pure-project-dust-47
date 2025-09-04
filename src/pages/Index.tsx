@@ -339,7 +339,7 @@ const Index = () => {
                 ЭКСПРЕСС-ТЕСТ
               </h2>
               
-              <h3 className="text-lg md:text-xl text-[#272727] mb-6 leading-relaxed">
+              <h3 className="typo-h3 text-lg md:text-xl text-[#272727] mb-6 leading-relaxed">
                 Как понять, что ваше предложение не упаковано или упаковано плохо?
               </h3>
               
