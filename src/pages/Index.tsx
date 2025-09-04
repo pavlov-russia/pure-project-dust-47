@@ -530,7 +530,7 @@ const Index = () => {
       </section>
 
       {/* Consultation Form */}
-      <div className="-mt-20 pb-0 bg-gradient-to-b from-[#563AF0] to-white">
+      <div className="-mt-20 pb-0 bg-[#563AF0]">
         <ConsultationForm />
       </div>
       </div>
