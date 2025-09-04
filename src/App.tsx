@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import AnimationShowcase from "./components/AnimationShowcase";
 import FontUploader from "./pages/FontUploader";
 import TypographyShowcase from "./pages/TypographyShowcase";
+import BrandTypography from "./pages/BrandTypography";
 import CheckmarkAnimations from "./pages/CheckmarkAnimations";
 
 
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/animations" element={<CheckmarkAnimations />} />
             <Route path="/fonts" element={<FontUploader />} />
             <Route path="/typography" element={<TypographyShowcase />} />
+            <Route path="/brand-typography" element={<BrandTypography />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
