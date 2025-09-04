@@ -1,179 +1,301 @@
-import React, { useState } from 'react';
-import { H1, H2, H3, GradientHeading } from '@/components/Typography';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { useState, useRef, useCallback } from 'react';
+import { Upload, Download, Trash2, Type, Eye } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
+import { 
+  StoredFont, 
+  injectFontFace, 
+  applyGlobalFont, 
+  saveFontsToStorage, 
+  loadFontsFromStorage,
+  downloadCSS 
+} from '@/utils/customFonts';
+import { detectFontWeight, getFontWeightName, extractFontFamily } from '@/utils/fontWeightDetector';
 
 const TypographyShowcase: React.FC = () => {
-  const [headingText, setHeadingText] = useState('Пример заголовка с выделением');
-  const [highlightWords, setHighlightWords] = useState('заголовка, выделением');
-  const [headingType, setHeadingType] = useState<'h1' | 'h2' | 'h3' | 'gradient'>('h1');
+  const [fonts, setFonts] = useState<StoredFont[]>(loadFontsFromStorage());
+  const [previewText, setPreviewText] = useState('Пример текста для предпросмотра шрифта');
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
-  const renderPreviewHeading = () => {
-    const wordsArray = highlightWords.split(',').map(word => word.trim()).filter(Boolean);
-    
-    switch (headingType) {
-      case 'h1':
-        return <H1 highlightWords={wordsArray}>{headingText}</H1>;
-      case 'h2':
-        return <H2 highlightWords={wordsArray}>{headingText}</H2>;
-      case 'h3':
-        return <H3 highlightWords={wordsArray}>{headingText}</H3>;
-      case 'gradient':
-        return <GradientHeading level={1} highlightWords={wordsArray}>{headingText}</GradientHeading>;
-      default:
-        return <H1 highlightWords={wordsArray}>{headingText}</H1>;
+  const handleFileUpload = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (!files) return;
+
+    Array.from(files).forEach(file => {
+      if (!file.name.toLowerCase().endsWith('.ttf')) {
+        toast({
+          title: "Ошибка",
+          description: `Файл ${file.name} не является TTF шрифтом`,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target?.result as string;
+        const fontFamily = extractFontFamily(file.name);
+        const fontWeight = detectFontWeight(file.name);
+        
+        const newFont: StoredFont = {
+          name: file.name.replace(/\.[^/.]+$/, ""),
+          fontFamily,
+          fontWeight,
+          dataUrl,
+          originalFileName: file.name
+        };
+
+        // Immediately inject the font face
+        injectFontFace(newFont);
+
+        setFonts(prev => {
+          const updated = [...prev, newFont];
+          return updated;
+        });
+
+        toast({
+          title: "Шрифт загружен",
+          description: `${newFont.name} успешно добавлен`,
+        });
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    // Clear the input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
     }
-  };
+  }, [toast]);
+
+  const handleApplyToProject = useCallback(() => {
+    if (fonts.length === 0) {
+      toast({
+        title: "Нет шрифтов",
+        description: "Сначала загрузите шрифты",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Save to localStorage
+    saveFontsToStorage(fonts);
+    
+    // Inject all font faces
+    fonts.forEach(font => {
+      injectFontFace(font);
+    });
+    
+    // Apply first font family globally with Regular weight (400)
+    const firstFont = fonts.find(f => f.fontWeight === '400') || fonts[0];
+    applyGlobalFont(firstFont.fontFamily, '400');
+
+    toast({
+      title: "Шрифты применены",
+      description: `${fonts.length} шрифт(ов) применено к проекту`,
+    });
+  }, [fonts, toast]);
+
+  const handleDownloadCSS = useCallback(() => {
+    if (fonts.length === 0) {
+      toast({
+        title: "Нет шрифтов",
+        description: "Сначала загрузите шрифты",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    downloadCSS(fonts);
+    
+    toast({
+      title: "CSS файл загружен",
+      description: "Файл с CSS для шрифтов сохранен",
+    });
+  }, [fonts, toast]);
+
+  const handleDeleteFont = useCallback((index: number) => {
+    const fontToDelete = fonts[index];
+    
+    // Remove the injected style
+    const styleId = `custom-font-${fontToDelete.fontFamily}`;
+    const existingStyle = document.getElementById(styleId);
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+
+    const updatedFonts = fonts.filter((_, i) => i !== index);
+    setFonts(updatedFonts);
+    saveFontsToStorage(updatedFonts);
+
+    toast({
+      title: "Шрифт удален",
+      description: `${fontToDelete.name} удален из проекта`,
+    });
+  }, [fonts, toast]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 p-4">
       <div className="max-w-4xl mx-auto space-y-6">
-        
-        {/* Заголовок страницы */}
+        {/* Header */}
         <div className="text-center space-y-4">
-          <GradientHeading level={1} highlightWords={['Типографика', 'DemiBold']}>
-            Типографика с выделением DemiBold
-          </GradientHeading>
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
+            Фирменные шрифты проекта
+          </h1>
           <p className="text-muted-foreground text-lg">
-            Демонстрация концепции выделения ключевых слов в заголовках
+            Загружайте и управляйте фирменными шрифтами для использования во всем проекте
           </p>
         </div>
 
-        {/* Интерактивный конструктор */}
+        {/* Upload Section */}
         <Card className="glass">
           <CardHeader>
-            <CardTitle>Конструктор заголовков</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <Upload className="h-5 w-5" />
+              Загрузка TTF шрифтов
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Панель управления */}
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="heading-text">Текст заголовка</Label>
-                  <Input
-                    id="heading-text"
-                    value={headingText}
-                    onChange={(e) => setHeadingText(e.target.value)}
-                    placeholder="Введите текст заголовка"
-                    className="mt-1"
-                  />
+          <CardContent className="space-y-4">
+            <div className="flex items-center gap-4">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".ttf"
+                multiple
+                onChange={handleFileUpload}
+                className="hidden"
+                id="font-upload"
+              />
+              <label 
+                htmlFor="font-upload"
+                className="flex-1 cursor-pointer"
+              >
+                <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary/50 transition-colors">
+                  <Upload className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                  <p className="text-lg font-medium">Нажмите для выбора TTF файлов</p>
+                  <p className="text-sm text-muted-foreground">Поддерживаются только файлы .ttf</p>
                 </div>
+              </label>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Preview Section */}
+        {fonts.length > 0 && (
+          <Card className="glass">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Eye className="h-5 w-5" />
+                Предпросмотр шрифтов
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Input
+                value={previewText}
+                onChange={(e) => setPreviewText(e.target.value)}
+                placeholder="Введите текст для предпросмотра"
+                className="mb-4"
+              />
+              
+              <div className="grid gap-4">
+                {/* Группируем шрифты по семействам */}
+                {Object.entries(
+                  fonts.reduce((groups, font, index) => {
+                    if (!groups[font.fontFamily]) {
+                      groups[font.fontFamily] = [];
+                    }
+                    groups[font.fontFamily].push({ font, index });
+                    return groups;
+                  }, {} as { [key: string]: { font: StoredFont; index: number }[] })
+                ).map(([fontFamily, fontGroup]) => (
+                  <div key={fontFamily} className="border rounded-lg bg-background/50 p-4">
+                    <h3 className="font-semibold text-lg mb-3">{fontFamily}</h3>
+                    <div className="space-y-3">
+                      {fontGroup
+                        .sort((a, b) => parseInt(a.font.fontWeight) - parseInt(b.font.fontWeight))
+                        .map(({ font, index }) => (
+                        <div key={index} className="flex items-center justify-between p-3 bg-background/30 rounded border">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-sm font-medium">{font.name}</span>
+                              <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+                                {getFontWeightName(font.fontWeight)}
+                              </span>
+                            </div>
+                            <p 
+                              className="text-lg"
+                              style={{ 
+                                fontFamily: `'${font.fontFamily}', sans-serif`,
+                                fontWeight: font.fontWeight
+                              }}
+                            >
+                              {previewText}
+                            </p>
+                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleDeleteFont(index)}
+                            className="text-destructive hover:text-destructive ml-4"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Action Buttons */}
+        {fonts.length > 0 && (
+          <Card className="glass">
+            <CardContent className="pt-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={handleApplyToProject}
+                  className="cta-glow flex-1"
+                  size="lg"
+                >
+                  <Type className="h-5 w-5 mr-2" />
+                  Загрузить в проект
+                </Button>
                 
-                <div>
-                  <Label htmlFor="highlight-words">Ключевые слова (через запятую)</Label>
-                  <Input
-                    id="highlight-words"
-                    value={highlightWords}
-                    onChange={(e) => setHighlightWords(e.target.value)}
-                    placeholder="слово1, слово2, слово3"
-                    className="mt-1"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="heading-type">Тип заголовка</Label>
-                  <Select value={headingType} onValueChange={(value: 'h1' | 'h2' | 'h3' | 'gradient') => setHeadingType(value)}>
-                    <SelectTrigger className="mt-1">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="h1">H1 - Главный заголовок</SelectItem>
-                      <SelectItem value="h2">H2 - Заголовок раздела</SelectItem>
-                      <SelectItem value="h3">H3 - Подзаголовок</SelectItem>
-                      <SelectItem value="gradient">Градиентный заголовок</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <Button 
+                  onClick={handleDownloadCSS}
+                  variant="outline"
+                  size="lg"
+                  className="flex-1"
+                >
+                  <Download className="h-5 w-5 mr-2" />
+                  Скачать CSS
+                </Button>
               </div>
               
-              {/* Превью */}
-              <div className="border-l border-border pl-6">
-                <Label className="text-sm font-medium text-muted-foreground mb-4 block">Превью:</Label>
-                <div className="min-h-[100px] flex items-center">
-                  {renderPreviewHeading()}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Примеры использования */}
-        <Card className="glass">
-          <CardHeader>
-            <CardTitle>Примеры заголовков</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-8">
-            
-            {/* H1 с выделением */}
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-2">H1 с выделением ключевых слов:</h4>
-              <H1 highlightWords={['инновационное', 'решение']}>
-                Наше инновационное решение для бизнеса
-              </H1>
-            </div>
-
-            {/* H2 с выделением */}
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-2">H2 с выделением:</h4>
-              <H2 highlightWords={['качество', 'сервис']}>
-                Высокое качество и надежный сервис
-              </H2>
-            </div>
-
-            {/* H3 с выделением */}
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-2">H3 с выделением:</h4>
-              <H3 highlightWords={['современные', 'технологии']}>
-                Используем современные технологии для достижения целей
-              </H3>
-            </div>
-
-            {/* Без выделения */}
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-2">Обычный заголовок без выделения:</h4>
-              <H2>
-                Стандартный заголовок без ключевых слов
-              </H2>
-            </div>
-
-            {/* Градиентный заголовок */}
-            <div>
-              <h4 className="text-sm font-medium text-muted-foreground mb-2">Градиентный заголовок с выделением:</h4>
-              <GradientHeading level={2} highlightWords={['будущее', 'уже']}>
-                Будущее уже здесь
-              </GradientHeading>
-            </div>
-
-          </CardContent>
-        </Card>
-
-        {/* Концепция */}
-        <Card className="glass">
-          <CardHeader>
-            <CardTitle>Концепция типографики</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="prose prose-gray dark:prose-invert max-w-none">
-              <p className="text-muted-foreground leading-relaxed">
-                <strong>Фирменная типографика:</strong> В заголовках предусмотрено выделение 
-                ключевых слов начертанием <span className="font-semibold">DemiBold (font-weight: 600)</span> 
-                при остальном тексте, написанном начертанием Regular (font-weight: 400).
+              <p className="text-sm text-muted-foreground mt-4 text-center">
+                "Загрузить в проект" применит шрифты глобально и сохранит их для будущих сессий
               </p>
-              
-              <h3 className="font-semibold mt-6 mb-3">Как использовать:</h3>
-              <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm">
-                <code>
-                  {`<H1 highlightWords={['ключевые', 'слова']}>
-  Заголовок с ключевые слова для выделения
-</H1>`}
-                </code>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        )}
 
+        {fonts.length === 0 && (
+          <Card className="glass">
+            <CardContent className="pt-6 text-center">
+              <Type className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Шрифты не загружены</h3>
+              <p className="text-muted-foreground">
+                Загрузите TTF файлы фирменных шрифтов, чтобы начать работу
+              </p>
+            </CardContent>
+          </Card>
+        )}
       </div>
     </div>
   );
