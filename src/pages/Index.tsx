@@ -196,9 +196,46 @@ const Index = () => {
             
             {/* CTA Button positioned at bottom with minimal margins */}
             <div className="absolute inset-x-[14px] bottom-4">
-              <Button variant="glass-breath" style={{
+              <Button 
+                variant="glass-breath" 
+                style={{
                   backgroundColor: 'rgba(255,255,255,0.18)'
-                }} className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-regular text-xs">
+                }} 
+                className="w-full transition-all duration-300 h-12 rounded-2xl md:text-base font-regular text-xs"
+                onClick={() => {
+                  const consultationForm = document.querySelector('[data-consultation-form]') as HTMLElement | null;
+                  const rootEl = document.getElementById('root');
+
+                  if (!consultationForm) return;
+
+                  // Учитываем высоту фиксированной шапки
+                  const headerHeight = window.innerWidth < 768 ? 155 : 120; // 155px на мобильных, 120px на десктопе
+                  const offsetUp = window.innerWidth < 768 ? -75 : -50; // смещение вниз для более низкой центровки
+
+                  if (rootEl) {
+                    const formRect = consultationForm.getBoundingClientRect();
+                    const rootRect = rootEl.getBoundingClientRect();
+                    const relativeTop = formRect.top - rootRect.top; // позиция формы относительно контейнера прокрутки
+                    const containerHeight = rootEl.clientHeight;
+
+                    const target = relativeTop + rootEl.scrollTop - headerHeight - (containerHeight - formRect.height) / 2 - offsetUp;
+                    const maxScroll = rootEl.scrollHeight - containerHeight;
+
+                    rootEl.scrollTo({
+                      top: Math.max(0, Math.min(maxScroll, target)),
+                      behavior: 'smooth',
+                    });
+                  } else {
+                    // Фолбэк для случая, если прокручивается окно
+                    const formRect = consultationForm.getBoundingClientRect();
+                    const pageY = window.pageYOffset || document.documentElement.scrollTop;
+                    const viewportHeight = window.innerHeight;
+                    const target = formRect.top + pageY - headerHeight - (viewportHeight - formRect.height) / 2 - offsetUp;
+
+                    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+                  }
+                }}
+              >
                 Получить индивидуальное предложение
               </Button>
             </div>
