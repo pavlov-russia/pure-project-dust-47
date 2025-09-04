@@ -151,8 +151,6 @@ const ConsultationForm = () => {
               <div className="text-center mb-8">
                 {/* Telegram Icon with liquid glass effect */}
                 <div className="relative mx-auto w-20 h-20 mb-6">
-                  <div className="absolute inset-0 backdrop-blur-[40px] bg-white/20 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
-                  <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-transparent rounded-full"></div>
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
                     <svg width="40" height="40" viewBox="0 0 151 151" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
                       <rect x="0.6516" y="0.6321" width="150" height="150" rx="75" fill="#563AF0"/>
