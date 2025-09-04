@@ -82,7 +82,7 @@ export default {
 			fontFamily: {
 				'custom': 'var(--custom-font-family, "TT Fors Trial", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
 				'fors': ['TT Fors Trial', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-				'sans': 'var(--custom-font-family, "TT Fors Trial", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)'
+				'sans': ['var(--font-brand)', 'TT Fors Trial', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
 			},
 			fontWeight: {
 				'light': '300',
