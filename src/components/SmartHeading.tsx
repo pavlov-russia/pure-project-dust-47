@@ -48,11 +48,10 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
       
       if (isHighlighted) {
         return (
-          <span 
-            key={index} 
-            className="font-demibold" // DemiBold
-            style={{ fontWeight: '600' }}
-          >
+           <span 
+             key={index} 
+             className="u-strong"
+           >
             {part}
           </span>
         );

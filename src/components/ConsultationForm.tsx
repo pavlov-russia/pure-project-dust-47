@@ -158,7 +158,7 @@ const ConsultationForm = () => {
                   </div>
                 </div>
                 
-                <h1 className="text-2xl font-bold text-[#272727] mb-3 drop-shadow-lg">
+                <h1 className="text-2xl font-extrabold text-[#272727] mb-3 drop-shadow-lg">
                   Консультация по Telegram
                 </h1>
                 <p className="text-[#272727] text-sm leading-relaxed">
@@ -263,7 +263,7 @@ const ConsultationForm = () => {
                     <Button 
                       onClick={handleNext}
                       disabled={!isStepValid}
-                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-[#272727] font-semibold h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                      className="relative z-10 w-full bg-transparent border-none hover:bg-white/10 text-[#272727] font-bold uppercase h-14 rounded-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     >
                       {currentStep === totalSteps ? "Записаться" : "Далее"}
                       <ChevronRight className="w-5 h-5" />
@@ -307,7 +307,7 @@ const ConsultationForm = () => {
                 </div>
               </div>
               
-              <h2 className="text-2xl font-bold text-[#272727] mb-4 drop-shadow-sm">
+              <h2 className="text-2xl font-semibold text-[#272727] mb-4 drop-shadow-sm">
                 Заявка отправлена!
               </h2>
               
@@ -321,7 +321,7 @@ const ConsultationForm = () => {
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
                 <Button 
                   onClick={() => setShowSuccessPopup(false)}
-                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] font-semibold px-8 py-3 rounded-2xl transition-all duration-300"
+                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-[#272727] font-bold uppercase px-8 py-3 rounded-2xl transition-all duration-300"
                 >
                   Закрыть
                 </Button>
