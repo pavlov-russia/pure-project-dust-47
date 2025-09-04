@@ -18,7 +18,10 @@
 }
 
 /* Базовые правила */
-html,body{font-family:var(--font-brand); color:var(--c-dark);}
+html, body {
+  font-family: "TT Fors Trial", sans-serif;
+  color: var(--c-dark);
+}
 
 /* Заголовки - точные правила применения */
 h1,.typo-h1{
