@@ -257,14 +257,12 @@ const ConsultationForm = () => {
                     </div>
                   )}
                   
-                  <div className="relative flex-1">
-                    <div className="absolute inset-0 backdrop-blur-[40px] bg-white/25 border border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)]"></div>
-                    <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
+                  <div className="flex-1">
                     <Button 
                       onClick={handleNext}
                       disabled={!isStepValid}
                       variant="glass-breath"
-                      className="relative z-10 w-full h-14 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                      className="w-full h-14 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     >
                       {currentStep === totalSteps ? "Записаться" : "Далее"}
                       <ChevronRight className="w-5 h-5" />
