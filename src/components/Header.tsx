@@ -15,6 +15,7 @@ const Header = () => {
     if (consultationForm) {
       const viewportHeight = window.innerHeight;
       const formRect = consultationForm.getBoundingClientRect();
+      const formElement = consultationForm as HTMLElement;
       
       // Получаем реальную высоту хедера
       const header = document.querySelector('header');
@@ -22,13 +23,18 @@ const Header = () => {
       
       // Для мобильных устройств используем более точный расчет
       if (isMobile) {
-        // Вычисляем позицию для центрирования с учетом мобильной шапки
+        // Получаем текущую позицию скролла
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const formHeight = formRect.height;
-        const formElement = consultationForm as HTMLElement;
-        const targetTop = formElement.offsetTop - (viewportHeight - formHeight) / 2 + headerHeight / 2;
+        
+        // Вычисляем абсолютную позицию формы на странице
+        const formTopAbsolute = currentScrollTop + formRect.top;
+        
+        // Вычисляем целевую позицию для центрирования
+        const targetScrollTop = formTopAbsolute - (viewportHeight - formHeight) / 2 + headerHeight / 2;
         
         window.scrollTo({
-          top: Math.max(0, targetTop),
+          top: Math.max(0, targetScrollTop),
           behavior: 'smooth'
         });
       } else {
