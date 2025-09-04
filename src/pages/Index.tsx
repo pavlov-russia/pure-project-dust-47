@@ -25,8 +25,8 @@ const Index = () => {
   const targetSectionRef = useRef(null);
   const timerRef = useRef(null);
   const carouselData = [{
-    title: "Глубинная распаковка вашего продукта, УТП и анализ аудитории",
-    description: "Чтобы сформировать убийственный оффер, обнажить реальные боли клиентов, закрыть возражения и вызвать доверие"
+    title: "Анализ продукта, конкурентов и целевой аудитории",
+    description: "Формируем сильное предложение, находим реальные потребности клиентов и закрываем возражения"
   }, {
     title: "Кристальное позиционирование, понятное даже школьнику",
     description: "Почему именно ваш продукт необходим аудитории и как именно он решит их проблему?"
@@ -181,12 +181,12 @@ const Index = () => {
             
             <div className="flex-1 flex flex-col justify-center">
               <h1 className="text-xl md:text-3xl font-bold mb-4 leading-tight text-white relative z-10">
-                Управляйте впечатлением о своём бизнесе с{" "}
+                Создавайте первое впечатление, которое продаёт, с{" "}
                 <span className="font-bold text-white">TapBlog</span>
               </h1>
               
               <p className="text-sm md:text-base mb-6 leading-relaxed text-white/90 max-w-md mx-auto">
-                У вас есть менее <AnimatedCountdown active={!hasCountdownRun} frozen={freezeCountdown} onComplete={() => { setHasCountdownRun(true); setIsPopupOpen(true); }} /> секунд, чтобы сформировать о своём продукте нужное впечатление и повлиять на решение потребителя.
+                У вас есть менее <AnimatedCountdown active={!hasCountdownRun} frozen={freezeCountdown} onComplete={() => { setHasCountdownRun(true); setIsPopupOpen(true); }} /> секунд на первое впечатление. Сделайте их решающими.
               </p>
               
               <p className="text-sm md:text-base mb-8 font-semibold text-white leading-relaxed">

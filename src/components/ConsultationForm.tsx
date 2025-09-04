@@ -22,13 +22,13 @@ const ConsultationForm = () => {
 
   const questions = [
     {
-      question: "Какая у тебя ниша?",
+      question: "В какой сфере вы работаете?",
       placeholder: "Например, авто из Китая / авторские тренинги",
       field: "niche" as keyof typeof formData,
       type: "input"
     },
     {
-      question: "Опишите свою точку А",
+      question: "Расскажите о текущем состоянии вашего проекта",
       placeholder: "Уже есть канал? Сколько подписчиков? Упакован ли продукт? Тестировали ли какие-то инструменты трафика? Расскажите, что есть сейчас",
       field: "currentState" as keyof typeof formData,
       type: "textarea"
