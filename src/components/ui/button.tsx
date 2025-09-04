@@ -18,14 +18,14 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         
         // New CTA variants - hierarchy system
-        "cta-primary": "bg-gradient-telegram text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus:ring-primary/30",
-        "cta-secondary": "border-2 border-primary bg-transparent text-primary font-semibold hover:bg-primary hover:text-white focus:ring-primary/30",
+        "cta-primary": "bg-gradient-telegram text-white font-demibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus:ring-primary/30",
+        "cta-secondary": "border-2 border-primary bg-transparent text-primary font-demibold hover:bg-primary hover:text-white focus:ring-primary/30",
         "cta-tertiary": "bg-secondary/60 text-foreground font-medium hover:bg-secondary/80 border border-white/20 backdrop-blur-sm",
         
         // Specialized variants
-        "glass-breath": "relative font-semibold text-foreground backdrop-blur-[12px] border border-white/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] hover:scale-105 focus:ring-white/30",
-        "form-submit": "bg-gradient-telegram text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] focus:ring-primary/30",
-        "hero-accent": "bg-white text-foreground font-semibold shadow-md hover:bg-secondary hover:shadow-lg hover:scale-[1.01] focus:ring-primary/30",
+        "glass-breath": "relative font-demibold text-foreground backdrop-blur-[12px] border border-white/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] hover:scale-105 focus:ring-white/30",
+        "form-submit": "bg-gradient-telegram text-white font-demibold shadow-md hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] focus:ring-primary/30",
+        "hero-accent": "bg-white text-foreground font-demibold shadow-md hover:bg-secondary hover:shadow-lg hover:scale-[1.01] focus:ring-primary/30",
       },
       size: {
         default: "h-10 px-4 py-2 text-sm",

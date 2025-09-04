@@ -50,7 +50,7 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
         return (
           <span 
             key={index} 
-            className="font-semibold" // DemiBold
+            className="font-demibold" // DemiBold
             style={{ fontWeight: '600' }}
           >
             {part}
@@ -61,7 +61,7 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
       return (
         <span 
           key={index}
-          className="font-normal" // Regular
+          className="font-regular" // Regular
           style={{ fontWeight: '400' }}
         >
           {part}
@@ -73,7 +73,7 @@ const SmartHeading: React.FC<SmartHeadingProps> = ({
   return (
     <Tag 
       className={cn(
-        "font-normal", // Базовый Regular weight
+        "font-regular", // Базовый Regular weight
         levelStyles[level],
         "leading-tight tracking-tight",
         className

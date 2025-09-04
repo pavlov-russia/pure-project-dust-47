@@ -58,7 +58,7 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               </h3>
               
               <p className="text-white/90 mb-8 leading-relaxed">
-                <span className="font-semibold text-lg text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">5 ошибок</span><br />в вашем Телеграм-канале, которые съедают более<br /><span className="font-semibold text-lg text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">50% продаж</span>
+                <span className="font-demibold text-lg text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">5 ошибок</span><br />в вашем Телеграм-канале, которые съедают более<br /><span className="font-demibold text-lg text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">50% продаж</span>
               </p>
               
               <p className="text-xs text-white/70 mb-6">
@@ -71,7 +71,7 @@ const ChecklistPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 <div className="absolute inset-[1px] bg-gradient-to-b from-white/15 via-transparent to-white/5 rounded-[15px]"></div>
                 <Button 
                   onClick={onClose}
-                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300 w-full"
+                  className="relative z-10 bg-transparent border-none hover:bg-white/10 text-white font-demibold px-8 py-3 rounded-2xl transition-all duration-300 w-full"
                 >
                   Забрать
                 </Button>
