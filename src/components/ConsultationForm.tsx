@@ -28,7 +28,7 @@ const ConsultationForm = () => {
       type: "input"
     },
     {
-      question: "Расскажите о текущем состоянии вашего проекта",
+      question: "Опишите вашу точку А",
       placeholder: "Уже есть канал? Сколько подписчиков? Упакован ли продукт? Тестировали ли какие-то инструменты трафика? Расскажите, что есть сейчас",
       field: "currentState" as keyof typeof formData,
       type: "textarea"
@@ -162,7 +162,7 @@ const ConsultationForm = () => {
                   Консультация по Telegram
                 </h1>
                 <p className="text-white/85 text-sm leading-relaxed">
-                  Ответь на несколько вопросов для записи на консультацию
+                  Ответьте на несколько вопросов для записи на консультацию
                 </p>
               </div>
 
