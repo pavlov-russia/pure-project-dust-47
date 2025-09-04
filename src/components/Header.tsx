@@ -17,6 +17,7 @@ const Header = () => {
 
     // Учитываем высоту фиксированной шапки
     const headerHeight = isMobile ? 155 : 120; // 155px на мобильных, 120px на десктопе
+    const offsetUp = isMobile ? 60 : 40; // дополнительное смещение вверх
 
     if (rootEl) {
       const formRect = consultationForm.getBoundingClientRect();
@@ -24,7 +25,7 @@ const Header = () => {
       const relativeTop = formRect.top - rootRect.top; // позиция формы относительно контейнера прокрутки
       const containerHeight = rootEl.clientHeight;
 
-      const target = relativeTop + rootEl.scrollTop - headerHeight - (containerHeight - formRect.height) / 2;
+      const target = relativeTop + rootEl.scrollTop - headerHeight - (containerHeight - formRect.height) / 2 - offsetUp;
       const maxScroll = rootEl.scrollHeight - containerHeight;
 
       rootEl.scrollTo({
@@ -36,7 +37,7 @@ const Header = () => {
       const formRect = consultationForm.getBoundingClientRect();
       const pageY = window.pageYOffset || document.documentElement.scrollTop;
       const viewportHeight = window.innerHeight;
-      const target = formRect.top + pageY - headerHeight - (viewportHeight - formRect.height) / 2;
+      const target = formRect.top + pageY - headerHeight - (viewportHeight - formRect.height) / 2 - offsetUp;
 
       window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
     }
