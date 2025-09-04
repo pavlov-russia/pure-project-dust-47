@@ -10,8 +10,10 @@ const Header = () => {
   const [leftOffset, setLeftOffset] = useState(0);
   const isMobile = useIsMobile();
   const handleCTAClick = () => {
+    console.log('Кнопка КП нажата');
     // Находим форму консультации и скроллим к ней с учетом центрирования
     const consultationForm = document.querySelector('[data-consultation-form]');
+    console.log('Найденная форма:', consultationForm);
     if (consultationForm) {
       const viewportHeight = window.innerHeight;
       const formRect = consultationForm.getBoundingClientRect();
