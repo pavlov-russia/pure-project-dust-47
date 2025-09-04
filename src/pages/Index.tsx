@@ -479,7 +479,7 @@ const Index = () => {
       <section ref={targetSectionRef} className="py-8 bg-[linear-gradient(to_bottom,_#ffffff_0%,_#cfc8fd_28%,_#a79af8_50%,_#7962F4_70%,_#a79af8_86%,_#ffffff_100%)]">
         <div className="container mx-auto px-6 max-w-full">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#272727] mb-8 leading-tight">
               Кому подходит наша упаковка?
             </h2>
             
@@ -503,16 +503,16 @@ const Index = () => {
             </div>
             
             <div className="space-y-6 mb-8">
-              <p className="text-lg md:text-xl font-bold text-white tracking-wide">
+              <p className="text-lg md:text-xl font-bold text-[#272727] tracking-wide">
                 УПАКОВКА – ПЕРВЫЙ ШАГ, С КОТОРОГО НАЧИНАЮТСЯ ВАШИ ПРОДАЖИ.
               </p>
-              <p className="text-lg md:text-xl font-bold text-white tracking-wide">
+              <p className="text-lg md:text-xl font-bold text-[#272727] tracking-wide">
                 САМОЕ ВРЕМЯ ЕГО СДЕЛАТЬ
               </p>
             </div>
             
             <div className="mb-8">
-              <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-[#272727] leading-relaxed mb-6">
                 Запишитесь на бесплатную консультацию — составим индивидуальный план вашей упаковки в ТГ и подготовим ваш бизнес к запуску трафика
               </p>
               
