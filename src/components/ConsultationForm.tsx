@@ -152,7 +152,7 @@ const ConsultationForm = () => {
                 {/* Telegram Icon with liquid glass effect */}
                 <div className="relative mx-auto w-20 h-20 mb-6">
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
-                    <svg width="40" height="40" viewBox="0 0 151 151" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
+                    <svg width="60" height="60" viewBox="0 0 151 151" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
                       <defs>
                         <clipPath id="clipCircle">
                           <circle cx="75.5" cy="75.5" r="75"/>
